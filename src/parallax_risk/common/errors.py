@@ -27,3 +27,23 @@ class ConfigurationError(ParallaxError, ValueError):
 
 class InfrastructureError(ParallaxError):
     """An external dependency failed without exposing its credentials."""
+
+
+class MarketDataError(DomainValidationError):
+    """Market observations violate their declared units or snapshot consistency."""
+
+
+class MissingMarketDataError(MarketDataError):
+    """Required quotes, fixings or curves are missing; no substitute is inferred."""
+
+
+class CurveError(DomainValidationError):
+    """A curve, interpolation request or extrapolation policy is invalid."""
+
+
+class CurveBootstrapError(ParallaxError):
+    """Curve construction failed its explicit bracket, convergence or repricing gate."""
+
+
+class PricingError(DomainValidationError):
+    """An instrument or pricing context cannot be valued under the declared model."""

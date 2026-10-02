@@ -55,3 +55,23 @@ class ModelVersion(Identifier):
 @dataclass(frozen=True, slots=True)
 class RiskRunId(Identifier):
     """Run identity supplied independently of its random seed."""
+
+
+@dataclass(frozen=True, slots=True)
+class MarketSnapshotId(Identifier):
+    """Market-data snapshot identity."""
+
+
+@dataclass(frozen=True, slots=True)
+class MarketSnapshotVersion(Identifier):
+    """Opaque, immutable market-data version token."""
+
+
+@dataclass(frozen=True, slots=True)
+class QuoteId(Identifier):
+    """Observation identity, unique within a snapshot."""
+
+
+@dataclass(frozen=True, slots=True)
+class CurveId(Identifier):
+    """Curve identity; content hash also identifies its effective parameters."""
