@@ -1,0 +1,8 @@
+# Test-only override; production baseline never publishes PostgreSQL.
+services:
+  api:
+    ports: !override
+      - "127.0.0.1:58000:8000"
+  postgres:
+    ports:
+      - "127.0.0.1:55432:5432"

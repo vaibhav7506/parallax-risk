@@ -1,0 +1,15 @@
+.git
+.venv
+.env
+.env.*
+.docker-local
+__pycache__
+.pytest_cache
+.mypy_cache
+.ruff_cache
+.pre-commit-cache
+.hypothesis
+.coverage*
+coverage.xml
+dist
+build
