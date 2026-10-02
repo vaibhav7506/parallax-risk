@@ -51,7 +51,7 @@ These are actual local observations; the GitHub-hosted workflow has not been run
 | Editable installation | Passed in fresh project `.venv`, Python 3.13.2 |
 | Dependency consistency | `pip check`: no broken requirements, host and container |
 | Ruff lint | All checks passed |
-| Ruff formatting | 37 Python files already formatted |
+| Ruff formatting | All checked project files already formatted |
 | Strict mypy | No issues in 22 production source files |
 | Pre-commit | Ruff, formatting and mypy hooks passed on all project Python files |
 | Full pytest with real PostgreSQL | **141 passed**, no skips, 14.16 seconds |

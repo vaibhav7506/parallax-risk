@@ -1,0 +1,147 @@
+{
+  "snapshot_id": "phase2-synthetic",
+  "version": "1",
+  "valuation_date": "2025-01-01",
+  "currencies": [
+    "USD",
+    "EUR"
+  ],
+  "rates": [
+    {
+      "quote_id": "USD-zero-1Y",
+      "currency": "USD",
+      "index": "USD-SYNTH-ZERO",
+      "maturity": "2026-01-01",
+      "rate": 0.05,
+      "day_count": "ACT/365F",
+      "compounding": "continuous",
+      "source": {
+        "name": "synthetic",
+        "reference": "Hand-specified Parallax Risk Phase 2 sample; not observed market data",
+        "observed_at": "2025-01-01T00:00:00Z",
+        "is_sample": true
+      }
+    },
+    {
+      "quote_id": "USD-zero-2Y",
+      "currency": "USD",
+      "index": "USD-SYNTH-ZERO",
+      "maturity": "2027-01-01",
+      "rate": 0.05,
+      "day_count": "ACT/365F",
+      "compounding": "continuous",
+      "source": {
+        "name": "synthetic",
+        "reference": "Hand-specified Parallax Risk Phase 2 sample; not observed market data",
+        "observed_at": "2025-01-01T00:00:00Z",
+        "is_sample": true
+      }
+    },
+    {
+      "quote_id": "EUR-zero-1Y",
+      "currency": "EUR",
+      "index": "EUR-SYNTH-ZERO",
+      "maturity": "2026-01-01",
+      "rate": 0.03,
+      "day_count": "ACT/365F",
+      "compounding": "continuous",
+      "source": {
+        "name": "synthetic",
+        "reference": "Hand-specified Parallax Risk Phase 2 sample; not observed market data",
+        "observed_at": "2025-01-01T00:00:00Z",
+        "is_sample": true
+      }
+    },
+    {
+      "quote_id": "EUR-zero-2Y",
+      "currency": "EUR",
+      "index": "EUR-SYNTH-ZERO",
+      "maturity": "2027-01-01",
+      "rate": 0.03,
+      "day_count": "ACT/365F",
+      "compounding": "continuous",
+      "source": {
+        "name": "synthetic",
+        "reference": "Hand-specified Parallax Risk Phase 2 sample; not observed market data",
+        "observed_at": "2025-01-01T00:00:00Z",
+        "is_sample": true
+      }
+    }
+  ],
+  "quotes": [
+    {
+      "quote_id": "sample-price",
+      "currency": "USD",
+      "value": 100.0,
+      "unit": "currency_units",
+      "source": {
+        "name": "synthetic",
+        "reference": "Hand-specified Parallax Risk Phase 2 sample; not observed market data",
+        "observed_at": "2025-01-01T00:00:00Z",
+        "is_sample": true
+      }
+    }
+  ],
+  "fx_spots": [
+    {
+      "quote_id": "EUR-USD",
+      "base_currency": "EUR",
+      "quote_currency": "USD",
+      "value_date": "2025-01-03",
+      "rate": 1.1,
+      "source": {
+        "name": "synthetic",
+        "reference": "Hand-specified Parallax Risk Phase 2 sample; not observed market data",
+        "observed_at": "2025-01-01T00:00:00Z",
+        "is_sample": true
+      }
+    }
+  ],
+  "fixings": [
+    {
+      "quote_id": "USD-fixing",
+      "currency": "USD",
+      "index": "USD-SYNTH-1Y",
+      "fixing_date": "2025-01-01",
+      "rate": 0.051271096376024054,
+      "source": {
+        "name": "synthetic",
+        "reference": "Hand-specified Parallax Risk Phase 2 sample; not observed market data",
+        "observed_at": "2025-01-01T00:00:00Z",
+        "is_sample": true
+      }
+    }
+  ],
+  "volatilities": [
+    {
+      "quote_id": "sample-vol",
+      "currency": "USD",
+      "underlying": "USD-SYNTH-1Y",
+      "expiry": "2026-01-01",
+      "strike": 0.05,
+      "volatility": 0.2,
+      "convention": "lognormal",
+      "source": {
+        "name": "synthetic",
+        "reference": "Hand-specified Parallax Risk Phase 2 sample; not observed market data",
+        "observed_at": "2025-01-01T00:00:00Z",
+        "is_sample": true
+      }
+    }
+  ],
+  "credit_spreads": [
+    {
+      "quote_id": "sample-credit",
+      "currency": "USD",
+      "counterparty_id": "synthetic-entity",
+      "maturity": "2027-01-01",
+      "spread": 0.01,
+      "source": {
+        "name": "synthetic",
+        "reference": "Hand-specified Parallax Risk Phase 2 sample; not observed market data",
+        "observed_at": "2025-01-01T00:00:00Z",
+        "is_sample": true
+      }
+    }
+  ]
+}

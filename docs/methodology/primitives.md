@@ -54,7 +54,8 @@ Rates are decimal annual rates (0.05 means 5%), time is a nonnegative declared
 year fraction. Simple accumulation is 1+r*t; continuous is exp(r*t); periodic is
 (1+r/m)^(m*t), with explicit positive integer frequency m. Positive finite factors
 are required. Negative rates are allowed in their mathematical domain. No curve,
-instrument valuation or XVA calculation is provided. Non-finite outputs and
+instrument valuation or XVA calculation lives in these primitive helpers; Phase 2
+valuation uses them under the [deterministic model](deterministic-pricing.md). Non-finite outputs and
 underflow to zero raise NumericalError; overflow is not silently clipped.
 
 Foundation float comparisons use |a-b| <= max(atol, rtol*max(|a|,|b|)), implemented

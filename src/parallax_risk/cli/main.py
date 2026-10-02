@@ -1,4 +1,4 @@
-"""Phase 1 operational CLI; no premature financial command placeholders."""
+"""Operational CLI; quantitative workflows are exposed in their delivery phase."""
 
 import argparse
 import json
@@ -24,7 +24,7 @@ def main(argv: Sequence[str] | None = None) -> int:
     commands.add_parser("check-db", help="Check configured PostgreSQL connectivity")
     args = parser.parse_args(argv)
     if args.command == "version":
-        print(json.dumps({"name": "Parallax Risk", "version": __version__, "phase": 1}))
+        print(json.dumps({"name": "Parallax Risk", "version": __version__, "phase": 2}))
         return 0
     try:
         settings = load_settings()

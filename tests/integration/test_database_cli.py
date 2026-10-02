@@ -140,7 +140,7 @@ def test_cli_database_check_and_cleanup(monkeypatch, capsys):
 
 def test_cli_help_and_version_start_without_settings(monkeypatch, capsys):
     monkeypatch.setenv("PARALLAX_DEFAULT_SEED", "invalid")
-    for argument, expected in (("--help", "run-context"), ("--version", "Parallax Risk 0.1.0")):
+    for argument, expected in (("--help", "run-context"), ("--version", "Parallax Risk 0.2.0")):
         with pytest.raises(SystemExit) as result:
             main([argument])
         assert result.value.code == 0

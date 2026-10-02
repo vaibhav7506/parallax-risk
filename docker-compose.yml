@@ -16,7 +16,7 @@ services:
     restart: unless-stopped
   api:
     build: .
-    image: parallax-risk:0.1.0
+    image: parallax-risk:0.2.0
     environment:
       PARALLAX_ENVIRONMENT: production
       PARALLAX_DATABASE_URL: ${PARALLAX_DATABASE_URL:?Set PARALLAX_DATABASE_URL with host postgres}
