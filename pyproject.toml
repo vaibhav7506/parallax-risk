@@ -1,0 +1,55 @@
+[build-system]
+requires = ["hatchling>=1.27,<2"]
+build-backend = "hatchling.build"
+
+[project]
+name = "parallax-risk"
+version = "0.1.0"
+description = "Parallax Risk: quantitative counterparty credit risk and model validation platform"
+readme = "README.md"
+requires-python = ">=3.12,<3.15"
+license = "MIT"
+dependencies = [
+  "numpy>=2.2,<3", "scipy>=1.15,<2", "pandas>=2.2,<4",
+  "fastapi>=0.115,<1", "pydantic>=2.10,<3", "pydantic-settings>=2.7,<3",
+  "sqlalchemy>=2.0.36,<2.1", "alembic>=1.14,<2", "psycopg[binary]>=3.2,<4",
+  "structlog>=25.1,<27", "uvicorn>=0.34,<1",
+]
+
+[project.optional-dependencies]
+dev = [
+  "pytest>=8.3,<10", "hypothesis>=6.125,<7", "pytest-cov>=6,<8",
+  "coverage[toml]>=7.6,<8", "httpx>=0.28,<1", "ruff>=0.11,<1",
+  "mypy>=1.15,<2", "pre-commit>=4.1,<5", "build>=1.2,<2",
+]
+
+[project.scripts]
+parallax-risk = "parallax_risk.cli.main:main"
+
+[tool.hatch.build.targets.wheel]
+packages = ["src/parallax_risk"]
+
+[tool.ruff]
+target-version = "py312"
+line-length = 100
+
+[tool.ruff.lint]
+select = ["E", "F", "I", "B", "UP", "SIM", "C4"]
+
+[tool.mypy]
+python_version = "3.12"
+strict = true
+files = ["src/parallax_risk"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+addopts = "-ra --strict-markers --cov=parallax_risk --cov-report=term-missing --cov-report=xml --cov-fail-under=95"
+markers = ["postgres: requires PARALLAX_TEST_DATABASE_URL pointing to isolated PostgreSQL"]
+
+[tool.coverage.run]
+branch = true
+source = ["parallax_risk"]
+
+[tool.coverage.report]
+show_missing = true
+exclude_also = ["if __name__ == .__main__.:", "^\\s*\\.\\.\\.$"]

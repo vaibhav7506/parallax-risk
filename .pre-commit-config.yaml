@@ -1,0 +1,19 @@
+repos:
+  - repo: local
+    hooks:
+      - id: ruff
+        name: ruff (project environment)
+        entry: python -m ruff check --fix
+        language: system
+        types_or: [python, pyi]
+      - id: ruff-format
+        name: ruff format (project environment)
+        entry: python -m ruff format
+        language: system
+        types_or: [python, pyi]
+      - id: mypy
+        name: mypy (project environment)
+        entry: python -m mypy
+        language: system
+        pass_filenames: false
+        types: [python]
