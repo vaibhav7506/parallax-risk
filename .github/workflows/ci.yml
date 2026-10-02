@@ -1,0 +1,59 @@
+name: Parallax Risk quality gates
+on: [push, pull_request]
+permissions:
+  contents: read
+jobs:
+  quality:
+    runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        python: ["3.12", "3.13"]
+    services:
+      postgres:
+        image: postgres:17
+        env:
+          POSTGRES_USER: ci_test
+          POSTGRES_PASSWORD: ci_ephemeral_only
+          POSTGRES_DB: parallax_risk_test
+        ports: ["5432:5432"]
+        options: >-
+          --health-cmd "pg_isready -U ci_test -d parallax_risk_test"
+          --health-interval 5s --health-timeout 5s --health-retries 10
+    env:
+      PARALLAX_TEST_DATABASE_URL: postgresql+psycopg://ci_test:ci_ephemeral_only@localhost:5432/parallax_risk_test
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: ${{ matrix.python }}
+          cache: pip
+      - run: python -m pip install -r requirements-dev.lock
+      - run: python -m pip install --no-deps -e .
+      - run: python -m ruff check .
+      - run: python -m ruff format --check .
+      - run: python -m mypy
+      - run: python -m pytest
+      - run: python -m build
+      - run: parallax-risk version
+      - uses: actions/upload-artifact@v4
+        with:
+          name: coverage-${{ matrix.python }}
+          path: coverage.xml
+  container:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Build and start service stack
+        env:
+          POSTGRES_USER: ci_test
+          POSTGRES_PASSWORD: ci_ephemeral_only
+          POSTGRES_DB: parallax_risk_test
+          PARALLAX_DATABASE_URL: postgresql+psycopg://ci_test:ci_ephemeral_only@postgres:5432/parallax_risk_test
+        run: docker compose up --build --wait --wait-timeout 180
+      - run: curl --fail http://127.0.0.1:8000/health
+      - run: curl --fail http://127.0.0.1:8000/ready
+      - run: curl --fail http://127.0.0.1:8000/version
+      - run: docker exec $(docker ps --filter ancestor=parallax-risk:0.2.0 --format '{{.ID}}') parallax-risk check-db
+      - name: Logs
+        if: failure()
+        run: docker logs $(docker ps -a --filter ancestor=parallax-risk:0.2.0 --format '{{.ID}}')
