@@ -20,6 +20,19 @@ def test_core_and_application_dependency_direction():
                 "parallax_risk.api",
                 "parallax_risk.application",
                 "parallax_risk.infrastructure",
+                "parallax_risk.domain",
+            },
+        ),
+        (
+            "domain",
+            {
+                "fastapi",
+                "pydantic",
+                "pydantic_settings",
+                "sqlalchemy",
+                "parallax_risk.api",
+                "parallax_risk.application",
+                "parallax_risk.infrastructure",
             },
         ),
         (
