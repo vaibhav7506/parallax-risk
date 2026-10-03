@@ -47,3 +47,15 @@ class CurveBootstrapError(ParallaxError):
 
 class PricingError(DomainValidationError):
     """An instrument or pricing context cannot be valued under the declared model."""
+
+
+class ModelError(DomainValidationError):
+    """Model parameters, state or discretization are outside their declared domain."""
+
+
+class CorrelationError(DomainValidationError):
+    """Dependence input or requested factorization is invalid; no repair is inferred."""
+
+
+class CalibrationError(ParallaxError):
+    """Calibration evaluation failed; optimizer non-convergence has a separate result."""

@@ -75,3 +75,8 @@ class QuoteId(Identifier):
 @dataclass(frozen=True, slots=True)
 class CurveId(Identifier):
     """Curve identity; content hash also identifies its effective parameters."""
+
+
+@dataclass(frozen=True, slots=True)
+class CalibrationRunId(Identifier):
+    """Caller-supplied calibration identity, independent of fitted parameters."""
