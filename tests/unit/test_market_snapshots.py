@@ -350,6 +350,7 @@ def test_ingestion_does_not_infer_timezone_from_epoch_numbers(value):
 def test_ingestion_accepts_explicit_civil_date_objects():
     payload = boundary_payload()
     payload["valuation_date"] = VALUATION
+    payload["quotes"][0]["source"]["observed_at"] = SOURCE.observed_at
     assert MarketSnapshotInput.model_validate(payload).valuation_date == VALUATION
 
 
