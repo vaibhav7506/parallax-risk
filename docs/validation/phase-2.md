@@ -54,14 +54,14 @@ These are actual local observations. GitHub-hosted CI has not been run.
 | Ruff lint and formatting | All checks passed; project Python files formatted |
 | Strict mypy | No issues in 46 production source files |
 | Pre-commit | Ruff, formatting and mypy hooks passed on project Python files |
-| Windows/Python 3.13.2 full pytest | **332 passed**, no skips, 13.16 seconds, live isolated PostgreSQL |
-| Linux/Python 3.12 full pytest | Final repeat in progress after stricter temporal ingestion; prior run 323 passed |
-| Statement + branch coverage | **99.07%** on Windows: 1784 statements, 474 branches; gate >=95% |
+| Windows/Python 3.13.2 full pytest | **333 passed**, no skips, 12.94 seconds, live isolated PostgreSQL |
+| Linux/Python 3.12.14 full pytest | **333 passed**, no skips, 16.44 seconds, installed production wheel and live isolated PostgreSQL |
+| Statement + branch coverage | **99.07%** on both platforms: 1786 statements, 476 branches; gate >=95% |
 | Import/dependency safety | All modules import without environment loading, engine/logger initialization or output; domain framework dependency checks passed |
 | Synthetic workflow | Four prices, bootstrap and sensitivities computed; two subprocess runs yielded byte-identical JSON stdout |
 | Packaging | Wheel and source archive built; wheel built from sdist; all 46 production Python modules and `py.typed` verified in wheel |
 | Docker build | Final `parallax-risk:0.2.0` production image built on Linux/amd64 |
-| Image identity | `sha256:b142306301b7be8ef358f93c03c41bc52345e3ce824966abf906bb95a5139e84` |
+| Image identity | `sha256:1cb95e91d78b6f1a2893d918ec8256885295b156a876d1264e84395d4a44118d` |
 | Compose startup | Isolated API and PostgreSQL services healthy with `up --wait` |
 | Live HTTP | Health `ok`; readiness `ready`/database `connected`; version 0.2.0, phase 2 |
 | Runtime identity | `id -u`: 10001 |

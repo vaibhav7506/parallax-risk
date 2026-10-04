@@ -1,0 +1,38 @@
+# Implemented and planned workflow
+
+```mermaid
+flowchart TD
+    JSON[Labelled market input] --> VALID[Pydantic validation]
+    VALID --> SNAP[Immutable snapshot]
+    SNAP --> CURVES[Explicit curve construction and assignment]
+    CONTRACT[Contract and supplied schedule] --> PRICE[Deterministic pricing]
+    SNAP --> PRICE
+    CURVES --> PRICE
+    RUN[Run metadata] --> SERVICE[Injected pricing service]
+    SERVICE --> PRICE
+    PRICE --> RESULT[NPV, cash flows, assumptions and hashes]
+    RESULT --> RISK[Central zero-knot PV01 and FX delta]
+    CALJSON[Sourced instrument quotes and bounded parameters] --> CAL[CalibrationService / SciPy]
+    CAL --> MODELS[Stochastic model instrument predictions]
+    MODELS --> FIT[Parameters, residuals, identification and hashes]
+    FIT -.-> MC[PLANNED: simulation]
+    MC -.-> EXP[PLANNED: netting/collateral/exposure]
+    EXP -.-> XVA[PLANNED: credit/XVA/capital]
+    XVA -.-> GOV[PLANNED: validation lab and governance]
+```
+
+| Implemented step | Input / transformation / output | Module and failure |
+|---|---|---|
+| Ingestion | JSON with explicit dates, values and provenance → checks → immutable snapshot | application/market_data + domain/market; malformed/duplicate/missing metadata errors |
+| Curves | Explicit knots/quotes, conventions and assignments → interpolation/bootstrap → discount/projection curves | domain/market/curves; invalid anchor/horizon/root/residual errors |
+| Contracts | Money + supplied schedules/day counts/directions → checks → typed instrument | domain/instruments; invalid schedule/notional/convention errors |
+| Run orchestration | Context + instrument + frozen run envelope → safe logs/injected engine → run-linked result | application/pricing; propagates authored errors |
+| Pricing | Future signed payments → historical fixing or projected rate → discounted PV contributions | domain/pricing; missing fixing/index/currency/FX or numerical failure |
+| Sensitivity | Explicit curve IDs/spot bumps → immutable up/down revaluation → central derivative/evidence | domain/pricing/sensitivities; invalid/resolution/range failure |
+| Calibration | Sourced premiums + explicit model/bounds/scales → injected bounded optimizer → convergence/parameters/uncertainty/evidence | application/calibration + infrastructure/calibration + domain models/objectives; explicit failures |
+| Model step | Finite state/time/independent shocks → chosen exact or numerical scheme → next state | domain/models; no RNG, invalid states/proposals fail, Heston projection is reported |
+
+See [code call path](CODEBASE_GUIDE.md) and [pricing workflow](workflows/PRICING_WORKFLOW.md).
+See [calibration workflow](workflows/CALIBRATION_WORKFLOW.md). Future arrows describe
+intended phases. No portfolio, simulation, exposure, XVA, capital or governance
+result exists today.

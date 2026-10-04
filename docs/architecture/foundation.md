@@ -1,6 +1,6 @@
 # Parallax Risk foundation architecture
 
-Phases 1–2 use a modular Python package with inward dependencies. Deterministic
+Phases 1–3 use a modular Python package with inward dependencies. Deterministic
 domain pricing is implemented; future-phase directories are not scaffolded.
 The package has no import-time
 IO, environment reads, network connections, resource creation or global logger
@@ -39,7 +39,12 @@ are explicit calls with no process-global caches. Source-labelled observations
 remain separate from derived curves; the result hashes both. The bootstrap quote
 protocol describes extension points, while Phase 2 supports deposits and par swaps.
 Floating cash-flow abstraction supports the implemented simple-index contract;
-future stochastic or compounded logic is absent.
+compounded floating-index and pathwise stochastic repricing logic is absent.
+
+Phase 3 adds separate model/objective packages and an injected calibration service/
+SciPy optimizer adapter. Single-step models consume supplied shocks; they do not
+create random paths. See [current components](COMPONENTS.md) and
+[model decision](../decisions/0008-stochastic-models-and-discretization.md).
 
 `infrastructure.persistence` adapts SQLAlchemy to the connectivity protocol. An
 engine is constructed explicitly at CLI invocation or API lifespan startup, with
@@ -63,3 +68,7 @@ Compose. The non-root container has no source mounting or automatic migrations.
 The ADRs record accepted implementation choices, not external institutional
 approval. Architecture, numerical correctness and regulatory compliance must not
 be inferred solely from the project title.
+
+The [canonical decision register](../decisions/README.md) now tracks per-phase
+changes and reviews. Original ADRs remain historical evidence; see the
+[current architecture overview](OVERVIEW.md) for navigation.

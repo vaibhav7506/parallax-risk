@@ -182,4 +182,6 @@ and 1e-12 relative to account for cancellation. Central-difference rate derivati
 1e-8 relative with h=1e-4 (documented truncation bias); FX's linear spot derivative
 uses 1e-10 relative. Property tests constrain rates/notionals to finite economically
 readable domains; monotonicity is asserted only under nonnegative flat rates.
-No stochastic process, calibration, simulation, exposure or XVA is implemented.
+This deterministic-discounting model contains no stochastic/pathwise calculations.
+Separate [Phase 3 models and calibration](INDEX.md) are implemented; random paths,
+exposure and XVA remain NOT IMPLEMENTED.

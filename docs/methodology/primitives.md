@@ -78,6 +78,10 @@ UUIDs/current UTC, which must never supply randomness to quantitative models.
 Different numeric results across software/BLAS versions remain possible later;
 dependency locks and future environment metadata are part of that control.
 
-Portfolio and market snapshots, calibrations, sequence metadata and source-code
+Portfolio, sequence metadata and source-code
 lineage are deferred to their designated phases. No future random engine is
 implemented merely to imply deterministic numerical simulation exists now.
+
+Phase 3 model/calibration primitives are separate from these helpers. Calibration
+IDs, input/settings hashes and parameters now exist; random sequences and portfolio/
+governance lineage remain deferred. See [calibration](CALIBRATION.md).
