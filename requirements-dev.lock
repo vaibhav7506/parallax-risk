@@ -27,7 +27,9 @@ mypy==1.20.2
 mypy-extensions==1.1.0
 nodeenv==1.11.0
 numpy==2.5.3
+numpy-typing-compat==20260602.2.5
 opentelemetry-api==1.45.0
+optype==0.18.0
 packaging==26.3
 pandas==3.0.6
 pathspec==1.1.1
@@ -49,6 +51,7 @@ python-dotenv==1.2.3
 pyyaml==6.0.3
 ruff==0.16.9
 scipy==1.18.1
+scipy-stubs==1.18.1.1
 six==1.17.0
 sortedcontainers==2.4.0
 sqlalchemy==2.0.54

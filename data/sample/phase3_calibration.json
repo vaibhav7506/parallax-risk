@@ -1,0 +1,491 @@
+{
+  "project": "Parallax Risk",
+  "is_synthetic": true,
+  "description": "Generated Q-model instrument values, not observed market quotes; year-fraction times and continuous rates/yields.",
+  "cases": [
+    {
+      "request": {
+        "calibration_id": "sample.phase3.vasicek",
+        "problem": {
+          "kind": "vasicek",
+          "currency": "USD",
+          "as_of": "2025-01-01T00:00:00+00:00",
+          "observations": [
+            {
+              "quote_id": "v0",
+              "value": 0.9946440324713256,
+              "source": {
+                "name": "synthetic_phase3",
+                "reference": "generated_from_declared_Q_parameters",
+                "observed_at": "2025-01-01T00:00:00+00:00",
+                "is_sample": true
+              },
+              "scale": 1.0,
+              "maturity": 0.25
+            },
+            {
+              "quote_id": "v1",
+              "value": 0.9886308637402198,
+              "source": {
+                "name": "synthetic_phase3",
+                "reference": "generated_from_declared_Q_parameters",
+                "observed_at": "2025-01-01T00:00:00+00:00",
+                "is_sample": true
+              },
+              "scale": 1.0,
+              "maturity": 0.5
+            },
+            {
+              "quote_id": "v2",
+              "value": 0.97493154057588,
+              "source": {
+                "name": "synthetic_phase3",
+                "reference": "generated_from_declared_Q_parameters",
+                "observed_at": "2025-01-01T00:00:00+00:00",
+                "is_sample": true
+              },
+              "scale": 1.0,
+              "maturity": 1.0
+            },
+            {
+              "quote_id": "v3",
+              "value": 0.9425660728225952,
+              "source": {
+                "name": "synthetic_phase3",
+                "reference": "generated_from_declared_Q_parameters",
+                "observed_at": "2025-01-01T00:00:00+00:00",
+                "is_sample": true
+              },
+              "scale": 1.0,
+              "maturity": 2.0
+            },
+            {
+              "quote_id": "v4",
+              "value": 0.9060880477570303,
+              "source": {
+                "name": "synthetic_phase3",
+                "reference": "generated_from_declared_Q_parameters",
+                "observed_at": "2025-01-01T00:00:00+00:00",
+                "is_sample": true
+              },
+              "scale": 1.0,
+              "maturity": 3.0
+            },
+            {
+              "quote_id": "v5",
+              "value": 0.8285052231250218,
+              "source": {
+                "name": "synthetic_phase3",
+                "reference": "generated_from_declared_Q_parameters",
+                "observed_at": "2025-01-01T00:00:00+00:00",
+                "is_sample": true
+              },
+              "scale": 1.0,
+              "maturity": 5.0
+            },
+            {
+              "quote_id": "v6",
+              "value": 0.751657602840744,
+              "source": {
+                "name": "synthetic_phase3",
+                "reference": "generated_from_declared_Q_parameters",
+                "observed_at": "2025-01-01T00:00:00+00:00",
+                "is_sample": true
+              },
+              "scale": 1.0,
+              "maturity": 7.0
+            },
+            {
+              "quote_id": "v7",
+              "value": 0.6453221645526201,
+              "source": {
+                "name": "synthetic_phase3",
+                "reference": "generated_from_declared_Q_parameters",
+                "observed_at": "2025-01-01T00:00:00+00:00",
+                "is_sample": true
+              },
+              "scale": 1.0,
+              "maturity": 10.0
+            },
+            {
+              "quote_id": "v8",
+              "value": 0.4975217542329577,
+              "source": {
+                "name": "synthetic_phase3",
+                "reference": "generated_from_declared_Q_parameters",
+                "observed_at": "2025-01-01T00:00:00+00:00",
+                "is_sample": true
+              },
+              "scale": 1.0,
+              "maturity": 15.0
+            },
+            {
+              "quote_id": "v9",
+              "value": 0.38289654838987147,
+              "source": {
+                "name": "synthetic_phase3",
+                "reference": "generated_from_declared_Q_parameters",
+                "observed_at": "2025-01-01T00:00:00+00:00",
+                "is_sample": true
+              },
+              "scale": 1.0,
+              "maturity": 20.0
+            }
+          ],
+          "initial_rate": 0.02
+        },
+        "bounds": [
+          {
+            "name": "speed",
+            "initial": 0.2,
+            "lower": 0.03,
+            "upper": 2.0
+          },
+          {
+            "name": "level",
+            "initial": 0.04,
+            "lower": -0.1,
+            "upper": 0.2
+          },
+          {
+            "name": "volatility",
+            "initial": 0.018,
+            "lower": 0.0,
+            "upper": 0.1
+          }
+        ]
+      },
+      "generating_parameters": [
+        0.35,
+        0.055,
+        0.025
+      ]
+    },
+    {
+      "request": {
+        "calibration_id": "sample.phase3.hull_white",
+        "problem": {
+          "kind": "hull_white",
+          "currency": "USD",
+          "as_of": "2025-01-01T00:00:00+00:00",
+          "observations": [
+            {
+              "quote_id": "hw0",
+              "value": 0.00400108416130962,
+              "source": {
+                "name": "synthetic_phase3",
+                "reference": "generated_from_declared_Q_parameters",
+                "observed_at": "2025-01-01T00:00:00+00:00",
+                "is_sample": true
+              },
+              "scale": 1.0,
+              "maturity": 2.0,
+              "expiry": 0.5,
+              "strike": 0.9542066659691884
+            },
+            {
+              "quote_id": "hw1",
+              "value": 0.006703919484565224,
+              "source": {
+                "name": "synthetic_phase3",
+                "reference": "generated_from_declared_Q_parameters",
+                "observed_at": "2025-01-01T00:00:00+00:00",
+                "is_sample": true
+              },
+              "scale": 1.0,
+              "maturity": 3.0,
+              "expiry": 1.0,
+              "strike": 0.9380049995307295
+            },
+            {
+              "quote_id": "hw2",
+              "value": 0.010632613790098056,
+              "source": {
+                "name": "synthetic_phase3",
+                "reference": "generated_from_declared_Q_parameters",
+                "observed_at": "2025-01-01T00:00:00+00:00",
+                "is_sample": true
+              },
+              "scale": 1.0,
+              "maturity": 5.0,
+              "expiry": 1.0,
+              "strike": 0.8763409950793734
+            },
+            {
+              "quote_id": "hw3",
+              "value": 0.011262542167896572,
+              "source": {
+                "name": "synthetic_phase3",
+                "reference": "generated_from_declared_Q_parameters",
+                "observed_at": "2025-01-01T00:00:00+00:00",
+                "is_sample": true
+              },
+              "scale": 1.0,
+              "maturity": 5.0,
+              "expiry": 2.0,
+              "strike": 0.9043851124127704
+            },
+            {
+              "quote_id": "hw4",
+              "value": 0.0162840434967072,
+              "source": {
+                "name": "synthetic_phase3",
+                "reference": "generated_from_declared_Q_parameters",
+                "observed_at": "2025-01-01T00:00:00+00:00",
+                "is_sample": true
+              },
+              "scale": 1.0,
+              "maturity": 8.0,
+              "expiry": 3.0,
+              "strike": 0.8373609993357539
+            },
+            {
+              "quote_id": "hw5",
+              "value": 0.016933006131369166,
+              "source": {
+                "name": "synthetic_phase3",
+                "reference": "generated_from_declared_Q_parameters",
+                "observed_at": "2025-01-01T00:00:00+00:00",
+                "is_sample": true
+              },
+              "scale": 1.0,
+              "maturity": 10.0,
+              "expiry": 5.0,
+              "strike": 0.8290291181804004
+            }
+          ],
+          "forward_level": 0.03,
+          "forward_slope": 0.001
+        },
+        "bounds": [
+          {
+            "name": "speed",
+            "initial": 0.3,
+            "lower": 0.01,
+            "upper": 1.0
+          },
+          {
+            "name": "volatility",
+            "initial": 0.02,
+            "lower": 0.0,
+            "upper": 0.1
+          }
+        ]
+      },
+      "generating_parameters": [
+        0.18,
+        0.012
+      ]
+    },
+    {
+      "request": {
+        "calibration_id": "sample.phase3.heston",
+        "problem": {
+          "kind": "heston",
+          "currency": "USD",
+          "as_of": "2025-01-01T00:00:00+00:00",
+          "observations": [
+            {
+              "quote_id": "h0",
+              "value": 15.70967102825604,
+              "source": {
+                "name": "synthetic_phase3",
+                "reference": "generated_from_declared_Q_parameters",
+                "observed_at": "2025-01-01T00:00:00+00:00",
+                "is_sample": true
+              },
+              "scale": 1.0,
+              "expiry": 0.25,
+              "strike": 85.0
+            },
+            {
+              "quote_id": "h1",
+              "value": 3.9610675550432006,
+              "source": {
+                "name": "synthetic_phase3",
+                "reference": "generated_from_declared_Q_parameters",
+                "observed_at": "2025-01-01T00:00:00+00:00",
+                "is_sample": true
+              },
+              "scale": 1.0,
+              "expiry": 0.25,
+              "strike": 100.0
+            },
+            {
+              "quote_id": "h2",
+              "value": 0.14014074658638265,
+              "source": {
+                "name": "synthetic_phase3",
+                "reference": "generated_from_declared_Q_parameters",
+                "observed_at": "2025-01-01T00:00:00+00:00",
+                "is_sample": true
+              },
+              "scale": 1.0,
+              "expiry": 0.25,
+              "strike": 115.0
+            },
+            {
+              "quote_id": "h3",
+              "value": 17.791103881728105,
+              "source": {
+                "name": "synthetic_phase3",
+                "reference": "generated_from_declared_Q_parameters",
+                "observed_at": "2025-01-01T00:00:00+00:00",
+                "is_sample": true
+              },
+              "scale": 1.0,
+              "expiry": 0.75,
+              "strike": 85.0
+            },
+            {
+              "quote_id": "h4",
+              "value": 7.185875934246653,
+              "source": {
+                "name": "synthetic_phase3",
+                "reference": "generated_from_declared_Q_parameters",
+                "observed_at": "2025-01-01T00:00:00+00:00",
+                "is_sample": true
+              },
+              "scale": 1.0,
+              "expiry": 0.75,
+              "strike": 100.0
+            },
+            {
+              "quote_id": "h5",
+              "value": 1.5441337981233403,
+              "source": {
+                "name": "synthetic_phase3",
+                "reference": "generated_from_declared_Q_parameters",
+                "observed_at": "2025-01-01T00:00:00+00:00",
+                "is_sample": true
+              },
+              "scale": 1.0,
+              "expiry": 0.75,
+              "strike": 115.0
+            },
+            {
+              "quote_id": "h6",
+              "value": 20.45394448512147,
+              "source": {
+                "name": "synthetic_phase3",
+                "reference": "generated_from_declared_Q_parameters",
+                "observed_at": "2025-01-01T00:00:00+00:00",
+                "is_sample": true
+              },
+              "scale": 1.0,
+              "expiry": 1.5,
+              "strike": 85.0
+            },
+            {
+              "quote_id": "h7",
+              "value": 10.656816088598802,
+              "source": {
+                "name": "synthetic_phase3",
+                "reference": "generated_from_declared_Q_parameters",
+                "observed_at": "2025-01-01T00:00:00+00:00",
+                "is_sample": true
+              },
+              "scale": 1.0,
+              "expiry": 1.5,
+              "strike": 100.0
+            },
+            {
+              "quote_id": "h8",
+              "value": 4.274171127277185,
+              "source": {
+                "name": "synthetic_phase3",
+                "reference": "generated_from_declared_Q_parameters",
+                "observed_at": "2025-01-01T00:00:00+00:00",
+                "is_sample": true
+              },
+              "scale": 1.0,
+              "expiry": 1.5,
+              "strike": 115.0
+            },
+            {
+              "quote_id": "h9",
+              "value": 24.679069592774553,
+              "source": {
+                "name": "synthetic_phase3",
+                "reference": "generated_from_declared_Q_parameters",
+                "observed_at": "2025-01-01T00:00:00+00:00",
+                "is_sample": true
+              },
+              "scale": 1.0,
+              "expiry": 3.0,
+              "strike": 85.0
+            },
+            {
+              "quote_id": "h10",
+              "value": 15.87981152423798,
+              "source": {
+                "name": "synthetic_phase3",
+                "reference": "generated_from_declared_Q_parameters",
+                "observed_at": "2025-01-01T00:00:00+00:00",
+                "is_sample": true
+              },
+              "scale": 1.0,
+              "expiry": 3.0,
+              "strike": 100.0
+            },
+            {
+              "quote_id": "h11",
+              "value": 9.326403501913802,
+              "source": {
+                "name": "synthetic_phase3",
+                "reference": "generated_from_declared_Q_parameters",
+                "observed_at": "2025-01-01T00:00:00+00:00",
+                "is_sample": true
+              },
+              "scale": 1.0,
+              "expiry": 3.0,
+              "strike": 115.0
+            }
+          ],
+          "spot": 100.0,
+          "rate": 0.03,
+          "dividend": 0.01
+        },
+        "bounds": [
+          {
+            "name": "speed",
+            "initial": 1.2,
+            "lower": 0.3,
+            "upper": 4.0
+          },
+          {
+            "name": "variance_level",
+            "initial": 0.05,
+            "lower": 0.01,
+            "upper": 0.12
+          },
+          {
+            "name": "vol_of_variance",
+            "initial": 0.3,
+            "lower": 0.1,
+            "upper": 0.7
+          },
+          {
+            "name": "correlation",
+            "initial": -0.5,
+            "lower": -0.9,
+            "upper": 0.5
+          },
+          {
+            "name": "initial_variance",
+            "initial": 0.04,
+            "lower": 0.01,
+            "upper": 0.1
+          }
+        ]
+      },
+      "generating_parameters": [
+        1.5,
+        0.045,
+        0.35,
+        -0.65,
+        0.035
+      ]
+    }
+  ]
+}
