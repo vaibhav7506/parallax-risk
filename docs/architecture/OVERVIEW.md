@@ -38,3 +38,9 @@ See [components](COMPONENTS.md), [data flow](DATA_FLOW.md),
 [dependency rules](DEPENDENCY_RULES.md), [deployment](DEPLOYMENT.md) and the
 [historical foundation explanation](foundation.md). Rationale and per-phase changes
 are in [decisions](../decisions/README.md), not proof of institutional approval.
+
+Phase 4 adds domain-owned numerical streams, contracts, vectorized kernels and
+immutable batch buffers. Application SimulationService injects an engine/observable
+port and safe logger; research/benchmark modules orchestrate experiments without
+HTTP/ORM dependencies. Scripts/notebooks compose the library. No import-time RNG
+is created, and each iteration owns its working state. See [paths](../methodology/MONTE_CARLO.md).

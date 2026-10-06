@@ -15,3 +15,7 @@ are useful schema views but not a financial API contract or security layer.
 
 Read [endpoints](ENDPOINTS.md), [errors](ERRORS.md), [examples](EXAMPLES.md) and
 [security scope](../../SECURITY.md). Bind locally; no enterprise-service claim is made.
+
+Phase 4 adds an injected Python simulation research workflow and executed notebooks.
+It adds no financial HTTP route or asynchronous risk-job lifecycle. Operational version
+metadata advances to release 0.4.0 and phase 4.

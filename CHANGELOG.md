@@ -1,5 +1,21 @@
 # Parallax Risk changelog
 
+## 0.4.0 — Phase 4 complete — 2026-10-01
+
+- Added explicitly addressed PCG64DXSM/Sobol normal streams, antithetics, separate
+  pilot controls and replayable sequence/environment metadata.
+- Added vectorized batched GBM/Vasicek/Hull–White/Heston paths with immutable buffers,
+  correct Gaussian Brownian-driver covariance and explicit projection diagnostics.
+- Added independent-unit estimates/intervals, convergence/path-count/variance studies,
+  measured memory/vectorization harness and two executed production-calling notebooks.
+- Reviewed all 11 canonical ADRs; added 0010/0011, accepted 0004's prior sequence policy.
+  Created 8 and updated 46 Markdown documents; preserved historical phase evidence.
+- Release/API/CLI advance to 0.4.0/phase 4; deterministic/calibration model versions
+  remain 0.2.0/0.3.0. Docker helper uses scoped finally cleanup.
+- Windows/Linux each passed 653 tests with real PostgreSQL and 99.15% coverage;
+  packaging and ownership-checked cleanup passed. Complete evidence is recorded in
+  [Phase 4](docs/validation/phase-4.md). Phase 5 remains deferred pending a new `go`.
+
 Phase records describe implemented changes, not future capabilities. Detailed
 file manifests and actual checks remain in the linked evidence reports.
 

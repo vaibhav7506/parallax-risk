@@ -13,3 +13,7 @@ is fixed. API lifecycle emits service_started/stopped and dependency-check outco
 `/version` reports release/phase. No metrics dashboard, distributed tracing, request-ID
 middleware, model monitoring or persisted audit stream is implemented.
 See [API](../api/ENDPOINTS.md) and [reproducibility](../REPRODUCIBILITY.md).
+
+Phase 4 simulation logs use only the restricted start/completed/failed envelope with
+run ID, outcome and error type. Numerical values, observable outputs, curves and
+control coefficients are kept in explicit research results, not workflow logs.

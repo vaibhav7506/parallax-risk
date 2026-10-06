@@ -21,3 +21,7 @@ Do not connect tests to valuable production data. Use a separate test project an
 ports with the [Docker lifecycle](DOCKER.md). No tables or migrations are currently
 created; see [database scope](DATABASE.md). Service failures are described in
 [troubleshooting](TROUBLESHOOTING.md).
+
+Phase 4 research also supports [the simulation tutorial](../tutorials/03-FIRST-SIMULATION-RUN.md).
+Notebook execution uses the installed project development interpreter, creates its
+kernel specification under ignored artifacts, and shuts down owned kernels on completion.

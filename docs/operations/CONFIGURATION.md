@@ -24,3 +24,9 @@ the operational boundary. URL-encode credential characters.
 `python -m parallax_risk config` validates and exports safe effective settings;
 `run-context` emits the current configuration digest. Logs and exported metadata
 must not contain raw connection URLs. See [security](../../SECURITY.md).
+
+Phase 4 SimulationRequest is an explicit typed scientific configuration, separate
+from operational Settings. It records model/scheme, units/measure, grid, paths/batches,
+root seed and stream/substream, transform, and ordered optional correlation.
+RunContext seed must match the request; a newly generated run ID/time does not affect draws.
+Synthetic research functions use an explicit environment-independent configuration hash.

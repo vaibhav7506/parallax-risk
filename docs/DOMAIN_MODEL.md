@@ -41,7 +41,7 @@ input hashes. RunContext identifies a workflow/configuration; it is not a persis
 risk job, model approval or random generator. Nominal IDs such as CounterpartyId
 are types, not proof of a counterparty/portfolio aggregate.
 
-Trade, Portfolio, NettingSet, CSA, CollateralAccount, Simulation, ExposureProfile,
+Trade, Portfolio, NettingSet, CSA, CollateralAccount, ExposureProfile,
 XVAResult, Finding and persisted model-governance aggregates are NOT IMPLEMENTED.
 See [roadmap](../ROADMAP.md), [code locations](CODEBASE_GUIDE.md) and
 [limitations](LIMITATIONS.md).
@@ -58,3 +58,12 @@ contracts; state is an immutable tuple, not a path aggregate. CorrelationMatrix 
 factor order and values. CorrelationRepair preserves the explicitly requested
 transformation evidence. See [model contracts](methodology/STOCHASTIC_PROCESSES.md)
 and [calibration](methodology/CALIBRATION.md).
+
+Phase 4 adds SimulationRequest → ProcessComponent/TimeGrid/SequenceSpec/CorrelationMatrix,
+MonteCarloEngine → immutable PathBatch/FrozenArray, and SimulationService →
+SimulationRunResult/SimulationMetadata/RunContext. Estimate separates raw path moments
+from independent sampling units. ReplicatedSobolResult owns independently addressed
+complete designs and scramble-mean inference. ControlVariate preserves a separate
+pilot key, observation count, coefficient and known expectation. These are research
+values, not persistent jobs, portfolios or exposure profiles.
+See [simulation](methodology/MONTE_CARLO.md) and [statistics](methodology/MONTE_CARLO_STATISTICS.md).

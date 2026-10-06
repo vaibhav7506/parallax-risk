@@ -16,3 +16,9 @@
 The [code guide](../CODEBASE_GUIDE.md) links principal classes/files and call paths.
 The same domain values serve pure Python research and future authorized boundaries;
 dependency injection limits hidden process state.
+
+Phase 4 `domain/simulation` owns sequence generation, time grids, vectorized kernels,
+Gaussian covariance, immutable buffers, observables and statistical math.
+Application owns injected simulation/research orchestration and measured benchmarks.
+Notebook dependencies are development-only; they are excluded from the runtime lock
+and production image. All notebooks call production experiment modules.

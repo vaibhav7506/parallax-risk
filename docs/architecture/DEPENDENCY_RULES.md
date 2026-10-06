@@ -15,9 +15,14 @@ modules in an isolated subprocess with settings/engine/logger initialization blo
 Strict typing supplements these tests but cannot enforce architecture alone.
 
 Add a module only when implemented in its authorized phase. Do not create a future
-simulation/validation/governance folder just because a diagram describes planned
+validation/governance folder just because a diagram describes planned
 workflow. Keep research examples calling production modules. No import-time IO,
 global mutable settings, random generator or cached financial state is acceptable.
 
 Review this file and [ADR 0001](../decisions/0001-clean-architecture.md) whenever
 dependency ownership changes; record the change in the phase history.
+
+Phase 4's actual domain/simulation uses NumPy/SciPy numerical routines and common/domain
+values. The application engine port and domain observable contract permit injection without importing
+infrastructure. Research notebooks and execution/plotting dependencies live in the
+optional development environment; production modules do not import notebook tooling.

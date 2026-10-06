@@ -1,6 +1,6 @@
 # Release and evidence checklist
 
-Current release is 0.3.0 / Phase 3. Phase boundaries are independent of documentation
+Current release is 0.4.0 / Phase 4 complete. Phase boundaries are independent of documentation
 maintenance, which does not authorize new quantitative functionality.
 
 1. Complete only the authorized phase, inspect changes and run applicable numerical/
@@ -19,3 +19,8 @@ maintenance, which does not authorize new quantitative functionality.
 
 No publishing/deployment to external infrastructure, automatic model approval or
 production hardening is implied by building a local wheel/image.
+
+For Phase 4 preserve executed notebooks, replayable demo JSON, measured benchmark
+JSON, dependency locks, actual Windows/Linux PostgreSQL tests and scoped cleanup logs.
+Use `scripts/verify_phase4.ps1`; useful 0.4.0 and earlier release images remain.
+The unchanged deterministic/calibration models retain versions 0.2.0/0.3.0.

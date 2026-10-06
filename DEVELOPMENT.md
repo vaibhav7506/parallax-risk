@@ -52,14 +52,14 @@ Without it the PostgreSQL-marked test is skipped, which is not live integration 
 Use `scripts/compose.verify.yml` and a unique phase verification project. Ports
 58000/55432 avoid this machine's unrelated port-8000 workload. Save useful outputs
 before teardown. In PowerShell, wrap the verification session in `try/finally` and
-call `scripts/cleanup_docker.ps1 -Phase 3 -Apply` in `finally`; increment only after
+call `scripts/cleanup_docker.ps1 -Phase 4 -Apply` in `finally`; increment only after
 the next phase is authorized. Preview without `-Apply`. See
 [Docker ownership and retention](docs/operations/DOCKER.md) for exact commands.
 
-The active-phase helper `.\scripts\verify_phase3.ps1` builds the stack, verifies
+The active-phase helper `.\scripts\verify_phase4.ps1` builds the stack, verifies
 HTTP/database/non-root runtime and runs real PostgreSQL Windows/Linux suites. It
 uses ownership labels and always scoped cleanup; logs/artifacts remain under
-`artifacts/local/phase3/`. SciPy stubs are development-only; runtime locks exclude them.
+`artifacts/local/phase4/`. SciPy stubs are development-only; runtime locks exclude them.
 
 ## Troubleshooting and contribution
 
@@ -68,3 +68,10 @@ and unsupported instruments/curves/fixings are not substituted. See
 [troubleshooting](docs/operations/TROUBLESHOOTING.md) and
 [contributing](CONTRIBUTING.md). The full suite's existing Starlette/httpx adapter
 deprecation warning is documented in phase evidence, not suppressed.
+
+Phase 4 notebook execution uses nbformat/nbclient/ipykernel and Matplotlib from the
+locked development environment. These packages do not enter the runtime lock/image.
+Run `python scripts/demo_simulation.py`, `python scripts/benchmark_simulation.py`,
+and `python scripts/execute_notebooks.py`. The executor uses a workspace-local kernel
+spec and explicitly tears down its kernels; successful outputs and evidence are retained.
+See [simulation tutorial](docs/tutorials/03-FIRST-SIMULATION-RUN.md).

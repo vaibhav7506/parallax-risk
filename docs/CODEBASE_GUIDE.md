@@ -81,3 +81,23 @@ verification scope and [decisions](decisions/README.md) for the reasoning behind
    absence; CalibrationResult retains input/settings hashes, fitted parameters and status.
 7. The service returns CalibrationRunResult, preserving run metadata. No database or
    RNG is called. See [workflow](workflows/CALIBRATION_WORKFLOW.md) for failure semantics.
+
+## Simulation call path and change locations
+
+`src/parallax_risk/domain/simulation/contracts.py` owns immutable requests, units,
+measure/scheme choices, time grid and metadata. `random.py` owns explicitly addressed
+sequences; `engine.py` streams immutable batches and normalizes exact OU covariance;
+`kernels.py` implements reconciled vectorized transitions. `arrays.py` publishes
+immutable buffers. `statistics.py`, `controls.py` and `observables.py` own numerical
+estimation and research statistics.
+
+`src/parallax_risk/application/simulation.py` injects the SimulationEngine/PathObservable
+contracts, validates complete contiguous output and preserves run/result evidence.
+`simulation_research.py` runs path-count and variance comparisons; `simulation_examples.py`
+provides labelled synthetic cases, and `simulation_benchmark.py` measures buffers/time.
+Scripts and notebooks call these production modules; there is no alternate notebook
+pricing formula, persistence adapter or financial HTTP endpoint.
+
+To add a sequence or observable, extend its explicit contract and replay/domain tests.
+To add a vectorized model, reconcile against independent scalar/math targets and extend
+covariance semantics where required. See [workflow](workflows/SIMULATION_WORKFLOW.md).

@@ -21,20 +21,29 @@ reported. Use `python -m ruff check .`, format check and strict mypy for product
 typing/style. [Development](../../DEVELOPMENT.md) lists exact commands.
 
 The existing deterministic suites do not consume random model draws; Hypothesis
-generates bounded property examples and replay tests inject fixed metadata. Future
-sequence/Monte Carlo tests will require explicit algorithms/streams/seeds when implemented.
+generates bounded property examples and replay tests inject fixed metadata. Phase 4
+sequence/Monte Carlo tests specify algorithms, stream addresses, transforms and seeds.
 See [benchmarking](../validation/BENCHMARKING.md) and
 [sensitivity](../validation/SENSITIVITY.md) for deliberate numerical tolerances.
 
 Phase 2 recorded 333 tests/99.07% coverage on two platforms. That is historical
 evidence, not a new test count for documentation-only maintenance. Hosted CI is
-configured but has not been observed executing. Performance harness/studies, model
-path convergence, mutation and adversarial testing are DEFERRED; no throughput claim exists.
+configured but has not been observed executing. Phase 4 adds a measured research harness and multi-replicate path convergence;
+mutation/adversarial testing and production throughput SLOs are DEFERRED.
 
 [Phase 3 evidence](../validation/phase-3.md) records the new actual runs separately.
-Model steps consume supplied shocks; tests do not implement the deferred path engine.
+Scalar model steps consume supplied shocks; Phase 4 tests exercise the separate path engine.
 Synthetic parameter recovery cannot establish production-market validity. Heston
 quadrature tolerance, Gaussian/ODE and low-xi cases target different numerical risks.
 
 After Docker-backed checks, retain necessary outputs and remove only the disposable
 project verification stack, including on failures; see [cleanup](../operations/DOCKER.md).
+
+Phase 4 tests require distribution mean errors within six analytical standard errors,
+deliberate variance/correlation tolerances, scalar/vector `atol=rtol=1e-12` benchmarks
+(and tighter ordinary-range reconciliation), and exact pinned-environment batch replay.
+Convergence slopes are checked across 32 independent replicates with broad statistical
+bounds, without demanding monotonic improvement in a single run. Antithetic inference
+is checked on pair averages and an even-function counterexample. Sobol intervals use
+replicates, never points. Both notebooks execute in the project kernel. Actual final
+counts/environments appear in [Phase 4 evidence](../validation/phase-4.md).

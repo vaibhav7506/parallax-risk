@@ -15,7 +15,9 @@ flowchart TD
     CALJSON[Sourced instrument quotes and bounded parameters] --> CAL[CalibrationService / SciPy]
     CAL --> MODELS[Stochastic model instrument predictions]
     MODELS --> FIT[Parameters, residuals, identification and hashes]
-    FIT -.-> MC[PLANNED: simulation]
+    FIT -.-> CONFIG[Explicit caller model/configuration choice]
+    CONFIG --> MC[SimulationService / batched research paths]
+    MC --> STATS[Independent-unit estimates and convergence evidence]
     MC -.-> EXP[PLANNED: netting/collateral/exposure]
     EXP -.-> XVA[PLANNED: credit/XVA/capital]
     XVA -.-> GOV[PLANNED: validation lab and governance]
@@ -33,6 +35,14 @@ flowchart TD
 | Model step | Finite state/time/independent shocks → chosen exact or numerical scheme → next state | domain/models; no RNG, invalid states/proposals fail, Heston projection is reported |
 
 See [code call path](CODEBASE_GUIDE.md) and [pricing workflow](workflows/PRICING_WORKFLOW.md).
-See [calibration workflow](workflows/CALIBRATION_WORKFLOW.md). Future arrows describe
-intended phases. No portfolio, simulation, exposure, XVA, capital or governance
+See [calibration workflow](workflows/CALIBRATION_WORKFLOW.md) and
+[simulation workflow](workflows/SIMULATION_WORKFLOW.md). Future arrows describe
+intended phases. No portfolio, exposure, XVA, capital or governance
 result exists today.
+
+Phase 4: explicit typed simulation configuration + RunContext → owned addressed
+normal stream → corrected Gaussian driver covariance → selected vectorized kernels
+→ immutable path batches → observable → independent-unit moments/inference and
+convergence evidence. Single Sobol designs record absent IID inference; independent
+scramblings provide valid sampling units. Separate control pilots are never implicitly
+fitted on the evaluation stream.

@@ -6,18 +6,20 @@ Banks exchange derivative payments with counterparties. A derivative can become
 valuable to the bank before the counterparty defaults, leaving positive value at
 risk. Exposure and valuation-adjustment models estimate that risk; the models can
 also be wrong. Parallax Risk is intended to calculate and challenge those models.
-The implemented foundation covers deterministic pricing, stochastic model primitives
-and calibration; future credit
+The implemented foundation covers deterministic pricing, stochastic model primitives,
+calibration and Monte Carlo research; future credit
 risk and model-validation workflows remain in their authorized phases.
 
 Educational/research implementation. Not production trading/risk software. Not
 regulatory certification.
 
-**Current scope: Phase 3 — stochastic market models and calibration.**
+**Current scope: Phase 4 — Monte Carlo research engine.**
 Immutable market snapshots, discount/zero/projection curves, deposit/par-swap
 bootstrapping, cash flows, bonds, swaps, FX forwards and finite-difference
 sensitivities are implemented. Phase 3 adds Vasicek, Hull–White, GBM, Heston,
 exact/Euler step strategies, correlation validation and bounded instrument calibration.
+Phase 4 adds addressed pseudo/Sobol streams, antithetics, separate-pilot controls,
+vectorized correlated paths, valid statistical diagnostics and executed notebooks.
 This repository makes no
 regulatory-compliance claim. Implementation advances one phase at a time, only
 after the user writes `go`.
@@ -73,7 +75,7 @@ python -m uvicorn parallax_risk.api.app:create_app --factory --host 127.0.0.1 --
 
 `/health` is process liveness. `/ready` returns 200 only after startup and a real
 PostgreSQL `SELECT 1`; it returns 503 for missing/unavailable dependencies.
-`/version` identifies Parallax Risk, release 0.3.0 and Phase 3. These endpoints do
+`/version` identifies Parallax Risk, release 0.4.0 and Phase 4. These endpoints do
 not perform financial calculations. API and CLI imports perform no environment,
 network, filesystem or logger initialization.
 
@@ -131,6 +133,7 @@ The override is unnecessary for normal operation.
 - [Phase 1 verification and file manifest](docs/validation/phase-1.md)
 - [Phase 2 verification and file manifest](docs/validation/phase-2.md)
 - [Phase 3 verification and file manifest](docs/validation/phase-3.md)
+- [Phase 4 verification and file manifest](docs/validation/phase-4.md)
 - [Project-scoped Docker cleanup and retention](docs/operations/DOCKER.md)
 
 After every phase, review every canonical ADR and append its phase history, update
@@ -159,7 +162,7 @@ the valuation date. Positive discounts may increase when rates are negative.
 FX quotes are QUOTE/BASE with a declared settlement date. The pricing model uses
 checked binary64 arithmetic and reports unrounded currency units in Decimal
 Money; its computations do not inherit Money's exact-decimal arithmetic guarantee.
-Random/path simulation, exposure, XVA and capital models remain NOT IMPLEMENTED.
+Portfolio, exposure, XVA and capital models remain NOT IMPLEMENTED.
 
 Decimal Money prohibits implicit currency conversion, float amounts and silent
 rounding. Calendars use declared weekend/holiday sets, never assumed official
@@ -168,7 +171,8 @@ nonsecret configuration hash; explicit ID/time injection supports metadata repla
 Pricing additionally records market, curve and instrument hashes, model version,
 assumptions and each cash-flow contribution. Calibration records its own ID,
 input/settings hashes, bounds, fitted parameters and residuals. Portfolio/governance
-and automatic code/environment lineage remain later-phase work.
+remain later-phase work. Simulation captures runtime/library/platform metadata and
+an optional explicitly supplied source revision.
 
 ## Stochastic models and calibration example
 
@@ -190,4 +194,27 @@ curve. Heston projected Euler reports variance projection; its European call pri
 reports quadrature estimates and rejects numerical failure. Correlation validation
 never repairs inputs automatically; a separate opt-in repair retains full evidence.
 These are research models with documented limitations, not real-market validation.
-The existing deterministic-discounting model remains version 0.2.0 within release 0.3.0.
+The existing deterministic-discounting model remains version 0.2.0 within release 0.4.0; calibration model mathematics retains version 0.3.0.
+
+## Monte Carlo research
+
+```sh
+python scripts/demo_simulation.py
+python scripts/benchmark_simulation.py
+python scripts/execute_notebooks.py
+```
+
+The synthetic experiments call production modules for known moments, terminal
+positive-part statistics, convergence and variance-reduction comparisons.
+Antithetic intervals use pair averages; Sobol error estimates use independent
+scramble means. Control coefficients use a separate pilot whose work is reported.
+Paths have explicit units/measure, year-fraction grid, schemes, seed/stream addresses
+and correlation order. Exact OU endpoint dependence uses integrated Brownian kernels.
+Immutable output buffers and batch-size replay are verified on the pinned builds.
+
+See [simulation tutorial](docs/tutorials/03-FIRST-SIMULATION-RUN.md),
+[methodology](docs/methodology/MONTE_CARLO.md),
+[statistics](docs/methodology/MONTE_CARLO_STATISTICS.md),
+and [research notebooks](notebooks/02-variance-reduction-convergence.ipynb).
+Optional Latin Hypercube, GPU/distributed methods and joint integrated-rate discounts
+are deferred. Phase 5 requires a new `go` after Phase 4 completes.

@@ -1,6 +1,6 @@
 # Parallax Risk documentation
 
-**Current: Phases 1–3 complete; release 0.3.0. Phase 4 is NOT IMPLEMENTED and awaits `go`.**
+**Current: Phases 1–4 complete; release 0.4.0. Phase 5 awaits a new `go`.**
 
 Start with the learning path below. FACT describes actual code/evidence; IMPLEMENTATION
 DECISION describes a chosen policy; ASSUMPTION states its applicability; LIMITATION
@@ -21,6 +21,7 @@ External URL availability and future model correctness are not claimed by this c
 - [Implemented and planned workflow](WORKFLOW.md)
 - [Your first deterministic pricing run](tutorials/01-FIRST-PRICING-RUN.md)
 - [Your first calibration run](tutorials/02-FIRST-CALIBRATION-RUN.md)
+- [Your first simulation research run](tutorials/03-FIRST-SIMULATION-RUN.md)
 
 ## Understand and change the code
 
@@ -38,6 +39,7 @@ External URL availability and future model correctness are not claimed by this c
 - [Parallax Risk — Phase 1 completion evidence](validation/phase-1.md)
 - [Parallax Risk — Phase 2 completion evidence](validation/phase-2.md)
 - [Parallax Risk — Phase 3 implementation and verification](validation/phase-3.md)
+- [Parallax Risk — Phase 4 implementation and verification](validation/phase-4.md)
 - [Documentation maintenance evidence](validation/documentation-maintenance.md)
 - [Historical decision records](adr/README.md)
 
@@ -62,6 +64,12 @@ External URL availability and future model correctness are not claimed by this c
 - [Test strategy and evidence](testing/STRATEGY.md)
 - [First-class deterministic pricing workflow](workflows/PRICING_WORKFLOW.md)
 - [Calibration workflow](workflows/CALIBRATION_WORKFLOW.md)
+- [Monte Carlo paths and sequences](methodology/MONTE_CARLO.md)
+- [Monte Carlo statistics](methodology/MONTE_CARLO_STATISTICS.md)
+- [Simulation workflow](workflows/SIMULATION_WORKFLOW.md)
+- [Monte Carlo benchmark methodology](validation/MONTE_CARLO_BENCHMARKS.md)
+- [Moments/replay notebook](../notebooks/01-monte-carlo-reproducibility.ipynb)
+- [Variance/convergence notebook](../notebooks/02-variance-reduction-convergence.ipynb)
 
 ## Architecture and operation
 
@@ -85,7 +93,7 @@ External URL availability and future model correctness are not claimed by this c
 
 ## Deferred detailed documents
 
-No Monte Carlo/exposure/XVA/capital/governance/performance
-tutorial or model page is scaffolded before its authorized implementation. The user-requested
-random-sequence policy remains proposed; correlation validation is implemented in Phase 3.
+Exposure/XVA/capital/governance and production scale tutorials remain deferred.
+Monte Carlo research, sequence policy and measured local benchmarks are implemented
+in Phase 4; no future financial workflow is scaffolded.
 Create future methodology/model/testing/tutorial pages alongside actual code and evidence.

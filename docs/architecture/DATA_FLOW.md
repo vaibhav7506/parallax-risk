@@ -32,3 +32,10 @@ with injected ScipyLeastSquares → model predictions and scaled residual optimi
 → CalibrationResult/ParameterUncertainty → run-linked CalibrationRunResult. Quote order,
 units, signed residuals, IDs and data/settings hashes remain explicit. This evidence is
 in memory/JSON, without persistence. See [calibration path](../workflows/CALIBRATION_WORKFLOW.md).
+
+SimulationRequest + explicit model/unit/measure/sequence/grid/correlation → owned
+NormalStream → per-step Gaussian innovation covariance → vectorized transition
+→ immutable batch → injected observable → descriptive moments and independent-unit
+Estimate or explicit absence → RunContext/SimulationMetadata/result evidence.
+Independent Sobol replicates and separate pilot controls retain their own addresses.
+No research-result database writes or portfolio/exposure aggregation occurs.

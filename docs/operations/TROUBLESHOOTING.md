@@ -25,3 +25,10 @@ Docker engine/configuration failure is a prerequisite problem, not proof of a pr
 defect. Start Docker through the user's normal installation if needed; do not reset
 the engine or delete other workloads. Existing TestClient deprecation is documented
 and does not imply a new financial model failure.
+
+For Phase 4, odd antithetic counts split independent pairs and are rejected. Sobol
+requires power-of-two complete designs/batches and a supported step/driver dimension.
+A single Sobol design's missing IID interval is deliberate: use independent scramblings.
+Exact Heston requests and singular correlation factorization fail without fallbacks.
+Use `python scripts/execute_notebooks.py` in the locked development interpreter if a
+notebook kernel imports a different package/environment.

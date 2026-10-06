@@ -1,6 +1,6 @@
 # Parallax Risk foundation architecture
 
-Phases 1–3 use a modular Python package with inward dependencies. Deterministic
+Phases 1–4 use a modular Python package with inward dependencies. Deterministic
 domain pricing is implemented; future-phase directories are not scaffolded.
 The package has no import-time
 IO, environment reads, network connections, resource creation or global logger
@@ -33,8 +33,9 @@ domain results. It does not import ORM or HTTP types.
 
 `domain` owns immutable market observations/snapshots, curve representations,
 bounded deterministic bootstrap, contracts, valuation evidence and sensitivities.
-It depends only on common primitives and Python standard-library arithmetic,
-never Pydantic, HTTP, ORM or application types. Curve construction and pricing
+The Phase 2 financial arithmetic uses common primitives and the standard library;
+model/simulation mathematics additionally uses NumPy/SciPy. Domain never imports
+Pydantic, HTTP, ORM or application types. Curve construction and pricing
 are explicit calls with no process-global caches. Source-labelled observations
 remain separate from derived curves; the result hashes both. The bootstrap quote
 protocol describes extension points, while Phase 2 supports deposits and par swaps.

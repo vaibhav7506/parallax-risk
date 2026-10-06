@@ -22,7 +22,7 @@ and validate links. Supersede a decision with a new ID rather than rewriting his
 
 Current derivative extensions belong in implemented instrument/pricing modules;
 follow [how to change the code](docs/CODEBASE_GUIDE.md). Model/calibration primitives
-are implemented; random/path simulation, XVA/governance
+and Monte Carlo research are implemented; XVA/governance
 extension points described in the roadmap are NOT IMPLEMENTED and must wait for
 their authorized phase. Finish only one phase, clean its disposable Docker resources,
 report code/documentation/testing changes and stop before awaiting `go`.

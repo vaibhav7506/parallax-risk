@@ -19,9 +19,9 @@
 | FX spot / QUOTE per BASE | Currency exchange amount per base unit for declared value date | Direct FxSpot; no inverse/cross inference; [market data](methodology/MARKET_DATA.md) |
 | FX delta | Price change per one spot-rate unit | QUOTE-currency derivative with fixed curves and settlement conversion; [sensitivity](validation/SENSITIVITY.md) |
 | Immutability / content hash | Preserve inputs and identify their complete content | Frozen snapshots/curves/contracts with schema-1 SHA-256; hashes are not signatures; [replay](REPRODUCIBILITY.md) |
-| Seed / random sequence | Seed initializes a chosen algorithm; a sequence also depends on stream/order/version | Only seed metadata implemented; RNG/streams deferred to research phases; [ADR 0004](decisions/0004-random-sequence-reproducibility.md) |
+| Seed / random sequence | Seed initializes a chosen algorithm; a sequence also depends on stream/order/version | Explicit addressed pseudo/Sobol sequences implemented in Phase 4; [ADR 0004](decisions/0004-random-sequence-reproducibility.md) |
 | Correlation / PSD | Dependence must yield nonnegative variances for the complete joint matrix | Strict structure, eigenvalue diagnostics and singular policy; [correlation](methodology/CORRELATION.md) |
-| Monte Carlo | Estimate quantities from repeated simulated scenarios | NOT IMPLEMENTED; Phase 4 planned; [roadmap](../ROADMAP.md) |
+| Monte Carlo | Estimate quantities from repeated simulated scenarios | Phase 4 research engine; [methodology](methodology/MONTE_CARLO.md) |
 | Calibration | Fit model parameters to sourced instrument observations under a bounded objective | Actual rate/Heston SciPy fits; bootstrap remains separate; [calibration](methodology/CALIBRATION.md) |
 | Liveness / readiness | Process responds vs dependencies available | GET health/ready; a live service can be unready; [API](api/ENDPOINTS.md) |
 | Q / risk-neutral measure | Pricing probability measure under which discounted tradable prices have the specified martingale dynamics | Rate/Heston models use Q parameters; not historical forecasts; [models](methodology/STOCHASTIC_PROCESSES.md) |
@@ -39,3 +39,25 @@
 
 New terms must be added with the phase introducing actual usage, not with fabricated
 model classes or formulas for deferred modules.
+
+## Terms introduced in Phase 4
+
+| Term | Meaning and implemented use |
+|---|---|
+| StreamKey / substream | Root seed plus order-independent stream/substream IDs; [sequence policy](methodology/MONTE_CARLO.md) |
+| PCG64DXSM | Explicit pseudo bit generator initialized by SeedSequence |
+| Ziggurat normal transform | NumPy binary64 pseudo-normal sampler; version/build recorded |
+| Sobol / LMS+shift | Scrambled low-discrepancy complete power-of-two quadrature design |
+| Midpoint inverse-normal grid | Explicit finite-bit endpoint convention before ndtri; has quadrature bias |
+| Antithetic pair | Adjacent reflected shocks whose pair average is one independent unit |
+| Control variate | Adjustment using a separately fitted coefficient and known control expectation |
+| Pilot | Separate explicitly addressed sample used to fit/freeze the control coefficient |
+| Independent sampling unit | Path, pair average or scramble mean used for inference |
+| Standard error | Estimated standard deviation of an estimator, separate from path dispersion |
+| Student t interval | Approximate confidence interval over independent units |
+| Scramble replicate | One independently randomized complete Sobol design |
+| Path-count study | Nested counts with independent replicate RMSE/bias and descriptive slope |
+| Frozen path buffer | Immutable little-endian C-order binary64 bytes exposed through read-only views |
+| Traced peak allocations | tracemalloc peak for tracked allocations; not process RSS |
+
+All statistical terms refer to [the implemented estimation policy](methodology/MONTE_CARLO_STATISTICS.md).

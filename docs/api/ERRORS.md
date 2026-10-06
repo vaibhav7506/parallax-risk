@@ -14,3 +14,8 @@ Pydantic ingestion reports boundary ValidationError. No general financial HTTP e
 schema or mapping exists because no such endpoint exists. CLI config/check-db failures
 print authored safe errors to stderr and return exit 1; argparse errors use its own
 exit semantics. Do not infer quantitative error codes from operational responses.
+
+Phase 4 library failures include SimulationError for sequence/grid/sampling-unit and
+workflow contracts, plus existing model/correlation/numerical failures. They propagate
+through the research service with safe outcome logging; there is no simulation HTTP
+route that maps them to a new financial response schema.

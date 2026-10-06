@@ -4,7 +4,7 @@
 |---|---|---|
 | GET /health | 200 `{"status":"ok"}` | Liveness only; DB availability not checked |
 | GET /ready | 200 `{"status":"ready","database":"connected"}` | 503 not_ready with database unavailable/not_configured before startup or dependency failure |
-| GET /version | 200 `{"name":"Parallax Risk","version":"0.3.0","phase":3}` | Metadata endpoint, no financial calculation |
+| GET /version | 200 `{"name":"Parallax Risk","version":"0.4.0","phase":4}` | Metadata endpoint, no financial calculation |
 
 Implementation: `src/parallax_risk/api/app.py` and `src/parallax_risk/api/schemas.py`.
 `tests/api/test_operations.py` validates injected-probe/lifecycle/response behavior.

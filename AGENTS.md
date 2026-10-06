@@ -6,9 +6,9 @@ understand the financial reasoning, locate the code and reproduce results.
 
 ## Current phase
 
-- Current implementation phase: **3 — complete**; release 0.3.0.
-- Completed implementation phases: **1, 2, 3**.
-- Next implementation phase: **4 — Monte Carlo research engine, NOT IMPLEMENTED**.
+- Current implementation phase: **4 — complete**; release 0.4.0.
+- Completed implementation phases: **1, 2, 3, 4**.
+- Next implementation phase: **5 — portfolio, netting and collateral, NOT IMPLEMENTED**.
 - Documentation maintenance between phases does not advance the implementation phase.
 - Implement exactly one numbered phase when the user writes `go`; complete its
   code, applicable tests, documentation and cleanup, then stop. Never pre-build the next phase.

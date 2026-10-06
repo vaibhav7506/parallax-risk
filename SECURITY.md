@@ -1,6 +1,6 @@
 # Parallax Risk security scope
 
-Release 0.3.0 is an educational/research implementation, not production trading/risk
+Release 0.4.0 is an educational/research implementation, not production trading/risk
 software or security/regulatory certification. No security support SLA or enterprise
 hardening claim is made. Older release artifacts are rollback/history evidence.
 
