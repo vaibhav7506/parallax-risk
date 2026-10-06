@@ -15,8 +15,8 @@ from parallax_risk.common.time import utc_timestamp
 class RunContext:
     """Run identity, UTC timestamp, uint64 seed and canonical config digest.
 
-    A replay preserves these values explicitly. Future random-stream adapters
-    must use seed and sequence metadata, never wall clock or run ID.
+    A replay preserves these values explicitly. Phase 4 streams use seed and
+    sequence metadata, never wall clock or run ID.
     """
 
     run_id: RiskRunId

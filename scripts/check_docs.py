@@ -11,7 +11,7 @@ from urllib.parse import unquote, urlsplit
 
 ROOT = Path(__file__).resolve().parents[1]
 LINK = re.compile(r"\[[^\]\n]*\]\(([^)\n]+)\)")
-REFERENCE = re.compile(r"`((?:src|tests|scripts|docs|data)/[^`\n]+)`")
+REFERENCE = re.compile(r"`((?:src|tests|scripts|docs|data|notebooks)/[^`\n]+)`")
 
 
 def check() -> int:
