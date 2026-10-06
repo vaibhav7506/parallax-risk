@@ -59,3 +59,7 @@ class CorrelationError(DomainValidationError):
 
 class CalibrationError(ParallaxError):
     """Calibration evaluation failed; optimizer non-convergence has a separate result."""
+
+
+class SimulationError(DomainValidationError):
+    """Simulation, sequence or estimator configuration violates its explicit contract."""
