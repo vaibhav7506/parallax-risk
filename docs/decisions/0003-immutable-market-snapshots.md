@@ -49,3 +49,4 @@ Source integrations, authenticated lineage and persisted versions remain DEFERRE
 | 2 | Frozen/source-labelled snapshot, ingestion/version/hash and failure checks introduced | [Phase 2](../validation/phase-2.md) |
 | Maintenance 2026-10-01 | Dedicated canonical ADR created; snapshot behavior unchanged | [Register](README.md) |
 | 3 | Reviewed; no snapshot change; sourced calibration premiums are separate immutable objective inputs | [Phase 3](../validation/phase-3.md) |
+| 4 | Reviewed; no snapshot change; explicit simulation configuration does not mutate market observations | [Phase 4](../validation/phase-4.md) |

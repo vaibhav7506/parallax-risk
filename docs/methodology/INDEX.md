@@ -14,6 +14,9 @@ definitions are backed by actual implementation and tests.
 - [Correlation validation and explicit repair](CORRELATION.md).
 - [Calibration, convergence and parameter uncertainty](CALIBRATION.md).
 
-Monte Carlo, credit/collateral/exposure, wrong-way
+- [Monte Carlo paths and sequences](MONTE_CARLO.md).
+- [Monte Carlo statistics and variance reduction](MONTE_CARLO_STATISTICS.md).
+
+Credit/collateral/exposure, wrong-way
 risk, XVA, capital and risk attribution are NOT IMPLEMENTED. Their detailed model
 documents will be created with actual authorized implementations; see [roadmap](../../ROADMAP.md).

@@ -49,7 +49,7 @@ state, zero-time boundaries, unsupported schemes and finite arithmetic.
 
 ## Limitations
 
-Phase 4 random engines, paths, time grids, batching, convergence confidence intervals
-and variance reduction are NOT IMPLEMENTED. [Rate](VASICEK.md),
+Phase 4 adds separate random engines, paths, time grids, batching, valid confidence
+intervals and variance reduction; see [Monte Carlo](MONTE_CARLO.md). [Rate](VASICEK.md),
 [Hull–White](HULL_WHITE.md), [GBM](GBM.md), [Heston](HESTON.md) and
 [correlation](CORRELATION.md) documents state each model's narrower assumptions.

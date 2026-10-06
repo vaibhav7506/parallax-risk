@@ -51,3 +51,4 @@ tolerances, assumptions and limitations. Stochastic, exposure and XVA work is DE
 | 2 | Curves/bootstrap, contracts/pricing, zero-knot/FX risk and benchmarks introduced | [Phase 2](../validation/phase-2.md) |
 | Maintenance 2026-10-01 | Canonical record and learning/navigation docs added; formulas unchanged | [Register](README.md) |
 | 3 | Reviewed; deterministic-discounting model remains 0.2.0; stochastic pricing uses separate model primitives | [Phase 3](../validation/phase-3.md) |
+| 4 | Reviewed; deterministic model stays 0.2.0; simulation research does not replace its discounting contract | [Phase 4](../validation/phase-4.md) |

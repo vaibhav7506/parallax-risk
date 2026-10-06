@@ -183,5 +183,5 @@ and 1e-12 relative to account for cancellation. Central-difference rate derivati
 uses 1e-10 relative. Property tests constrain rates/notionals to finite economically
 readable domains; monotonicity is asserted only under nonnegative flat rates.
 This deterministic-discounting model contains no stochastic/pathwise calculations.
-Separate [Phase 3 models and calibration](INDEX.md) are implemented; random paths,
+Separate [models, calibration and Phase 4 random paths](INDEX.md) are implemented;
 exposure and XVA remain NOT IMPLEMENTED.

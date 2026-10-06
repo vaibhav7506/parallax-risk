@@ -17,7 +17,8 @@ Vasicek/Hull–White/GBM transitions and generic Euler; reject unsupported exact
 Hull–White uses explicit LinearForwardCurve, never guessed piecewise derivatives.
 Heston projected variance/log-spot Euler reports projection and makes no boundary
 convergence claim. Its European calls use stable Riccati/Lewis infinite quadrature
-with numerical diagnostics and rejection gates. No random/path engine is introduced.
+with numerical diagnostics and rejection gates. Phase 3 introduced no random/path engine;
+Phase 4 adds the separate engine and reconciled vectorized kernels.
 
 ## Alternatives considered
 
@@ -45,8 +46,8 @@ error bounds. Supplied correlated shocks would double-apply Heston correlation.
 
 ## Follow-up
 
-Phase 4 may implement random streams and joint paths; do not infer exact stochastic
-discount-integral transitions from exact marginal rate steps.
+Phase 4 implements separate streams and joint paths; exact stochastic discount-integral
+transitions are still absent from exact marginal rate steps.
 
 ## Related code
 
@@ -62,3 +63,4 @@ discount-integral transitions from exact marginal rate steps.
 | 1 | Not applicable; models NOT IMPLEMENTED | [Phase 1](../validation/phase-1.md) |
 | 2 | Not applicable; deterministic domain only | [Phase 2](../validation/phase-2.md) |
 | 3 | Model interfaces, exact/Euler primitives and analytical/Fourier instrument pricing introduced | [Phase 3](../validation/phase-3.md) |
+| 4 | Scalar model policies retained; vectorized kernels reconciled and projected-Heston counts reported by the separate engine | [Phase 4](../validation/phase-4.md) |

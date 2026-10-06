@@ -68,3 +68,4 @@ financial service jobs. No calibration approval or production-market claim is ma
 | 1 | Not applicable; calibration NOT IMPLEMENTED | [Phase 1](../validation/phase-1.md) |
 | 2 | Not applicable; deterministic bounded bootstrap is a separate algorithm | [Phase 2](../validation/phase-2.md) |
 | 3 | Bounded sourced-instrument fits, convergence/failure and uncertainty evidence introduced | [Phase 3](../validation/phase-3.md) |
+| 4 | Reviewed; calibration model 0.3.0, local optimizer and uncertainty assumptions unchanged; no implicit parameter transfer | [Phase 4](../validation/phase-4.md) |

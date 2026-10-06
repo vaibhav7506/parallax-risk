@@ -1,7 +1,7 @@
 # Parallax Risk decision register
 
 This is the canonical register from the documentation maintenance update on
-2026-10-01. **3 of 12 implementation phases are complete.** Phase 4 awaits `go`.
+2026-10-01. **4 of 12 implementation phases are complete.** Phase 5 awaits a new `go`.
 Decision numbers identify decisions, not phases. Each decision retains a phase
 history so reviews and changes can be counted without erasing earlier choices.
 
@@ -10,15 +10,17 @@ history so reviews and changes can be counted without erasing earlier choices.
 | 0001 | [Clean architecture](0001-clean-architecture.md) | Accepted | Phase 1; extended Phase 2 |
 | 0002 | [Money representation](0002-money-representation.md) | Accepted | Phase 1; pricing boundary Phase 2 |
 | 0003 | [Immutable market snapshots](0003-immutable-market-snapshots.md) | Accepted | Phase 2 |
-| 0004 | [Random sequence reproducibility](0004-random-sequence-reproducibility.md) | Accepted envelope; sequence policy Proposed / NOT IMPLEMENTED | Phase 1 envelope; Phase 2 input hashes |
+| 0004 | [Random sequence reproducibility](0004-random-sequence-reproducibility.md) | Accepted metadata and addressed pseudo/Sobol sequences | Phases 1–4 |
 | 0005 | [Correlation validation](0005-correlation-validation.md) | Accepted | Phase 3 |
 | 0006 | [Persistence boundaries](0006-persistence-boundaries.md) | Accepted | Phase 1 |
 | 0007 | [Deterministic curves and pricing](0007-deterministic-curves-and-pricing.md) | Accepted | Phase 2 |
 | 0008 | [Stochastic models and discretization](0008-stochastic-models-and-discretization.md) | Accepted | Phase 3 |
 | 0009 | [Bounded calibration and uncertainty](0009-bounded-calibration-and-uncertainty.md) | Accepted | Phase 3 |
+| 0010 | [Independent sampling units and controls](0010-independent-sampling-units.md) | Accepted | Phase 4 |
+| 0011 | [Batched paths and Gaussian covariance](0011-batched-paths-and-gaussian-covariance.md) | Accepted | Phase 4 |
 
-There are **9 canonical ADRs**: 8 fully accepted and 1 mixed accepted/proposed.
-Proposed random-sequence policy is not a claim of implemented code or tests.
+There are **11 canonical ADRs**, all accepted. The prior sequence proposal is now
+implemented and reviewed; earlier history remains intact.
 
 ## Phase ledger
 
@@ -28,6 +30,8 @@ Proposed random-sequence policy is not a claim of implemented code or tests.
 | Phase 2 | 0.2.0 COMPLETE | 0001, 0002, 0003, 0004, 0007 | 5 | [333 tests; deterministic report](../validation/phase-2.md) |
 | Documentation maintenance, 2026-10-01 | Phase remains 2 COMPLETE | Register reconstructed from actual code/history; 0005 recorded as user-requested proposal | 7 ADR files created/reviewed; **0 implementation phases advanced** | [Maintenance report](../validation/documentation-maintenance.md) |
 | Phase 3 | 0.3.0 COMPLETE | 0001, 0004, 0005, 0008, 0009 | 5 material changes; all 9 ADRs reviewed | [483 tests on both platforms; model/calibration report](../validation/phase-3.md) |
+
+| Phase 4 | 0.4.0 COMPLETE | 0001, 0004, 0005, 0008, 0010, 0011 | 6 material changes; all 11 ADRs reviewed | [653 tests on both platforms; Monte Carlo research report](../validation/phase-4.md) |
 
 These counts are material decision changes, not file-edit or commit counts.
 Historical phase numbers/test outcomes come from the original reports; retrospective

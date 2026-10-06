@@ -64,7 +64,8 @@ cover dimensionless convention formula checks at ordinary scales; they are not
 statistical confidence thresholds or tolerances for future monetary results.
 Exact Decimal arithmetic uses exact equality. Formula benchmarks use declared
 pytest tolerances. Hypothesis checks bounded mathematical invariants rather than
-statistical estimates; no Monte Carlo engine exists in this phase.
+statistical estimates; these foundation helpers do not implement an estimator.
+Phase 4 provides separate [Monte Carlo statistics](MONTE_CARLO_STATISTICS.md).
 
 ## Reproducibility
 
@@ -76,12 +77,12 @@ market/portfolio/model lineage hash. Changing credentials alone preserves it.
 Identity and timestamp are injected for exact envelope replay; new runs use fresh
 UUIDs/current UTC, which must never supply randomness to quantitative models.
 Different numeric results across software/BLAS versions remain possible later;
-dependency locks and future environment metadata are part of that control.
+dependency locks and Phase 4 simulation environment metadata support that control.
 
-Portfolio, sequence metadata and source-code
-lineage are deferred to their designated phases. No future random engine is
-implemented merely to imply deterministic numerical simulation exists now.
+Portfolio and persisted governance lineage remain deferred. Phase 4 records explicit
+sequence/environment metadata and an optional supplied source revision; these do not
+prove input authenticity or mathematical correctness.
 
 Phase 3 model/calibration primitives are separate from these helpers. Calibration
-IDs, input/settings hashes and parameters now exist; random sequences and portfolio/
-governance lineage remain deferred. See [calibration](CALIBRATION.md).
+IDs, input/settings hashes and parameters now exist; Phase 4 implements random
+sequences, while portfolio/governance lineage remains deferred. See [calibration](CALIBRATION.md).

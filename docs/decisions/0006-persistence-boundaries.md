@@ -43,3 +43,4 @@ tests and an updated readiness/schema policy.
 | 2 | Reviewed; no persistence behavior change or tables introduced | [Phase 2](../validation/phase-2.md) |
 | Maintenance 2026-10-01 | Canonical record and scoped cleanup guidance added; DB behavior unchanged | [Register](README.md) |
 | 3 | Reviewed; no tables or calibration persistence introduced | [Phase 3](../validation/phase-3.md) |
+| 4 | Reviewed; no tables or research-result persistence introduced; disposable PostgreSQL verification remains scoped | [Phase 4](../validation/phase-4.md) |

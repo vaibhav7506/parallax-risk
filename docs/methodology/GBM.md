@@ -35,5 +35,5 @@ and out-of-domain data.
 
 This constant-coefficient process omits smiles, jumps, stochastic rates and discrete
 dividends. It has no calibration objective in Phase 3; required calibration examples
-use rates and Heston. Terminal-distribution/path convergence studies and random
-generation belong to Phase 4 and are NOT IMPLEMENTED.
+use rates and Heston. Phase 4 implements terminal-distribution, known-moment and path-count studies with
+explicit pseudo/Sobol streams; see [Monte Carlo](MONTE_CARLO.md).

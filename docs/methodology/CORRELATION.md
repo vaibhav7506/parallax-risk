@@ -40,5 +40,6 @@ structure/entries/non-PSD inputs, singular/roundoff policy and explicit repair e
 `tests/property/test_model_invariants.py` verifies two-factor reconstruction over
 bounded correlations. Factor order is included in the hash. Repair changes assumptions
 and requires reviewing the report. Statistical correlation estimation, joint paths,
-correlation reproduction and exposure effects are NOT IMPLEMENTED; Phase 4 handles
-joint simulation. See [ADR 0005](../decisions/0005-correlation-validation.md).
+correlation reproduction is implemented in Phase 4; exposure effects remain deferred.
+Brownian-driver order and exact OU innovation covariance are described in
+[Monte Carlo](MONTE_CARLO.md). See [ADR 0005](../decisions/0005-correlation-validation.md).

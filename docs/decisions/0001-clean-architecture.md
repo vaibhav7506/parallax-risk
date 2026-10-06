@@ -54,3 +54,4 @@ to Phase 12. Do not scaffold those implementations now.
 | 2 | Domain market/contracts/pricing and application ingestion/workflow added; inward rules retained | [Phase 2](../validation/phase-2.md) |
 | Maintenance 2026-10-01 | Canonical record created from historical ADRs; no calculation change | [Register](README.md) |
 | 3 | Domain model/objective values, application calibration port and SciPy infrastructure adapter added; inward dependency rules retained | [Phase 3](../validation/phase-3.md) |
+| 4 | Application engine port and research orchestration added; mathematical stream/kernel/observable contracts remain in domain | [Phase 4](../validation/phase-4.md) |

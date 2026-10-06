@@ -40,7 +40,9 @@ PSD tolerance is an absolute numerical allowance, not statistical uncertainty.
 Clipping changes dependence and need not minimize matrix distance.
 
 ## Follow-up
-Joint path/correlation reproduction tests belong to Phase 4 and are NOT IMPLEMENTED.
+Phase 4 reproduces joint dependence and transforms Brownian-driver correlation into
+exact OU endpoint covariance. Heston pre-loading driver pairs remain independent.
+See [paths](../methodology/MONTE_CARLO.md) and [ADR 0011](0011-batched-paths-and-gaussian-covariance.md).
 
 ## Related code
 `src/parallax_risk/domain/models/correlation.py`: CorrelationMatrix, diagnostics,
@@ -56,3 +58,4 @@ CorrelationRepair and repair_correlation. `tests/unit/test_correlation.py`,
 | 2 | Not applicable; deterministic pricing needs no correlation | [Phase 2](../validation/phase-2.md) |
 | Maintenance 2026-10-01 | User-requested proposed policy recorded; no implementation phase advanced | [Register](README.md) |
 | 3 | Proposal accepted: strict validation, PSD diagnostics, Cholesky and reported opt-in repair | [Phase 3](../validation/phase-3.md) |
+| 4 | Brownian pre-loading factor order and exact OU innovation covariance integrated; empirical dependence tests added; repair remains explicit | [Phase 4](../validation/phase-4.md) |

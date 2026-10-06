@@ -46,3 +46,4 @@ See [methodology](../methodology/deterministic-pricing.md).
 | 2 | Explicit binary64 pricing conversion and unrounded Decimal reporting added | [Phase 2](../validation/phase-2.md) |
 | Maintenance 2026-10-01 | Separate canonical ADR created; arithmetic unchanged | [Register](README.md) |
 | 3 | Reviewed; no Money change; model prices/residuals have explicit binary64 units | [Phase 3](../validation/phase-3.md) |
+| 4 | Reviewed; no Money change; simulation buffers and statistics declare binary64 units and no settlement guarantee | [Phase 4](../validation/phase-4.md) |
