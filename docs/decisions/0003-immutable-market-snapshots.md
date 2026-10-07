@@ -50,3 +50,4 @@ Source integrations, authenticated lineage and persisted versions remain DEFERRE
 | Maintenance 2026-10-01 | Dedicated canonical ADR created; snapshot behavior unchanged | [Register](README.md) |
 | 3 | Reviewed; no snapshot change; sourced calibration premiums are separate immutable objective inputs | [Phase 3](../validation/phase-3.md) |
 | 4 | Reviewed; no snapshot change; explicit simulation configuration does not mutate market observations | [Phase 4](../validation/phase-4.md) |
+| 5 | Reviewed; no change; Phase 5 deterministic portfolios retain this accepted contract | [Phase 5](../validation/phase-5.md) |

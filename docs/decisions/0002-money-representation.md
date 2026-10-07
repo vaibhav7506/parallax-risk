@@ -1,6 +1,6 @@
 # ADR 0002 — Money representation
 
-**Status:** Accepted. **Recorded:** 2026-10-01; reflects Phases 1–2.
+**Status:** Accepted. **Recorded:** 2026-10-01; reflects Phases 1–2 with explicit Phase 5 use.
 
 ## Context
 Currency amounts need stable signs, explicit currencies and exact primitive
@@ -11,6 +11,12 @@ arithmetic. Quantitative discounting also needs a declared numerical precision m
 arithmetic uses a private 34-digit context and traps inexact results. Pricing
 explicitly converts amounts to checked binary64, then reports Decimal(str(value)).
 No implicit FX conversion, cent rounding or exact-decimal valuation claim is made.
+
+Phase 5 extends explicit use to signed positions, cash ledgers, thresholds, haircuts
+and legal-scope sums. FX conversion factors use declared direct settlement-adjusted
+binary64 rates represented as Decimal text before exact-contract Money scaling.
+MTA absolute comparisons use copy_abs, preserving ambient-context independence.
+Physical allocation/rounding remains an explicit caller policy.
 
 ## Alternatives considered
 Binary floats everywhere simplify numerics but blur exact amount arithmetic.
@@ -36,7 +42,8 @@ Any new rounding/reporting policy needs its own documented convention and tests.
 `src/parallax_risk/common/money.py` (`Money`),
 `src/parallax_risk/domain/pricing/_numbers.py` (`money_value`, `priced_money`),
 `tests/unit/test_primitives.py`, `tests/unit/test_pricing_contracts.py`.
-See [methodology](../methodology/deterministic-pricing.md).
+See [pricing methodology](../methodology/deterministic-pricing.md) and
+[portfolio conversion](../methodology/PORTFOLIO_COLLATERAL.md).
 
 ## Phase history
 
@@ -47,3 +54,4 @@ See [methodology](../methodology/deterministic-pricing.md).
 | Maintenance 2026-10-01 | Separate canonical ADR created; arithmetic unchanged | [Register](README.md) |
 | 3 | Reviewed; no Money change; model prices/residuals have explicit binary64 units | [Phase 3](../validation/phase-3.md) |
 | 4 | Reviewed; no Money change; simulation buffers and statistics declare binary64 units and no settlement guarantee | [Phase 4](../validation/phase-4.md) |
+| 5 | Exact Money reused for positions, cash, haircuts and aggregation; explicit binary64 FX factors become Decimal text without an exact-valuation claim | [Phase 5](../validation/phase-5.md) |

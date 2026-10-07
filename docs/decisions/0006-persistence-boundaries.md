@@ -44,3 +44,4 @@ tests and an updated readiness/schema policy.
 | Maintenance 2026-10-01 | Canonical record and scoped cleanup guidance added; DB behavior unchanged | [Register](README.md) |
 | 3 | Reviewed; no tables or calibration persistence introduced | [Phase 3](../validation/phase-3.md) |
 | 4 | Reviewed; no tables or research-result persistence introduced; disposable PostgreSQL verification remains scoped | [Phase 4](../validation/phase-4.md) |
+| 5 | Reviewed; no change; Phase 5 deterministic portfolios retain this accepted contract | [Phase 5](../validation/phase-5.md) |

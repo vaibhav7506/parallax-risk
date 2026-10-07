@@ -59,3 +59,4 @@ CorrelationRepair and repair_correlation. `tests/unit/test_correlation.py`,
 | Maintenance 2026-10-01 | User-requested proposed policy recorded; no implementation phase advanced | [Register](README.md) |
 | 3 | Proposal accepted: strict validation, PSD diagnostics, Cholesky and reported opt-in repair | [Phase 3](../validation/phase-3.md) |
 | 4 | Brownian pre-loading factor order and exact OU innovation covariance integrated; empirical dependence tests added; repair remains explicit | [Phase 4](../validation/phase-4.md) |
+| 5 | Reviewed; no change; Phase 5 deterministic portfolios retain this accepted contract | [Phase 5](../validation/phase-5.md) |

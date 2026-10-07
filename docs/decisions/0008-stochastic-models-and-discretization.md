@@ -64,3 +64,4 @@ transitions are still absent from exact marginal rate steps.
 | 2 | Not applicable; deterministic domain only | [Phase 2](../validation/phase-2.md) |
 | 3 | Model interfaces, exact/Euler primitives and analytical/Fourier instrument pricing introduced | [Phase 3](../validation/phase-3.md) |
 | 4 | Scalar model policies retained; vectorized kernels reconciled and projected-Heston counts reported by the separate engine | [Phase 4](../validation/phase-4.md) |
+| 5 | Reviewed; no change; Phase 5 deterministic portfolios retain this accepted contract | [Phase 5](../validation/phase-5.md) |

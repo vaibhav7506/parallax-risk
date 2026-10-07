@@ -65,3 +65,4 @@ cross-platform finite-tolerance validation are different guarantees.
 | Maintenance 2026-10-01 | Proposed sequence policy made explicit; implemented metadata unchanged | [Register](README.md) |
 | 3 | Calibration input/settings/parameter/run evidence added; RNG/sequence remains NOT IMPLEMENTED | [Phase 3](../validation/phase-3.md) |
 | 4 | Prior sequence proposal accepted: addressed PCG64DXSM/Sobol streams, ordering, transforms, environment metadata and replay tests | [Phase 4](../validation/phase-4.md) |
+| 5 | Reviewed; no change; Phase 5 deterministic portfolios retain this accepted contract | [Phase 5](../validation/phase-5.md) |

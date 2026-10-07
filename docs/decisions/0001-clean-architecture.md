@@ -16,6 +16,11 @@ CalibrationSolver is an application port; ScipyLeastSquares implements it in
 infrastructure. NumPy/SciPy mathematical dependencies are permitted in domain;
 application/HTTP/ORM dependencies remain forbidden.
 
+Phase 5 adds an application PortfolioPricer port and orchestration service, composing
+existing deterministic prices. Legal/lifecycle/CSA/cash/netting/MPOR values and
+financial calculations belong to domain/portfolio; no database or HTTP adapter
+owns those policies.
+
 ## Alternatives considered
 HTTP-centric calculation code is quick to start but couples financial tests to
 web concerns. Microservices add deployment/network failure before a measured need.
@@ -55,3 +60,4 @@ to Phase 12. Do not scaffold those implementations now.
 | Maintenance 2026-10-01 | Canonical record created from historical ADRs; no calculation change | [Register](README.md) |
 | 3 | Domain model/objective values, application calibration port and SciPy infrastructure adapter added; inward dependency rules retained | [Phase 3](../validation/phase-3.md) |
 | 4 | Application engine port and research orchestration added; mathematical stream/kernel/observable contracts remain in domain | [Phase 4](../validation/phase-4.md) |
+| 5 | Application portfolio pricer port and domain legal/collateral aggregates added; dependency rules retained | [Phase 5](../validation/phase-5.md) |
