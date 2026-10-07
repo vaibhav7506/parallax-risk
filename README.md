@@ -7,19 +7,21 @@ valuable to the bank before the counterparty defaults, leaving positive value at
 risk. Exposure and valuation-adjustment models estimate that risk; the models can
 also be wrong. Parallax Risk is intended to calculate and challenge those models.
 The implemented foundation covers deterministic pricing, stochastic model primitives,
-calibration and Monte Carlo research; future credit
+calibration, Monte Carlo research and deterministic collateralized portfolios; future credit
 risk and model-validation workflows remain in their authorized phases.
 
 Educational/research implementation. Not production trading/risk software. Not
 regulatory certification.
 
-**Current scope: Phase 4 — Monte Carlo research engine.**
+**Current scope: Phase 5 — portfolios, netting and collateral.**
 Immutable market snapshots, discount/zero/projection curves, deposit/par-swap
 bootstrapping, cash flows, bonds, swaps, FX forwards and finite-difference
 sensitivities are implemented. Phase 3 adds Vasicek, Hull–White, GBM, Heston,
 exact/Euler step strategies, correlation validation and bounded instrument calibration.
 Phase 4 adds addressed pseudo/Sobol streams, antithetics, separate-pilot controls,
 vectorized correlated paths, valid statistical diagnostics and executed notebooks.
+Phase 5 adds immutable legal books, signed positions and lifecycle, scoped netting,
+explicit CSA/cash ledgers, pending-aware calls, haircuts/FX and deterministic MPOR.
 This repository makes no
 regulatory-compliance claim. Implementation advances one phase at a time, only
 after the user writes `go`.
@@ -75,7 +77,7 @@ python -m uvicorn parallax_risk.api.app:create_app --factory --host 127.0.0.1 --
 
 `/health` is process liveness. `/ready` returns 200 only after startup and a real
 PostgreSQL `SELECT 1`; it returns 503 for missing/unavailable dependencies.
-`/version` identifies Parallax Risk, release 0.4.0 and Phase 4. These endpoints do
+`/version` identifies Parallax Risk, release 0.5.0 and Phase 5. These endpoints do
 not perform financial calculations. API and CLI imports perform no environment,
 network, filesystem or logger initialization.
 
@@ -194,7 +196,7 @@ curve. Heston projected Euler reports variance projection; its European call pri
 reports quadrature estimates and rejects numerical failure. Correlation validation
 never repairs inputs automatically; a separate opt-in repair retains full evidence.
 These are research models with documented limitations, not real-market validation.
-The existing deterministic-discounting model remains version 0.2.0 within release 0.4.0; calibration model mathematics retains version 0.3.0.
+The existing deterministic-discounting model remains version 0.2.0 within release 0.5.0; calibration model mathematics retains version 0.3.0.
 
 ## Monte Carlo research
 
@@ -217,4 +219,23 @@ See [simulation tutorial](docs/tutorials/03-FIRST-SIMULATION-RUN.md),
 [statistics](docs/methodology/MONTE_CARLO_STATISTICS.md),
 and [research notebooks](notebooks/02-variance-reduction-convergence.ipynb).
 Optional Latin Hypercube, GPU/distributed methods and joint integrated-rate discounts
-are deferred. Phase 5 requires a new `go` after Phase 4 completes.
+are deferred. Phase 6 requires a new `go` after Phase 5 completes.
+
+## Portfolios and collateral
+
+```sh
+python scripts/demo_portfolio.py
+```
+
+The labelled synthetic book uses the existing deterministic pricer through an injected
+portfolio workflow. Netting and collateral remain within caller-attested legal scopes;
+positive risk is summed across scopes and counterparties. Pending calls affect the next
+instruction but only settled collateral offsets current value. The CSA declares calendar
+frequency/lag/MPOR, directional thresholds, strict-greater MTA, signed reusable IA and
+eligible cash currencies/haircuts. IA is not segregated regulatory initial margin.
+
+Read [the tutorial](docs/tutorials/04-FIRST-PORTFOLIO-RUN.md),
+[financial conventions](docs/methodology/PORTFOLIO_COLLATERAL.md),
+[workflow](docs/workflows/PORTFOLIO_WORKFLOW.md) and
+[Phase 5 evidence and manifest](docs/validation/phase-5.md).
+Pathwise exposure/WWR, EE/PFE and CVA remain Phase 6/7 work; no financial API is added.

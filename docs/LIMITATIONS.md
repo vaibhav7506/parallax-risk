@@ -1,6 +1,6 @@
 # Current limitations
 
-These limitations apply to implemented Phases 1–4. Preserve them until an actual
+These limitations apply to implemented Phases 1–5. Preserve them until an actual
 change and evidence justify revision; record revisions in the decision history.
 
 | Category / limitation | Impact and affected code | Mitigation / phase |
@@ -10,12 +10,12 @@ change and evidence justify revision; record revisions in the decision history.
 | Daily snapshot cutoff, synthetic demo data | No intraday/freshness/vendor/authenticity guarantee; domain/market | Label provenance/sample status, validate dates; integrations deferred |
 | Deposit/par-swap single-curve bootstrap | No heterogeneous basis/spot lag/convexity calibration; curves/bootstrap | Use supported conventions; stochastic model calibration is separate |
 | Default-free dirty bond PV; simple swap coupons | No credit/default/optionality/clean-price/ex-coupon/compounded index | Use only supported explicit contracts; no invented adjustments |
-| Direct FX / no basis | No inverse/cross synthesis or arbitrary portfolio conversion | Supply exact direct pair/settlement and supported funding assumption |
+| Direct FX / no basis | No inverse/cross synthesis; portfolio/collateral conversion needs exact direct orientation | Supply exact direct pair/settlement and supported funding assumption |
 | Zero-knot risk, explicit finite bumps | Not market-quote DV01; truncation/cancellation depends on h | State scope/signs, test meaningful bump stability |
-| No portfolio/exposure/XVA/capital | Research paths/statistics cannot calculate counterparty default losses | Phases 5–8 planned |
+| No stochastic exposure/XVA/capital | Current deterministic legal-scope risk and MPOR scenarios cannot estimate default losses | Phases 6–8 planned |
 | No validation lab/mutation/governance persistence | Current tests are not independent institutional approval or model inventory | Phases 9–11 planned |
 | Operational API only, unauthenticated local service | No production risk jobs, authorization, scale/HA or security certification | Loopback/development use; Phase 12 planned |
-| Incomplete automatic lineage | Simulation captures sequences/runtime/platform and optional supplied source revision; portfolio/persisted lineage absent | Preserve external source/runtime evidence; phased lineage work |
+| Incomplete automatic lineage | Simulation captures sequences/runtime/platform and optional supplied source revision; portfolio/market/curve/ledger/pricer hashes exist in memory; persisted lineage absent | Preserve external source/runtime evidence; phased lineage work |
 | Exact version locks without hashes; release-tag bases | Whole-environment rebuild immutability not guaranteed | Record actual versions/image IDs and revalidate updates |
 | Python 3.14 unverified; hosted CI not observed | Metadata support is broader than local evidence | Report tested 3.13.2/3.12.14; execute matrix when hosted CI runs |
 
@@ -45,3 +45,14 @@ Euler, and exact rates omit joint integrated discounts. Collecting every batch l
 streaming memory savings; traced allocations are not RSS or a hard memory budget.
 See [paths](methodology/MONTE_CARLO.md), [statistics](methodology/MONTE_CARLO_STATISTICS.md)
 and [benchmarks](validation/MONTE_CARLO_BENCHMARKS.md).
+
+## Phase 5 scope
+
+Legal enforceability is caller attestation. Cash collateral only; signed haircuts
+use a symmetric research convention. IA is reusable title-transfer collateral,
+not segregated regulatory IM. Calls are effective-value instructions; physical
+allocation/rounding/confirmed movements are supplied explicitly. No failed settlements,
+interest, disputes, securities, funding, liquidation or custody is modeled. Calendar
+frequency/lag/MPOR ignores business calendars. End-of-day whole-trade termination
+requires exit cash separately. Direct FX orientation and precision/horizon contracts
+restrict supported books. See [full assumptions](methodology/PORTFOLIO_COLLATERAL.md).

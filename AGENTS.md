@@ -6,9 +6,9 @@ understand the financial reasoning, locate the code and reproduce results.
 
 ## Current phase
 
-- Current implementation phase: **4 — complete**; release 0.4.0.
-- Completed implementation phases: **1, 2, 3, 4**.
-- Next implementation phase: **5 — portfolio, netting and collateral, NOT IMPLEMENTED**.
+- Current implementation phase: **5 — complete**; release 0.5.0.
+- Completed implementation phases: **1, 2, 3, 4, 5**.
+- Next implementation phase: **6 — exposure engine and wrong-way risk, NOT IMPLEMENTED**.
 - Documentation maintenance between phases does not advance the implementation phase.
 - Implement exactly one numbered phase when the user writes `go`; complete its
   code, applicable tests, documentation and cleanup, then stop. Never pre-build the next phase.
@@ -82,6 +82,7 @@ Ambiguous ownership means retain and report. Never delete the normal Compose
 - Core Money: `src/parallax_risk/common/money.py`.
 - Market/curves: `src/parallax_risk/domain/market/`.
 - Contracts/pricing: `src/parallax_risk/domain/instruments/`, `domain/pricing/`.
+- Portfolios/netting/CSA/cash ledgers: `src/parallax_risk/domain/portfolio/`.
 - Boundaries/workflow: `src/parallax_risk/application/`.
 - Tests: `tests/`; documentation: `docs/INDEX.md`, `docs/CODEBASE_GUIDE.md`.
 - Decisions: `docs/decisions/README.md`; maintenance log: `CHANGELOG.md`.

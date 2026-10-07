@@ -18,7 +18,10 @@ flowchart TD
     FIT -.-> CONFIG[Explicit caller model/configuration choice]
     CONFIG --> MC[SimulationService / batched research paths]
     MC --> STATS[Independent-unit estimates and convergence evidence]
-    MC -.-> EXP[PLANNED: netting/collateral/exposure]
+    RESULT --> BOOK[PortfolioService / legal netting and settled collateral]
+    BOOK --> CURRENT[Current risk and pending-aware margin instruction]
+    MC -.-> EXP[PLANNED: pathwise exposure / WWR]
+    BOOK -.-> EXP
     EXP -.-> XVA[PLANNED: credit/XVA/capital]
     XVA -.-> GOV[PLANNED: validation lab and governance]
 ```
@@ -37,8 +40,8 @@ flowchart TD
 See [code call path](CODEBASE_GUIDE.md) and [pricing workflow](workflows/PRICING_WORKFLOW.md).
 See [calibration workflow](workflows/CALIBRATION_WORKFLOW.md) and
 [simulation workflow](workflows/SIMULATION_WORKFLOW.md). Future arrows describe
-intended phases. No portfolio, exposure, XVA, capital or governance
-result exists today.
+intended phases. No stochastic exposure profile, XVA, capital or governance
+result exists today. Phase 5 implements deterministic portfolio results.
 
 Phase 4: explicit typed simulation configuration + RunContext → owned addressed
 normal stream → corrected Gaussian driver covariance → selected vectorized kernels
@@ -46,3 +49,10 @@ normal stream → corrected Gaussian driver covariance → selected vectorized k
 convergence evidence. Single Sobol designs record absent IID inference; independent
 scramblings provide valid sampling units. Separate control pilots are never implicitly
 fitted on the evaluation stream.
+
+Phase 5: immutable book + matching PricingContext + complete scoped cash ledgers +
+RunContext → injected pricer/lineage validation → within-set gross/net value → settled
+collateral residual/current risk and pending-aware instruction → positive/negative set
+risk sums across legal entities. A separate deterministic MPOR scenario freezes settled
+physical cash and values it at caller-supplied closeout. See
+[portfolio workflow](workflows/PORTFOLIO_WORKFLOW.md).

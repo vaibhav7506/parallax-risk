@@ -26,3 +26,7 @@ and Monte Carlo research are implemented; XVA/governance
 extension points described in the roadmap are NOT IMPLEMENTED and must wait for
 their authorized phase. Finish only one phase, clean its disposable Docker resources,
 report code/documentation/testing changes and stop before awaiting `go`.
+
+For Phase 5 portfolio changes, preserve legal boundaries, end-of-day lifecycle and
+settled/pending distinction. Read [portfolio conventions](docs/methodology/PORTFOLIO_COLLATERAL.md)
+and update independent checks plus all canonical ADR phase histories.

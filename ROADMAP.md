@@ -1,7 +1,7 @@
 # Parallax Risk roadmap
 
-**Current:** Phase 4 complete, release 0.4.0. Phases 1–4 are complete. Documentation maintenance does not advance the phase.
-Phase 5 remains NOT IMPLEMENTED and requires a new `go`.
+**Current:** Phase 5 complete, release 0.5.0. Phases 1–5 are complete. Documentation maintenance does not advance the phase.
+Phase 5 is complete. Phase 6 remains NOT IMPLEMENTED and requires a new `go`.
 
 | Phase | Scope | State |
 |---|---|---|
@@ -9,7 +9,7 @@ Phase 5 remains NOT IMPLEMENTED and requires a new `go`.
 | 2 | Market data, curves and deterministic pricing | COMPLETE — [evidence](docs/validation/phase-2.md) |
 | 3 | Stochastic market models, correlation validation and calibration | COMPLETE — [evidence](docs/validation/phase-3.md) |
 | 4 | Monte Carlo research engine, random streams and diagnostics | COMPLETE — [evidence](docs/validation/phase-4.md) |
-| 5 | Portfolios, counterparties, netting and collateral | PLANNED / NOT IMPLEMENTED |
+| 5 | Portfolios, counterparties, netting and collateral | COMPLETE — [evidence](docs/validation/phase-5.md) |
 | 6 | Exposure and wrong-way risk | PLANNED / NOT IMPLEMENTED |
 | 7 | XVA and extended sensitivity engine | PLANNED / NOT IMPLEMENTED |
 | 8 | Regulatory-style capital and challenger models | PLANNED / NOT IMPLEMENTED |

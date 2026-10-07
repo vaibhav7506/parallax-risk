@@ -38,11 +38,12 @@ fixing/projection convention; the code does not fabricate an official market ind
 
 PricingResult owns original signed amounts, reporting-currency contributions and
 input hashes. RunContext identifies a workflow/configuration; it is not a persisted
-risk job, model approval or random generator. Nominal IDs such as CounterpartyId
-are types, not proof of a counterparty/portfolio aggregate.
+risk job, model approval or random generator. Phase 5 wraps nominal identities in
+actual immutable legal portfolio aggregates.
 
-Trade, Portfolio, NettingSet, CSA, CollateralAccount, ExposureProfile,
-XVAResult, Finding and persisted model-governance aggregates are NOT IMPLEMENTED.
+ExposureProfile, XVAResult, Finding and persisted model-governance aggregates are
+NOT IMPLEMENTED. Deterministic current portfolio risk is separate from a future
+stochastic exposure profile.
 See [roadmap](../ROADMAP.md), [code locations](CODEBASE_GUIDE.md) and
 [limitations](LIMITATIONS.md).
 
@@ -67,3 +68,29 @@ complete designs and scramble-mean inference. ControlVariate preserves a separat
 pilot key, observation count, coefficient and known expectation. These are research
 values, not persistent jobs, portfolios or exposure profiles.
 See [simulation](methodology/MONTE_CARLO.md) and [statistics](methodology/MONTE_CARLO_STATISTICS.md).
+
+## Phase 5 book and collateral relationships
+
+```mermaid
+classDiagram
+    PortfolioSnapshot "1" *-- "many" Counterparty
+    Counterparty "1" *-- "many" NettingSet
+    NettingSet "1" *-- "many" Trade
+    Trade --> Instrument : signed quantity and lifecycle
+    NettingSet --> Csa : optional scoped agreement
+    CollateralAccount --> NettingSet : typed scope ID
+    CollateralAccount --> Csa : typed agreement ID
+    CollateralAccount "1" *-- "many" CollateralMovement
+    PortfolioResult --> CounterpartyResult
+    CounterpartyResult --> NettingResult
+    NettingResult --> MarginCall
+    PortfolioResult --> RunContext
+```
+
+`src/parallax_risk/domain/portfolio/contracts.py` owns the immutable snapshot and
+legal hierarchy; `csa.py` owns eligible cash/threshold/direction/calendar conventions.
+`collateral.py` owns physical cash history, effective calls and MporScenario; `netting.py`
+owns TradeValue/NettingResult. `src/parallax_risk/application/portfolio.py` owns the
+injected PortfolioPricer workflow and result envelope. Each set retains separate
+risk and collateral; counterparty/portfolio risk sums do not create new legal netting.
+See [formulas and limitations](methodology/PORTFOLIO_COLLATERAL.md).

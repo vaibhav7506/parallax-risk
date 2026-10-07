@@ -52,14 +52,14 @@ Without it the PostgreSQL-marked test is skipped, which is not live integration 
 Use `scripts/compose.verify.yml` and a unique phase verification project. Ports
 58000/55432 avoid this machine's unrelated port-8000 workload. Save useful outputs
 before teardown. In PowerShell, wrap the verification session in `try/finally` and
-call `scripts/cleanup_docker.ps1 -Phase 4 -Apply` in `finally`; increment only after
+call `scripts/cleanup_docker.ps1 -Phase 5 -Apply` in `finally`; increment only after
 the next phase is authorized. Preview without `-Apply`. See
 [Docker ownership and retention](docs/operations/DOCKER.md) for exact commands.
 
-The active-phase helper `.\scripts\verify_phase4.ps1` builds the stack, verifies
+The active-phase helper `.\scripts\verify_phase5.ps1` builds the stack, verifies
 HTTP/database/non-root runtime and runs real PostgreSQL Windows/Linux suites. It
 uses ownership labels and always scoped cleanup; logs/artifacts remain under
-`artifacts/local/phase4/`. SciPy stubs are development-only; runtime locks exclude them.
+`artifacts/local/phase5/`. SciPy stubs are development-only; runtime locks exclude them.
 
 ## Troubleshooting and contribution
 
@@ -75,3 +75,8 @@ Run `python scripts/demo_simulation.py`, `python scripts/benchmark_simulation.py
 and `python scripts/execute_notebooks.py`. The executor uses a workspace-local kernel
 spec and explicitly tears down its kernels; successful outputs and evidence are retained.
 See [simulation tutorial](docs/tutorials/03-FIRST-SIMULATION-RUN.md).
+
+Phase 5 reproduction: `python scripts/demo_portfolio.py`; quantitative policy lives in
+`src/parallax_risk/domain/portfolio/`, orchestration in `src/parallax_risk/application/portfolio.py`.
+Existing instruments/models and pinned dependencies are reused. Read the
+[portfolio tutorial](docs/tutorials/04-FIRST-PORTFOLIO-RUN.md).

@@ -101,3 +101,20 @@ pricing formula, persistence adapter or financial HTTP endpoint.
 To add a sequence or observable, extend its explicit contract and replay/domain tests.
 To add a vectorized model, reconcile against independent scalar/math targets and extend
 covariance semantics where required. See [workflow](workflows/SIMULATION_WORKFLOW.md).
+
+## Portfolio call path and change locations
+
+`src/parallax_risk/domain/portfolio/contracts.py` defines the legal hierarchy and
+lifecycle cutoff. `csa.py` defines direction/threshold/IA/MTA and calendar timing.
+`collateral.py` values direct settlement-adjusted FX, physical ledgers, pending-aware
+instructions and frozen MPOR. `netting.py` checks complete trade marks and aggregates
+within a legal set. `src/parallax_risk/application/portfolio.py` injects the pricer,
+validates input evidence, and adds separate scope risks in portfolio currency.
+
+`src/parallax_risk/common/identifiers.py` adds PortfolioId/PortfolioVersion and cash
+account/movement IDs. Change financial policy in domain with independent quantitative
+checks and ADR history; change orchestration in the application port/service. API and
+persistence still expose operational connectivity only. Adding a new instrument also
+requires extending the portfolio currency/final-payment dispatch and reconciliation
+checks. See [workflow](workflows/PORTFOLIO_WORKFLOW.md) and
+[tutorial](tutorials/04-FIRST-PORTFOLIO-RUN.md).

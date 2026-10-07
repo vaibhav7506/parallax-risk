@@ -67,3 +67,13 @@ There is no source commit in this workspace; source revision is explicitly None.
 Do not infer bitwise compatibility across CPU/library/build changes.
 See [sequence policy](methodology/MONTE_CARLO.md) and
 [statistical units](methodology/MONTE_CARLO_STATISTICS.md).
+
+## Phase 5 portfolio replay
+
+Preserve full PortfolioSnapshot, PricingContext, CollateralAccount timelines and fixed
+RunContext. PortfolioResult contains book/market/curve hashes, individual pricing evidence
+and scoped ledger fingerprints; hashes do not replace original inputs or identify a Git
+commit. Sorted legal IDs and explicit dates/quantities/currencies make replay deterministic
+in the same pinned environment. `python scripts/demo_portfolio.py` emits repeatable stdout
+JSON from labelled synthetic inputs; timestamped safe stderr logs differ. No RNG or
+portfolio persistence is introduced. See [workflow](workflows/PORTFOLIO_WORKFLOW.md).

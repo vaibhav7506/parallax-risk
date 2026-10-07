@@ -1,6 +1,6 @@
 # Parallax Risk documentation
 
-**Current: Phases 1–4 complete; release 0.4.0. Phase 5 awaits a new `go`.**
+**Current: Phases 1–5 complete; release 0.5.0. Phase 6 awaits a new `go`.**
 
 Start with the learning path below. FACT describes actual code/evidence; IMPLEMENTATION
 DECISION describes a chosen policy; ASSUMPTION states its applicability; LIMITATION
@@ -22,6 +22,7 @@ External URL availability and future model correctness are not claimed by this c
 - [Your first deterministic pricing run](tutorials/01-FIRST-PRICING-RUN.md)
 - [Your first calibration run](tutorials/02-FIRST-CALIBRATION-RUN.md)
 - [Your first simulation research run](tutorials/03-FIRST-SIMULATION-RUN.md)
+- [Your first portfolio run](tutorials/04-FIRST-PORTFOLIO-RUN.md)
 
 ## Understand and change the code
 
@@ -40,6 +41,7 @@ External URL availability and future model correctness are not claimed by this c
 - [Parallax Risk — Phase 2 completion evidence](validation/phase-2.md)
 - [Parallax Risk — Phase 3 implementation and verification](validation/phase-3.md)
 - [Parallax Risk — Phase 4 implementation and verification](validation/phase-4.md)
+- [Parallax Risk — Phase 5 implementation and verification](validation/phase-5.md)
 - [Documentation maintenance evidence](validation/documentation-maintenance.md)
 - [Historical decision records](adr/README.md)
 
@@ -66,6 +68,8 @@ External URL availability and future model correctness are not claimed by this c
 - [Calibration workflow](workflows/CALIBRATION_WORKFLOW.md)
 - [Monte Carlo paths and sequences](methodology/MONTE_CARLO.md)
 - [Monte Carlo statistics](methodology/MONTE_CARLO_STATISTICS.md)
+- [Portfolios, netting and collateral](methodology/PORTFOLIO_COLLATERAL.md)
+- [Portfolio workflow](workflows/PORTFOLIO_WORKFLOW.md)
 - [Simulation workflow](workflows/SIMULATION_WORKFLOW.md)
 - [Monte Carlo benchmark methodology](validation/MONTE_CARLO_BENCHMARKS.md)
 - [Moments/replay notebook](../notebooks/01-monte-carlo-reproducibility.ipynb)

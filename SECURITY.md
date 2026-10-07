@@ -1,6 +1,6 @@
 # Parallax Risk security scope
 
-Release 0.4.0 is an educational/research implementation, not production trading/risk
+Release 0.5.0 is an educational/research implementation, not production trading/risk
 software or security/regulatory certification. No security support SLA or enterprise
 hardening claim is made. Older release artifacts are rollback/history evidence.
 
@@ -32,3 +32,8 @@ Report potential vulnerabilities directly to the repository owner through a priv
 channel they provide. No dedicated reporting address is configured. Do not post
 credentials or exploit details in a public issue; record sanitized impact and affected
 version/module. Tests and instructions must never require real financial secrets.
+
+Phase 5 books/ledgers contain potentially sensitive trade/legal/cash data. The local
+synthetic demo is explicitly labelled; safe logs omit those fields. Portfolio hashes
+are content digests, not encryption, signatures, authorization or proof of legal rights.
+No external settlement/payment or authenticated financial API is added.

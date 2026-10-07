@@ -2,7 +2,7 @@
 
 | Term | Intuition / why it matters | Current project usage and reference |
 |---|---|---|
-| Counterparty credit risk (CCR) | Risk of losing a positive derivative claim when the other party defaults | Project mission; exposure/default calculation NOT IMPLEMENTED; [roadmap](../ROADMAP.md) |
+| Counterparty credit risk (CCR) | Risk of losing a positive derivative claim when the other party defaults | Deterministic current netting/collateral risk implemented; stochastic exposure/default loss deferred; [roadmap](../ROADMAP.md) |
 | Model risk | Risk that assumptions, mathematics, data or implementation produce misleading decisions | Explicit assumptions and quantitative tests today; independent lab/governance deferred; [validation](validation/OVERVIEW.md) |
 | XVA / CVA | Valuation adjustments; CVA addresses counterparty default losses | NOT IMPLEMENTED; no present default-loss result; [roadmap](../ROADMAP.md) |
 | NPV / PV | Value today of signed future payments | DiscountingEngine/PricingResult; [pricing](methodology/PRICING.md) |
@@ -61,3 +61,20 @@ model classes or formulas for deferred modules.
 | Traced peak allocations | tracemalloc peak for tracked allocations; not process RSS |
 
 All statistical terms refer to [the implemented estimation policy](methodology/MONTE_CARLO_STATISTICS.md).
+
+## Terms introduced in Phase 5
+
+| Term | Meaning in this implementation |
+|---|---|
+| Portfolio snapshot | Versioned immutable legal book with full contract/lifecycle/CSA hash |
+| Counterparty / legal netting set | Legal entity / separately attested scope for offsetting signed claims |
+| Signed quantity / effective date | Position multiplier / contractual start metadata, not an activation gate |
+| Gross vs net positive risk | Sum of positive trade values vs positive part of enforceably netted set value |
+| CSA | Explicit research thresholds, direction, eligible cash and margin timing terms |
+| VM / independent amount (IA) | Exposure-sensitive target / signed reusable title-transfer amount; not segregated IM |
+| MTA | Full transfer occurs only when absolute difference is strictly greater than this amount |
+| Settled / pending collateral | Physical cash held today / known future transfers included only for next call calculation |
+| Haircut-adjusted value | Signed physical cash times (1-h), converted explicitly to agreement currency |
+| MPOR | Caller-declared calendar freeze interval; deterministic closeout scenario, not default simulation |
+
+Definitions, units/signs and caveats: [portfolio methodology](methodology/PORTFOLIO_COLLATERAL.md).
