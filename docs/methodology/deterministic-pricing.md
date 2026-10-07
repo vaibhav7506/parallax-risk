@@ -143,7 +143,8 @@ payment in its own currency, consistent with the
 [Strata FX pricer](https://strata.opengamma.io/apidocs/com/opengamma/strata/pricer/fx/DiscountingFxSingleProductPricer.html).
 This reference is methodological; the tests do not claim externally executed Strata
 benchmarks. There are no FX points, basis calibration, transaction costs, inverse
-quote fallback or multi-currency portfolio conversion. Quotes with settlement before
+quote fallback. Phase 5 separately composes explicit direct multi-currency portfolio
+conversion without changing this pricing engine. Quotes with settlement before
 valuation and future forward maturity before spot settlement are rejected.
 
 ## Finite differences, precision and acceptance tests

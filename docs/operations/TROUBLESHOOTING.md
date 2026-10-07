@@ -32,3 +32,9 @@ A single Sobol design's missing IID interval is deliberate: use independent scra
 Exact Heston requests and singular correlation factorization fail without fallbacks.
 Use `python scripts/execute_notebooks.py` in the locked development interpreter if a
 notebook kernel imports a different package/environment.
+
+For Phase 5, verify matching end-of-day market/book dates, one uniquely identified
+ledger per CSA scope, direct FX orientation and curve horizon, movement schedule/lag,
+eligible currencies and one-way holding direction. Pending calls do not offset current
+risk; MTA equality intentionally produces zero transfer. See
+[portfolio conventions](../methodology/PORTFOLIO_COLLATERAL.md).

@@ -47,3 +47,9 @@ bounds, without demanding monotonic improvement in a single run. Antithetic infe
 is checked on pair averages and an even-function counterexample. Sobol intervals use
 replicates, never points. Both notebooks execute in the project kernel. Actual final
 counts/environments appear in [Phase 4 evidence](../validation/phase-4.md).
+
+Phase 5 adds exact decimal threshold/MTA/ledger checks, independent FX discount-ratio
+targets (relative tolerance 1e-14), legal-scope/lifecycle/injected-pricer reconciliation,
+80 generated netting-bound/collateral-monotonicity cases and deterministic MPOR freezes.
+No synthetic data is represented as observed or regulatory. Full platform/count/coverage
+evidence appears in [Phase 5](../validation/phase-5.md).

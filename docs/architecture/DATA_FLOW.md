@@ -25,7 +25,7 @@ flowchart LR
 
 Concrete mapping and failure conditions: [workflow](../WORKFLOW.md) and
 [pricing call path](../workflows/PRICING_WORKFLOW.md). There is no database write of
-these results, automatic portfolio ownership or persisted calibration/governance lineage.
+these results or persisted calibration/portfolio/governance lineage.
 
 CalibrationRequest → sourced immutable objective/bounds/settings → CalibrationService
 with injected ScipyLeastSquares → model predictions and scaled residual optimization
@@ -38,4 +38,11 @@ NormalStream → per-step Gaussian innovation covariance → vectorized transiti
 → immutable batch → injected observable → descriptive moments and independent-unit
 Estimate or explicit absence → RunContext/SimulationMetadata/result evidence.
 Independent Sobol replicates and separate pilot controls retain their own addresses.
-No research-result database writes or portfolio/exposure aggregation occurs.
+The simulation workflow does not write research results or aggregate portfolio exposure.
+
+Phase 5: frozen legal book + dates/position/CSA terms + cash movement ledgers →
+PortfolioService → existing deterministic pricer → verified instrument/market/curve
+hashes → within-set FX/gross/net/settled-collateral results and pending-aware calls →
+separate counterparty risk sums → PortfolioResult/RunContext with ledger/book hashes.
+No auto-settlement or pathwise exposure/default/XVA is attached to this flow.
+See [portfolio path](../workflows/PORTFOLIO_WORKFLOW.md).

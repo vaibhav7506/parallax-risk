@@ -19,3 +19,7 @@ Phase 4 library failures include SimulationError for sequence/grid/sampling-unit
 workflow contracts, plus existing model/correlation/numerical failures. They propagate
 through the research service with safe outcome logging; there is no simulation HTTP
 route that maps them to a new financial response schema.
+
+Phase 5 library scope/lifecycle/CSA/ledger/pricer-evidence violations raise
+DomainValidationError. Existing missing-market/numerical errors propagate. No
+financial HTTP operation or new HTTP error mapping is implemented.

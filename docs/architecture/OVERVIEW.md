@@ -44,3 +44,7 @@ immutable batch buffers. Application SimulationService injects an engine/observa
 port and safe logger; research/benchmark modules orchestrate experiments without
 HTTP/ORM dependencies. Scripts/notebooks compose the library. No import-time RNG
 is created, and each iteration owns its working state. See [paths](../methodology/MONTE_CARLO.md).
+
+Phase 5 adds immutable legal portfolio/CSA/cash aggregates in domain and an injected
+application PortfolioPricer workflow. Financial netting/collateral math remains outside
+API/persistence. See [portfolio workflow](../workflows/PORTFOLIO_WORKFLOW.md).

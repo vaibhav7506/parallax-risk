@@ -30,3 +30,7 @@ from operational Settings. It records model/scheme, units/measure, grid, paths/b
 root seed and stream/substream, transform, and ordered optional correlation.
 RunContext seed must match the request; a newly generated run ID/time does not affect draws.
 Synthetic research functions use an explicit environment-independent configuration hash.
+
+Phase 5 portfolio/CSA/ledger values are supplied explicitly to PortfolioService.
+No new environment setting loads books, legal rights, currencies or margin policy.
+RunContext preserves the existing configuration envelope.

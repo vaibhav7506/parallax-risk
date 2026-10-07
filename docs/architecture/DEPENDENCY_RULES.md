@@ -26,3 +26,7 @@ Phase 4's actual domain/simulation uses NumPy/SciPy numerical routines and commo
 values. The application engine port and domain observable contract permit injection without importing
 infrastructure. Research notebooks and execution/plotting dependencies live in the
 optional development environment; production modules do not import notebook tooling.
+
+Phase 5 domain/portfolio imports common plus existing domain contracts/pricing/market;
+application/portfolio injects the pricer and logger. It never imports API/Pydantic/ORM
+into the domain. Existing architecture checks exercise these new modules too.

@@ -14,7 +14,7 @@
 8. Compare path counts or variance reductions through the production experiment
    functions. Preserve their references, seeds, work counts and limitations.
 
-No HTTP endpoint, job queue, portfolio, netting, collateral, exposure, stochastic
+This simulation workflow has no HTTP endpoint, job queue, portfolio aggregation, exposure, stochastic
 discount integral or XVA result is added. Research outputs do not persist to PostgreSQL.
 The operational health/readiness/version interfaces remain available.
 
@@ -29,3 +29,6 @@ assert result.gbm.estimate is not None
 See [first research run](../tutorials/03-FIRST-SIMULATION-RUN.md),
 [paths](../methodology/MONTE_CARLO.md), [statistics](../methodology/MONTE_CARLO_STATISTICS.md),
 [reproduction](../REPRODUCIBILITY.md) and [phase report](../validation/phase-4.md).
+
+Phase 5 deterministic legal portfolios use the separate [portfolio workflow](PORTFOLIO_WORKFLOW.md);
+research path observables do not become stochastic counterparty exposure profiles.

@@ -25,3 +25,7 @@ created; see [database scope](DATABASE.md). Service failures are described in
 Phase 4 research also supports [the simulation tutorial](../tutorials/03-FIRST-SIMULATION-RUN.md).
 Notebook execution uses the installed project development interpreter, creates its
 kernel specification under ignored artifacts, and shuts down owned kernels on completion.
+
+Phase 5 pure Python portfolio demo: `python scripts/demo_portfolio.py`. Follow
+[the portfolio tutorial](../tutorials/04-FIRST-PORTFOLIO-RUN.md); no new service or
+market integration is required.

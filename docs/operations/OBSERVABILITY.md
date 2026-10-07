@@ -17,3 +17,7 @@ See [API](../api/ENDPOINTS.md) and [reproducibility](../REPRODUCIBILITY.md).
 Phase 4 simulation logs use only the restricted start/completed/failed envelope with
 run ID, outcome and error type. Numerical values, observable outputs, curves and
 control coefficients are kept in explicit research results, not workflow logs.
+
+Phase 5 portfolio logs use the same restricted start/completed/failed envelope.
+Only run ID, outcome and authored error type are logged, never trades, collateral
+amounts, legal references or credential-bearing market inputs.

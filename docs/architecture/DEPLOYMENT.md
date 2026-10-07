@@ -19,3 +19,8 @@ ownership checks and cleanup. CI uses its own `parallax-risk-ci` stack and teard
 
 This is local research deployment, not a hardened production financial service.
 Authentication, financial jobs, scale/HA and release hardening are DEFERRED to Phase 12.
+
+Phase 5 adds pure Python book/collateral functionality within the existing wheel.
+No additional service, port or persistent volume is needed. The active disposable
+verification project is parallax-risk-phase5-verification; normal database data
+and other projects remain outside its cleanup scope.

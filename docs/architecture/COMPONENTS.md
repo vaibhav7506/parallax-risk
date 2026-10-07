@@ -8,7 +8,7 @@
 | domain/pricing | Discounted signed payments, assumptions/evidence and central sensitivities | Database, environment settings, stochastic paths |
 | domain/models | Finite process coefficients/one-step schemes, correlation and analytical/Fourier instrument values | RNG, paths, market vendors or web handlers |
 | domain/calibration | Sourced immutable objective/bounds/settings/result and uncertainty contracts | Optimizer initialization, persistence or HTTP validation |
-| application | Pydantic input/settings boundaries, run envelope, injected pricing/calibration workflows and connectivity/solver ports | ORM models or web handlers |
+| application | Pydantic input/settings boundaries, run envelope, injected pricing/calibration/simulation/portfolio workflows and ports | ORM models or web handlers |
 | infrastructure | SQLAlchemy connectivity and SciPy bounded optimizer adapter | Financial instrument formulas, automatic migrations or governance tables |
 | API/CLI | Operational composition, response/exit states and resource cleanup | Financial HTTP jobs, model calculations or approvals |
 | scripts/tests/docs | Reproduction, maintenance, independent checks and learning/evidence | Alternate untested financial implementations |
@@ -22,3 +22,9 @@ Gaussian covariance, immutable buffers, observables and statistical math.
 Application owns injected simulation/research orchestration and measured benchmarks.
 Notebook dependencies are development-only; they are excluded from the runtime lock
 and production image. All notebooks call production experiment modules.
+
+Phase 5 `domain/portfolio` owns legal/lifecycle contracts, CSA conventions, cash ledgers,
+FX/haircut/netting mathematics, effective margin calls and deterministic MPOR. The
+application PortfolioPricer port/service owns pricing orchestration and validated result
+lineage. It composes existing instruments/pricing, without API financial logic or ORM.
+See [portfolio workflow](../workflows/PORTFOLIO_WORKFLOW.md).

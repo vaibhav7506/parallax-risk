@@ -19,3 +19,7 @@ port. Disposable verification projects use distinct volumes and loopback DB port
 55432. Remove only those explicitly disposable volumes after test sessions; retain
 normal project data. [Docker ownership policy](DOCKER.md) and
 [ADR 0006](../decisions/0006-persistence-boundaries.md) explain why.
+
+Phase 5 PortfolioService and cash ledgers remain immutable in-memory values and
+synthetic JSON evidence. No portfolio/collateral tables or migration are added;
+live PostgreSQL verification still proves operational connectivity only.

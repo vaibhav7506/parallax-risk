@@ -18,4 +18,8 @@ Read [endpoints](ENDPOINTS.md), [errors](ERRORS.md), [examples](EXAMPLES.md) and
 
 Phase 4 adds an injected Python simulation research workflow and executed notebooks.
 It adds no financial HTTP route or asynchronous risk-job lifecycle. Operational version
-metadata advances to release 0.4.0 and phase 4.
+metadata now identifies release 0.5.0 and phase 5.
+
+Phase 5 adds the injected Python PortfolioService for deterministic legal netting and
+cash collateral accounting. Operational endpoints do not submit books or execute
+margin movements. Financial APIs remain deferred.

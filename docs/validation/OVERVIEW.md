@@ -29,3 +29,7 @@ scalar/vector reconciliation, batch replay, antithetic counterexamples, separate
 pilots, independent-scramble intervals and multi-replicate convergence comparisons.
 [The benchmark methodology](MONTE_CARLO_BENCHMARKS.md) separates measured timings,
 buffer sizes and traced allocation scope from deployment capacity claims.
+
+Phase 5 checks current deterministic portfolio/netting/collateral risk, pending-aware
+margin instructions, physical FX/haircuts, lifecycle and explicit MPOR endpoints. It
+does not validate a stochastic exposure/default model. See [Phase 5](phase-5.md).

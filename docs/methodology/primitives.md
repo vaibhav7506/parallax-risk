@@ -79,10 +79,15 @@ UUIDs/current UTC, which must never supply randomness to quantitative models.
 Different numeric results across software/BLAS versions remain possible later;
 dependency locks and Phase 4 simulation environment metadata support that control.
 
-Portfolio and persisted governance lineage remain deferred. Phase 4 records explicit
+Phase 5 portfolio/market/curve/ledger lineage is implemented in memory; persisted
+governance lineage remains deferred. Phase 4 records explicit
 sequence/environment metadata and an optional supplied source revision; these do not
 prove input authenticity or mathematical correctness.
 
 Phase 3 model/calibration primitives are separate from these helpers. Calibration
 IDs, input/settings hashes and parameters now exist; Phase 4 implements random
-sequences, while portfolio/governance lineage remains deferred. See [calibration](CALIBRATION.md).
+sequences, while persisted governance lineage remains deferred. See [calibration](CALIBRATION.md).
+
+Phase 5 reuses exact-contract Money for positions/cash/haircuts/aggregation, while
+explicit binary64 FX factors become Decimal text. It does not imply exact-decimal
+valuation; see [portfolio conventions](PORTFOLIO_COLLATERAL.md).
