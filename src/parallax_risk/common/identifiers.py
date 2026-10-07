@@ -43,6 +43,26 @@ class CsaId(Identifier):
 
 
 @dataclass(frozen=True, slots=True)
+class PortfolioId(Identifier):
+    """Portfolio identity."""
+
+
+@dataclass(frozen=True, slots=True)
+class PortfolioVersion(Identifier):
+    """Opaque immutable portfolio version."""
+
+
+@dataclass(frozen=True, slots=True)
+class CollateralAccountId(Identifier):
+    """Collateral ledger identity."""
+
+
+@dataclass(frozen=True, slots=True)
+class CollateralMovementId(Identifier):
+    """Unique contractual collateral transfer identity."""
+
+
+@dataclass(frozen=True, slots=True)
 class ModelId(Identifier):
     """Model identity."""
 
