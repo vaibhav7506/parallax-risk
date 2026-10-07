@@ -26,7 +26,7 @@ def test_health_version_and_readiness_without_database():
         assert client.get("/health").json() == {"status": "ok"}
         response = client.get("/version")
         assert response.status_code == 200
-        assert response.json() == {"name": "Parallax Risk", "version": __version__, "phase": 4}
+        assert response.json() == {"name": "Parallax Risk", "version": __version__, "phase": 5}
         ready = client.get("/ready")
         assert ready.status_code == 503
         assert ready.json() == {"status": "not_ready", "database": "not_configured"}

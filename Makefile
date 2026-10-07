@@ -16,4 +16,4 @@ build:
 serve:
 	python -m uvicorn parallax_risk.api.app:create_app --factory --host 127.0.0.1 --port 8000
 container:
-	docker build -t parallax-risk:0.4.0 .
+	docker build -t parallax-risk:0.5.0 .
