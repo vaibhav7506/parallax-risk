@@ -30,3 +30,9 @@ report code/documentation/testing changes and stop before awaiting `go`.
 For Phase 5 portfolio changes, preserve legal boundaries, end-of-day lifecycle and
 settled/pending distinction. Read [portfolio conventions](docs/methodology/PORTFOLIO_COLLATERAL.md)
 and update independent checks plus all canonical ADR phase histories.
+
+For Phase 6, preserve current-state conditional curves, retained known fixings,
+legal-scope separation, independent random addresses and explicitly restricted
+cash settlement. Quantile monotonicity is in confidence level, not arbitrary time.
+Document survival-marginal changes and right-grid EAD bias/default-freeze omission.
+See [exposure methodology](docs/methodology/EXPOSURE.md). Phase 7 requires a new `go`.

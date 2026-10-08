@@ -7,13 +7,13 @@ valuable to the bank before the counterparty defaults, leaving positive value at
 risk. Exposure and valuation-adjustment models estimate that risk; the models can
 also be wrong. Parallax Risk is intended to calculate and challenge those models.
 The implemented foundation covers deterministic pricing, stochastic model primitives,
-calibration, Monte Carlo research and deterministic collateralized portfolios; future credit
-risk and model-validation workflows remain in their authorized phases.
+calibration, Monte Carlo research, collateralized portfolios and pathwise exposure/credit
+dependence. XVA and model-validation lab workflows remain in their authorized phases.
 
 Educational/research implementation. Not production trading/risk software. Not
 regulatory certification.
 
-**Current scope: Phase 5 — portfolios, netting and collateral.**
+**Current scope: Phase 6 — exposure and wrong-way risk; release 0.6.0.**
 Immutable market snapshots, discount/zero/projection curves, deposit/par-swap
 bootstrapping, cash flows, bonds, swaps, FX forwards and finite-difference
 sensitivities are implemented. Phase 3 adds Vasicek, Hull–White, GBM, Heston,
@@ -77,7 +77,7 @@ python -m uvicorn parallax_risk.api.app:create_app --factory --host 127.0.0.1 --
 
 `/health` is process liveness. `/ready` returns 200 only after startup and a real
 PostgreSQL `SELECT 1`; it returns 503 for missing/unavailable dependencies.
-`/version` identifies Parallax Risk, release 0.5.0 and Phase 5. These endpoints do
+`/version` identifies Parallax Risk, release 0.6.0 and Phase 6. These endpoints do
 not perform financial calculations. API and CLI imports perform no environment,
 network, filesystem or logger initialization.
 
@@ -164,7 +164,8 @@ the valuation date. Positive discounts may increase when rates are negative.
 FX quotes are QUOTE/BASE with a declared settlement date. The pricing model uses
 checked binary64 arithmetic and reports unrounded currency units in Decimal
 Money; its computations do not inherit Money's exact-decimal arithmetic guarantee.
-Portfolio, exposure, XVA and capital models remain NOT IMPLEMENTED.
+Portfolio and pathwise exposure/credit research are implemented. XVA and capital
+models remain NOT IMPLEMENTED.
 
 Decimal Money prohibits implicit currency conversion, float amounts and silent
 rounding. Calendars use declared weekend/holiday sets, never assumed official
@@ -172,8 +173,8 @@ market holidays. Run contexts record ID, UTC timestamp, seed and canonical
 nonsecret configuration hash; explicit ID/time injection supports metadata replay.
 Pricing additionally records market, curve and instrument hashes, model version,
 assumptions and each cash-flow contribution. Calibration records its own ID,
-input/settings hashes, bounds, fitted parameters and residuals. Portfolio/governance
-remain later-phase work. Simulation captures runtime/library/platform metadata and
+input/settings hashes, bounds, fitted parameters and residuals. Portfolio hashes exist in memory; persisted governance
+remains later-phase work. Simulation captures runtime/library/platform metadata and
 an optional explicitly supplied source revision.
 
 ## Stochastic models and calibration example
@@ -196,7 +197,7 @@ curve. Heston projected Euler reports variance projection; its European call pri
 reports quadrature estimates and rejects numerical failure. Correlation validation
 never repairs inputs automatically; a separate opt-in repair retains full evidence.
 These are research models with documented limitations, not real-market validation.
-The existing deterministic-discounting model remains version 0.2.0 within release 0.5.0; calibration model mathematics retains version 0.3.0.
+The existing deterministic-discounting model remains version 0.2.0 within release 0.6.0; calibration model mathematics retains version 0.3.0.
 
 ## Monte Carlo research
 
@@ -219,7 +220,7 @@ See [simulation tutorial](docs/tutorials/03-FIRST-SIMULATION-RUN.md),
 [statistics](docs/methodology/MONTE_CARLO_STATISTICS.md),
 and [research notebooks](notebooks/02-variance-reduction-convergence.ipynb).
 Optional Latin Hypercube, GPU/distributed methods and joint integrated-rate discounts
-are deferred. Phase 6 requires a new `go` after Phase 5 completes.
+are deferred. Phase 7 XVA requires another `go` after Phase 6 completes.
 
 ## Portfolios and collateral
 
@@ -238,4 +239,24 @@ Read [the tutorial](docs/tutorials/04-FIRST-PORTFOLIO-RUN.md),
 [financial conventions](docs/methodology/PORTFOLIO_COLLATERAL.md),
 [workflow](docs/workflows/PORTFOLIO_WORKFLOW.md) and
 [Phase 5 evidence and manifest](docs/validation/phase-5.md).
-Pathwise exposure/WWR, EE/PFE and CVA remain Phase 6/7 work; no financial API is added.
+Phase 6 now composes that workflow into pathwise exposure. No financial API is added.
+
+## Exposure and credit dependence
+
+```sh
+python scripts/demo_exposure.py
+```
+
+Phase 6 reprices actual instruments along conditional Q rate/FX paths, retains known
+fixings, advances separate scoped cash ledgers and produces EE, ENE, empirical PFE
+and horizon-averaged EPE. Credit research adds supplied piecewise hazards/survival,
+default sampling, constant recovery assumptions and independent/static/dynamic
+market-credit scenarios. Synthetic inputs and method assumptions are explicit.
+Static ranks preserve the sampled default marginal; dynamic spreads need not match
+the baseline. Grid EAD uses the first endpoint after default and alive-path collateral,
+omitting default-conditioned freeze/MPOR. It is not regulatory EAD or CVA.
+
+See [exposure tutorial](docs/tutorials/05-FIRST-EXPOSURE-RUN.md),
+[methodology](docs/methodology/EXPOSURE.md), [credit](docs/methodology/CREDIT_DEFAULT.md),
+[WWR](docs/methodology/WRONG_WAY_RISK.md), [workflow](docs/workflows/EXPOSURE_WORKFLOW.md)
+and [Phase 6 verification](docs/validation/phase-6.md). Phase 7 remains NOT IMPLEMENTED.

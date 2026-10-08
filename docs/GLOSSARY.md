@@ -2,7 +2,7 @@
 
 | Term | Intuition / why it matters | Current project usage and reference |
 |---|---|---|
-| Counterparty credit risk (CCR) | Risk of losing a positive derivative claim when the other party defaults | Deterministic current netting/collateral risk implemented; stochastic exposure/default loss deferred; [roadmap](../ROADMAP.md) |
+| Counterparty credit risk (CCR) | Risk of losing a positive derivative claim when the other party defaults | Deterministic and pathwise exposure/credit research implemented; default loss deferred; [roadmap](../ROADMAP.md) |
 | Model risk | Risk that assumptions, mathematics, data or implementation produce misleading decisions | Explicit assumptions and quantitative tests today; independent lab/governance deferred; [validation](validation/OVERVIEW.md) |
 | XVA / CVA | Valuation adjustments; CVA addresses counterparty default losses | NOT IMPLEMENTED; no present default-loss result; [roadmap](../ROADMAP.md) |
 | NPV / PV | Value today of signed future payments | DiscountingEngine/PricingResult; [pricing](methodology/PRICING.md) |
@@ -78,3 +78,24 @@ All statistical terms refer to [the implemented estimation policy](methodology/M
 | MPOR | Caller-declared calendar freeze interval; deterministic closeout scenario, not default simulation |
 
 Definitions, units/signs and caveats: [portfolio methodology](methodology/PORTFOLIO_COLLATERAL.md).
+
+## Terms introduced in Phase 6
+
+| Term | Declared meaning / scope |
+|---|---|
+| EE | Mean positive legal-scope exposure, including zero paths |
+| ENE | Mean nonnegative payable exposure magnitude |
+| EPE | Full-supplied-horizon trapezoidal time average of EE; not effective EPE |
+| PFE | Configurable linear empirical quantile of positive path exposure |
+| Grid EAD | Right-endpoint alive-path positive exposure for default; no default freeze/MPOR/regulatory alpha |
+| Hazard / intensity | Nonnegative annual default rate; piecewise integration produces cumulative hazard |
+| Survival | Probability alive conditional on surviving at origin; exp(-integrated hazard) |
+| Recovery / LGD | Supplied constant fraction and complement; not applied to Phase 6 exposure |
+| Cox threshold | Independent positive unit exponential, inverted against integrated intensity |
+| Static rank WWR | Full-path non-adapted threshold reassignment preserving sampled marginal |
+| Dynamic WWR | Correlated market/spread drivers and left-grid default intensity; no baseline calibration |
+| Credit triangle | Declared approximation intensity = spread/(1-recovery) |
+| Conditional market path | Model-derived curves/FX plus fixings known at each date |
+
+[Definitions and units](methodology/EXPOSURE.md), [credit](methodology/CREDIT_DEFAULT.md),
+[dependence](methodology/WRONG_WAY_RISK.md).

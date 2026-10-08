@@ -1,6 +1,6 @@
 # Parallax Risk documentation
 
-**Current: Phases 1–5 complete; release 0.5.0. Phase 6 awaits a new `go`.**
+**Current: Phases 1–6 complete; release 0.6.0. Phase 7 NOT IMPLEMENTED.**
 
 Start with the learning path below. FACT describes actual code/evidence; IMPLEMENTATION
 DECISION describes a chosen policy; ASSUMPTION states its applicability; LIMITATION
@@ -97,7 +97,16 @@ External URL availability and future model correctness are not claimed by this c
 
 ## Deferred detailed documents
 
-Exposure/XVA/capital/governance and production scale tutorials remain deferred.
+XVA/capital/governance and production scale tutorials remain deferred.
 Monte Carlo research, sequence policy and measured local benchmarks are implemented
 in Phase 4; no future financial workflow is scaffolded.
 Create future methodology/model/testing/tutorial pages alongside actual code and evidence.
+
+## Phase 6 exposure and credit research
+
+- [First exposure run](tutorials/05-FIRST-EXPOSURE-RUN.md)
+- [Exposure workflow](workflows/EXPOSURE_WORKFLOW.md)
+- [Pathwise repricing, statistics, collateral and grid EAD](methodology/EXPOSURE.md)
+- [Hazard, survival and default sampling](methodology/CREDIT_DEFAULT.md)
+- [Independent, static and dynamic wrong-way risk](methodology/WRONG_WAY_RISK.md)
+- [Phase 6 verification and file manifest](validation/phase-6.md)

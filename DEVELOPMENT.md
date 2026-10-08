@@ -52,14 +52,14 @@ Without it the PostgreSQL-marked test is skipped, which is not live integration 
 Use `scripts/compose.verify.yml` and a unique phase verification project. Ports
 58000/55432 avoid this machine's unrelated port-8000 workload. Save useful outputs
 before teardown. In PowerShell, wrap the verification session in `try/finally` and
-call `scripts/cleanup_docker.ps1 -Phase 5 -Apply` in `finally`; increment only after
+call `scripts/cleanup_docker.ps1 -Phase 6 -Apply` in `finally`; increment only after
 the next phase is authorized. Preview without `-Apply`. See
 [Docker ownership and retention](docs/operations/DOCKER.md) for exact commands.
 
-The active-phase helper `.\scripts\verify_phase5.ps1` builds the stack, verifies
+The active-phase helper `.\scripts\verify_phase6.ps1` builds the stack, verifies
 HTTP/database/non-root runtime and runs real PostgreSQL Windows/Linux suites. It
 uses ownership labels and always scoped cleanup; logs/artifacts remain under
-`artifacts/local/phase5/`. SciPy stubs are development-only; runtime locks exclude them.
+`artifacts/local/phase6/`. SciPy stubs are development-only; runtime locks exclude them.
 
 ## Troubleshooting and contribution
 
@@ -80,3 +80,9 @@ Phase 5 reproduction: `python scripts/demo_portfolio.py`; quantitative policy li
 `src/parallax_risk/domain/portfolio/`, orchestration in `src/parallax_risk/application/portfolio.py`.
 Existing instruments/models and pinned dependencies are reused. Read the
 [portfolio tutorial](docs/tutorials/04-FIRST-PORTFOLIO-RUN.md).
+
+Phase 6 reproduction: `python scripts/demo_exposure.py`; read
+[exposure workflow](docs/workflows/EXPOSURE_WORKFLOW.md) and
+[credit assumptions](docs/methodology/CREDIT_DEFAULT.md). Full-scope verification
+requires the live database suite, deliberate analytical/statistical tolerances and
+>=95% branch-inclusive coverage. A skip is not live database evidence.

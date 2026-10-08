@@ -41,9 +41,9 @@ input hashes. RunContext identifies a workflow/configuration; it is not a persis
 risk job, model approval or random generator. Phase 5 wraps nominal identities in
 actual immutable legal portfolio aggregates.
 
-ExposureProfile, XVAResult, Finding and persisted model-governance aggregates are
-NOT IMPLEMENTED. Deterministic current portfolio risk is separate from a future
-stochastic exposure profile.
+Phase 6 implements ExposureProfile and ExposureRunResult. XVAResult, Finding and
+persisted model-governance aggregates remain NOT IMPLEMENTED. Current deterministic
+portfolio risk is a building block for actual stochastic exposure profiles.
 See [roadmap](../ROADMAP.md), [code locations](CODEBASE_GUIDE.md) and
 [limitations](LIMITATIONS.md).
 
@@ -94,3 +94,16 @@ owns TradeValue/NettingResult. `src/parallax_risk/application/portfolio.py` owns
 injected PortfolioPricer workflow and result envelope. Each set retains separate
 risk and collateral; counterparty/portfolio risk sums do not create new legal netting.
 See [formulas and limitations](methodology/PORTFOLIO_COLLATERAL.md).
+
+## Phase 6 exposure and credit relationships
+
+ExposureService injects SimulationEngine, PortfolioService and ExposureMarkets.
+ConditionalMarketScenario owns request, civil dates, knots, bindings and origin fixings;
+each generated PricingContext uses only current state and previously known fixings.
+ExposureRunResult owns per-counterparty and total ExposureProfile, immutable positive/
+negative buffers, input hashes and ordered market-path digest. CreditScenario owns
+PiecewiseHazardCurve, RecoveryAssumption, threshold/rank addresses and dependence policy.
+StochasticCreditSpread is a protocol; ReducedFormSpread is its credit-triangle policy.
+ExposureAtDefault and DependenceComparison retain finite-horizon defaults, grid buckets,
+default-weighted summaries and explicit approximation labels. They are not losses.
+See [definitions](methodology/EXPOSURE.md) and [credit](methodology/CREDIT_DEFAULT.md).

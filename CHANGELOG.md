@@ -2,6 +2,27 @@
 
 
 
+## 0.6.0 — Phase 6 complete — 2026-10-01
+
+- Added conditional Q market paths, retained future fixing histories and actual
+  pathwise repricing through existing portfolio/pricing ports.
+- Added EE/ENE, exact empirical configurable PFE, trapezoidal horizon EPE and
+  explicitly approximate right-grid EAD using alive-path collateral.
+- Added supplied piecewise hazard/survival/default curves, recovery assumptions,
+  addressed default thresholds, static rank stress and dynamic correlated spreads.
+- Added explicit perfect same-currency zero-haircut cash settlement on daily grids.
+  Dynamic survival is reported separately; no hidden baseline calibration, default
+  freeze/MPOR, regulatory EAD or CVA is claimed.
+- New ADRs 0014–0016; all 16 decisions reviewed. New methodology/workflow/tutorial
+  and affected guides updated. 821 tests pass on each live PostgreSQL platform with 99.37% branch-inclusive
+  coverage; Ruff/format/mypy/docs/pre-commit/package/replay checks pass. Scoped
+  cleanup removed only Phase 6 test resources; all 35 other containers and useful
+  release images retained. Actual results in
+  [Phase 6 evidence](docs/validation/phase-6.md). Phase 7 NOT IMPLEMENTED.
+- Release/API/CLI metadata 0.6.0/6. Existing deterministic/calibration/simulation
+  mathematical versions remain 0.2.0/0.3.0/0.4.0; no dependency, financial API,
+  database migration or notebook changes.
+
 ## 0.5.0 — Phase 5 complete — 2026-10-01
 
 

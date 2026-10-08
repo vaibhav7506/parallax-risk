@@ -118,3 +118,17 @@ persistence still expose operational connectivity only. Adding a new instrument 
 requires extending the portfolio currency/final-payment dispatch and reconciliation
 checks. See [workflow](workflows/PORTFOLIO_WORKFLOW.md) and
 [tutorial](tutorials/04-FIRST-PORTFOLIO-RUN.md).
+
+## Phase 6 exposure and credit call path
+
+`src/parallax_risk/application/exposure.py` owns ExposureService and its market port.
+`src/parallax_risk/application/exposure_examples.py` and `scripts/demo_exposure.py`
+compose a full synthetic run. `src/parallax_risk/domain/exposure/markets.py` supplies
+conditional curve/FX contexts and retained fixing histories; `contracts.py` validates
+credit policies; `statistics.py` computes empirical profiles and labelled grid EAD.
+`src/parallax_risk/domain/credit/hazard.py` integrates/inverts piecewise hazard;
+`dependence.py` owns addressed thresholds, static ranks and stochastic intensity.
+Change these policies with independent quantitative targets, workflow/lifecycle/replay
+checks and a decision history. See [workflow](workflows/EXPOSURE_WORKFLOW.md) and
+[methodology](methodology/EXPOSURE.md). The generic domain remains independent of
+application, HTTP, Pydantic and persistence; XVA remains absent.

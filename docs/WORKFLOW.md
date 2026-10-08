@@ -20,9 +20,9 @@ flowchart TD
     MC --> STATS[Independent-unit estimates and convergence evidence]
     RESULT --> BOOK[PortfolioService / legal netting and settled collateral]
     BOOK --> CURRENT[Current risk and pending-aware margin instruction]
-    MC -.-> EXP[PLANNED: pathwise exposure / WWR]
-    BOOK -.-> EXP
-    EXP -.-> XVA[PLANNED: credit/XVA/capital]
+    MC --> EXP[ExposureService / pathwise exposure and credit]
+    BOOK --> EXP
+    EXP -.-> XVA[PLANNED: XVA/capital]
     XVA -.-> GOV[PLANNED: validation lab and governance]
 ```
 
@@ -40,8 +40,8 @@ flowchart TD
 See [code call path](CODEBASE_GUIDE.md) and [pricing workflow](workflows/PRICING_WORKFLOW.md).
 See [calibration workflow](workflows/CALIBRATION_WORKFLOW.md) and
 [simulation workflow](workflows/SIMULATION_WORKFLOW.md). Future arrows describe
-intended phases. No stochastic exposure profile, XVA, capital or governance
-result exists today. Phase 5 implements deterministic portfolio results.
+intended phases. Phase 6 implements stochastic exposure and credit summaries; XVA,
+capital and governance results remain absent.
 
 Phase 4: explicit typed simulation configuration + RunContext → owned addressed
 normal stream → corrected Gaussian driver covariance → selected vectorized kernels
@@ -56,3 +56,9 @@ collateral residual/current risk and pending-aware instruction → positive/nega
 risk sums across legal entities. A separate deterministic MPOR scenario freezes settled
 physical cash and values it at caller-supplied closeout. See
 [portfolio workflow](workflows/PORTFOLIO_WORKFLOW.md).
+
+Phase 6: SimulationRequest + conditional market binding + legal book + initial ledgers
++ optional credit scenarios + RunContext → owned market/default sequences → path-local
+future markets/fixings/cash → PortfolioService repricing → retained positive/negative
+paths → EE/ENE/PFE/EPE and separately labelled grid EAD/survival comparisons.
+See [exposure workflow](workflows/EXPOSURE_WORKFLOW.md).

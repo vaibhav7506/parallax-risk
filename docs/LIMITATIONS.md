@@ -1,6 +1,6 @@
 # Current limitations
 
-These limitations apply to implemented Phases 1–5. Preserve them until an actual
+These limitations apply to implemented Phases 1–6. Preserve them until an actual
 change and evidence justify revision; record revisions in the decision history.
 
 | Category / limitation | Impact and affected code | Mitigation / phase |
@@ -12,7 +12,7 @@ change and evidence justify revision; record revisions in the decision history.
 | Default-free dirty bond PV; simple swap coupons | No credit/default/optionality/clean-price/ex-coupon/compounded index | Use only supported explicit contracts; no invented adjustments |
 | Direct FX / no basis | No inverse/cross synthesis; portfolio/collateral conversion needs exact direct orientation | Supply exact direct pair/settlement and supported funding assumption |
 | Zero-knot risk, explicit finite bumps | Not market-quote DV01; truncation/cancellation depends on h | State scope/signs, test meaningful bump stability |
-| No stochastic exposure/XVA/capital | Current deterministic legal-scope risk and MPOR scenarios cannot estimate default losses | Phases 6–8 planned |
+| No XVA/capital | Phase 6 exposure/default summaries do not compute recovered/discounted losses or regulatory capital | Phases 7–8 planned |
 | No validation lab/mutation/governance persistence | Current tests are not independent institutional approval or model inventory | Phases 9–11 planned |
 | Operational API only, unauthenticated local service | No production risk jobs, authorization, scale/HA or security certification | Loopback/development use; Phase 12 planned |
 | Incomplete automatic lineage | Simulation captures sequences/runtime/platform and optional supplied source revision; portfolio/market/curve/ledger/pricer hashes exist in memory; persisted lineage absent | Preserve external source/runtime evidence; phased lineage work |
@@ -56,3 +56,25 @@ interest, disputes, securities, funding, liquidation or custody is modeled. Cale
 frequency/lag/MPOR ignores business calendars. End-of-day whole-trade termination
 requires exit cash separately. Direct FX orientation and precision/horizon contracts
 restrict supported books. See [full assumptions](methodology/PORTFOLIO_COLLATERAL.md).
+
+## Phase 6 exposure and credit scope
+
+Conditional Q model curves use supplied knots and log-linear discount interpolation;
+projection shares the bound currency curve. Q labels/correlation alone cannot establish
+stochastic-rate FX no-arbitrage: drift consistency is caller responsibility. Origin
+fixings must be supplied; future fixings inside horizon must be on the exact grid.
+Derived snapshots are model values with synthetic labels, not observed market data.
+
+Cash margin simulation assumes perfect scheduled settlement in zero-haircut CSA currency
+on a daily calendar grid. Output cap covers retained exposure matrices only, not peak
+memory. Exact empirical PFE requires all exposure paths; no profile confidence intervals
+or distributed computation are provided. EPE is full-horizon trapezoidal EE, not effective EPE.
+
+EAD uses right grid endpoints of alive-path collateral. Default-conditioned freeze of
+calls/settlement, interpolation at default and MPOR closeout are absent. It is not
+regulatory EAD/CVA and can be biased near maturity. Static rank stress is full-path,
+non-adapted and only preserves the finite sampled default marginal. Dynamic credit
+uses left-grid GBM spread intensity and credit-triangle assumptions with no baseline
+survival calibration, stochastic recovery, bilateral defaults or CDS model. See
+[exposure](methodology/EXPOSURE.md), [credit](methodology/CREDIT_DEFAULT.md),
+[WWR](methodology/WRONG_WAY_RISK.md). Phase 7 remains NOT IMPLEMENTED.

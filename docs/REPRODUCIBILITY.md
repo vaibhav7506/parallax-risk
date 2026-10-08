@@ -15,7 +15,7 @@ snapshot, curves, conventions and model version; it does not consume random draw
 | Source revision/runtime/libs | Simulation captures Python/NumPy/SciPy/platform plus optional supplied source revision; other workflows preserve external evidence |
 | Calibration identity/parameters/data/settings | CalibrationRunId, input/configuration hashes, bounds, fitted parameters, residuals/status and enclosing RunContext |
 | Sequence algorithm/order | StreamKey, PCG64DXSM Ziggurat or complete scrambled Sobol midpoint design, explicit layout and request hash |
-| Portfolio hash/persisted lineage | NOT IMPLEMENTED; later phases |
+| Portfolio hash/persisted lineage | Portfolio/ledger/scenario content hashes in memory; persisted lineage deferred |
 
 ## Reproduce a run
 
@@ -77,3 +77,15 @@ commit. Sorted legal IDs and explicit dates/quantities/currencies make replay de
 in the same pinned environment. `python scripts/demo_portfolio.py` emits repeatable stdout
 JSON from labelled synthetic inputs; timestamped safe stderr logs differ. No RNG or
 portfolio persistence is introduced. See [workflow](workflows/PORTFOLIO_WORKFLOW.md).
+
+## Phase 6 exposure and credit replay
+
+`python scripts/demo_exposure.py` emits full synthetic inputs and three comparisons.
+Preserve request, book, dates/knots/bindings, origin fixings, ledgers, quantiles, credit
+curve/recovery/policy and unique default/rank addresses. Same fixed RunContext and
+pinned runtime/source reproduce results. Market path digest includes every generated
+snapshot and curve in path/date order; input fingerprints do not replace original values.
+Batch size changes request identity but the tested market paths and exposure arrays
+replay exactly on the pinned environment. No cross-platform bitwise promise is made.
+Dynamic scenario survival is recorded separately to expose marginal changes.
+[Workflow](workflows/EXPOSURE_WORKFLOW.md), [evidence](validation/phase-6.md).

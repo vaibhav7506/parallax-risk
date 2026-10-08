@@ -1,6 +1,6 @@
 # Parallax Risk security scope
 
-Release 0.5.0 is an educational/research implementation, not production trading/risk
+Release 0.6.0 is an educational/research implementation, not production trading/risk
 software or security/regulatory certification. No security support SLA or enterprise
 hardening claim is made. Older release artifacts are rollback/history evidence.
 
@@ -37,3 +37,7 @@ Phase 5 books/ledgers contain potentially sensitive trade/legal/cash data. The l
 synthetic demo is explicitly labelled; safe logs omit those fields. Portfolio hashes
 are content digests, not encryption, signatures, authorization or proof of legal rights.
 No external settlement/payment or authenticated financial API is added.
+
+Phase 6 exposure buffers and default scenarios can also contain sensitive derived
+trade information. Preserve them only in authorized local artifact storage. This
+release adds no financial HTTP route, authentication or external publication.
