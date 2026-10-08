@@ -22,5 +22,8 @@ Authentication, financial jobs, scale/HA and release hardening are DEFERRED to P
 
 Phase 5 adds pure Python book/collateral functionality within the existing wheel.
 No additional service, port or persistent volume is needed. The active disposable
-verification project is parallax-risk-phase5-verification; normal database data
+verification project is parallax-risk-phase6-verification; normal database data
 and other projects remain outside its cleanup scope.
+
+Phase 6: Pure Python exposure/credit runs in the existing wheel, with no new service/port/data volume. The active disposable verification project is parallax-risk-phase6-verification; normal project data and other workloads remain outside cleanup.
+See [exposure workflow](../workflows/EXPOSURE_WORKFLOW.md).

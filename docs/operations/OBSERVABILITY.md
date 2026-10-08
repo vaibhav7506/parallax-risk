@@ -21,3 +21,6 @@ control coefficients are kept in explicit research results, not workflow logs.
 Phase 5 portfolio logs use the same restricted start/completed/failed envelope.
 Only run ID, outcome and authored error type are logged, never trades, collateral
 amounts, legal references or credential-bearing market inputs.
+
+Phase 6: ExposureService uses restricted start/completed/failed events with run ID and authored error type. Per-date portfolio calls retain safe envelopes; exposure arrays/trade terms are not logged automatically.
+See [workflow](../workflows/EXPOSURE_WORKFLOW.md) and [limits](../LIMITATIONS.md).

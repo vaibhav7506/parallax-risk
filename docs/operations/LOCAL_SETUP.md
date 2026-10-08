@@ -29,3 +29,6 @@ kernel specification under ignored artifacts, and shuts down owned kernels on co
 Phase 5 pure Python portfolio demo: `python scripts/demo_portfolio.py`. Follow
 [the portfolio tutorial](../tutorials/04-FIRST-PORTFOLIO-RUN.md); no new service or
 market integration is required.
+
+Phase 6: Run `python scripts/demo_exposure.py` in the locked environment for labelled synthetic exposure/credit research. [Tutorial](../tutorials/05-FIRST-EXPOSURE-RUN.md).
+See [workflow](../workflows/EXPOSURE_WORKFLOW.md) and [limits](../LIMITATIONS.md).

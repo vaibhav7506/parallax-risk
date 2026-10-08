@@ -46,3 +46,6 @@ hashes → within-set FX/gross/net/settled-collateral results and pending-aware 
 separate counterparty risk sums → PortfolioResult/RunContext with ledger/book hashes.
 No auto-settlement or pathwise exposure/default/XVA is attached to this flow.
 See [portfolio path](../workflows/PORTFOLIO_WORKFLOW.md).
+
+Phase 6: request/book/bindings/fixings/accounts/credit/RunContext → owned addressed market/default draws → path-specific future contexts and cash → PortfolioService → positive/negative matrices → empirical profile, survival and grid EAD. Result hashes preserve inputs and ordered generated markets; no database lineage is added.
+See [exposure workflow](../workflows/EXPOSURE_WORKFLOW.md).

@@ -23,3 +23,7 @@ route that maps them to a new financial response schema.
 Phase 5 library scope/lifecycle/CSA/ledger/pricer-evidence violations raise
 DomainValidationError. Existing missing-market/numerical errors propagate. No
 financial HTTP operation or new HTTP error mapping is implemented.
+
+Phase 6 library date/grid/binding/credit/settlement/adapter violations raise authored
+DomainValidationError or existing numerical errors. They are not mapped into a new
+financial endpoint. Invalid hazards, spreads and resolution/overflow are not repaired.

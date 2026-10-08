@@ -23,3 +23,6 @@ normal project data. [Docker ownership policy](DOCKER.md) and
 Phase 5 PortfolioService and cash ledgers remain immutable in-memory values and
 synthetic JSON evidence. No portfolio/collateral tables or migration are added;
 live PostgreSQL verification still proves operational connectivity only.
+
+Phase 6: Exposure/credit values are immutable in-memory results. No new table/migration or persisted portfolio/default/risk job is added. Database verification remains real connectivity coverage.
+See [workflow](../workflows/EXPOSURE_WORKFLOW.md) and [limits](../LIMITATIONS.md).

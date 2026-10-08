@@ -93,3 +93,8 @@ See [statistics](MONTE_CARLO_STATISTICS.md), [workflow](../workflows/SIMULATION_
 [ADR 0004](../decisions/0004-random-sequence-reproducibility.md),
 [ADR 0011](../decisions/0011-batched-paths-and-gaussian-covariance.md) and
 [Phase 4 evidence](../validation/phase-4.md).
+
+Phase 6 [exposure workflow](../workflows/EXPOSURE_WORKFLOW.md) consumes the same
+immutable batches for conditional repricing. Credit thresholds use separate addressed
+PCG64DXSM streams; no global generator is introduced. Profile statistics report no
+IID/QMC confidence intervals. The retained-matrix cap does not bound peak allocations.

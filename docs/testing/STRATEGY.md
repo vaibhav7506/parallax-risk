@@ -53,3 +53,14 @@ targets (relative tolerance 1e-14), legal-scope/lifecycle/injected-pricer reconc
 80 generated netting-bound/collateral-monotonicity cases and deterministic MPOR freezes.
 No synthetic data is represented as observed or regulatory. Full platform/count/coverage
 evidence appears in [Phase 5](../validation/phase-5.md).
+
+Phase 6 targets: piecewise hazard identities/inversion (1e-15), known default CDFs
+within six binomial standard errors, constant spread equivalence, dynamic dependence
+under preserved credit marginals, linear empirical quantiles and trapezoidal EPE.
+Actual FX-forward future EE is checked against the analytic lognormal positive part
+within six sample standard errors. Sixty generated PFE/collateral properties assert
+only justified monotonicity. Workflow checks exercise lifecycle, daily cash settlement,
+known-fixing retention, conditional HullWhite knots (relative 1e-14), malformed adapters,
+unique random addresses and exact pinned-environment batch/replay behavior.
+Full tests must include live PostgreSQL and >=95% branch-inclusive coverage. See
+[Phase 6 results](../validation/phase-6.md); historical totals are not relabelled.

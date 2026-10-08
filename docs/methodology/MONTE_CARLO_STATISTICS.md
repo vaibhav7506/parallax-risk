@@ -74,3 +74,8 @@ Tests: `tests/unit/test_simulation_statistics.py`,
 `tests/quantitative/test_simulation_convergence.py`.
 See [ADR 0010](../decisions/0010-independent-sampling-units.md),
 [research notebooks](../../notebooks/02-variance-reduction-convergence.ipynb).
+
+Phase 6 exposure EE/ENE/EPE/PFE are empirical summaries over equally weighted paths,
+not this module's independent-unit inference. No confidence intervals are attached to
+those profiles. PFE uses exact retained-sample linear quantiles; EPE uses trapezoidal
+EE time averaging. See [definitions](EXPOSURE.md).

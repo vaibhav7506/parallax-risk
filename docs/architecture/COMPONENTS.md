@@ -28,3 +28,6 @@ FX/haircut/netting mathematics, effective margin calls and deterministic MPOR. T
 application PortfolioPricer port/service owns pricing orchestration and validated result
 lineage. It composes existing instruments/pricing, without API financial logic or ORM.
 See [portfolio workflow](../workflows/PORTFOLIO_WORKFLOW.md).
+
+Phase 6: `domain/exposure` owns conditional contexts, CreditScenario and profile/EAD mathematics; `domain/credit` owns hazard/survival/default and spread policies. `application/exposure.py` composes the existing SimulationEngine and PortfolioService with a market-provider protocol.
+See [exposure workflow](../workflows/EXPOSURE_WORKFLOW.md).

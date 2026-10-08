@@ -48,3 +48,6 @@ is created, and each iteration owns its working state. See [paths](../methodolog
 Phase 5 adds immutable legal portfolio/CSA/cash aggregates in domain and an injected
 application PortfolioPricer workflow. Financial netting/collateral math remains outside
 API/persistence. See [portfolio workflow](../workflows/PORTFOLIO_WORKFLOW.md).
+
+Phase 6: ExposureService injects simulation/portfolio/market ports. Domain exposure and credit own immutable market bindings, statistics and default/dependence mathematics; no financial handler or persistence is introduced.
+See [exposure workflow](../workflows/EXPOSURE_WORKFLOW.md).

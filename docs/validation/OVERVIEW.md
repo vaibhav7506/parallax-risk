@@ -33,3 +33,9 @@ buffer sizes and traced allocation scope from deployment capacity claims.
 Phase 5 checks current deterministic portfolio/netting/collateral risk, pending-aware
 margin instructions, physical FX/haircuts, lifecycle and explicit MPOR endpoints. It
 does not validate a stochastic exposure/default model. See [Phase 5](phase-5.md).
+
+Phase 6 checks actual pathwise repricing and empirical exposure/credit policies with
+independent analytical targets, default distributions, justified properties and
+preserved-marginal WWR experiments. These are software/model mathematics checks,
+not external calibration, independent institutional approval or regulatory validation.
+[Phase 6 results](phase-6.md), [method assumptions](../methodology/EXPOSURE.md).

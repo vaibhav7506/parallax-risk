@@ -26,3 +26,7 @@ Run [the synthetic tutorial](../tutorials/04-FIRST-PORTFOLIO-RUN.md). Read the
 signs, dates, FX or thresholds. Tests live in `tests/unit/test_portfolio_contracts.py`,
 `tests/quantitative/test_collateral_netting.py` and
 `tests/integration/test_portfolio_workflow.py`.
+
+Phase 6 composes PortfolioService for every simulated date/path through the
+[exposure workflow](EXPOSURE_WORKFLOW.md). Its perfect cash settlement is an explicit
+restricted policy; generic effective calls and standalone frozen MPOR stay separate.

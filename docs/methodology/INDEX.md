@@ -17,8 +17,11 @@ definitions are backed by actual implementation and tests.
 - [Monte Carlo paths and sequences](MONTE_CARLO.md).
 - [Monte Carlo statistics and variance reduction](MONTE_CARLO_STATISTICS.md).
 
-Stochastic exposure/default credit, wrong-way
-risk, XVA, capital and risk attribution are NOT IMPLEMENTED. Their detailed model
+XVA, capital and risk attribution are NOT IMPLEMENTED. Their detailed model
 documents will be created with actual authorized implementations; see [roadmap](../../ROADMAP.md).
 
 - [Portfolios, legal netting and cash collateral](PORTFOLIO_COLLATERAL.md).
+
+- [Conditional market paths, exposure statistics and grid EAD](EXPOSURE.md).
+- [Hazard/survival/default and recovery assumptions](CREDIT_DEFAULT.md).
+- [Wrong-way risk scenario policies](WRONG_WAY_RISK.md).

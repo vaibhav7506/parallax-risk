@@ -34,3 +34,6 @@ Synthetic research functions use an explicit environment-independent configurati
 Phase 5 portfolio/CSA/ledger values are supplied explicitly to PortfolioService.
 No new environment setting loads books, legal rights, currencies or margin policy.
 RunContext preserves the existing configuration envelope.
+
+Phase 6: ExposureService receives request/book/bindings/accounts/credit/quantiles/output budget explicitly. No new environment setting is introduced. Credit addresses and run seed must agree.
+See [workflow](../workflows/EXPOSURE_WORKFLOW.md) and [limits](../LIMITATIONS.md).

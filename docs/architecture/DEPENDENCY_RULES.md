@@ -30,3 +30,6 @@ optional development environment; production modules do not import notebook tool
 Phase 5 domain/portfolio imports common plus existing domain contracts/pricing/market;
 application/portfolio injects the pricer and logger. It never imports API/Pydantic/ORM
 into the domain. Existing architecture checks exercise these new modules too.
+
+Phase 6: Domain exposure/credit imports common and existing numerical/domain modules only. ExposureService composes domain values and injected ports; scripts/examples own logger/runtime composition. Import-side-effect checks automatically discover the new modules.
+See [exposure workflow](../workflows/EXPOSURE_WORKFLOW.md).

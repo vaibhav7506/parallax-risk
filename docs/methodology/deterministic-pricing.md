@@ -185,4 +185,4 @@ uses 1e-10 relative. Property tests constrain rates/notionals to finite economic
 readable domains; monotonicity is asserted only under nonnegative flat rates.
 This deterministic-discounting model contains no stochastic/pathwise calculations.
 Separate [models, calibration and Phase 4 random paths](INDEX.md) are implemented;
-exposure and XVA remain NOT IMPLEMENTED.
+Phase 6 composes actual pathwise exposure/credit; XVA remains NOT IMPLEMENTED.

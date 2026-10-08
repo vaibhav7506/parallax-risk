@@ -39,7 +39,9 @@ correlation optimizer. No model, validator or calibration automatically calls re
 structure/entries/non-PSD inputs, singular/roundoff policy and explicit repair evidence.
 `tests/property/test_model_invariants.py` verifies two-factor reconstruction over
 bounded correlations. Factor order is included in the hash. Repair changes assumptions
-and requires reviewing the report. Statistical correlation estimation, joint paths,
-correlation reproduction is implemented in Phase 4; exposure effects remain deferred.
+and requires reviewing the report. Population correlation estimation remains absent. Joint paths and driver
+correlation reproduction are implemented in Phase 4. Phase 6 adds explicit
+[market/credit dependence experiments](WRONG_WAY_RISK.md); correlation alone does not
+establish no-arbitrage, baseline survival calibration or universal exposure monotonicity.
 Brownian-driver order and exact OU innovation covariance are described in
 [Monte Carlo](MONTE_CARLO.md). See [ADR 0005](../decisions/0005-correlation-validation.md).

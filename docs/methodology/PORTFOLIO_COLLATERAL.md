@@ -128,3 +128,8 @@ closeout values. It does not draw defaults, derive a regulatory MPOR, model cure
 periods, estimate IM, calculate closeout recoveries or simulate pathwise repricing.
 See [ADR 0012](../decisions/0012-legal-portfolio-snapshots.md) and
 [ADR 0013](../decisions/0013-collateral-ledger-and-margin-policy.md).
+
+Phase 6 [pathwise exposure](EXPOSURE.md) composes this service and introduces a
+restricted explicit simulator policy for perfect zero-haircut CSA-currency settlement.
+It preserves these generic physical ledger conventions. Its grid EAD uses alive
+collateral and does not attach this standalone frozen MPOR closeout implicitly.

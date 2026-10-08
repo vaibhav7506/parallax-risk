@@ -30,3 +30,8 @@ for that snapshot workflow. Phase 3 uses separate sourced option premium objecti
 for [Heston calibration](CALIBRATION.md); raw volatility quotes are not substituted
 for premiums. Intraday/source-specific freshness policy is absent.
 See [full assumptions](deterministic-pricing.md) and [ADR 0003](../decisions/0003-immutable-market-snapshots.md).
+
+Phase 6 [conditional market paths](EXPOSURE.md) construct model-derived snapshots
+with synthetic/source labels. Generated fixings are held fixed after their fixing date;
+origin observations remain caller supplied. These derived values do not imply authentic
+market observations or vendor ingestion. Original immutable identity conventions remain.

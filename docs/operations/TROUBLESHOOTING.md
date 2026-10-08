@@ -38,3 +38,6 @@ ledger per CSA scope, direct FX orientation and curve horizon, movement schedule
 eligible currencies and one-way holding direction. Pending calls do not offset current
 risk; MTA equality intentionally produces zero transfer. See
 [portfolio conventions](../methodology/PORTFOLIO_COLLATERAL.md).
+
+Phase 6: For exposure failures, check exact ACT/365F grid alignment, Q bindings/units, sufficient knots, origin fixing provenance and future fixing grid membership. Margined paths need daily calendar grids, one scoped account and zero-haircut CSA cash. Credit needs aligned horizons and unique addresses. Do not fix invalid data by implicit repair.
+See [workflow](../workflows/EXPOSURE_WORKFLOW.md) and [limits](../LIMITATIONS.md).

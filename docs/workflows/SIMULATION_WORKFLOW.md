@@ -32,3 +32,7 @@ See [first research run](../tutorials/03-FIRST-SIMULATION-RUN.md),
 
 Phase 5 deterministic legal portfolios use the separate [portfolio workflow](PORTFOLIO_WORKFLOW.md);
 research path observables do not become stochastic counterparty exposure profiles.
+
+Phase 6 now consumes these paths in the [exposure workflow](EXPOSURE_WORKFLOW.md),
+with separately addressed credit thresholds and path-local fixings/cash. This does not
+alter existing simulation kernels or independent-unit statistics.
