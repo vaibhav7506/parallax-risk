@@ -57,3 +57,4 @@ No pathwise repricing, default/CVA or governance approval is implemented.
 | 3 | Not applicable; portfolio NOT IMPLEMENTED | [Phase 3](../validation/phase-3.md) |
 | 4 | Not applicable; portfolio NOT IMPLEMENTED | [Phase 4](../validation/phase-4.md) |
 | 5 | Immutable book, legal scopes, lifecycle and injected valuation introduced | [Phase 5](../validation/phase-5.md) |
+| 6 | Reviewed; no change; reused existing contract in Phase 6 | [Phase 6](../validation/phase-6.md) |

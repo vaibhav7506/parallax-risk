@@ -56,3 +56,4 @@ dimension/order can weaken gains; no Brownian bridge or PCA is implemented.
 | 3 | Scalar model/correlation primitives supply the foundation; paths NOT IMPLEMENTED | [Phase 3](../validation/phase-3.md) |
 | 4 | Vectorized batched paths, immutable buffers, exact Gaussian innovation covariance and measured benchmark harness introduced | [Phase 4](../validation/phase-4.md) |
 | 5 | Reviewed; no change; Phase 5 deterministic portfolios retain this accepted contract | [Phase 5](../validation/phase-5.md) |
+| 6 | Reviewed; no change; reused existing contract in Phase 6 | [Phase 6](../validation/phase-6.md) |

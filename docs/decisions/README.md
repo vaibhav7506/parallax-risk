@@ -1,15 +1,15 @@
 # Parallax Risk decision register
 
 This is the canonical register from the documentation maintenance update on
-2026-10-01. **5 of 12 implementation phases are complete.** Phase 6 awaits a new `go`.
+2026-10-01. **6 of 12 implementation phases are complete.** Phase 6 is complete; Phase 7 requires another `go`.
 Decision numbers identify decisions, not phases. Each decision retains a phase
 history so reviews and changes can be counted without erasing earlier choices.
 
 | ID | Decision | Status / implemented scope | Introduced in implementation |
 |---|---|---|---|
-| 0001 | [Clean architecture](0001-clean-architecture.md) | Accepted | Phase 1; extended Phases 2/5 |
+| 0001 | [Clean architecture](0001-clean-architecture.md) | Accepted | Phase 1; extended Phases 2/5/6 |
 | 0002 | [Money representation](0002-money-representation.md) | Accepted | Phase 1; pricing boundary Phase 2; portfolio use Phase 5 |
-| 0003 | [Immutable market snapshots](0003-immutable-market-snapshots.md) | Accepted | Phase 2 |
+| 0003 | [Immutable market snapshots](0003-immutable-market-snapshots.md) | Accepted | Phase 2; conditional paths Phase 6 |
 | 0004 | [Random sequence reproducibility](0004-random-sequence-reproducibility.md) | Accepted metadata and addressed pseudo/Sobol sequences | Phases 1–4 |
 | 0005 | [Correlation validation](0005-correlation-validation.md) | Accepted | Phase 3 |
 | 0006 | [Persistence boundaries](0006-persistence-boundaries.md) | Accepted | Phase 1 |
@@ -20,8 +20,11 @@ history so reviews and changes can be counted without erasing earlier choices.
 | 0011 | [Batched paths and Gaussian covariance](0011-batched-paths-and-gaussian-covariance.md) | Accepted | Phase 4 |
 | 0012 | [Legal portfolio snapshots](0012-legal-portfolio-snapshots.md) | Accepted | Phase 5 |
 | 0013 | [Collateral ledger and margin policy](0013-collateral-ledger-and-margin-policy.md) | Accepted | Phase 5 |
+| 0014 | [Conditional market paths](0014-conditional-market-paths.md) | Accepted | Phase 6 |
+| 0015 | [Credit/default/dependence](0015-credit-default-dependence.md) | Accepted | Phase 6 |
+| 0016 | [Exposure/cash/grid EAD](0016-exposure-statistics-and-cash-policy.md) | Accepted | Phase 6 |
 
-There are **13 canonical ADRs**, all accepted. The prior sequence proposal is now
+There are **16 canonical ADRs**, all accepted, implemented and reviewed. The prior sequence proposal is now
 implemented and reviewed; earlier history remains intact.
 
 ## Phase ledger
@@ -34,6 +37,7 @@ implemented and reviewed; earlier history remains intact.
 | Phase 3 | 0.3.0 COMPLETE | 0001, 0004, 0005, 0008, 0009 | 5 material changes; all 9 ADRs reviewed | [483 tests on both platforms; model/calibration report](../validation/phase-3.md) |
 | Phase 4 | 0.4.0 COMPLETE | 0001, 0004, 0005, 0008, 0010, 0011 | 6 material changes; all 11 ADRs reviewed | [653 tests on both platforms; Monte Carlo research report](../validation/phase-4.md) |
 | Phase 5 | 0.5.0 COMPLETE | 0001, 0002, 0012, 0013 | 4 material changes; all 13 ADRs reviewed | [742 tests on both platforms; portfolio report](../validation/phase-5.md) |
+| Phase 6 | 0.6.0 COMPLETE | 0001, 0003, 0014, 0015, 0016 | 5 material changes; all 16 ADRs reviewed | [821 tests on both platforms; exposure/credit report](../validation/phase-6.md) |
 
 These counts are material decision changes, not file-edit or commit counts.
 Historical phase numbers/test outcomes come from the original reports; retrospective

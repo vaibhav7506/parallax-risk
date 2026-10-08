@@ -53,3 +53,4 @@ tolerances, assumptions and limitations. Stochastic, exposure and XVA work is DE
 | 3 | Reviewed; deterministic-discounting model remains 0.2.0; stochastic pricing uses separate model primitives | [Phase 3](../validation/phase-3.md) |
 | 4 | Reviewed; deterministic model stays 0.2.0; simulation research does not replace its discounting contract | [Phase 4](../validation/phase-4.md) |
 | 5 | Reviewed; no change; Phase 5 deterministic portfolios retain this accepted contract | [Phase 5](../validation/phase-5.md) |
+| 6 | Reviewed; no change; reused existing contract in Phase 6 | [Phase 6](../validation/phase-6.md) |

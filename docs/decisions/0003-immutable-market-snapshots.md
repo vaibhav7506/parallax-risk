@@ -13,6 +13,8 @@ identity/version, values, conventions and source metadata with schema-1 SHA-256 
 Reject duplicates, invalid dates/currencies and malformed/nonfinite values. Required
 fixings and direct FX quotes have no inferred fallback.
 
+Phase 6 creates labelled model-derived snapshots per path/date and retains generated fixings without lookahead; [ADR 0014](0014-conditional-market-paths.md) declares those additional conventions. Original observation identity remains intact.
+
 ## Alternatives considered
 Mutable vendor payloads reduce conversion work but allow accidental edits.
 Database IDs alone identify rows but do not prove input content. Content-only hashes
@@ -51,3 +53,4 @@ Source integrations, authenticated lineage and persisted versions remain DEFERRE
 | 3 | Reviewed; no snapshot change; sourced calibration premiums are separate immutable objective inputs | [Phase 3](../validation/phase-3.md) |
 | 4 | Reviewed; no snapshot change; explicit simulation configuration does not mutate market observations | [Phase 4](../validation/phase-4.md) |
 | 5 | Reviewed; no change; Phase 5 deterministic portfolios retain this accepted contract | [Phase 5](../validation/phase-5.md) |
+| 6 | Extended immutable snapshots to labelled conditional model-derived paths with retained fixings (ADR 0014) | [Phase 6](../validation/phase-6.md) |

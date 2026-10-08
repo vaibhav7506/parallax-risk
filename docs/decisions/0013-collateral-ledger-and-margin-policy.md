@@ -61,3 +61,4 @@ binary64 valuation remains approximate. See the [methodology assumptions](../met
 | 3 | Not applicable; collateral NOT IMPLEMENTED | [Phase 3](../validation/phase-3.md) |
 | 4 | Not applicable; collateral NOT IMPLEMENTED | [Phase 4](../validation/phase-4.md) |
 | 5 | Pending-aware calls, explicit cash/haircut/FX and frozen MPOR introduced | [Phase 5](../validation/phase-5.md) |
+| 6 | Reviewed; no change; reused existing contract in Phase 6 | [Phase 6](../validation/phase-6.md) |

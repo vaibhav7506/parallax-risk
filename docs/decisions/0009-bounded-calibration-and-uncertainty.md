@@ -70,3 +70,4 @@ financial service jobs. No calibration approval or production-market claim is ma
 | 3 | Bounded sourced-instrument fits, convergence/failure and uncertainty evidence introduced | [Phase 3](../validation/phase-3.md) |
 | 4 | Reviewed; calibration model 0.3.0, local optimizer and uncertainty assumptions unchanged; no implicit parameter transfer | [Phase 4](../validation/phase-4.md) |
 | 5 | Reviewed; no change; Phase 5 deterministic portfolios retain this accepted contract | [Phase 5](../validation/phase-5.md) |
+| 6 | Reviewed; no change; reused existing contract in Phase 6 | [Phase 6](../validation/phase-6.md) |

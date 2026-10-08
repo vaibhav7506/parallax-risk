@@ -55,3 +55,4 @@ See [pricing methodology](../methodology/deterministic-pricing.md) and
 | 3 | Reviewed; no Money change; model prices/residuals have explicit binary64 units | [Phase 3](../validation/phase-3.md) |
 | 4 | Reviewed; no Money change; simulation buffers and statistics declare binary64 units and no settlement guarantee | [Phase 4](../validation/phase-4.md) |
 | 5 | Exact Money reused for positions, cash, haircuts and aggregation; explicit binary64 FX factors become Decimal text without an exact-valuation claim | [Phase 5](../validation/phase-5.md) |
+| 6 | Reviewed; no change; reused existing contract in Phase 6 | [Phase 6](../validation/phase-6.md) |
