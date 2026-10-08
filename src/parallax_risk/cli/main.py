@@ -24,7 +24,7 @@ def main(argv: Sequence[str] | None = None) -> int:
     commands.add_parser("check-db", help="Check configured PostgreSQL connectivity")
     args = parser.parse_args(argv)
     if args.command == "version":
-        print(json.dumps({"name": "Parallax Risk", "version": __version__, "phase": 5}))
+        print(json.dumps({"name": "Parallax Risk", "version": __version__, "phase": 6}))
         return 0
     try:
         settings = load_settings()
