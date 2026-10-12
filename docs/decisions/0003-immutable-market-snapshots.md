@@ -54,3 +54,4 @@ Source integrations, authenticated lineage and persisted versions remain DEFERRE
 | 4 | Reviewed; no snapshot change; explicit simulation configuration does not mutate market observations | [Phase 4](../validation/phase-4.md) |
 | 5 | Reviewed; no change; Phase 5 deterministic portfolios retain this accepted contract | [Phase 5](../validation/phase-5.md) |
 | 6 | Extended immutable snapshots to labelled conditional model-derived paths with retained fixings (ADR 0014) | [Phase 6](../validation/phase-6.md) |
+| 7 | Reviewed; no change to accepted policy; Phase 7 consumers preserve its stated limitations | [Phase 7](../validation/phase-7.md) |

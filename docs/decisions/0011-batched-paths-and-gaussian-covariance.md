@@ -57,3 +57,4 @@ dimension/order can weaken gains; no Brownian bridge or PCA is implemented.
 | 4 | Vectorized batched paths, immutable buffers, exact Gaussian innovation covariance and measured benchmark harness introduced | [Phase 4](../validation/phase-4.md) |
 | 5 | Reviewed; no change; Phase 5 deterministic portfolios retain this accepted contract | [Phase 5](../validation/phase-5.md) |
 | 6 | Reviewed; no change; reused existing contract in Phase 6 | [Phase 6](../validation/phase-6.md) |
+| 7 | Reviewed; no change to accepted policy; Phase 7 consumers preserve its stated limitations | [Phase 7](../validation/phase-7.md) |

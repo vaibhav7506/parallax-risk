@@ -67,3 +67,4 @@ cross-platform finite-tolerance validation are different guarantees.
 | 4 | Prior sequence proposal accepted: addressed PCG64DXSM/Sobol streams, ordering, transforms, environment metadata and replay tests | [Phase 4](../validation/phase-4.md) |
 | 5 | Reviewed; no change; Phase 5 deterministic portfolios retain this accepted contract | [Phase 5](../validation/phase-5.md) |
 | 6 | Reviewed; no change; reused existing contract in Phase 6 | [Phase 6](../validation/phase-6.md) |
+| 7 | Reviewed; no change to accepted policy; Phase 7 consumers preserve its stated limitations | [Phase 7](../validation/phase-7.md) |

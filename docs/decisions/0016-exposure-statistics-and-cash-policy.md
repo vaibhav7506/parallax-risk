@@ -20,7 +20,7 @@ Extends Phase 5 with a restricted explicit simulator settlement policy; its gene
 
 ## Risks
 
-Output cap is not peak memory. Empirical statistics have no reported confidence interval. Right-endpoint exposure can be biased, especially near maturity. No default freeze, bilateral closeout, regulatory effective EPE/EAD, CVA or funding is implemented.
+Output cap is not peak memory. Empirical statistics have no reported confidence interval. Right-endpoint exposure can be biased, especially near maturity. No default freeze, bilateral closeout or regulatory effective EPE/EAD is implemented. The exposure layer itself computes no CVA or funding; Phase 7 consumes its explicitly approximate EAD in a separate XVA layer.
 
 ## Related code
 
@@ -37,3 +37,4 @@ Output cap is not peak memory. Empirical statistics have no reported confidence 
 | 4 | Not applicable; Phase 6 pathwise exposure/credit NOT IMPLEMENTED | [Phase 4](../validation/phase-4.md) |
 | 5 | Not applicable; Phase 6 pathwise exposure/credit NOT IMPLEMENTED | [Phase 5](../validation/phase-5.md) |
 | 6 | Introduced explicit policy and implementation; verified on both platforms | [Phase 6](../validation/phase-6.md) |
+| 7 | Reviewed; no change to accepted policy; Phase 7 consumers preserve its stated limitations | [Phase 7](../validation/phase-7.md) |

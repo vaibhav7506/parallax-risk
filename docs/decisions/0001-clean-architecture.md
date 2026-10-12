@@ -23,6 +23,8 @@ owns those policies.
 
 Phase 6 adds injected ExposureService with market/engine ports; domain owns conditional markets, exposure statistics and credit mathematics. No financial handler or persistence dependency is introduced.
 
+Phase 7 adds an application XvaCalculator port, XvaService and actual exposure revaluation. Domain XVA owns validated funding/margin/result contracts, credit/funding mathematics and finite differences/attribution. No financial handler or persistence adapter is added.
+
 ## Alternatives considered
 HTTP-centric calculation code is quick to start but couples financial tests to
 web concerns. Microservices add deployment/network failure before a measured need.
@@ -64,3 +66,4 @@ to Phase 12. Do not scaffold those implementations now.
 | 4 | Application engine port and research orchestration added; mathematical stream/kernel/observable contracts remain in domain | [Phase 4](../validation/phase-4.md) |
 | 5 | Application portfolio pricer port and domain legal/collateral aggregates added; dependency rules retained | [Phase 5](../validation/phase-5.md) |
 | 6 | Added injected ExposureService and domain exposure/credit modules; dependencies retained | [Phase 6](../validation/phase-6.md) |
+| 7 | Added injected XvaCalculator/XvaService and full exposure revaluation; domain XVA/risk remains inward | [Phase 7](../validation/phase-7.md) |

@@ -1,13 +1,13 @@
 # Parallax Risk decision register
 
 This is the canonical register from the documentation maintenance update on
-2026-10-01. **6 of 12 implementation phases are complete.** Phase 6 is complete; Phase 7 requires another `go`.
+2026-10-01. **7 of 12 implementation phases are complete.** Phase 7 is complete; Phase 8 requires another `go`.
 Decision numbers identify decisions, not phases. Each decision retains a phase
 history so reviews and changes can be counted without erasing earlier choices.
 
 | ID | Decision | Status / implemented scope | Introduced in implementation |
 |---|---|---|---|
-| 0001 | [Clean architecture](0001-clean-architecture.md) | Accepted | Phase 1; extended Phases 2/5/6 |
+| 0001 | [Clean architecture](0001-clean-architecture.md) | Accepted | Phase 1; extended Phases 2/5/6/7 |
 | 0002 | [Money representation](0002-money-representation.md) | Accepted | Phase 1; pricing boundary Phase 2; portfolio use Phase 5 |
 | 0003 | [Immutable market snapshots](0003-immutable-market-snapshots.md) | Accepted | Phase 2; conditional paths Phase 6 |
 | 0004 | [Random sequence reproducibility](0004-random-sequence-reproducibility.md) | Accepted metadata and addressed pseudo/Sobol sequences | Phases 1–4 |
@@ -23,8 +23,11 @@ history so reviews and changes can be counted without erasing earlier choices.
 | 0014 | [Conditional market paths](0014-conditional-market-paths.md) | Accepted | Phase 6 |
 | 0015 | [Credit/default/dependence](0015-credit-default-dependence.md) | Accepted | Phase 6 |
 | 0016 | [Exposure/cash/grid EAD](0016-exposure-statistics-and-cash-policy.md) | Accepted | Phase 6 |
+| 0017 | [Unilateral credit adjustments](0017-unilateral-credit-adjustments.md) | Accepted; implemented and verified | Phase 7 |
+| 0018 | [Additive funding/external IM](0018-additive-funding-and-external-margin.md) | Accepted; implemented and verified | Phase 7 |
+| 0019 | [Common-stream risk/residual](0019-xva-common-stream-risk-attribution.md) | Accepted; implemented and verified | Phase 7 |
 
-There are **16 canonical ADRs**, all accepted, implemented and reviewed. The prior sequence proposal is now
+There are **19 canonical ADRs**, all accepted, implemented and reviewed. The prior sequence proposal is now
 implemented and reviewed; earlier history remains intact.
 
 ## Phase ledger
@@ -38,6 +41,7 @@ implemented and reviewed; earlier history remains intact.
 | Phase 4 | 0.4.0 COMPLETE | 0001, 0004, 0005, 0008, 0010, 0011 | 6 material changes; all 11 ADRs reviewed | [653 tests on both platforms; Monte Carlo research report](../validation/phase-4.md) |
 | Phase 5 | 0.5.0 COMPLETE | 0001, 0002, 0012, 0013 | 4 material changes; all 13 ADRs reviewed | [742 tests on both platforms; portfolio report](../validation/phase-5.md) |
 | Phase 6 | 0.6.0 COMPLETE | 0001, 0003, 0014, 0015, 0016 | 5 material changes; all 16 ADRs reviewed | [821 tests on both platforms; exposure/credit report](../validation/phase-6.md) |
+| Phase 7 | 0.7.0 COMPLETE | 0001, 0017, 0018, 0019 | 4 material changes; all 19 ADRs reviewed | [943 tests on both platforms; XVA/risk report](../validation/phase-7.md) |
 
 These counts are material decision changes, not file-edit or commit counts.
 Historical phase numbers/test outcomes come from the original reports; retrospective

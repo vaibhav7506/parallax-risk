@@ -37,3 +37,4 @@ Finite-grid intensity bias, non-adapted static stress and uncalibrated dynamic m
 | 4 | Not applicable; Phase 6 pathwise exposure/credit NOT IMPLEMENTED | [Phase 4](../validation/phase-4.md) |
 | 5 | Not applicable; Phase 6 pathwise exposure/credit NOT IMPLEMENTED | [Phase 5](../validation/phase-5.md) |
 | 6 | Introduced explicit policy and implementation; verified on both platforms | [Phase 6](../validation/phase-6.md) |
+| 7 | Reviewed; no change to accepted policy; Phase 7 consumers preserve its stated limitations | [Phase 7](../validation/phase-7.md) |
