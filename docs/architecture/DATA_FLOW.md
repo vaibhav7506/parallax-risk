@@ -49,3 +49,9 @@ See [portfolio path](../workflows/PORTFOLIO_WORKFLOW.md).
 
 Phase 6: request/book/bindings/fixings/accounts/credit/RunContext → owned addressed market/default draws → path-specific future contexts and cash → PortfolioService → positive/negative matrices → empirical profile, survival and grid EAD. Result hashes preserve inputs and ordered generated markets; no database lineage is added.
 See [exposure workflow](../workflows/EXPOSURE_WORKFLOW.md).
+
+Phase 7: exact exposure/credit evidence + own credit + origin discount + funding/
+external IM → XvaService/domain calculator → separate name components and aggregate
+signed adjustment. Full named revaluation under fixed addressed streams → central
+h/h2 evidence and ordered component/total actual-end residuals. No persisted lineage
+or economic bilateral recursion is inferred. [Workflow](../workflows/XVA_WORKFLOW.md).

@@ -37,3 +37,8 @@ RunContext preserves the existing configuration envelope.
 
 Phase 6: ExposureService receives request/book/bindings/accounts/credit/quantiles/output budget explicitly. No new environment setting is introduced. Credit addresses and run seed must agree.
 See [workflow](../workflows/EXPOSURE_WORKFLOW.md) and [limits](../LIMITATIONS.md).
+
+Phase 7: own hazard/recovery, origin discount curve, funding spread curves/benefit
+policy, external IM, exact risk targets/units/bump sizes and movement order are explicit
+library inputs. No environment variable silently selects a financial approximation.
+[Conventions](../methodology/XVA.md), [risk](../methodology/XVA_SENSITIVITIES.md).

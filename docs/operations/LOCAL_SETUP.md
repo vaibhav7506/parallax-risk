@@ -32,3 +32,6 @@ market integration is required.
 
 Phase 6: Run `python scripts/demo_exposure.py` in the locked environment for labelled synthetic exposure/credit research. [Tutorial](../tutorials/05-FIRST-EXPOSURE-RUN.md).
 See [workflow](../workflows/EXPOSURE_WORKFLOW.md) and [limits](../LIMITATIONS.md).
+
+Phase 7: `python scripts/demo_xva.py` runs labelled synthetic XVA/risk research.
+[First run](../tutorials/06-FIRST-XVA-RUN.md), [workflow](../workflows/XVA_WORKFLOW.md).

@@ -1,6 +1,6 @@
 # Release and evidence checklist
 
-Current release is 0.6.0 / Phase 6 complete. Phase boundaries are independent of documentation
+Current release is 0.7.0 / Phase 7 complete. Phase boundaries are independent of documentation
 maintenance, which does not authorize new quantitative functionality.
 
 1. Complete only the authorized phase, inspect changes and run applicable numerical/
@@ -22,7 +22,7 @@ production hardening is implied by building a local wheel/image.
 
 For Phase 4 preserve executed notebooks, replayable demo JSON, measured benchmark
 JSON, dependency locks, actual Windows/Linux PostgreSQL tests and scoped cleanup logs.
-Use `scripts/verify_phase6.ps1` for the active release; useful 0.6.0 and earlier release
+Use `scripts/verify_phase7.ps1` for the active release; useful 0.7.0 and earlier release
 images remain. The Phase 4 helper is historical evidence, not a current version check.
 The unchanged deterministic/calibration models retain versions 0.2.0/0.3.0.
 
@@ -35,3 +35,9 @@ Phase 6 retains full synthetic input/replay JSON, conditional market digest and
 profile/credit method labels, plus live PostgreSQL tests and exact release image IDs.
 Every canonical ADR gets a Phase 6 review; new IDs 0014–0016 declare additional policies.
 [Phase 6 evidence](../validation/phase-6.md) records actual results and retained/removed resources.
+
+Phase 7 preserves full synthetic XVA inputs/results, five revaluations, actual
+stability and ordered residual evidence. Review every canonical ADR; new IDs
+0017–0019 define credit, funding/IM and risk policies. Retain needed release/rollback
+images and logs, and record exact project cleanup and unchanged unrelated workloads.
+[Phase 7 report](../validation/phase-7.md) records actual checks and file hashes.

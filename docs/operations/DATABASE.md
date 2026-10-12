@@ -26,3 +26,7 @@ live PostgreSQL verification still proves operational connectivity only.
 
 Phase 6: Exposure/credit values are immutable in-memory results. No new table/migration or persisted portfolio/default/risk job is added. Database verification remains real connectivity coverage.
 See [workflow](../workflows/EXPOSURE_WORKFLOW.md) and [limits](../LIMITATIONS.md).
+
+Phase 7 XVA/risk results remain immutable in-memory values. No table/migration,
+persisted job or institutional model approval is added. Live PostgreSQL checks still
+verify operational connectivity rather than financial-result persistence.

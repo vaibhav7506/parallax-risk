@@ -39,3 +39,9 @@ independent analytical targets, default distributions, justified properties and
 preserved-marginal WWR experiments. These are software/model mathematics checks,
 not external calibration, independent institutional approval or regulatory validation.
 [Phase 6 results](phase-6.md), [method assumptions](../methodology/EXPOSURE.md).
+
+Phase 7 adds independently targeted unilateral XVA, transparent funding/IM proxies,
+actual central revaluation and residual reconciliation. Validation retains mathematical
+and sampling limitations; it does not establish bilateral pricing, regulatory IM or
+production model approval. [Phase 7 evidence](phase-7.md),
+[formulations](../methodology/XVA.md), [risk](../methodology/XVA_SENSITIVITIES.md).

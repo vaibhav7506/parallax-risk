@@ -41,3 +41,9 @@ risk; MTA equality intentionally produces zero transfer. See
 
 Phase 6: For exposure failures, check exact ACT/365F grid alignment, Q bindings/units, sufficient knots, origin fixing provenance and future fixing grid membership. Margined paths need daily calendar grids, one scoped account and zero-haircut CSA cash. Credit needs aligned horizons and unique addresses. Do not fix invalid data by implicit repair.
 See [workflow](../workflows/EXPOSURE_WORKFLOW.md) and [limits](../LIMITATIONS.md).
+
+Phase 7: check exact exposure/credit/run identities, one ordered IM profile per name,
+same currency/origin/ACT365F grid and all finite curve horizons. Verify component signs
+and -FCA+FBA reconciliation. Central differences require admissible resolved +/-h;
+unsupported policy/volatility/shared-spread or PSD failures must not be silently
+repaired. [Risk conventions](../methodology/XVA_SENSITIVITIES.md).

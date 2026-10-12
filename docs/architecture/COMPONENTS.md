@@ -31,3 +31,8 @@ See [portfolio workflow](../workflows/PORTFOLIO_WORKFLOW.md).
 
 Phase 6: `domain/exposure` owns conditional contexts, CreditScenario and profile/EAD mathematics; `domain/credit` owns hazard/survival/default and spread policies. `application/exposure.py` composes the existing SimulationEngine and PortfolioService with a market-provider protocol.
 See [exposure workflow](../workflows/EXPOSURE_WORKFLOW.md).
+
+Phase 7: `domain/xva` owns funding/margin/result contracts, credit/funding calculators
+and numerical sensitivity/attribution. `application/xva.py` injects XvaCalculator and
+links exact exposure evidence; `application/xva_revaluation.py` composes full actual
+revaluation and admissible named transformations. Examples/scripts own safe composition.

@@ -64,3 +64,16 @@ known-fixing retention, conditional HullWhite knots (relative 1e-14), malformed 
 unique random addresses and exact pinned-environment batch/replay behavior.
 Full tests must include live PostgreSQL and >=95% branch-inclusive coverage. See
 [Phase 6 results](../validation/phase-6.md); historical totals are not relabelled.
+
+Phase 7 checks independent constant-exposure CVA/DVA targets, zero PD/full recovery/
+zero exposure, piecewise funding knots, external IM separation, sign/component
+reconciliation and no duplicate PD in sampled loss. Discounted credit quadrature
+refinement has a closed-form target and second-order error-ratio check. Generated
+constant-exposure hazard/recovery properties assert only justified monotonicity.
+
+Actual-path tests cover all seven factor types, selected h/h2 stability, preserved
+stream addresses, separate entity aggregation, custom/shared-credit policy rejection,
+stale calculator evidence, five retained valuations and complete/omitted movement
+residuals. Guard suites challenge malformed currency/grid/types/hashes/nonfinite and
+unsupported bumps. Full live PostgreSQL/platform/coverage outcomes appear in
+[Phase 7 evidence](../validation/phase-7.md). Historical totals remain unchanged.

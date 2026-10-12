@@ -24,3 +24,8 @@ amounts, legal references or credential-bearing market inputs.
 
 Phase 6: ExposureService uses restricted start/completed/failed events with run ID and authored error type. Per-date portfolio calls retain safe envelopes; exposure arrays/trade terms are not logged automatically.
 See [workflow](../workflows/EXPOSURE_WORKFLOW.md) and [limits](../LIMITATIONS.md).
+
+Phase 7: XvaService emits restricted started/completed/failed events with RunContext
+ID and authored error type. Revaluation may emit multiple such workflows. Financial
+component values, path arrays and full terms are returned to the caller, not logged
+automatically. The synthetic demo explicitly owns an in-memory logger stream.

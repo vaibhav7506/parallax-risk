@@ -33,3 +33,8 @@ into the domain. Existing architecture checks exercise these new modules too.
 
 Phase 6: Domain exposure/credit imports common and existing numerical/domain modules only. ExposureService composes domain values and injected ports; scripts/examples own logger/runtime composition. Import-side-effect checks automatically discover the new modules.
 See [exposure workflow](../workflows/EXPOSURE_WORKFLOW.md).
+
+Phase 7: domain/xva imports only common/existing domain mathematics. Application
+owns calculator injection, input evidence checks and workflow composition. Import
+and AST boundary tests discover these new modules; no HTTP/ORM dependency or global
+RNG/logger/network initialization is added.

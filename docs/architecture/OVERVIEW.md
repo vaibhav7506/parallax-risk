@@ -51,3 +51,8 @@ API/persistence. See [portfolio workflow](../workflows/PORTFOLIO_WORKFLOW.md).
 
 Phase 6: ExposureService injects simulation/portfolio/market ports. Domain exposure and credit own immutable market bindings, statistics and default/dependence mathematics; no financial handler or persistence is introduced.
 See [exposure workflow](../workflows/EXPOSURE_WORKFLOW.md).
+
+Phase 7: XvaService injects an XvaCalculator and validates exposure/input evidence;
+XvaRevaluation composes actual exposure for each bump. Domain XVA owns financial
+contracts, integration, finite differences and attribution. No new financial handler,
+persistence dependency or runtime service is added. [Workflow](../workflows/XVA_WORKFLOW.md).

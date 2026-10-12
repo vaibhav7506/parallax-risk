@@ -27,3 +27,7 @@ financial HTTP operation or new HTTP error mapping is implemented.
 Phase 6 library date/grid/binding/credit/settlement/adapter violations raise authored
 DomainValidationError or existing numerical errors. They are not mapped into a new
 financial endpoint. Invalid hazards, spreads and resolution/overflow are not repaired.
+
+Phase 7 library XVA/risk type/currency/date/horizon/sign/evidence and inadmissible
+bump failures raise authored ParallaxError subclasses. They are not a new HTTP error
+schema; operational endpoints retain their existing behavior.
