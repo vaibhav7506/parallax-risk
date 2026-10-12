@@ -80,3 +80,7 @@ future FX-forward EE with its lognormal positive-part analytical expectation usi
 six sample standard errors over 2,048 paths. Conditional HullWhite knots use relative
 1e-14; hazard identities use 1e-15. See [workflow](../workflows/EXPOSURE_WORKFLOW.md),
 [credit](CREDIT_DEFAULT.md), [WWR](WRONG_WAY_RISK.md), and [Phase 6 evidence](../validation/phase-6.md).
+
+Phase 7 [XVA](XVA.md) is a separate consumer of these approximate profiles/default
+buckets. It applies deterministic discount/LGD to sampled losses for dependent credit;
+it does not upgrade alive-path EAD to default-conditioned MPOR or regulatory EAD.

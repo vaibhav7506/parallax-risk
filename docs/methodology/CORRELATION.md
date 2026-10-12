@@ -45,3 +45,8 @@ correlation reproduction are implemented in Phase 4. Phase 6 adds explicit
 establish no-arbitrage, baseline survival calibration or universal exposure monotonicity.
 Brownian-driver order and exact OU innovation covariance are described in
 [Monte Carlo](MONTE_CARLO.md). See [ADR 0005](../decisions/0005-correlation-validation.md).
+
+Phase 7 [correlation risk](XVA_SENSITIVITIES.md) shifts the exact symmetric Brownian
+driver pair, preserving declared factor order and PSD tolerance. A missing matrix
+starts from explicit identity. Validation and engine singular-matrix failures still
+reject without automatic repair; a correlation Greek is not universally signed.

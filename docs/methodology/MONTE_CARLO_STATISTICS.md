@@ -79,3 +79,8 @@ Phase 6 exposure EE/ENE/EPE/PFE are empirical summaries over equally weighted pa
 not this module's independent-unit inference. No confidence intervals are attached to
 those profiles. PFE uses exact retained-sample linear quantiles; EPE uses trapezoidal
 EE time averaging. See [definitions](EXPOSURE.md).
+
+Phase 7 XVA retains actual five-point valuation/stability evidence but reports no
+Monte Carlo confidence interval for CVA or Greeks. Do not transfer an unrelated IID
+Estimate interval to sampled/default-correlated exposure or infer certification from
+common streams. See [risk assumptions](XVA_SENSITIVITIES.md).

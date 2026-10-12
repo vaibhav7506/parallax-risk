@@ -1,8 +1,8 @@
 # Portfolios, legal netting and cash collateral
 
 Phase 5 adds deterministic book valuation and collateral accounting. All examples
-are synthetic. No default probabilities, stochastic exposure profiles, EE/PFE or
-CVA calculation is implemented. [Workflow](../workflows/PORTFOLIO_WORKFLOW.md),
+are synthetic. This standalone Phase 5 layer computes no default probabilities,
+stochastic profiles or CVA; Phase 6/7 compose it into separate exposure/XVA workflows. [Workflow](../workflows/PORTFOLIO_WORKFLOW.md),
 [tutorial](../tutorials/04-FIRST-PORTFOLIO-RUN.md), [evidence](../validation/phase-5.md).
 
 ## Book and lifecycle
@@ -133,3 +133,8 @@ Phase 6 [pathwise exposure](EXPOSURE.md) composes this service and introduces a
 restricted explicit simulator policy for perfect zero-haircut CSA-currency settlement.
 It preserves these generic physical ledger conventions. Its grid EAD uses alive
 collateral and does not attach this standalone frozen MPOR closeout implicitly.
+
+Phase 7 [funding/IM](FUNDING_MARGIN.md) consumes residual EE/ENE as declared proxies.
+Its external segregated posted IM is distinct from reusable CSA IA. The physical
+collateral ledger still has no treasury/IM funding cash flows. XVA collateral risk
+shifts an existing receive threshold and reruns the actual scoped exposure workflow.

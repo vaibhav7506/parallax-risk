@@ -56,3 +56,8 @@ research context is discussed by [Vrins, Wrong-Way Risk Models](https://arxiv.or
 The repository implements the above declared policies, not all models from that paper.
 [Credit formulas](CREDIT_DEFAULT.md), [exposure limits](EXPOSURE.md),
 [workflow](../workflows/EXPOSURE_WORKFLOW.md), [Phase 6 evidence](../validation/phase-6.md).
+
+Phase 7 [sampled CVA](XVA.md) consumes dependent default buckets without a second PD
+multiplier. Comparing it with independent EE quadrature also changes the estimator;
+dynamic scenarios may change credit marginals. Such differences alone do not isolate
+dependence. Fixed-stream risk retains grid/kink limitations and actual h/h2 differences.

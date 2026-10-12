@@ -35,3 +35,9 @@ Phase 6 [conditional market paths](EXPOSURE.md) construct model-derived snapshot
 with synthetic/source labels. Generated fixings are held fixed after their fixing date;
 origin observations remain caller supplied. These derived values do not imply authentic
 market observations or vendor ingestion. Original immutable identity conventions remain.
+
+Phase 7 XVA receives a supplied origin ACT/365F discount curve covering the exposure
+horizon. This deterministic discount choice is separate from conditional pricing
+curves and does not claim stochastic discount covariance. Funding spreads, own credit
+and external IM carry explicit input identity; they are not fabricated market quotes.
+See [XVA](XVA.md) and [funding](FUNDING_MARGIN.md).

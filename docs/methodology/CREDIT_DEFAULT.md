@@ -52,3 +52,9 @@ not market calibration or regulatory approval.
 
 [Exposure/EAD](EXPOSURE.md), [tests](../testing/STRATEGY.md),
 [Phase 6 evidence](../validation/phase-6.md).
+
+Phase 7 [unilateral credit adjustment](XVA.md) uses exact survival decrements for
+independent quadrature and actual scenario default indicators for dependent loss.
+Recovery multiplies losses through LGD; dynamic recovery bumps also change the explicit
+credit-triangle intensity at fixed spread. Baseline hazard is held fixed in that bump.
+No CDS calibration, stochastic recovery or bilateral first-to-default is added.

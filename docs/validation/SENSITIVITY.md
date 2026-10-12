@@ -25,4 +25,13 @@ Quantitative tests compare a zero-coupon bond rate derivative to `-T*N*exp(-r*T)
 FX delta to its linear spot formula including settlement. Relative tolerances are
 1e-9 with h=1e-5, 1e-8 with h=1e-4 for the rate case (central truncation bias), and
 1e-10 for the FX derivative. Property checks cover direction reversal; rejection
-tests cover invalid/unresolvable bumps. No Monte Carlo gradient or attribution model exists.
+tests cover invalid/unresolvable bumps. These deterministic Phase 2 checks do not estimate a Monte Carlo gradient. Phase 7 adds separate XVA revaluation and ordered attribution below.
+
+## Phase 7 XVA sensitivities
+
+[XVA risk methodology](../methodology/XVA_SENSITIVITIES.md) defines all seven explicit
+parameter transformations and five full revaluations. Derivatives use input units,
+not implicit basis-point/DV01 conversion. Actual h/h2 differences and component/TOTAL
+reconciliation are retained. Only theoretically justified selected signs are tested;
+default-grid/kink effects may yield unstable or flat derivatives. Ordered attribution
+always reports independently valued actual-end residuals.

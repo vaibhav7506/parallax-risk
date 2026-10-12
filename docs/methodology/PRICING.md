@@ -38,4 +38,4 @@ Property/regression suites check signs, scale, paid flows and no hidden fallback
 Central sensitivity formulas/signs/bump errors are in [sensitivity](../validation/SENSITIVITY.md).
 Full conventions, numerical tolerances and consulted sources are in
 [deterministic methodology](deterministic-pricing.md). Separate Phase 3 analytical
-rate options and [Heston calls](HESTON.md) support calibration; no pathwise repricing or XVA is present.
+rate options and [Heston calls](HESTON.md) support calibration; Phase 6 pathwise repricing and Phase 7 XVA are separate consumers of these pricing contracts.

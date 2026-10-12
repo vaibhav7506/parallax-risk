@@ -17,11 +17,14 @@ definitions are backed by actual implementation and tests.
 - [Monte Carlo paths and sequences](MONTE_CARLO.md).
 - [Monte Carlo statistics and variance reduction](MONTE_CARLO_STATISTICS.md).
 
-XVA, capital and risk attribution are NOT IMPLEMENTED. Their detailed model
-documents will be created with actual authorized implementations; see [roadmap](../../ROADMAP.md).
+Capital and validation-lab models are NOT IMPLEMENTED. Detailed documents will be created alongside authorized implementations; see [roadmap](../../ROADMAP.md).
 
 - [Portfolios, legal netting and cash collateral](PORTFOLIO_COLLATERAL.md).
 
 - [Conditional market paths, exposure statistics and grid EAD](EXPOSURE.md).
 - [Hazard/survival/default and recovery assumptions](CREDIT_DEFAULT.md).
 - [Wrong-way risk scenario policies](WRONG_WAY_RISK.md).
+
+- [Unilateral CVA/DVA and signed XVA](XVA.md).
+- [Additive funding and external segregated IM](FUNDING_MARGIN.md).
+- [Actual XVA sensitivities and ordered residual attribution](XVA_SENSITIVITIES.md).

@@ -98,3 +98,8 @@ Phase 6 [exposure workflow](../workflows/EXPOSURE_WORKFLOW.md) consumes the same
 immutable batches for conditional repricing. Credit thresholds use separate addressed
 PCG64DXSM streams; no global generator is introduced. Profile statistics report no
 IID/QMC confidence intervals. The retained-matrix cap does not bound peak allocations.
+
+Phase 7 [XVA revaluation](XVA_SENSITIVITIES.md) reruns actual paths for each factor
+movement under identical independent stream addresses. Correlation matrices may change,
+while request/default/rank addresses remain fixed. There is no shared global RNG or
+promise that common streams remove default-bucket or exposure-kink discontinuities.
