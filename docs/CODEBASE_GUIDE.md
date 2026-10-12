@@ -1,7 +1,7 @@
 # Parallax Risk codebase guide
 
 The code currently supports primitives, operational service checks and deterministic
-pricing, stochastic model primitives and instrument calibration. [Roadmap](../ROADMAP.md)
+pricing, stochastic models/calibration, Monte Carlo, collateralized portfolios, exposure/credit and XVA research. [Roadmap](../ROADMAP.md)
 marks later capabilities NOT IMPLEMENTED.
 
 | Package | Purpose / principal objects | Inputs → outputs; caller/dependencies |
@@ -59,7 +59,8 @@ is operational connectivity, not a pricing or risk-job workflow.
 | API operation | `src/parallax_risk/api/app.py` and schemas; avoid numeric logic | API success/failure/startup tests; api/ENDPOINTS |
 | Stochastic model | StochasticProcess/ExactProcess/Discretization in domain/models/base; coefficients and explicit scheme | Independent mathematical targets, domains/refinement; model methodology and ADR |
 | Calibration objective/solver | CalibrationProblem in domain/calibration/contracts; objective in problems; application CalibrationSolver; infrastructure adapter | Recovery, bounds, optimizer failure and identification; methodology/CALIBRATION and workflow |
-| XVA, stress/mutation, governance entity/table | NOT IMPLEMENTED; respective later phases required | Do not invent present folders/classes; update roadmap and new actual interfaces then |
+| XVA component or factor | domain/xva contracts/calculators/risk; application/xva and xva_revaluation | Independent targets, admissible transformations, actual replay/stability/residual checks; XVA methodology and ADRs |
+| Stress/mutation, governance entity/table | NOT IMPLEMENTED; respective later phases required | Document actual interfaces when authorized |
 
 Domain errors are in `src/parallax_risk/common/errors.py`; typed names are in
 `src/parallax_risk/common/identifiers.py`. See [testing](testing/STRATEGY.md) for
@@ -131,4 +132,26 @@ credit policies; `statistics.py` computes empirical profiles and labelled grid E
 Change these policies with independent quantitative targets, workflow/lifecycle/replay
 checks and a decision history. See [workflow](workflows/EXPOSURE_WORKFLOW.md) and
 [methodology](methodology/EXPOSURE.md). The generic domain remains independent of
-application, HTTP, Pydantic and persistence; XVA remains absent.
+application, HTTP, Pydantic and persistence. Phase 7 consumes exposure in its separate XVA layer.
+
+## Phase 7 XVA call path and change locations
+
+1. `src/parallax_risk/application/xva_examples.py` constructs explicit synthetic
+   XvaExperiment inputs; `scripts/demo_xva.py` serializes calculated evidence.
+2. `src/parallax_risk/application/xva_revaluation.py` invokes actual ExposureService
+   for each immutable base/bumped experiment. Factor transformations preserve
+   addressed streams, origins and declared funding/IM assumptions.
+3. `src/parallax_risk/application/xva.py` validates credit/date/run alignment, injects
+   XvaCalculator, verifies input evidence and adds separate counterparty results.
+4. `src/parallax_risk/domain/xva/calculators.py` integrates exact default masses or
+   sampled loss, unilateral own DVA and declared funding/IM profiles.
+5. `src/parallax_risk/domain/xva/contracts.py` validates signed components, funding
+   magnitudes, currencies, fingerprints and contribution reconciliation.
+6. `src/parallax_risk/domain/xva/risk.py` computes component/TOTAL central differences
+   and ordered movements with independently valued actual-end residuals.
+
+Change financial formulations in domain with independent quantitative targets and
+an ADR. Change admissible factor transformations in application revaluation, with
+actual-path workflow tests. New components must extend the explicit fixed result
+contract deliberately; no arbitrary string silently changes economics. See
+[workflow](workflows/XVA_WORKFLOW.md) and [methodology](methodology/XVA.md).

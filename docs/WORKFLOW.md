@@ -22,8 +22,9 @@ flowchart TD
     BOOK --> CURRENT[Current risk and pending-aware margin instruction]
     MC --> EXP[ExposureService / pathwise exposure and credit]
     BOOK --> EXP
-    EXP -.-> XVA[PLANNED: XVA/capital]
-    XVA -.-> GOV[PLANNED: validation lab and governance]
+    EXP --> XVA[XvaService / unilateral credit and additive funding]
+    XVA --> XRISK[Actual central differences and movement residuals]
+    XRISK -.-> GOV[PLANNED: capital, validation lab and governance]
 ```
 
 | Implemented step | Input / transformation / output | Module and failure |
@@ -40,8 +41,7 @@ flowchart TD
 See [code call path](CODEBASE_GUIDE.md) and [pricing workflow](workflows/PRICING_WORKFLOW.md).
 See [calibration workflow](workflows/CALIBRATION_WORKFLOW.md) and
 [simulation workflow](workflows/SIMULATION_WORKFLOW.md). Future arrows describe
-intended phases. Phase 6 implements stochastic exposure and credit summaries; XVA,
-capital and governance results remain absent.
+intended phases. Phase 7 adds signed XVA and sensitivity/attribution results; capital and governance remain absent.
 
 Phase 4: explicit typed simulation configuration + RunContext → owned addressed
 normal stream → corrected Gaussian driver covariance → selected vectorized kernels
@@ -62,3 +62,11 @@ Phase 6: SimulationRequest + conditional market binding + legal book + initial l
 future markets/fixings/cash → PortfolioService repricing → retained positive/negative
 paths → EE/ENE/PFE/EPE and separately labelled grid EAD/survival comparisons.
 See [exposure workflow](workflows/EXPOSURE_WORKFLOW.md).
+
+Phase 7: matching exposure/credit + own credit + deterministic origin discount +
+funding excess spreads + external posted IM → injected calculator → per-name signed
+CVA/DVA/FVA/MVA and aggregate adjustment. Actual exposure is rerun at admissible factor
+shifts with fixed sequence addresses → component central differences/stability;
+ordered exact movements + independently valued actual endpoint → explicit residuals.
+See [XVA workflow](workflows/XVA_WORKFLOW.md). Funding/IM remain fixed during listed
+bumps; default-conditioned/bilateral and recursive economics are not inferred.

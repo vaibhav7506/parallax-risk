@@ -6,9 +6,9 @@ understand the financial reasoning, locate the code and reproduce results.
 
 ## Current phase
 
-- Current implementation phase: **6 — complete**; release 0.6.0.
-- Completed implementation phases: **1, 2, 3, 4, 5, 6**.
-- Next implementation phase: **7 — XVA and sensitivities, NOT IMPLEMENTED**.
+- Current implementation phase: **7 — complete**; release 0.7.0.
+- Completed implementation phases: **1, 2, 3, 4, 5, 6, 7**.
+- Next implementation phase: **8 — regulatory-style capital and challengers, NOT IMPLEMENTED**.
 - Documentation maintenance between phases does not advance the implementation phase.
 - Implement exactly one numbered phase when the user writes `go`; complete its
   code, applicable tests, documentation and cleanup, then stop. Never pre-build the next phase.
@@ -84,6 +84,7 @@ Ambiguous ownership means retain and report. Never delete the normal Compose
 - Contracts/pricing: `src/parallax_risk/domain/instruments/`, `domain/pricing/`.
 - Portfolios/netting/CSA/cash ledgers: `src/parallax_risk/domain/portfolio/`.
 - Exposure/credit: `src/parallax_risk/domain/exposure/`, `domain/credit/`.
+- XVA and risk: `src/parallax_risk/domain/xva/`, `application/xva.py`, `application/xva_revaluation.py`.
 - Boundaries/workflow: `src/parallax_risk/application/`.
 - Tests: `tests/`; documentation: `docs/INDEX.md`, `docs/CODEBASE_GUIDE.md`.
 - Decisions: `docs/decisions/README.md`; maintenance log: `CHANGELOG.md`.

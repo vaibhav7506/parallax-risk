@@ -4,7 +4,7 @@
 |---|---|---|
 | Counterparty credit risk (CCR) | Risk of losing a positive derivative claim when the other party defaults | Deterministic and pathwise exposure/credit research implemented; default loss deferred; [roadmap](../ROADMAP.md) |
 | Model risk | Risk that assumptions, mathematics, data or implementation produce misleading decisions | Explicit assumptions and quantitative tests today; independent lab/governance deferred; [validation](validation/OVERVIEW.md) |
-| XVA / CVA | Valuation adjustments; CVA addresses counterparty default losses | NOT IMPLEMENTED; no present default-loss result; [roadmap](../ROADMAP.md) |
+| XVA / CVA | Signed valuation adjustments; unilateral CVA addresses counterparty default loss | Phase 7 implements declared approximations; [methodology](methodology/XVA.md) |
 | NPV / PV | Value today of signed future payments | DiscountingEngine/PricingResult; [pricing](methodology/PRICING.md) |
 | Discount factor D(0,t) | Multiplier translating a payment at t into today's value | Positive anchored DiscountCurve; may exceed 1 with negative rates; [curves](methodology/CURVES.md) |
 | Zero rate | Annual rate representing accumulation to one maturity | ZeroCurve declares time/day count/compounding; [curves](methodology/CURVES.md) |
@@ -99,3 +99,25 @@ Definitions, units/signs and caveats: [portfolio methodology](methodology/PORTFO
 
 [Definitions and units](methodology/EXPOSURE.md), [credit](methodology/CREDIT_DEFAULT.md),
 [dependence](methodology/WRONG_WAY_RISK.md).
+
+## Phase 7 valuation and risk terms
+
+| Term | Implemented meaning / limitation |
+|---|---|
+| Unilateral CVA | Negative discounted counterparty default loss adjustment; independent EE/default quadrature or explicitly sampled dependent grid loss |
+| Unilateral DVA | Positive own-default benefit against ENE magnitude, independent own curve; no first-to-default filter |
+| XVA total adjustment | Checked sum of signed CVA, DVA, FVA, MVA in one currency; not automatically an adjusted replication price |
+| FCA / FBA | Nonnegative present-value borrowing cost / explicitly enabled lending benefit proxies; FVA=-FCA+FBA |
+| FVA | Signed additive residual-exposure funding proxy using declared excess spreads; no recursive hedge/treasury price |
+| MVA | Negative funding cost of external expected segregated posted IM; separate from reusable CSA IA |
+| Excess funding spread | Annual decimal increment above the supplied discount/collateral benchmark; caller must justify economics |
+| Posted IM profile | External nonnegative expected segregated margin in reporting currency on exact exposure dates; no regulatory estimator |
+| Default mass | Exact survival decrement on an interval; sampled default indicators already contain probability |
+| Central h/h2 stability | Actual derivative difference between five full valuations; sampling/kinks/grid may make it unstable |
+| Common random numbers | Fixed independent market/default/rank stream addresses across bumps; transformations and results may change |
+| Credit-triangle sensitivity | Hazard/spread parameter movement using s/(1-R), not recalibrated CDS quote CS01 |
+| Ordered attribution | Sequential exact movements assigning interactions in declared order; not causal or Shapley |
+| Unexplained residual | Actual endpoint adjustment minus last attributed ladder adjustment, reported per component and total |
+
+[Credit/results](methodology/XVA.md), [funding](methodology/FUNDING_MARGIN.md),
+[risk](methodology/XVA_SENSITIVITIES.md).

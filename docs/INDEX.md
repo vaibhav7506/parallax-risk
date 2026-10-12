@@ -1,6 +1,6 @@
 # Parallax Risk documentation
 
-**Current: Phases 1–6 complete; release 0.6.0. Phase 7 NOT IMPLEMENTED.**
+**Current: Phases 1–7 complete; release 0.7.0. Phase 8 NOT IMPLEMENTED.**
 
 Start with the learning path below. FACT describes actual code/evidence; IMPLEMENTATION
 DECISION describes a chosen policy; ASSUMPTION states its applicability; LIMITATION
@@ -97,7 +97,7 @@ External URL availability and future model correctness are not claimed by this c
 
 ## Deferred detailed documents
 
-XVA/capital/governance and production scale tutorials remain deferred.
+Capital/governance and production scale tutorials remain deferred.
 Monte Carlo research, sequence policy and measured local benchmarks are implemented
 in Phase 4; no future financial workflow is scaffolded.
 Create future methodology/model/testing/tutorial pages alongside actual code and evidence.
@@ -110,3 +110,12 @@ Create future methodology/model/testing/tutorial pages alongside actual code and
 - [Hazard, survival and default sampling](methodology/CREDIT_DEFAULT.md)
 - [Independent, static and dynamic wrong-way risk](methodology/WRONG_WAY_RISK.md)
 - [Phase 6 verification and file manifest](validation/phase-6.md)
+
+## Phase 7 XVA and sensitivity research
+
+- [First XVA run](tutorials/06-FIRST-XVA-RUN.md)
+- [XVA workflow](workflows/XVA_WORKFLOW.md)
+- [Unilateral credit and signed result contract](methodology/XVA.md)
+- [Additive funding and external segregated margin](methodology/FUNDING_MARGIN.md)
+- [Seven factor types and ordered attribution residuals](methodology/XVA_SENSITIVITIES.md)
+- [Phase 7 verification and file manifest](validation/phase-7.md)

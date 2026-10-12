@@ -30,4 +30,4 @@ The published right-grid default exposure uses alive-path collateral and omits a
 default-conditioned margin freeze/MPOR. Read those limits before interpreting results.
 [Workflow](../workflows/EXPOSURE_WORKFLOW.md), [definitions](../methodology/EXPOSURE.md),
 [credit](../methodology/CREDIT_DEFAULT.md), [WWR](../methodology/WRONG_WAY_RISK.md),
-[actual verification](../validation/phase-6.md). XVA is Phase 7, NOT IMPLEMENTED.
+[actual verification](../validation/phase-6.md). Phase 7 consumes these approximate results in the [XVA tutorial](06-FIRST-XVA-RUN.md).

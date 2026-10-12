@@ -89,3 +89,18 @@ Batch size changes request identity but the tested market paths and exposure arr
 replay exactly on the pinned environment. No cross-platform bitwise promise is made.
 Dynamic scenario survival is recorded separately to expose marginal changes.
 [Workflow](workflows/EXPOSURE_WORKFLOW.md), [evidence](validation/phase-6.md).
+
+## Phase 7 XVA/risk replay
+
+`python scripts/demo_xva.py` preserves full synthetic XvaExperiment inputs, three
+credit scenarios, per-name/aggregate results, five FX valuations and ordered movement
+attribution. Fixed RunContext, request/threshold/rank addresses, funding/IM and source/
+runtime are required. Preserve exact bump units/sizes/order and actual endpoint inputs.
+Per-name hashes cover EE/ENE, discount, credit/recovery, own credit, funding/IM and
+sampled defaults/method. The aggregate exposure digest also covers book, ledgers,
+market/path buffers, simulation metadata and run. None replaces original input storage.
+
+Replay is checked on the pinned builds; no cross-platform bitwise promise or source
+commit is invented. Funding/IM are fixed in sensitivities; an independently supplied
+actual endpoint may include their movement, which remains residual if omitted from
+the ladder. [Workflow](workflows/XVA_WORKFLOW.md), [evidence](validation/phase-7.md).

@@ -41,8 +41,7 @@ input hashes. RunContext identifies a workflow/configuration; it is not a persis
 risk job, model approval or random generator. Phase 5 wraps nominal identities in
 actual immutable legal portfolio aggregates.
 
-Phase 6 implements ExposureProfile and ExposureRunResult. XVAResult, Finding and
-persisted model-governance aggregates remain NOT IMPLEMENTED. Current deterministic
+Phase 6 implements ExposureProfile and ExposureRunResult; Phase 7 adds XvaResult. Finding and persisted model-governance aggregates remain NOT IMPLEMENTED. Current deterministic
 portfolio risk is a building block for actual stochastic exposure profiles.
 See [roadmap](../ROADMAP.md), [code locations](CODEBASE_GUIDE.md) and
 [limitations](LIMITATIONS.md).
@@ -107,3 +106,21 @@ StochasticCreditSpread is a protocol; ReducedFormSpread is its credit-triangle p
 ExposureAtDefault and DependenceComparison retain finite-horizon defaults, grid buckets,
 default-weighted summaries and explicit approximation labels. They are not losses.
 See [definitions](methodology/EXPOSURE.md) and [credit](methodology/CREDIT_DEFAULT.md).
+
+## Phase 7 valuation and risk relationships
+
+XvaExperiment owns the full explicit request/book/market/accounts/credit/own-credit/
+discount/funding/IM/run configuration. OwnCredit supplies an independent unilateral
+hazard/recovery. FundingTerms owns three FundingSpreadCurves and a lending-benefit
+policy. MarginProfile is externally supplied expected segregated posted IM, distinct
+from CSA independent amount. XvaCalculator is an injected application port.
+
+XvaRunResult links exposure evidence and RunContext to per-CounterpartyXva values
+and aggregate XvaResult. XvaResult owns exactly four signed XvaComponents, FCA/FBA,
+input metadata and assumptions; total_adjustment sums them. Per-name contribution
+labels are intervals, aggregate labels are legal entities. XvaSensitivity retains
+five results and per-unit derivatives/stability. XvaAttribution retains ordered
+AttributionSteps, actual-end component changes and explicit residuals. These are
+immutable research values, not persisted jobs or model approvals.
+[Definitions](methodology/XVA.md), [funding](methodology/FUNDING_MARGIN.md),
+[risk](methodology/XVA_SENSITIVITIES.md).

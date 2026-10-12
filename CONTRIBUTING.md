@@ -21,8 +21,8 @@ phase, append history rows even if unchanged, update the decision ledger/changel
 and validate links. Supersede a decision with a new ID rather than rewriting history.
 
 Current derivative extensions belong in implemented instrument/pricing modules;
-follow [how to change the code](docs/CODEBASE_GUIDE.md). Model/calibration primitives
-and Monte Carlo research are implemented; XVA/governance
+follow [how to change the code](docs/CODEBASE_GUIDE.md). Model/calibration primitives,
+Monte Carlo, exposure and XVA research are implemented; governance
 extension points described in the roadmap are NOT IMPLEMENTED and must wait for
 their authorized phase. Finish only one phase, clean its disposable Docker resources,
 report code/documentation/testing changes and stop before awaiting `go`.
@@ -35,4 +35,9 @@ For Phase 6, preserve current-state conditional curves, retained known fixings,
 legal-scope separation, independent random addresses and explicitly restricted
 cash settlement. Quantile monotonicity is in confidence level, not arbitrary time.
 Document survival-marginal changes and right-grid EAD bias/default-freeze omission.
-See [exposure methodology](docs/methodology/EXPOSURE.md). Phase 7 requires a new `go`.
+See [exposure methodology](docs/methodology/EXPOSURE.md). Phase 7 extends those inputs into explicit unilateral/additive adjustments.
+
+For Phase 7, preserve explicit unilateral credit and additive funding/IM assumptions,
+component signs and reconciliation, admissible factor transformations, fixed sequence
+addresses, actual h/h2 evidence and attribution residuals. Do not infer an IM model,
+replace custom policies or project correlations silently. [XVA](docs/methodology/XVA.md).

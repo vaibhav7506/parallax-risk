@@ -8,12 +8,12 @@ risk. Exposure and valuation-adjustment models estimate that risk; the models ca
 also be wrong. Parallax Risk is intended to calculate and challenge those models.
 The implemented foundation covers deterministic pricing, stochastic model primitives,
 calibration, Monte Carlo research, collateralized portfolios and pathwise exposure/credit
-dependence. XVA and model-validation lab workflows remain in their authorized phases.
+dependence, unilateral XVA and actual sensitivity/attribution research. Model-validation lab workflows remain in their authorized phases.
 
 Educational/research implementation. Not production trading/risk software. Not
 regulatory certification.
 
-**Current scope: Phase 6 — exposure and wrong-way risk; release 0.6.0.**
+**Current scope: Phase 7 — XVA and sensitivities; release 0.7.0.**
 Immutable market snapshots, discount/zero/projection curves, deposit/par-swap
 bootstrapping, cash flows, bonds, swaps, FX forwards and finite-difference
 sensitivities are implemented. Phase 3 adds Vasicek, Hull–White, GBM, Heston,
@@ -77,7 +77,7 @@ python -m uvicorn parallax_risk.api.app:create_app --factory --host 127.0.0.1 --
 
 `/health` is process liveness. `/ready` returns 200 only after startup and a real
 PostgreSQL `SELECT 1`; it returns 503 for missing/unavailable dependencies.
-`/version` identifies Parallax Risk, release 0.6.0 and Phase 6. These endpoints do
+`/version` identifies Parallax Risk, release 0.7.0 and Phase 7. These endpoints do
 not perform financial calculations. API and CLI imports perform no environment,
 network, filesystem or logger initialization.
 
@@ -164,8 +164,7 @@ the valuation date. Positive discounts may increase when rates are negative.
 FX quotes are QUOTE/BASE with a declared settlement date. The pricing model uses
 checked binary64 arithmetic and reports unrounded currency units in Decimal
 Money; its computations do not inherit Money's exact-decimal arithmetic guarantee.
-Portfolio and pathwise exposure/credit research are implemented. XVA and capital
-models remain NOT IMPLEMENTED.
+Portfolio, pathwise exposure/credit and unilateral/additive XVA research are implemented. Capital models remain NOT IMPLEMENTED.
 
 Decimal Money prohibits implicit currency conversion, float amounts and silent
 rounding. Calendars use declared weekend/holiday sets, never assumed official
@@ -197,7 +196,7 @@ curve. Heston projected Euler reports variance projection; its European call pri
 reports quadrature estimates and rejects numerical failure. Correlation validation
 never repairs inputs automatically; a separate opt-in repair retains full evidence.
 These are research models with documented limitations, not real-market validation.
-The existing deterministic-discounting model remains version 0.2.0 within release 0.6.0; calibration model mathematics retains version 0.3.0.
+The existing deterministic-discounting model remains version 0.2.0 within release 0.7.0; calibration model mathematics retains version 0.3.0.
 
 ## Monte Carlo research
 
@@ -220,7 +219,7 @@ See [simulation tutorial](docs/tutorials/03-FIRST-SIMULATION-RUN.md),
 [statistics](docs/methodology/MONTE_CARLO_STATISTICS.md),
 and [research notebooks](notebooks/02-variance-reduction-convergence.ipynb).
 Optional Latin Hypercube, GPU/distributed methods and joint integrated-rate discounts
-are deferred. Phase 7 XVA requires another `go` after Phase 6 completes.
+are deferred. Phase 7 extends the same addressed streams into actual XVA revaluation.
 
 ## Portfolios and collateral
 
@@ -259,4 +258,23 @@ omitting default-conditioned freeze/MPOR. It is not regulatory EAD or CVA.
 See [exposure tutorial](docs/tutorials/05-FIRST-EXPOSURE-RUN.md),
 [methodology](docs/methodology/EXPOSURE.md), [credit](docs/methodology/CREDIT_DEFAULT.md),
 [WWR](docs/methodology/WRONG_WAY_RISK.md), [workflow](docs/workflows/EXPOSURE_WORKFLOW.md)
-and [Phase 6 verification](docs/validation/phase-6.md). Phase 7 remains NOT IMPLEMENTED.
+and [Phase 6 verification](docs/validation/phase-6.md). Phase 7 consumes this evidence in a separate XVA layer.
+
+## XVA and sensitivity research
+
+```sh
+python scripts/demo_xva.py
+```
+
+Phase 7 adds signed unilateral CVA/DVA and declared additive funding/IM costs,
+with exact default increments or sampled dependent grid loss. It recomputes actual
+exposure/XVA for rate, FX, volatility, credit-triangle spread, recovery, correlation
+and CSA receive-threshold bumps. Five revaluations retain central differences and
+h/h2 stability. Ordered movements retain component and total unexplained residuals.
+
+Read [the tutorial](docs/tutorials/06-FIRST-XVA-RUN.md),
+[credit/results](docs/methodology/XVA.md), [funding/IM](docs/methodology/FUNDING_MARGIN.md),
+[risk](docs/methodology/XVA_SENSITIVITIES.md), [workflow](docs/workflows/XVA_WORKFLOW.md)
+and [Phase 7 evidence](docs/validation/phase-7.md). Funding is a residual-exposure
+proxy and segregated posted IM is externally supplied. Bilateral/default-conditioned
+closeout, recursive funding, regulatory IM and capital remain outside this phase.

@@ -2,6 +2,36 @@
 
 
 
+## 0.7.0 — Phase 7 complete — 2026-10-01
+
+- Added immutable signed CVA/DVA/FVA/MVA components, total adjustment, FCA/FBA,
+  labelled interval/name contributions, input evidence and exact result checks.
+- Unilateral independent credit integrates discounted EE/ENE with exact default
+  increments; dependent CVA uses actual sampled discounted grid EAD without a
+  second PD multiplier. Own DVA stays independent; bilateral/default-conditioned
+  freeze/MPOR and stochastic discount covariance are not inferred.
+- Added explicit excess funding curves, optional lending benefit and external
+  segregated posted IM funding. Residual funding is an additive proxy; no recursive
+  hedge/treasury framework or regulatory IM model is claimed.
+- Added actual exposure/XVA bump/revalue for all seven declared factor kinds,
+  five central valuations with h/h2 stability, fixed stream addresses and ordered
+  movement attribution with explicit component/total residuals. Unsupported/custom/
+  shared-state bumps reject without repair; correlation tolerance is preserved.
+- Full Windows 3.13.2 and Linux 3.12.14 installed-wheel suites each passed **943**
+  tests with live PostgreSQL 17 and **99.44%** branch-inclusive coverage. All new
+  production modules reached 100% statements/branches. Final absolute-only XVA
+  assertions were tightened after those full runs; all 122 affected cases were
+  rerun successfully on both platforms without changing production code.
+- Ruff/format, strict mypy (96 source files), pre-commit, package and documentation
+  checks passed. Synthetic demo replay was byte-identical. Canonical ADRs 0017–0019
+  added; all 19 reviewed. Created 9 Markdown files and updated 61 existing guides/
+  decisions/records. All 13 historical evidence records remain byte-identical.
+- Scoped finally cleanup removed only Phase 7 verification resources; both labelled
+  test containers used --rm. All 35 unrelated container inventories and useful
+  release/rollback images remain. [Phase 7 evidence and manifest](docs/validation/phase-7.md).
+- Release/API/CLI metadata 0.7.0/7. Existing mathematical versions, locks, notebooks,
+  cleanup/doc validators and schema/migrations remain unchanged. Phase 8 NOT IMPLEMENTED.
+
 ## 0.6.0 — Phase 6 complete — 2026-10-01
 
 - Added conditional Q market paths, retained future fixing histories and actual

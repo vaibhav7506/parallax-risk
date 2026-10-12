@@ -1,6 +1,6 @@
 # Current limitations
 
-These limitations apply to implemented Phases 1–6. Preserve them until an actual
+These limitations apply to implemented Phases 1–7. Preserve them until an actual
 change and evidence justify revision; record revisions in the decision history.
 
 | Category / limitation | Impact and affected code | Mitigation / phase |
@@ -12,7 +12,7 @@ change and evidence justify revision; record revisions in the decision history.
 | Default-free dirty bond PV; simple swap coupons | No credit/default/optionality/clean-price/ex-coupon/compounded index | Use only supported explicit contracts; no invented adjustments |
 | Direct FX / no basis | No inverse/cross synthesis; portfolio/collateral conversion needs exact direct orientation | Supply exact direct pair/settlement and supported funding assumption |
 | Zero-knot risk, explicit finite bumps | Not market-quote DV01; truncation/cancellation depends on h | State scope/signs, test meaningful bump stability |
-| No XVA/capital | Phase 6 exposure/default summaries do not compute recovered/discounted losses or regulatory capital | Phases 7–8 planned |
+| Additive XVA / no capital | Unilateral deterministic-discount CVA/DVA, residual funding proxy and external IM omit bilateral/default/recursive economics | Read Phase 7 assumptions; Phase 8 capital NOT IMPLEMENTED |
 | No validation lab/mutation/governance persistence | Current tests are not independent institutional approval or model inventory | Phases 9–11 planned |
 | Operational API only, unauthenticated local service | No production risk jobs, authorization, scale/HA or security certification | Loopback/development use; Phase 12 planned |
 | Incomplete automatic lineage | Simulation captures sequences/runtime/platform and optional supplied source revision; portfolio/market/curve/ledger/pricer hashes exist in memory; persisted lineage absent | Preserve external source/runtime evidence; phased lineage work |
@@ -77,4 +77,28 @@ non-adapted and only preserves the finite sampled default marginal. Dynamic cred
 uses left-grid GBM spread intensity and credit-triangle assumptions with no baseline
 survival calibration, stochastic recovery, bilateral defaults or CDS model. See
 [exposure](methodology/EXPOSURE.md), [credit](methodology/CREDIT_DEFAULT.md),
-[WWR](methodology/WRONG_WAY_RISK.md). Phase 7 remains NOT IMPLEMENTED.
+[WWR](methodology/WRONG_WAY_RISK.md). Phase 7 separately converts grid EAD into sampled discounted losses with these same limitations.
+
+## Phase 7 XVA and risk scope
+
+Unilateral CVA/DVA sum without joint first-to-default closeout. Discounting is a
+supplied deterministic origin curve, excluding stochastic discount covariance.
+Independent loss uses endpoint-average quadrature; dependent loss discounts actual
+right-grid EAD with alive collateral, omitting default freeze/MPOR. Estimator and
+marginal changes make direct independent/dependent differences unsuitable as isolated
+WWR attribution. Exposure/XVA Monte Carlo confidence intervals are not reported.
+
+Funding uses alive residual borrowing/lending proxies without hedge/default/recursive
+cash economics. Spreads may economically overlap credit adjustments; automatic
+avoidance of double counting is not claimed. Segregated posted IM is external,
+separate from CSA IA and held fixed with funding during risk bumps; no regulatory IM
+estimator or settlement exists. All boundaries reject invalid inputs without repair.
+
+Risk supports explicit Vasicek/HullWhite/GBM transformations and continuous CSA
+receive threshold. Heston vega, calibrated quote CS01, custom dynamic-policy credit
+bumps, shared single-name spread shifts and discrete CSA derivatives are unsupported.
+Common streams do not guarantee stable differences in default buckets or at exposure
+kinks. Sequential attribution is order dependent and always retains the actual-end
+residual. Capital, governance/lab and financial production endpoints remain deferred.
+[Detailed formulations](methodology/XVA.md), [funding](methodology/FUNDING_MARGIN.md),
+[risk](methodology/XVA_SENSITIVITIES.md).
