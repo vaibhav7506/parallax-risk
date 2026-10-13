@@ -45,3 +45,10 @@ actual central revaluation and residual reconciliation. Validation retains mathe
 and sampling limitations; it does not establish bilateral pricing, regulatory IM or
 production model approval. [Phase 7 evidence](phase-7.md),
 [formulations](../methodology/XVA.md), [risk](../methodology/XVA_SENSITIVITIES.md).
+
+Phase 8 compares a restricted standardized prototype with actual per-legal-unit
+Monte Carlo effective EE/EPE. Independent formula/RC and deterministic exposure
+targets, scaling/netting/collateral checks and report exceptions verify implemented
+behavior. This is not independent institutional approval or full regulatory
+compliance. [Phase 8 evidence](phase-8.md),
+[methodology](../methodology/STANDARDIZED_CCR.md).

@@ -32,3 +32,10 @@ units, without a small-xi threshold fallback. Parameter recovery is a separate
 internal-consistency test on generated observations, not an independent model benchmark.
 See [model tests](../methodology/STOCHASTIC_PROCESSES.md) and
 [calibration limits](../methodology/CALIBRATION.md) for exact units and tolerances.
+
+Phase 8 CCR targets combine hand-derived synthetic FX/IR formulas and the two
+published CRE99 replacement-cost examples. A deterministic Monte Carlo FX case
+uses 10*exp(-.03*(1-t)) USD before maturity, zero on maturity, and verifies that
+effective EE retains its earlier maximum. No external-pricer market comparison
+or performance certification is inferred. [Targets/evidence](phase-8.md),
+[formulas](../methodology/STANDARDIZED_CCR.md).

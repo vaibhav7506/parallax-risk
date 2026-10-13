@@ -77,3 +77,15 @@ stale calculator evidence, five retained valuations and complete/omitted movemen
 residuals. Guard suites challenge malformed currency/grid/types/hashes/nonfinite and
 unsupported bumps. Full live PostgreSQL/platform/coverage outcomes appear in
 [Phase 7 evidence](../validation/phase-7.md). Historical totals remain unchanged.
+
+## Phase 8 CCR checks
+
+Independent formula/CRE99 RC targets, duration/maturity floors, IR bucket and FX
+pair offsets, signed collateral/NICA, multiplier limits, cap and homogeneous
+trade/CSA scaling are tested. Effective EE/EPE targets use explicit unequal grids
+and exact horizon nodes. Actual deterministic MC FX exposures have an independent
+closed form; legal units, daily margin, batch replay and stale evidence are checked.
+Capital/exception/bridge semantics and unsupported/numerical input ranges reject.
+All new absolute monetary assertions explicitly set rel=0. Full phase validation
+requires both platforms, live isolated PostgreSQL and >=95% branch-inclusive
+coverage. [Actual evidence](../validation/phase-8.md); [workflow](../workflows/CCR_WORKFLOW.md).

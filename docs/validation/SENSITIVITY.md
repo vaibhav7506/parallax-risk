@@ -35,3 +35,8 @@ not implicit basis-point/DV01 conversion. Actual h/h2 differences and component/
 reconciliation are retained. Only theoretically justified selected signs are tested;
 default-grid/kink effects may yield unstable or flat derivatives. Ordered attribution
 always reports independently valued actual-end residuals.
+
+Phase 8's CCR component bridge is an arithmetic decomposition of two EAD
+endpoints. It does not invoke counterfactual repricing and must not be labelled
+causal attribution, a Greek or a bump sensitivity. Actual trade/CSA homogeneity
+and legal-offset tests are separate checks. [Comparison](../methodology/CCR_COMPARISON.md).
