@@ -26,4 +26,4 @@ class VersionResponse(BaseModel):
     model_config = ConfigDict(frozen=True, extra="forbid")
     name: Literal["Parallax Risk"] = "Parallax Risk"
     version: str
-    phase: Literal[7] = 7
+    phase: Literal[8] = 8
