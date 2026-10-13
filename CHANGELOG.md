@@ -2,6 +2,22 @@
 
 
 
+## 0.8.0 — Phase 8 complete — 2026-10-01
+
+- Added restricted linear domestic IRS/domestic-quote FX SA-CCR-inspired
+  supervisory configuration, RC/add-on/multiplier/PFE/EAD and margined cap.
+- Added actual legal-unit Monte Carlo IMM challenger with explicit effective EE/EPE
+  and separate right-endpoint horizon averaging, preserving Phase 6 semantics.
+- Added illustrative caller-weighted capital inputs, signed comparisons, arithmetic
+  driver bridge/residuals and strict dual-threshold exceptions with null zero ratios.
+- Added synthetic demo, quantitative/contract/workflow tests, nine documents and
+  ADRs 0020–0022; reviewed all 22 ADRs with preserved prior history.
+- Full Windows and installed-wheel Linux live PostgreSQL suites passed (1072 tests
+  each, 99.49% branch-inclusive coverage); scoped Docker cleanup completed;
+  [Phase 8 evidence](docs/validation/phase-8.md) records actual results.
+- No dependency lock, notebook, earlier model equation, schema/migration or financial
+  API changes; Phase 9 model validation lab remains NOT IMPLEMENTED.
+
 ## 0.7.0 — Phase 7 complete — 2026-10-01
 
 - Added immutable signed CVA/DVA/FVA/MVA components, total adjustment, FCA/FBA,

@@ -8,12 +8,12 @@ risk. Exposure and valuation-adjustment models estimate that risk; the models ca
 also be wrong. Parallax Risk is intended to calculate and challenge those models.
 The implemented foundation covers deterministic pricing, stochastic model primitives,
 calibration, Monte Carlo research, collateralized portfolios and pathwise exposure/credit
-dependence, unilateral XVA and actual sensitivity/attribution research. Model-validation lab workflows remain in their authorized phases.
+dependence, unilateral XVA, actual sensitivity/attribution research and restricted CCR comparisons. Model-validation lab workflows remain in their authorized phases.
 
 Educational/research implementation. Not production trading/risk software. Not
 regulatory certification.
 
-**Current scope: Phase 7 — XVA and sensitivities; release 0.7.0.**
+**Current scope: Phase 8 — CCR prototypes and challengers; release 0.8.0.**
 Immutable market snapshots, discount/zero/projection curves, deposit/par-swap
 bootstrapping, cash flows, bonds, swaps, FX forwards and finite-difference
 sensitivities are implemented. Phase 3 adds Vasicek, Hull–White, GBM, Heston,
@@ -77,7 +77,7 @@ python -m uvicorn parallax_risk.api.app:create_app --factory --host 127.0.0.1 --
 
 `/health` is process liveness. `/ready` returns 200 only after startup and a real
 PostgreSQL `SELECT 1`; it returns 503 for missing/unavailable dependencies.
-`/version` identifies Parallax Risk, release 0.7.0 and Phase 7. These endpoints do
+`/version` identifies Parallax Risk, release 0.8.0 and Phase 8. These endpoints do
 not perform financial calculations. API and CLI imports perform no environment,
 network, filesystem or logger initialization.
 
@@ -196,7 +196,7 @@ curve. Heston projected Euler reports variance projection; its European call pri
 reports quadrature estimates and rejects numerical failure. Correlation validation
 never repairs inputs automatically; a separate opt-in repair retains full evidence.
 These are research models with documented limitations, not real-market validation.
-The existing deterministic-discounting model remains version 0.2.0 within release 0.7.0; calibration model mathematics retains version 0.3.0.
+The existing deterministic-discounting model remains version 0.2.0 within release 0.8.0; calibration model mathematics retains version 0.3.0.
 
 ## Monte Carlo research
 
@@ -277,4 +277,23 @@ Read [the tutorial](docs/tutorials/06-FIRST-XVA-RUN.md),
 [risk](docs/methodology/XVA_SENSITIVITIES.md), [workflow](docs/workflows/XVA_WORKFLOW.md)
 and [Phase 7 evidence](docs/validation/phase-7.md). Funding is a residual-exposure
 proxy and segregated posted IM is externally supplied. Bilateral/default-conditioned
-closeout, recursive funding, regulatory IM and capital remain outside this phase.
+closeout, recursive funding, regulatory IM remain outside XVA. Phase 8 adds restricted comparative CCR prototypes.
+
+## Phase 8 CCR prototype and challenger
+
+`python scripts/demo_ccr.py` runs a labelled synthetic comparison using actual
+Monte Carlo legal-unit exposure. Domestic vanilla IRS and domestic-quote FX
+forwards map to a restricted SA-CCR-inspired RC/add-on/PFE/EAD model. Explicit
+business-day MPOR/NICA inputs remain distinct from research CSA calendar days/IA.
+An IMM challenger derives running-max effective EE and right-endpoint effective
+EPE, then reports EAD, illustrative caller-weighted RWA/capital differences,
+component drivers/residuals and strict exception thresholds. No regulatory
+compliance, model approval or full capital rulebook is claimed.
+
+Read [standardized](docs/methodology/STANDARDIZED_CCR.md),
+[challenger](docs/methodology/IMM_CHALLENGER.md),
+[comparison](docs/methodology/CCR_COMPARISON.md),
+[workflow](docs/workflows/CCR_WORKFLOW.md),
+[tutorial](docs/tutorials/07-FIRST-CCR-COMPARISON.md) and
+[Phase 8 evidence](docs/validation/phase-8.md). Phase 9 model validation lab remains
+NOT IMPLEMENTED and requires another `go`.
