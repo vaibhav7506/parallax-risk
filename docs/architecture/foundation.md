@@ -73,3 +73,6 @@ be inferred solely from the project title.
 The [canonical decision register](../decisions/README.md) now tracks per-phase
 changes and reviews. Original ADRs remain historical evidence; see the
 [current architecture overview](OVERVIEW.md) for navigation.
+
+Phase 8 extends inward architecture with pure CCR domain calculations and injected legal-unit simulation, preserving Decimal/binary64 and no-import-I/O boundaries.
+[CCR workflow](../workflows/CCR_WORKFLOW.md), [decisions](../decisions/README.md).

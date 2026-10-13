@@ -56,3 +56,6 @@ Phase 7: XvaService injects an XvaCalculator and validates exposure/input eviden
 XvaRevaluation composes actual exposure for each bump. Domain XVA owns financial
 contracts, integration, finite differences and attribution. No new financial handler,
 persistence dependency or runtime service is added. [Workflow](../workflows/XVA_WORKFLOW.md).
+
+Phase 8 adds pure domain CCR formulas/contract mapping and an injected application legal-unit simulation comparison. Existing dependency direction and resource lifetimes remain unchanged.
+[CCR workflow](../workflows/CCR_WORKFLOW.md), [decisions](../decisions/README.md).

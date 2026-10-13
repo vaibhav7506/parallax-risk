@@ -22,12 +22,15 @@ Authentication, financial jobs, scale/HA and release hardening are DEFERRED to P
 
 Phase 5 adds pure Python book/collateral functionality within the existing wheel.
 No additional service, port or persistent volume is needed. The active disposable
-verification project is parallax-risk-phase6-verification; normal database data
+verification project is parallax-risk-phase8-verification; normal database data
 and other projects remain outside its cleanup scope.
 
-Phase 6: Pure Python exposure/credit runs in the existing wheel, with no new service/port/data volume. The active disposable verification project is parallax-risk-phase7-verification; normal project data and other workloads remain outside cleanup.
+Phase 6: Pure Python exposure/credit runs in the existing wheel, with no new service/port/data volume. The active disposable verification project is parallax-risk-phase8-verification; normal project data and other workloads remain outside cleanup.
 See [exposure workflow](../workflows/EXPOSURE_WORKFLOW.md).
 
 Phase 7 XVA/risk ships in the same typed wheel and existing image, with no new
 service, port or persistent volume. The verification helper runs installed production
 wheel code in its disposable Linux test container. [Cleanup](../operations/DOCKER.md).
+
+Phase 8 uses the same Python wheel/API/CLI/PostgreSQL topology. CCR is a library research workflow, not a new service, port, financial endpoint or persisted job.
+[CCR workflow](../workflows/CCR_WORKFLOW.md), [decisions](../decisions/README.md).

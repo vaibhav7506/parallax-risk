@@ -32,3 +32,8 @@ Use [the tutorial](../tutorials/05-FIRST-EXPOSURE-RUN.md) and preserve full inpu
 source/environment evidence and method assumptions. See [exposure](../methodology/EXPOSURE.md),
 [credit](../methodology/CREDIT_DEFAULT.md), [WWR](../methodology/WRONG_WAY_RISK.md),
 [replay](../REPRODUCIBILITY.md) and [limits](../LIMITATIONS.md).
+
+Phase 8 CcrService invokes this actual workflow separately per legal unit,
+validates returned book/run/market/account evidence and retains positive-path
+fingerprints for its challenger. Existing exposure semantics/limitations are
+unchanged. [CCR workflow](CCR_WORKFLOW.md).

@@ -30,3 +30,7 @@ signs, dates, FX or thresholds. Tests live in `tests/unit/test_portfolio_contrac
 Phase 6 composes PortfolioService for every simulated date/path through the
 [exposure workflow](EXPOSURE_WORKFLOW.md). Its perfect cash settlement is an explicit
 restricted policy; generic effective calls and standalone frozen MPOR stay separate.
+
+Phase 8 uses this injected origin pricer to establish V and settled effective C
+before actual scoped exposure simulation. It preserves legal-unit boundaries and
+requires independently explicit margin assumptions. [CCR workflow](CCR_WORKFLOW.md).

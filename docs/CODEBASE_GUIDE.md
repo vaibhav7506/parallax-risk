@@ -155,3 +155,20 @@ an ADR. Change admissible factor transformations in application revaluation, wit
 actual-path workflow tests. New components must extend the explicit fixed result
 contract deliberately; no arbitrary string silently changes economics. See
 [workflow](workflows/XVA_WORKFLOW.md) and [methodology](methodology/XVA.md).
+
+## Phase 8 CCR call path and change locations
+
+| Responsibility | Actual location |
+|---|---|
+| Immutable supervisory trades/configuration and explicit margin policy | `src/parallax_risk/domain/ccr/contracts.py` |
+| Restricted IRS/FX mapping and source-market conversion | `src/parallax_risk/domain/ccr/mapping.py` |
+| RC, duration/maturity, add-on/multiplier/PFE and margin cap | `src/parallax_risk/domain/ccr/standardized.py` |
+| Effective EE and right-endpoint normalized EPE | `src/parallax_risk/domain/ccr/challenger.py` |
+| Illustrative capital, arithmetic bridge and dual thresholds | `src/parallax_risk/domain/ccr/comparison.py` |
+| Injected actual legal-unit simulation/evidence | `src/parallax_risk/application/ccr.py` |
+| Labelled synthetic composition/report | `src/parallax_risk/application/ccr_examples.py`, `scripts/demo_ccr.py` |
+| Independent targets, boundary rejection and actual workflow | `tests/quantitative/test_ccr.py`, `tests/unit/test_ccr_contracts.py`, `tests/integration/test_ccr_workflow.py` |
+
+The domain depends inward on common/pricing/portfolio values; application owns
+service composition. No persistence/API model or approved regulatory method is
+added. See [workflow](workflows/CCR_WORKFLOW.md) and [limits](LIMITATIONS.md).

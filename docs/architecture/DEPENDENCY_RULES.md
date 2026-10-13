@@ -38,3 +38,6 @@ Phase 7: domain/xva imports only common/existing domain mathematics. Application
 owns calculator injection, input evidence checks and workflow composition. Import
 and AST boundary tests discover these new modules; no HTTP/ORM dependency or global
 RNG/logger/network initialization is added.
+
+Phase 8 domain/ccr imports common and existing domain values, never HTTP/ORM/application. Application/ccr injects ExposureService; no import-time logger, settings, database or RNG is created.
+[CCR workflow](../workflows/CCR_WORKFLOW.md), [decisions](../decisions/README.md).

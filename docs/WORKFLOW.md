@@ -24,7 +24,9 @@ flowchart TD
     BOOK --> EXP
     EXP --> XVA[XvaService / unilateral credit and additive funding]
     XVA --> XRISK[Actual central differences and movement residuals]
-    XRISK -.-> GOV[PLANNED: capital, validation lab and governance]
+    EXP --> CCR[CcrService / legal-unit standardized and IMM comparison]
+    CCR --> COMP[EAD, illustrative capital, driver bridge and exceptions]
+    COMP -.-> GOV[PLANNED: validation lab and governance]
 ```
 
 | Implemented step | Input / transformation / output | Module and failure |
@@ -41,7 +43,7 @@ flowchart TD
 See [code call path](CODEBASE_GUIDE.md) and [pricing workflow](workflows/PRICING_WORKFLOW.md).
 See [calibration workflow](workflows/CALIBRATION_WORKFLOW.md) and
 [simulation workflow](workflows/SIMULATION_WORKFLOW.md). Future arrows describe
-intended phases. Phase 7 adds signed XVA and sensitivity/attribution results; capital and governance remain absent.
+intended phases. Phase 7 adds signed XVA/risk; Phase 8 adds restricted CCR comparisons. Governance remains absent.
 
 Phase 4: explicit typed simulation configuration + RunContext → owned addressed
 normal stream → corrected Gaussian driver covariance → selected vectorized kernels
@@ -70,3 +72,10 @@ shifts with fixed sequence addresses → component central differences/stability
 ordered exact movements + independently valued actual endpoint → explicit residuals.
 See [XVA workflow](workflows/XVA_WORKFLOW.md). Funding/IM remain fixed during listed
 bumps; default-conditioned/bilateral and recursive economics are not inferred.
+
+Phase 8: explicit supervisory/comparison configuration + matching simulation/book/
+conditional markets/run + scoped ledgers/business-day margin terms → actual
+per-legal-unit repricing → restricted standardized and effective-EE/EPE challenger
+→ EAD/capital-input comparison, arithmetic driver bridge/residual and strict
+exceptions. No financial HTTP job or regulatory approval is inferred.
+See [CCR workflow](workflows/CCR_WORKFLOW.md).

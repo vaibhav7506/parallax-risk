@@ -36,3 +36,6 @@ Phase 7: `domain/xva` owns funding/margin/result contracts, credit/funding calcu
 and numerical sensitivity/attribution. `application/xva.py` injects XvaCalculator and
 links exact exposure evidence; `application/xva_revaluation.py` composes full actual
 revaluation and admissible named transformations. Examples/scripts own safe composition.
+
+The domain/ccr package owns immutable supervisory inputs, supported contract mapping, standardized formulas, challenger averages and comparison arithmetic. Application CcrService owns legal-unit replay and evidence checks; existing ExposureService/PortfolioService supply actual paths/prices.
+[CCR workflow](../workflows/CCR_WORKFLOW.md), [decisions](../decisions/README.md).

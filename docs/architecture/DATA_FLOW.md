@@ -55,3 +55,6 @@ external IM → XvaService/domain calculator → separate name components and ag
 signed adjustment. Full named revaluation under fixed addressed streams → central
 h/h2 evidence and ordered component/total actual-end residuals. No persisted lineage
 or economic bilateral recursion is inferred. [Workflow](../workflows/XVA_WORKFLOW.md).
+
+Phase 8 configuration/book/conditional-market/run/ledgers flow into legal-unit standardized inputs and actual exposure replay. Selected EE feeds effective EE/EPE; comparison retains two endpoints, capital inputs, bridge residuals and exceptions plus full input/path fingerprints.
+[CCR workflow](../workflows/CCR_WORKFLOW.md), [decisions](../decisions/README.md).
