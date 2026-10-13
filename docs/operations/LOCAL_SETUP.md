@@ -35,3 +35,8 @@ See [workflow](../workflows/EXPOSURE_WORKFLOW.md) and [limits](../LIMITATIONS.md
 
 Phase 7: `python scripts/demo_xva.py` runs labelled synthetic XVA/risk research.
 [First run](../tutorials/06-FIRST-XVA-RUN.md), [workflow](../workflows/XVA_WORKFLOW.md).
+
+Phase 8 research demo: `python scripts/demo_ccr.py`. It composes pure Python
+services and needs no financial API/database connection. The full database release
+checks use `scripts/verify_phase8.ps1`; see [CCR tutorial](../tutorials/07-FIRST-CCR-COMPARISON.md)
+and [verification](../validation/phase-8.md).

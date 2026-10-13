@@ -41,3 +41,10 @@ For Phase 7, preserve explicit unilateral credit and additive funding/IM assumpt
 component signs and reconciliation, admissible factor transformations, fixed sequence
 addresses, actual h/h2 evidence and attribution residuals. Do not infer an IM model,
 replace custom policies or project correlations silently. [XVA](docs/methodology/XVA.md).
+
+For Phase 8, preserve restricted supported products, legal-unit isolation,
+explicit business-day MPOR/NICA and the separate calendar CSA contract. Distinguish
+standardized formula PFE from empirical quantile PFE, and illustrative capital
+inputs from regulatory capital. Exception flags are not Findings. Keep component
+bridge residuals and exact horizon-node rejection. See
+[CCR methodology](docs/methodology/STANDARDIZED_CCR.md).

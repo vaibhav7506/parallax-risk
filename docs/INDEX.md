@@ -1,6 +1,6 @@
 # Parallax Risk documentation
 
-**Current: Phases 1–7 complete; release 0.7.0. Phase 8 NOT IMPLEMENTED.**
+**Current: Phases 1–8 complete; release 0.8.0. Phase 9 NOT IMPLEMENTED.**
 
 Start with the learning path below. FACT describes actual code/evidence; IMPLEMENTATION
 DECISION describes a chosen policy; ASSUMPTION states its applicability; LIMITATION
@@ -97,7 +97,7 @@ External URL availability and future model correctness are not claimed by this c
 
 ## Deferred detailed documents
 
-Capital/governance and production scale tutorials remain deferred.
+Model-validation lab/governance and production scale tutorials remain deferred.
 Monte Carlo research, sequence policy and measured local benchmarks are implemented
 in Phase 4; no future financial workflow is scaffolded.
 Create future methodology/model/testing/tutorial pages alongside actual code and evidence.
@@ -119,3 +119,12 @@ Create future methodology/model/testing/tutorial pages alongside actual code and
 - [Additive funding and external segregated margin](methodology/FUNDING_MARGIN.md)
 - [Seven factor types and ordered attribution residuals](methodology/XVA_SENSITIVITIES.md)
 - [Phase 7 verification and file manifest](validation/phase-7.md)
+
+## Phase 8 CCR prototype and challenger research
+
+- [First CCR comparison](tutorials/07-FIRST-CCR-COMPARISON.md)
+- [CCR workflow](workflows/CCR_WORKFLOW.md)
+- [Restricted standardized methodology](methodology/STANDARDIZED_CCR.md)
+- [Actual legal-unit IMM challenger](methodology/IMM_CHALLENGER.md)
+- [Capital inputs, component bridges and exceptions](methodology/CCR_COMPARISON.md)
+- [Phase 8 verification and file manifest](validation/phase-8.md)

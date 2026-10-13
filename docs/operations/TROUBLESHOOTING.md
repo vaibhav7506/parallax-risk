@@ -47,3 +47,10 @@ same currency/origin/ACT365F grid and all finite curve horizons. Verify componen
 and -FCA+FBA reconciliation. Central differences require admissible resolved +/-h;
 unsupported policy/volatility/shared-spread or PSD failures must not be silently
 repaired. [Risk conventions](../methodology/XVA_SENSITIVITIES.md).
+
+CCR rejects missing exact first-year/final-maturity grid nodes, unsupported
+instruments/foreign reporting sets, stale simulation evidence, missing/duplicate
+CSA ledgers or explicit margin specifications, non-daily/post-only CSA and
+mismatched TH/MTA. Correct the source input; do not pad grids, replace weights,
+repair legal scope or convert calendar MPOR automatically.
+[Supported workflow](../workflows/CCR_WORKFLOW.md).

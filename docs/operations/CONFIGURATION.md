@@ -42,3 +42,8 @@ Phase 7: own hazard/recovery, origin discount curve, funding spread curves/benef
 policy, external IM, exact risk targets/units/bump sizes and movement order are explicit
 library inputs. No environment variable silently selects a financial approximation.
 [Conventions](../methodology/XVA.md), [risk](../methodology/XVA_SENSITIVITIES.md).
+
+Phase 8 SupervisoryParameters/ComparisonPolicy/ScopeMargin are explicit immutable
+library inputs, not new environment settings or imported defaults. Source labels,
+currencies, business-day MPOR/NICA, weights/ratio and exception thresholds remain
+caller assumptions. [Contracts/workflow](../workflows/CCR_WORKFLOW.md).

@@ -1,8 +1,8 @@
 # Parallax Risk roadmap
 
-**Current:** Phase 7 complete, release 0.7.0.
-Phases 1–7 are complete. Documentation maintenance does not advance the phase.
-Phase 8 remains NOT IMPLEMENTED and requires another `go`.
+**Current:** Phase 8 complete, release 0.8.0.
+Phases 1–8 are complete. Documentation maintenance does not advance the phase.
+Phase 8 is complete; Phase 9 remains NOT IMPLEMENTED and requires another `go`.
 
 | Phase | Scope | State |
 |---|---|---|
@@ -13,7 +13,7 @@ Phase 8 remains NOT IMPLEMENTED and requires another `go`.
 | 5 | Portfolios, counterparties, netting and collateral | COMPLETE — [evidence](docs/validation/phase-5.md) |
 | 6 | Exposure and wrong-way risk | COMPLETE — [evidence](docs/validation/phase-6.md) |
 | 7 | XVA and extended sensitivity engine | COMPLETE — [evidence](docs/validation/phase-7.md) |
-| 8 | Regulatory-style capital and challenger models | PLANNED / NOT IMPLEMENTED |
+| 8 | Regulatory-style capital and challenger models | COMPLETE — [evidence](docs/validation/phase-8.md) |
 | 9 | Model validation lab | PLANNED / NOT IMPLEMENTED |
 | 10 | Mutation, adversarial search and failure forensics | PLANNED / NOT IMPLEMENTED |
 | 11 | Governance, monitoring, lineage and reporting | PLANNED / NOT IMPLEMENTED |

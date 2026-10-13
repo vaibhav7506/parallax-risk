@@ -30,3 +30,8 @@ See [workflow](../workflows/EXPOSURE_WORKFLOW.md) and [limits](../LIMITATIONS.md
 Phase 7 XVA/risk results remain immutable in-memory values. No table/migration,
 persisted job or institutional model approval is added. Live PostgreSQL checks still
 verify operational connectivity rather than financial-result persistence.
+
+Phase 8 adds no CCR comparison table or migration. Input/path/configuration
+fingerprints and exception flags remain in immutable in-memory results; they are
+not persisted risk jobs or governance Findings. Full tests still exercise live
+isolated PostgreSQL. [Evidence](../validation/phase-8.md).

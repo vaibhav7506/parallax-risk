@@ -29,3 +29,8 @@ Phase 7: XvaService emits restricted started/completed/failed events with RunCon
 ID and authored error type. Revaluation may emit multiple such workflows. Financial
 component values, path arrays and full terms are returned to the caller, not logged
 automatically. The synthetic demo explicitly owns an in-memory logger stream.
+
+Phase 8 CcrService reuses injected portfolio/exposure workflow logs per legal unit;
+there is no global logger configuration or governance monitor. The returned report
+preserves scoped path/configuration evidence and comparison exception flags.
+[Workflow](../workflows/CCR_WORKFLOW.md).

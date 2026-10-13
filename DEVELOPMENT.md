@@ -52,7 +52,7 @@ Without it the PostgreSQL-marked test is skipped, which is not live integration 
 Use `scripts/compose.verify.yml` and a unique phase verification project. Ports
 58000/55432 avoid this machine's unrelated port-8000 workload. Save useful outputs
 before teardown. In PowerShell, wrap the verification session in `try/finally` and
-call `scripts/cleanup_docker.ps1 -Phase 7 -Apply` in `finally`; increment only after
+call `scripts/cleanup_docker.ps1 -Phase 8 -Apply` in `finally`; increment only after
 the next phase is authorized. Preview without `-Apply`. See
 [Docker ownership and retention](docs/operations/DOCKER.md) for exact commands.
 
@@ -91,3 +91,8 @@ Phase 7 reproduction: `python scripts/demo_xva.py`; read
 [the tutorial](docs/tutorials/06-FIRST-XVA-RUN.md). Run `.\scripts\verify_phase7.ps1`
 for isolated live PostgreSQL Windows/Linux verification with finally cleanup. Logs
 remain under `artifacts/local/phase7/`; useful releases and other projects are retained.
+
+Phase 8 reproduction: `python scripts/demo_ccr.py`; read
+[CCR workflow](docs/workflows/CCR_WORKFLOW.md). Use `scripts/verify_phase8.ps1`
+for the full installed-release/live-database checks and project-scoped finally cleanup.
+No earlier model version or dependency lock changes are needed.
