@@ -121,3 +121,16 @@ Definitions, units/signs and caveats: [portfolio methodology](methodology/PORTFO
 
 [Credit/results](methodology/XVA.md), [funding](methodology/FUNDING_MARGIN.md),
 [risk](methodology/XVA_SENSITIVITIES.md).
+
+## Phase 8 comparative CCR terms
+
+| Term | Meaning and current scope |
+|---|---|
+| Supervisory duration / maturity factor | Restricted IR notional duration and explicit horizon weighting; [standardized](methodology/STANDARDIZED_CCR.md) |
+| Standardized RC / add-on / multiplier / PFE | Current replacement cost and formula-based future-exposure proxy; PFE is not an empirical quantile |
+| NICA / business-day MPOR | Explicit net independent collateral assumption and bilateral margin risk period; distinct from reusable CSA IA/calendar MPOR |
+| Effective EE / effective EPE | Running maximum of empirical EE and its explicit horizon-weighted average; [challenger](methodology/IMM_CHALLENGER.md) |
+| IMM challenger | Actual simulated research exposure comparison, without approved/current-stressed IMM or compliance claim |
+| Illustrative RWA / capital | EAD multiplied by caller risk weight and capital ratio; no regulatory weight lookup |
+| Comparison exception | Both strict absolute/relative EAD thresholds exceeded, absolute only at zero reference; not a governance Finding |
+| CCR component bridge | Arithmetic EAD-driver reconciliation with margin-cap and rounding residual; not causal attribution |

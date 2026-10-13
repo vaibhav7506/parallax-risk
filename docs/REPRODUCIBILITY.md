@@ -104,3 +104,14 @@ Replay is checked on the pinned builds; no cross-platform bitwise promise or sou
 commit is invented. Funding/IM are fixed in sensitivities; an independently supplied
 actual endpoint may include their movement, which remains residual if omitted from
 the ladder. [Workflow](workflows/XVA_WORKFLOW.md), [evidence](validation/phase-7.md).
+
+## Phase 8 CCR replay
+
+Run `python scripts/demo_ccr.py` from the installed 0.8.0 source/wheel environment.
+The sample retains fixed seed/run metadata, full request/book/conditional-market/
+configuration hashes and each legal-unit positive-path hash. Source configurations
+must be retained to resolve hashes; no persisted result repository is claimed.
+Exact replay is not approved IMM or regulatory accuracy. Full platform/database
+results and actual demo stdout digest live in [Phase 8 evidence](validation/phase-8.md).
+Use `scripts/verify_phase8.ps1` for isolated live PostgreSQL verification and scoped
+finally cleanup; retain useful earlier releases and historical test evidence.

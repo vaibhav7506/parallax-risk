@@ -138,3 +138,8 @@ Phase 7 [funding/IM](FUNDING_MARGIN.md) consumes residual EE/ENE as declared pro
 Its external segregated posted IM is distinct from reusable CSA IA. The physical
 collateral ledger still has no treasury/IM funding cash flows. XVA collateral risk
 shifts an existing receive threshold and reruns the actual scoped exposure workflow.
+
+Phase 8 retains these legal/CSA/ledger contracts and adds a separate restricted
+[CCR prototype](STANDARDIZED_CCR.md). Business-day MPOR/NICA inputs are explicit;
+calendar CSA MPOR and reusable IA are not silently reinterpreted as regulatory
+terms. Non-enforceable sets are replayed as individual trades.

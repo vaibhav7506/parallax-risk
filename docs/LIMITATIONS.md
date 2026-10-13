@@ -1,6 +1,6 @@
 # Current limitations
 
-These limitations apply to implemented Phases 1–7. Preserve them until an actual
+These limitations apply to implemented Phases 1–8. Preserve them until an actual
 change and evidence justify revision; record revisions in the decision history.
 
 | Category / limitation | Impact and affected code | Mitigation / phase |
@@ -12,7 +12,7 @@ change and evidence justify revision; record revisions in the decision history.
 | Default-free dirty bond PV; simple swap coupons | No credit/default/optionality/clean-price/ex-coupon/compounded index | Use only supported explicit contracts; no invented adjustments |
 | Direct FX / no basis | No inverse/cross synthesis; portfolio/collateral conversion needs exact direct orientation | Supply exact direct pair/settlement and supported funding assumption |
 | Zero-knot risk, explicit finite bumps | Not market-quote DV01; truncation/cancellation depends on h | State scope/signs, test meaningful bump stability |
-| Additive XVA / no capital | Unilateral deterministic-discount CVA/DVA, residual funding proxy and external IM omit bilateral/default/recursive economics | Read Phase 7 assumptions; Phase 8 capital NOT IMPLEMENTED |
+| Additive XVA / restricted comparative CCR | Unilateral deterministic-discount CVA/DVA, residual funding proxy and external IM omit bilateral/default/recursive economics | Read Phases 7/8 assumptions; no regulatory capital/compliance claim |
 | No validation lab/mutation/governance persistence | Current tests are not independent institutional approval or model inventory | Phases 9–11 planned |
 | Operational API only, unauthenticated local service | No production risk jobs, authorization, scale/HA or security certification | Loopback/development use; Phase 12 planned |
 | Incomplete automatic lineage | Simulation captures sequences/runtime/platform and optional supplied source revision; portfolio/market/curve/ledger/pricer hashes exist in memory; persisted lineage absent | Preserve external source/runtime evidence; phased lineage work |
@@ -99,6 +99,30 @@ receive threshold. Heston vega, calibrated quote CS01, custom dynamic-policy cre
 bumps, shared single-name spread shifts and discrete CSA derivatives are unsupported.
 Common streams do not guarantee stable differences in default buckets or at exposure
 kinks. Sequential attribution is order dependent and always retains the actual-end
-residual. Capital, governance/lab and financial production endpoints remain deferred.
+residual. Capital remains outside the XVA layer; Phase 8 adds restricted CCR research. Governance/lab and financial production endpoints remain deferred.
 [Detailed formulations](methodology/XVA.md), [funding](methodology/FUNDING_MARGIN.md),
 [risk](methodology/XVA_SENSITIVITIES.md).
+
+## Phase 8 CCR scope
+
+Domestic vanilla zero-spread/unit-gearing IRS and domestic-quote FX only; other
+contracts/asset classes reject. IR offsets stop at currency/maturity bucket.
+Explicit same-day direct FX conversion, single reporting currency across legal
+sets, daily receive-capable CSA and independently supplied business-day MPOR/NICA
+restrict scope. No collateral eligibility/segregation/legal opinion, clearing,
+dispute/large-set adjustments, multiple CSA or full jurisdictional rulebook.
+
+Actual Q exposure yields a research IMM challenger, not approved current/stressed
+IMM. Exact horizon nodes, right-endpoint normalized averages, finite samples,
+no rollover and alive-path margin without default-frozen regulatory MPOR remain
+limitations. Serial legal-unit replay scales runtime; output budget is per unit.
+Caller weights/ratio give illustrative capital inputs only. Arithmetic attribution
+and comparison exceptions do not create causal explanations or governance Findings.
+[Standardized](methodology/STANDARDIZED_CCR.md),
+[challenger](methodology/IMM_CHALLENGER.md), [comparison](methodology/CCR_COMPARISON.md).
+
+Phase 8 mapping rejects scheduled future termination/reset contracts. The
+explicit MPOR must meet the configured business-day floor. The application
+checks simulation-request metadata, dates, profile units/path count and path shape
+in addition to book/run/market/account evidence; each scope retains runtime
+simulation metadata for replay.

@@ -124,3 +124,18 @@ AttributionSteps, actual-end component changes and explicit residuals. These are
 immutable research values, not persisted jobs or model approvals.
 [Definitions](methodology/XVA.md), [funding](methodology/FUNDING_MARGIN.md),
 [risk](methodology/XVA_SENSITIVITIES.md).
+
+## Phase 8 CCR relationships
+
+SupervisoryTrade holds typed trade identity, restricted asset class, currency
+hedging key, reporting notional, delta and ACT/365F S/E/M. StandardizedInputs
+owns one legal unit's V/C/trades and optional explicit MarginTerms.
+SupervisoryParameters identifies source/versioned formula assumptions.
+StandardizedResult retains trade/group contributions, RC/add-on/multiplier/PFE,
+uncapped EAD and unmargined cap. ChallengerResult owns selected empirical EE,
+running-max effective EE, horizon-normalized averages and alpha-scaled EAD.
+ComparisonPolicy owns caller weights, ratio and exception tolerances.
+ComparisonResult retains two endpoints, capital inputs, differences and bridge
+residual. CcrRunResult binds actual legal-unit paths and configuration evidence;
+comparison flags do not instantiate Finding or governance aggregates.
+[Methodology](methodology/CCR_COMPARISON.md), [workflow](workflows/CCR_WORKFLOW.md).

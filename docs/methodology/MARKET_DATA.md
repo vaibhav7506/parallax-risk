@@ -41,3 +41,8 @@ horizon. This deterministic discount choice is separate from conditional pricing
 curves and does not claim stochastic discount covariance. Funding spreads, own credit
 and external IM carry explicit input identity; they are not fabricated market quotes.
 See [XVA](XVA.md) and [funding](FUNDING_MARGIN.md).
+
+The Phase 8 supported FX supervisory mapping uses explicit same-day direct spot
+for the foreign leg in reporting currency. It rejects later-settled spot and
+foreign quote legs rather than inferring conversions or eligibility.
+[Restricted CCR](STANDARDIZED_CCR.md).

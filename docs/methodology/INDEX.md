@@ -17,7 +17,7 @@ definitions are backed by actual implementation and tests.
 - [Monte Carlo paths and sequences](MONTE_CARLO.md).
 - [Monte Carlo statistics and variance reduction](MONTE_CARLO_STATISTICS.md).
 
-Capital and validation-lab models are NOT IMPLEMENTED. Detailed documents will be created alongside authorized implementations; see [roadmap](../../ROADMAP.md).
+Phase 8 implements restricted comparative CCR prototypes. Model-validation lab remains NOT IMPLEMENTED; see [roadmap](../../ROADMAP.md).
 
 - [Portfolios, legal netting and cash collateral](PORTFOLIO_COLLATERAL.md).
 
@@ -28,3 +28,11 @@ Capital and validation-lab models are NOT IMPLEMENTED. Detailed documents will b
 - [Unilateral CVA/DVA and signed XVA](XVA.md).
 - [Additive funding and external segregated IM](FUNDING_MARGIN.md).
 - [Actual XVA sensitivities and ordered residual attribution](XVA_SENSITIVITIES.md).
+
+## Phase 8
+
+- [Restricted SA-CCR-inspired formulas and supported contracts](STANDARDIZED_CCR.md)
+- [Actual legal-unit IMM challenger and effective EE/EPE](IMM_CHALLENGER.md)
+- [Illustrative capital, arithmetic drivers and exception policy](CCR_COMPARISON.md)
+
+These research methods do not establish regulatory compliance or model approval.

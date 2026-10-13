@@ -84,3 +84,8 @@ six sample standard errors over 2,048 paths. Conditional HullWhite knots use rel
 Phase 7 [XVA](XVA.md) is a separate consumer of these approximate profiles/default
 buckets. It applies deterministic discount/LGD to sampled losses for dependent credit;
 it does not upgrade alive-path EAD to default-conditioned MPOR or regulatory EAD.
+
+Phase 8 consumes actual EE from separately replayed legal units in its
+[IMM challenger](IMM_CHALLENGER.md). Existing full-horizon trapezoidal EPE,
+empirical quantile PFE and grid default exposure semantics stay unchanged; they
+are not standardized PFE or approved regulatory EAD.
