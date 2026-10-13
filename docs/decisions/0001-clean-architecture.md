@@ -55,6 +55,8 @@ to Phase 12. Do not scaffold those implementations now.
 `src/parallax_risk/application/calibration.py`,
 `src/parallax_risk/infrastructure/calibration/scipy_solver.py`.
 
+Phase 8 adds `src/parallax_risk/domain/ccr/` and `src/parallax_risk/application/ccr.py` with the same inward dependency rule. [CCR workflow](../workflows/CCR_WORKFLOW.md).
+
 ## Phase history
 
 | Phase | Change / review | Evidence |
@@ -67,3 +69,4 @@ to Phase 12. Do not scaffold those implementations now.
 | 5 | Application portfolio pricer port and domain legal/collateral aggregates added; dependency rules retained | [Phase 5](../validation/phase-5.md) |
 | 6 | Added injected ExposureService and domain exposure/credit modules; dependencies retained | [Phase 6](../validation/phase-6.md) |
 | 7 | Added injected XvaCalculator/XvaService and full exposure revaluation; domain XVA/risk remains inward | [Phase 7](../validation/phase-7.md) |
+| 8 | Extended inward architecture with pure CCR domain calculations and injected legal-unit simulation | [Phase 8](../validation/phase-8.md) |

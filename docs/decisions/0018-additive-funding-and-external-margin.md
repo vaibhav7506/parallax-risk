@@ -38,3 +38,4 @@ No default termination, recursive pricing, hedge financing, collateral interest 
 | 5 | Not applicable; Phase 7 XVA/risk policy NOT IMPLEMENTED | [Phase 5](../validation/phase-5.md) |
 | 6 | Not applicable; Phase 7 XVA/risk policy NOT IMPLEMENTED | [Phase 6](../validation/phase-6.md) |
 | 7 | Introduced explicit policy and implementation; verified on both platforms; actual evidence retained separately | [Phase 7](../validation/phase-7.md) |
+| 8 | Reviewed; no change; existing contracts retained for restricted Phase 8 research | [Phase 8](../validation/phase-8.md) |

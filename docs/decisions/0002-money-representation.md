@@ -57,3 +57,4 @@ See [pricing methodology](../methodology/deterministic-pricing.md) and
 | 5 | Exact Money reused for positions, cash, haircuts and aggregation; explicit binary64 FX factors become Decimal text without an exact-valuation claim | [Phase 5](../validation/phase-5.md) |
 | 6 | Reviewed; no change; reused existing contract in Phase 6 | [Phase 6](../validation/phase-6.md) |
 | 7 | Reviewed; no change to accepted policy; Phase 7 consumers preserve its stated limitations | [Phase 7](../validation/phase-7.md) |
+| 8 | Reviewed; no change; existing contracts retained for restricted Phase 8 research | [Phase 8](../validation/phase-8.md) |
