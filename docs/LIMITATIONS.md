@@ -1,6 +1,6 @@
 # Current limitations
 
-These limitations apply to implemented Phases 1–8. Preserve them until an actual
+These limitations apply to implemented Phases 1–9. Preserve them until an actual
 change and evidence justify revision; record revisions in the decision history.
 
 | Category / limitation | Impact and affected code | Mitigation / phase |
@@ -13,7 +13,7 @@ change and evidence justify revision; record revisions in the decision history.
 | Direct FX / no basis | No inverse/cross synthesis; portfolio/collateral conversion needs exact direct orientation | Supply exact direct pair/settlement and supported funding assumption |
 | Zero-knot risk, explicit finite bumps | Not market-quote DV01; truncation/cancellation depends on h | State scope/signs, test meaningful bump stability |
 | Additive XVA / restricted comparative CCR | Unilateral deterministic-discount CVA/DVA, residual funding proxy and external IM omit bilateral/default/recursive economics | Read Phases 7/8 assumptions; no regulatory capital/compliance claim |
-| No validation lab/mutation/governance persistence | Current tests are not independent institutional approval or model inventory | Phases 9–11 planned |
+| In-memory validation lab; no mutation/governance persistence | Findings and checks are not independent institutional approval or model inventory | Phase 9 lab implemented; Phases 10–11 planned |
 | Operational API only, unauthenticated local service | No production risk jobs, authorization, scale/HA or security certification | Loopback/development use; Phase 12 planned |
 | Incomplete automatic lineage | Simulation captures sequences/runtime/platform and optional supplied source revision; portfolio/market/curve/ledger/pricer hashes exist in memory; persisted lineage absent | Preserve external source/runtime evidence; phased lineage work |
 | Exact version locks without hashes; release-tag bases | Whole-environment rebuild immutability not guaranteed | Record actual versions/image IDs and revalidate updates |
@@ -99,7 +99,7 @@ receive threshold. Heston vega, calibrated quote CS01, custom dynamic-policy cre
 bumps, shared single-name spread shifts and discrete CSA derivatives are unsupported.
 Common streams do not guarantee stable differences in default buckets or at exposure
 kinks. Sequential attribution is order dependent and always retains the actual-end
-residual. Capital remains outside the XVA layer; Phase 8 adds restricted CCR research. Governance/lab and financial production endpoints remain deferred.
+residual. Capital remains outside the XVA layer; Phase 8 adds restricted CCR research. Governance and financial production endpoints remain deferred; Phase 9 adds a scoped library lab.
 [Detailed formulations](methodology/XVA.md), [funding](methodology/FUNDING_MARGIN.md),
 [risk](methodology/XVA_SENSITIVITIES.md).
 
@@ -126,3 +126,17 @@ explicit MPOR must meet the configured business-day floor. The application
 checks simulation-request metadata, dates, profile units/path count and path shape
 in addition to book/run/market/account evidence; each scope retains runtime
 simulation metadata for replay.
+
+## Phase 9 validation limitations
+
+Same-case schema comparisons and findings are research evidence, not approval.
+Independent flat-hazard/discount CVA benchmarks do not validate every XVA assumption.
+Fixed cash offsets are not general dynamic CSA monotonicity. Finite grid/path ladders
+do not prove convergence or bound bias; step mappings are not Brownian-nested.
+Single Sobol point confidence and dependent CVA observations reject in this adapter.
+Bootstrap is conditional approximate coverage, parameter ensembles are supplied ranges,
+calibration delta bands are local normal approximations and unavailable/constrained
+covariance rejects. Caller-sourced history is not independently authenticated.
+No QuantLib/ORE verification, historical market dataset, model approval, monitoring,
+mutation/adversarial work or new financial API is claimed.
+[Detailed lab assumptions](methodology/MODEL_VALIDATION.md).

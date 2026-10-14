@@ -85,3 +85,14 @@ sources, data and boundary payloads. `tests/integration/test_calibration_workflo
 executes the real service/example. No global search, historical estimation, multistart,
 bootstrap, calibration uncertainty propagation, persisted calibration runs or financial
 HTTP/CLI workflow is implemented. These limits are visible in [limitations](../LIMITATIONS.md).
+
+## Phase 9 lab scope
+
+Phase 9 reuses available unconstrained local parameter covariance in actual selected-risk propagation, rejecting active bounds, inadmissible bumps and unstable h/h2 derivatives. Its flat-hazard cumulative-probability objective consumes explicit sourced observations; synthetic examples do not constitute market calibration.
+[Lab methods](../methodology/MODEL_VALIDATION.md), [phase evidence](../validation/phase-9.md).
+
+Phase 9 constructs the existing full-rank SVD covariance estimator from weighted
+Gram entries, evaluating each symmetric entry once. The lab still rejects asymmetric
+caller covariance exactly and never clips eigenvalues. This resolves the observed
+Linux BLAS rounding asymmetry at the estimator source. The existing calibration
+mathematical assumptions remain unchanged. [Phase 9 evidence](../validation/phase-9.md).

@@ -17,7 +17,7 @@ definitions are backed by actual implementation and tests.
 - [Monte Carlo paths and sequences](MONTE_CARLO.md).
 - [Monte Carlo statistics and variance reduction](MONTE_CARLO_STATISTICS.md).
 
-Phase 8 implements restricted comparative CCR prototypes. Model-validation lab remains NOT IMPLEMENTED; see [roadmap](../../ROADMAP.md).
+Phase 8 implements restricted comparative CCR prototypes. Phase 9 adds model-validation lab workflows; see [roadmap](../../ROADMAP.md).
 
 - [Portfolios, legal netting and cash collateral](PORTFOLIO_COLLATERAL.md).
 
@@ -36,3 +36,9 @@ Phase 8 implements restricted comparative CCR prototypes. Model-validation lab r
 - [Illustrative capital, arithmetic drivers and exception policy](CCR_COMPARISON.md)
 
 These research methods do not establish regulatory compliance or model approval.
+
+## Phase 9
+
+- [Comparable models and numerical checks](MODEL_VALIDATION.md)
+- [Independent bootstrap and calibration/parameter uncertainty](MODEL_UNCERTAINTY.md)
+- [Sourced and hypothetical stresses](STRESS_SCENARIOS.md)

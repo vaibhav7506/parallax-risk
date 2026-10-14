@@ -41,7 +41,7 @@ input hashes. RunContext identifies a workflow/configuration; it is not a persis
 risk job, model approval or random generator. Phase 5 wraps nominal identities in
 actual immutable legal portfolio aggregates.
 
-Phase 6 implements ExposureProfile and ExposureRunResult; Phase 7 adds XvaResult. Finding and persisted model-governance aggregates remain NOT IMPLEMENTED. Current deterministic
+Phase 6 implements ExposureProfile and ExposureRunResult; Phase 7 adds XvaResult. Phase 9 implements immutable Finding evidence; persisted model-governance aggregates remain NOT IMPLEMENTED. Current deterministic
 portfolio risk is a building block for actual stochastic exposure profiles.
 See [roadmap](../ROADMAP.md), [code locations](CODEBASE_GUIDE.md) and
 [limitations](LIMITATIONS.md).
@@ -139,3 +139,14 @@ ComparisonResult retains two endpoints, capital inputs, differences and bridge
 residual. CcrRunResult binds actual legal-unit paths and configuration evidence;
 comparison flags do not instantiate Finding or governance aggregates.
 [Methodology](methodology/CCR_COMPARISON.md), [workflow](workflows/CCR_WORKFLOW.md).
+
+## Phase 9 validation values
+
+ModelOutput owns immutable case/model/evidence identities and finite Metric values with
+unit-labelled Contributions. Comparison retains component differences, residuals and
+Check values. Failed checks own Finding severity/evidence/metric/reproduction/version/status.
+ConvergenceStudy owns independent-unit estimates and actual resolution points;
+UncertaintyBand distinguishes empirical bootstrap, supplied ensemble and local covariance
+interpretations. StressScenario retains sourced/ordered movements and optional observed
+dates/parent hashes; StressResult owns actual baseline/stressed values and movements.
+[Validation methodology](methodology/MODEL_VALIDATION.md).

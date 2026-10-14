@@ -2,8 +2,8 @@
 
 | Term | Intuition / why it matters | Current project usage and reference |
 |---|---|---|
-| Counterparty credit risk (CCR) | Risk of losing a positive derivative claim when the other party defaults | Deterministic and pathwise exposure/credit research implemented; default loss deferred; [roadmap](../ROADMAP.md) |
-| Model risk | Risk that assumptions, mathematics, data or implementation produce misleading decisions | Explicit assumptions and quantitative tests today; independent lab/governance deferred; [validation](validation/OVERVIEW.md) |
+| Counterparty credit risk (CCR) | Risk of losing a positive derivative claim when the other party defaults | Deterministic and pathwise exposure/credit research implemented; unilateral default loss implemented in Phase 7; [roadmap](../ROADMAP.md) |
+| Model risk | Risk that assumptions, mathematics, data or implementation produce misleading decisions | Explicit assumptions and quantitative tests today; Phase 9 library lab implemented; governance deferred; [validation](validation/OVERVIEW.md) |
 | XVA / CVA | Signed valuation adjustments; unilateral CVA addresses counterparty default loss | Phase 7 implements declared approximations; [methodology](methodology/XVA.md) |
 | NPV / PV | Value today of signed future payments | DiscountingEngine/PricingResult; [pricing](methodology/PRICING.md) |
 | Discount factor D(0,t) | Multiplier translating a payment at t into today's value | Positive anchored DiscountCurve; may exceed 1 with negative rates; [curves](methodology/CURVES.md) |
@@ -134,3 +134,19 @@ Definitions, units/signs and caveats: [portfolio methodology](methodology/PORTFO
 | Illustrative RWA / capital | EAD multiplied by caller risk weight and capital ratio; no regulatory weight lookup |
 | Comparison exception | Both strict absolute/relative EAD thresholds exceeded, absolute only at zero reference; not a governance Finding |
 | CCR component bridge | Arithmetic EAD-driver reconciliation with margin-cap and rounding residual; not causal attribution |
+
+## Phase 9 validation terms
+
+| Term | Meaning |
+|---|---|
+| Metric schema | Ordered names, exact unit labels and contribution names required for comparison |
+| Validation Finding | Immutable failed-check severity/evidence/metric/reproduction/version/status; not model approval |
+| Model-difference residual | Challenger-minus-production total minus supplied component changes |
+| Finite-ladder stability | Actual adjacent means and final approximate sampling precision meet explicit tolerances |
+| Percentile bootstrap | Conditional empirical resampling of independent path/pair/scramble units |
+| Parameter ensemble | Actually revalued caller perturbations; percentile range without inferred probability law |
+| Delta-method band | Local derivative/covariance normal approximation including cross terms |
+| Historical shock replay | Dated caller-sourced after-before parameter shifts applied to baseline |
+| Ordered combined stress | Concatenated sourced shocks with retained parent hashes and possible interactions |
+
+[Lab methods](methodology/MODEL_VALIDATION.md), [uncertainty](methodology/MODEL_UNCERTAINTY.md).

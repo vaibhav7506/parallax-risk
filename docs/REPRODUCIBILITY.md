@@ -115,3 +115,8 @@ Exact replay is not approved IMM or regulatory accuracy. Full platform/database
 results and actual demo stdout digest live in [Phase 8 evidence](validation/phase-8.md).
 Use `scripts/verify_phase8.ps1` for isolated live PostgreSQL verification and scoped
 finally cleanup; retain useful earlier releases and historical test evidence.
+
+## Phase 9 lab scope
+
+Run `python scripts/demo_validation.py` from the installed 0.9.0 environment. Retain exact immutable inputs, unit schemas, source release, owned stream addresses, model versions and result evidence. Bootstrap replicate addresses are order-independent; actual draws are retained. Same-runtime demo byte replay is checked; cross-platform bit identity is not promised. Finite step-grid normal mappings differ; no nested Brownian coupling is claimed.
+[Lab methods](methodology/MODEL_VALIDATION.md), [phase evidence](validation/phase-9.md).

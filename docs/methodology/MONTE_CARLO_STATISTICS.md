@@ -84,3 +84,8 @@ Phase 7 XVA retains actual five-point valuation/stability evidence but reports n
 Monte Carlo confidence interval for CVA or Greeks. Do not transfer an unrelated IID
 Estimate interval to sampled/default-correlated exposure or infer certification from
 common streams. See [risk assumptions](XVA_SENSITIVITIES.md).
+
+## Phase 9 lab scope
+
+Phase 9 reuses independent-unit estimates for actual risk path/grid ladders and resamples path/pair/scramble units in owned bootstrap workflows. Stability/precision findings do not bound discretization bias. The XVA path adapter rejects a single Sobol design for independent-path inference.
+[Lab methods](../methodology/MODEL_VALIDATION.md), [phase evidence](../validation/phase-9.md).
