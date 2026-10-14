@@ -52,3 +52,4 @@ rulebook, stress maximum or CVA charge is supplied.
 | 6 | Not applicable; Phase 8 comparison NOT IMPLEMENTED | [Phase 6](../validation/phase-6.md) |
 | 7 | Not applicable; Phase 8 comparison NOT IMPLEMENTED | [Phase 7](../validation/phase-7.md) |
 | 8 | Introduced explicit capital assumptions, arithmetic bridge and threshold semantics; verified on both platforms | [Phase 8](../validation/phase-8.md) |
+| 9 | Reviewed; no change; existing policy retained in Phase 9 lab scope | [Phase 9](../validation/phase-9.md) |

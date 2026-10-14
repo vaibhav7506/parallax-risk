@@ -1,13 +1,13 @@
 # Parallax Risk decision register
 
 This is the canonical register from the documentation maintenance update on
-2026-10-01. **8 of 12 implementation phases are complete.** Phase 8 is complete; Phase 9 requires another `go`.
+2026-10-01. **9 of 12 implementation phases are complete.** Phase 9 is complete; Phase 10 requires another `go`.
 Decision numbers identify decisions, not phases. Each decision retains a phase
 history so reviews and changes can be counted without erasing earlier choices.
 
 | ID | Decision | Status / implemented scope | Introduced in implementation |
 |---|---|---|---|
-| 0001 | [Clean architecture](0001-clean-architecture.md) | Accepted | Phase 1; extended Phases 2/5/6/7/8 |
+| 0001 | [Clean architecture](0001-clean-architecture.md) | Accepted | Phase 1; extended Phases 2/5/6/7/8/9 |
 | 0002 | [Money representation](0002-money-representation.md) | Accepted | Phase 1; pricing boundary Phase 2; portfolio use Phase 5 |
 | 0003 | [Immutable market snapshots](0003-immutable-market-snapshots.md) | Accepted | Phase 2; conditional paths Phase 6 |
 | 0004 | [Random sequence reproducibility](0004-random-sequence-reproducibility.md) | Accepted metadata and addressed pseudo/Sobol sequences | Phases 1–4 |
@@ -15,7 +15,7 @@ history so reviews and changes can be counted without erasing earlier choices.
 | 0006 | [Persistence boundaries](0006-persistence-boundaries.md) | Accepted | Phase 1 |
 | 0007 | [Deterministic curves and pricing](0007-deterministic-curves-and-pricing.md) | Accepted | Phase 2 |
 | 0008 | [Stochastic models and discretization](0008-stochastic-models-and-discretization.md) | Accepted | Phase 3 |
-| 0009 | [Bounded calibration and uncertainty](0009-bounded-calibration-and-uncertainty.md) | Accepted | Phase 3 |
+| 0009 | [Bounded calibration and uncertainty](0009-bounded-calibration-and-uncertainty.md) | Accepted; numerical construction refined in Phase 9 | Phase 3; refinement Phase 9 |
 | 0010 | [Independent sampling units and controls](0010-independent-sampling-units.md) | Accepted | Phase 4 |
 | 0011 | [Batched paths and Gaussian covariance](0011-batched-paths-and-gaussian-covariance.md) | Accepted | Phase 4 |
 | 0012 | [Legal portfolio snapshots](0012-legal-portfolio-snapshots.md) | Accepted | Phase 5 |
@@ -30,7 +30,11 @@ history so reviews and changes can be counted without erasing earlier choices.
 | 0021 | [Legal-unit IMM challenger](0021-legal-unit-imm-challenger.md) | Accepted; implemented and verified | Phase 8 |
 | 0022 | [CCR capital comparison](0022-ccr-capital-comparison.md) | Accepted; implemented and verified | Phase 8 |
 
-There are **22 canonical ADRs**; all are accepted, implemented, verified and reviewed. The prior sequence proposal is now
+| 0023 | [Comparable model outputs and reproducible findings](0023-validation-comparability.md) | Accepted; implemented and verified | Phase 9 |
+| 0024 | [Independent-unit convergence and uncertainty](0024-validation-inference.md) | Accepted; implemented and verified | Phase 9 |
+| 0025 | [Sourced and ordered stress scenarios](0025-sourced-stress-scenarios.md) | Accepted; implemented and verified | Phase 9 |
+
+There are **25 canonical ADRs**; all are accepted, implemented, verified and reviewed. The prior sequence proposal is now
 implemented and reviewed; earlier history remains intact.
 
 ## Phase ledger
@@ -46,6 +50,8 @@ implemented and reviewed; earlier history remains intact.
 | Phase 6 | 0.6.0 COMPLETE | 0001, 0003, 0014, 0015, 0016 | 5 material changes; all 16 ADRs reviewed | [821 tests on both platforms; exposure/credit report](../validation/phase-6.md) |
 | Phase 7 | 0.7.0 COMPLETE | 0001, 0017, 0018, 0019 | 4 material changes; all 19 ADRs reviewed | [943 tests on both platforms; XVA/risk report](../validation/phase-7.md) |
 | Phase 8 | 0.8.0 COMPLETE | 0001, 0020, 0021, 0022 | 4 material changes; all 22 ADRs reviewed | [1072 tests on both platforms; CCR prototype report](../validation/phase-8.md) |
+
+| Phase 9 | 0.9.0 COMPLETE | 0001, 0009, 0023, 0024, 0025 | 5 material changes; all 25 ADRs reviewed | [1209 tests on both platforms; validation lab report](../validation/phase-9.md) |
 
 These counts are material decision changes, not file-edit or commit counts.
 Historical phase numbers/test outcomes come from the original reports; retrospective

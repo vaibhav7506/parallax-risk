@@ -59,3 +59,4 @@ dimension/order can weaken gains; no Brownian bridge or PCA is implemented.
 | 6 | Reviewed; no change; reused existing contract in Phase 6 | [Phase 6](../validation/phase-6.md) |
 | 7 | Reviewed; no change to accepted policy; Phase 7 consumers preserve its stated limitations | [Phase 7](../validation/phase-7.md) |
 | 8 | Reviewed; no change; existing contracts retained for restricted Phase 8 research | [Phase 8](../validation/phase-8.md) |
+| 9 | Reviewed; no change; existing policy retained in Phase 9 lab scope | [Phase 9](../validation/phase-9.md) |

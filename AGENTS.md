@@ -6,9 +6,9 @@ understand the financial reasoning, locate the code and reproduce results.
 
 ## Current phase
 
-- Current implementation phase: **8 — complete**; release 0.8.0.
-- Completed implementation phases: **1, 2, 3, 4, 5, 6, 7, 8**.
-- Next implementation phase: **9 — model validation lab, NOT IMPLEMENTED**.
+- Current implementation phase: **9 — complete**; release 0.9.0.
+- Completed implementation phases: **1, 2, 3, 4, 5, 6, 7, 8, 9**.
+- Next implementation phase: **10 — adversarial and mutation lab, NOT IMPLEMENTED**.
 - Documentation maintenance between phases does not advance the implementation phase.
 - Implement exactly one numbered phase when the user writes `go`; complete its
   code, applicable tests, documentation and cleanup, then stop. Never pre-build the next phase.
@@ -86,6 +86,7 @@ Ambiguous ownership means retain and report. Never delete the normal Compose
 - Exposure/credit: `src/parallax_risk/domain/exposure/`, `domain/credit/`.
 - XVA and risk: `src/parallax_risk/domain/xva/`, `application/xva.py`, `application/xva_revaluation.py`.
 - CCR prototypes/challengers: `src/parallax_risk/domain/ccr/`, `application/ccr.py`.
+- Validation lab: `src/parallax_risk/domain/validation/`, `application/validation.py`, `application/validation_models.py`, `application/validation_stress.py`.
 - Boundaries/workflow: `src/parallax_risk/application/`.
 - Tests: `tests/`; documentation: `docs/INDEX.md`, `docs/CODEBASE_GUIDE.md`.
 - Decisions: `docs/decisions/README.md`; maintenance log: `CHANGELOG.md`.

@@ -57,6 +57,8 @@ to Phase 12. Do not scaffold those implementations now.
 
 Phase 8 adds `src/parallax_risk/domain/ccr/` and `src/parallax_risk/application/ccr.py` with the same inward dependency rule. [CCR workflow](../workflows/CCR_WORKFLOW.md).
 
+Phase 9 adds `src/parallax_risk/domain/validation/` and injected application model/uncertainty/stress workflows. The demo script injects the existing CalibrationSolver adapter; application never imports infrastructure. [Validation workflow](../workflows/VALIDATION_WORKFLOW.md).
+
 ## Phase history
 
 | Phase | Change / review | Evidence |
@@ -70,3 +72,4 @@ Phase 8 adds `src/parallax_risk/domain/ccr/` and `src/parallax_risk/application/
 | 6 | Added injected ExposureService and domain exposure/credit modules; dependencies retained | [Phase 6](../validation/phase-6.md) |
 | 7 | Added injected XvaCalculator/XvaService and full exposure revaluation; domain XVA/risk remains inward | [Phase 7](../validation/phase-7.md) |
 | 8 | Extended inward architecture with pure CCR domain calculations and injected legal-unit simulation | [Phase 8](../validation/phase-8.md) |
+| 9 | Extended inward architecture with pure validation evidence and injected production/challenger workflows | [Phase 9](../validation/phase-9.md) |

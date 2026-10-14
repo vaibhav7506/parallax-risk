@@ -52,3 +52,4 @@ closeout is supplied. Common streams support replay, not model accuracy.
 | 6 | Not applicable; Phase 8 challenger NOT IMPLEMENTED | [Phase 6](../validation/phase-6.md) |
 | 7 | Not applicable; Phase 8 challenger NOT IMPLEMENTED | [Phase 7](../validation/phase-7.md) |
 | 8 | Introduced actual legal-unit simulation and distinct effective EE/EPE convention; verified on both platforms | [Phase 8](../validation/phase-8.md) |
+| 9 | Reviewed; no change; existing policy retained in Phase 9 lab scope | [Phase 9](../validation/phase-9.md) |

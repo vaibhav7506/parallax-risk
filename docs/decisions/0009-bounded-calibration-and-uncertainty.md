@@ -20,7 +20,10 @@ errors raise CalibrationError with cause. No data deletion, penalty substitute o
 
 Estimate local covariance by full-rank Jacobian SVD only for converged interior
 fits with residual degrees of freedom and adequate conditioning. Otherwise report
-absence and reason. Covariance is an iid-scaled-residual local approximation.
+absence and reason. Covariance is an iid-scaled-residual local approximation. Phase 9 constructs each
+weighted SVD Gram covariance entry once and publishes the same value in both
+symmetric positions. This refines numerical construction without repairing supplied
+matrices, changing fitted parameters or replacing the mathematical estimator.
 
 ## Alternatives considered
 
@@ -73,3 +76,4 @@ financial service jobs. No calibration approval or production-market claim is ma
 | 6 | Reviewed; no change; reused existing contract in Phase 6 | [Phase 6](../validation/phase-6.md) |
 | 7 | Reviewed; no change to accepted policy; Phase 7 consumers preserve its stated limitations | [Phase 7](../validation/phase-7.md) |
 | 8 | Reviewed; no change; existing contracts retained for restricted Phase 8 research | [Phase 8](../validation/phase-8.md) |
+| 9 | Refined exact-symmetric weighted SVD Gram covariance construction after actual Linux propagation rejection; assumptions retained | [Phase 9](../validation/phase-9.md) |
