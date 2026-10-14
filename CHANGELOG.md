@@ -1,6 +1,18 @@
 # Parallax Risk changelog
 
+## 0.9.0 — Phase 9 complete — 2026-10-01
 
+- Added injected comparable production/challenger models, exact metric/unit schemas,
+  model-difference components/residuals and immutable reproducible findings.
+- Added actual credit benchmark/invariants/local checks, XVA path/grid convergence,
+  independent-unit bootstrap, actual parameter ensembles and calibration risk bands.
+- Added sourced dated observation adapters and actual hypothetical/ordered combined
+  stresses. Demo/adapter tests are explicitly synthetic; no market history is fabricated.
+- Added Phase 9 guides/report and ADRs 0023–0025; reviewed every prior ADR. Both full suites passed 1209 tests
+  with live PostgreSQL and 99.25% branch-inclusive
+  coverage. Scoped Docker cleanup preserved all 35 unrelated containers and useful images.
+  The first Linux rejection led to exact-symmetric SVD covariance construction, with
+  failure logs preserved. Phase 10 mutation/adversarial work remains NOT IMPLEMENTED.
 
 ## 0.8.0 — Phase 8 complete — 2026-10-01
 

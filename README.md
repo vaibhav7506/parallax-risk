@@ -8,12 +8,12 @@ risk. Exposure and valuation-adjustment models estimate that risk; the models ca
 also be wrong. Parallax Risk is intended to calculate and challenge those models.
 The implemented foundation covers deterministic pricing, stochastic model primitives,
 calibration, Monte Carlo research, collateralized portfolios and pathwise exposure/credit
-dependence, unilateral XVA, actual sensitivity/attribution research and restricted CCR comparisons. Model-validation lab workflows remain in their authorized phases.
+dependence, unilateral XVA, actual sensitivity/attribution research and restricted CCR comparisons. Phase 9 adds actual model-validation lab workflows.
 
 Educational/research implementation. Not production trading/risk software. Not
 regulatory certification.
 
-**Current scope: Phase 8 — CCR prototypes and challengers; release 0.8.0.**
+**Current scope: Phase 9 — model validation lab; release 0.9.0.**
 Immutable market snapshots, discount/zero/projection curves, deposit/par-swap
 bootstrapping, cash flows, bonds, swaps, FX forwards and finite-difference
 sensitivities are implemented. Phase 3 adds Vasicek, Hull–White, GBM, Heston,
@@ -29,7 +29,7 @@ after the user writes `go`.
 ```mermaid
 flowchart LR
     API[Operational API / CLI] --> APP[Application boundaries and ports]
-    APP --> DOMAIN[Market, curves, contracts, pricing and model objectives]
+    APP --> DOMAIN[Market, curves, contracts, pricing, model objectives and validation]
     DOMAIN --> CORE[Typed common primitives]
     DB[PostgreSQL adapter] --> APP
     SOLVER[SciPy calibration adapter] --> APP
@@ -77,7 +77,7 @@ python -m uvicorn parallax_risk.api.app:create_app --factory --host 127.0.0.1 --
 
 `/health` is process liveness. `/ready` returns 200 only after startup and a real
 PostgreSQL `SELECT 1`; it returns 503 for missing/unavailable dependencies.
-`/version` identifies Parallax Risk, release 0.8.0 and Phase 8. These endpoints do
+`/version` identifies Parallax Risk, release 0.9.0 and Phase 9. These endpoints do
 not perform financial calculations. API and CLI imports perform no environment,
 network, filesystem or logger initialization.
 
@@ -164,7 +164,8 @@ the valuation date. Positive discounts may increase when rates are negative.
 FX quotes are QUOTE/BASE with a declared settlement date. The pricing model uses
 checked binary64 arithmetic and reports unrounded currency units in Decimal
 Money; its computations do not inherit Money's exact-decimal arithmetic guarantee.
-Portfolio, pathwise exposure/credit and unilateral/additive XVA research are implemented. Capital models remain NOT IMPLEMENTED.
+Portfolio, pathwise exposure/credit, unilateral/additive XVA and restricted comparative
+CCR research are implemented. A full regulatory capital rulebook remains NOT IMPLEMENTED.
 
 Decimal Money prohibits implicit currency conversion, float amounts and silent
 rounding. Calendars use declared weekend/holiday sets, never assumed official
@@ -196,7 +197,7 @@ curve. Heston projected Euler reports variance projection; its European call pri
 reports quadrature estimates and rejects numerical failure. Correlation validation
 never repairs inputs automatically; a separate opt-in repair retains full evidence.
 These are research models with documented limitations, not real-market validation.
-The existing deterministic-discounting model remains version 0.2.0 within release 0.8.0; calibration model mathematics retains version 0.3.0.
+The existing deterministic-discounting model remains version 0.2.0 within release 0.9.0; calibration model mathematics retains version 0.3.0.
 
 ## Monte Carlo research
 
@@ -295,5 +296,15 @@ Read [standardized](docs/methodology/STANDARDIZED_CCR.md),
 [comparison](docs/methodology/CCR_COMPARISON.md),
 [workflow](docs/workflows/CCR_WORKFLOW.md),
 [tutorial](docs/tutorials/07-FIRST-CCR-COMPARISON.md) and
-[Phase 8 evidence](docs/validation/phase-8.md). Phase 9 model validation lab remains
-NOT IMPLEMENTED and requires another `go`.
+[Phase 8 evidence](docs/validation/phase-8.md). Phase 9 adds the scoped model-validation lab below.
+
+## Phase 9 model validation lab
+
+Run `python scripts/demo_validation.py` for labelled synthetic model comparisons,
+findings, invariants, actual XVA path/grid convergence, selected-risk uncertainty
+and hypothetical/combined stresses. Failed thresholds remain failed findings.
+[First run](docs/tutorials/08-FIRST-VALIDATION-RUN.md),
+[methods and assumptions](docs/methodology/MODEL_VALIDATION.md),
+[workflow](docs/workflows/VALIDATION_WORKFLOW.md),
+[actual verification](docs/validation/phase-9.md).
+Phase 10 mutation/adversarial work, Phase 11 governance and Phase 12 financial production APIs remain NOT IMPLEMENTED.
