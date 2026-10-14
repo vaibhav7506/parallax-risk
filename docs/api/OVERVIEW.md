@@ -18,14 +18,19 @@ Read [endpoints](ENDPOINTS.md), [errors](ERRORS.md), [examples](EXAMPLES.md) and
 
 Phase 4 adds an injected Python simulation research workflow and executed notebooks.
 It adds no financial HTTP route or asynchronous risk-job lifecycle. Operational version
-metadata now identifies release 0.8.0 and phase 8.
+metadata now identifies release 0.9.0 and phase 9.
 
 Phase 5 adds the injected Python PortfolioService for deterministic legal netting and
 cash collateral accounting. Operational endpoints do not submit books or execute
 margin movements. Financial APIs remain deferred.
 
-Phase 6 adds library exposure/default/WWR research only. `/version` currently reports 0.8.0/8;
+Phase 6 adds library exposure/default/WWR research only. `/version` currently reports 0.9.0/9;
 no endpoint executes repricing, collateral settlement, default simulation or XVA.
 
-Phase 7 adds library XVA/sensitivity/attribution research. `/version` currently reports 0.8.0/8;
+Phase 7 adds library XVA/sensitivity/attribution research. `/version` currently reports 0.9.0/9;
 no endpoint runs those calculations. [Library workflow](../workflows/XVA_WORKFLOW.md).
+
+## Phase 9 lab scope
+
+Phase 9 implements library validation reports only. Findings, uncertainty and stresses do not introduce financial API endpoints or model approval routes. `/version` identifies release 0.9.0/phase 9.
+[Lab methods](../methodology/MODEL_VALIDATION.md), [phase evidence](../validation/phase-9.md).

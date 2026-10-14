@@ -3,7 +3,7 @@
 Model development implements a calculation; model validation challenges its
 mathematics, data assumptions, numerical behavior and appropriate use. Current
 independent analytical/integral/ODE software tests support pricing and model primitives; they are
-not an institutional model approval, challenger-model lab or governance workflow.
+not institutional model approval or a governance workflow. Phase 9 now adds a library challenger-model lab.
 
 | Current technique | Defect it targets | Evidence |
 |---|---|---|
@@ -15,9 +15,8 @@ not an institutional model approval, challenger-model lab or governance workflow
 
 Actual bounded optimizer diagnostics, local parameter uncertainty and supplied-step
 refinement are now implemented. See [calibration](../methodology/CALIBRATION.md)
-and [Phase 3](phase-3.md). Stress/uncertainty propagation, challenger
-models, mutation/adversarial detection matrices, backtesting and governance monitoring
-are NOT IMPLEMENTED. Do not invent measured detection rates or model accuracy claims.
+and [Phase 3](phase-3.md). Phase 9 implements scoped stress/uncertainty propagation and comparable challenger models.
+Mutation/adversarial detection matrices, backtesting and governance monitoring remain NOT IMPLEMENTED. Do not invent measured detection rates or model accuracy claims.
 Create their detailed documents only with their authorized implementations.
 
 Actual phase outcomes are [Phase 1](phase-1.md), [Phase 2](phase-2.md) and
@@ -52,3 +51,7 @@ targets, scaling/netting/collateral checks and report exceptions verify implemen
 behavior. This is not independent institutional approval or full regulatory
 compliance. [Phase 8 evidence](phase-8.md),
 [methodology](../methodology/STANDARDIZED_CCR.md).
+
+Phase 9 adds immutable findings, automatic invariants, actual production/challenger
+comparison and numerical/uncertainty/stress workflows. [Methods](../methodology/MODEL_VALIDATION.md),
+[workflow](../workflows/VALIDATION_WORKFLOW.md), [actual evidence](phase-9.md).

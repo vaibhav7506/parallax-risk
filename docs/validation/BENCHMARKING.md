@@ -39,3 +39,8 @@ uses 10*exp(-.03*(1-t)) USD before maturity, zero on maturity, and verifies that
 effective EE retains its earlier maximum. No external-pricer market comparison
 or performance certification is inferred. [Targets/evidence](phase-8.md),
 [formulas](../methodology/STANDARDIZED_CCR.md).
+
+## Phase 9 lab scope
+
+Phase 9 compares actual production CVA quadrature with independent analytical constant EE and adaptive piecewise-linear integration. This can expose finite-grid bias under a strict tolerance; a discrepancy is retained rather than relabelled accuracy. No QuantLib/ORE result, external historical dataset, timing improvement or compliance claim is introduced.
+[Lab methods](../methodology/MODEL_VALIDATION.md), [phase evidence](../validation/phase-9.md).

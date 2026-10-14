@@ -89,3 +89,8 @@ Capital/exception/bridge semantics and unsupported/numerical input ranges reject
 All new absolute monetary assertions explicitly set rel=0. Full phase validation
 requires both platforms, live isolated PostgreSQL and >=95% branch-inclusive
 coverage. [Actual evidence](../validation/phase-8.md); [workflow](../workflows/CCR_WORKFLOW.md).
+
+## Phase 9 lab scope
+
+Phase 9 adds independent constant/linear-exposure credit targets, production grid-bias detection and refinement, zero/scaling/fixed-cash invariants, finite-difference checks, owned bootstrap replay, covariance cross-term targets, actual path/grid XVA studies, sourced stress adapter and invalid boundary tests. Full release acceptance retains >=95% branch-inclusive coverage; focused tests alone are not whole-package coverage evidence. See `tests/quantitative/test_validation_lab.py`, `tests/unit/test_validation_guards.py` and `tests/integration/test_validation_workflow.py`.
+[Lab methods](../methodology/MODEL_VALIDATION.md), [phase evidence](../validation/phase-9.md).

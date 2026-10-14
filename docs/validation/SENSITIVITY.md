@@ -40,3 +40,8 @@ Phase 8's CCR component bridge is an arithmetic decomposition of two EAD
 endpoints. It does not invoke counterfactual repricing and must not be labelled
 causal attribution, a Greek or a bump sensitivity. Actual trade/CSA homogeneity
 and legal-offset tests are separate checks. [Comparison](../methodology/CCR_COMPARISON.md).
+
+## Phase 9 lab scope
+
+Phase 9 records five actual local valuations at 0,+/-h,+/-h/2, h-versus-half-step consistency and optional independent targets, with derivative units, evidence and immutable findings. Calibration propagation additionally rejects optimizer-bound violations, unchanged input identities and unstable derivatives. No single-sided fallback is used.
+[Lab methods](../methodology/MODEL_VALIDATION.md), [phase evidence](../validation/phase-9.md).
