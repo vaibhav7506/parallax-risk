@@ -59,7 +59,20 @@ def _uncertainty(
     if reason is not None:
         return ParameterUncertainty(rank, dof, condition, None, None, reason)
     residual_variance = math.fsum(r * r for r in scaled) / dof
-    covariance = (vt.T * (residual_variance / (singular * singular))) @ vt
+    weights = residual_variance / (singular * singular)
+    covariance = np.empty((n, n), dtype=np.float64)
+    # Construct each symmetric covariance entry once from the weighted SVD Gram
+    # sum. Two independent BLAS products can differ by an ulp across platforms.
+    # This constructs the stated estimator; it does not repair supplied matrices.
+    try:
+        for i in range(n):
+            for j in range(i, n):
+                value = math.fsum(
+                    float(vt[k, i]) * float(vt[k, j]) * float(weights[k]) for k in range(n)
+                )
+                covariance[i, j] = covariance[j, i] = value
+    except (OverflowError, ValueError) as error:
+        raise CalibrationError("Local uncertainty estimate is not representable") from error
     if not np.all(np.isfinite(covariance)):
         raise CalibrationError("Local uncertainty estimate is non-finite")
     values = tuple(tuple(float(x) for x in row) for row in covariance)

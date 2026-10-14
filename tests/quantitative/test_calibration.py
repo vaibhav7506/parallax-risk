@@ -14,6 +14,19 @@ from parallax_risk.infrastructure.calibration.scipy_solver import ScipyLeastSqua
 from tests.fixtures.stochastic import heston_problem, hull_white_problem, vasicek_problem
 
 
+def test_covariance_construction_matches_independent_two_parameter_inverse():
+    from parallax_risk.infrastructure.calibration.scipy_solver import _uncertainty
+
+    jacobian = np.array([[1.0, 0.0], [0.0, 1.0], [1.0, 1.0], [2.0, -1.0]])
+    result = _uncertainty(jacobian, (1.0, -1.0, 0.5, -0.5), (0, 0), True, CalibrationSettings())
+    # J'J=[[6,-1],[-1,3]], inverse=[[3,1],[1,6]]/17; residual variance=2.5/2.
+    expected = np.array([[3.0, 1.0], [1.0, 6.0]]) * (1.25 / 17)
+    actual = np.asarray(result.covariance)
+    np.testing.assert_allclose(actual, expected, rtol=1e-13, atol=1e-15)
+    assert np.array_equal(actual, actual.T)
+    assert np.linalg.eigvalsh(actual)[0] > 0
+
+
 @pytest.mark.parametrize(
     "factory,tolerance",
     [(vasicek_problem, 3e-6), (hull_white_problem, 2e-7), (heston_problem, 3e-5)],
@@ -33,6 +46,8 @@ def test_generated_parameter_recovery_and_repeatability(factory, tolerance):
     assert result.uncertainty.jacobian_rank == len(bounds)
     assert result.uncertainty.unavailable_reason is None
     assert result.uncertainty.covariance is not None
+    covariance = np.asarray(result.uncertainty.covariance)
+    assert np.array_equal(covariance, covariance.T)
     replay = solver.solve(problem, bounds, CalibrationSettings(), CalibrationRunId("recovery"))
     assert replay == result
 
