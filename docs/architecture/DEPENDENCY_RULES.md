@@ -41,3 +41,8 @@ RNG/logger/network initialization is added.
 
 Phase 8 domain/ccr imports common and existing domain values, never HTTP/ORM/application. Application/ccr injects ExposureService; no import-time logger, settings, database or RNG is created.
 [CCR workflow](../workflows/CCR_WORKFLOW.md), [decisions](../decisions/README.md).
+
+## Phase 9 lab scope
+
+Phase 9 domain validation depends only inward on common and existing domain mathematics/statistics; application composes injected services. Calibration solver imports occur in the explicit demo script composition, with no import-time fitting/I/O/network/RNG creation.
+[Lab methods](../methodology/MODEL_VALIDATION.md), [phase evidence](../validation/phase-9.md).

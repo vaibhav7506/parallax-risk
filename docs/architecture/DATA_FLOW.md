@@ -58,3 +58,8 @@ or economic bilateral recursion is inferred. [Workflow](../workflows/XVA_WORKFLO
 
 Phase 8 configuration/book/conditional-market/run/ledgers flow into legal-unit standardized inputs and actual exposure replay. Selected EE feeds effective EE/EPE; comparison retains two endpoints, capital inputs, bridge residuals and exceptions plus full input/path fingerprints.
 [CCR workflow](../workflows/CCR_WORKFLOW.md), [decisions](../decisions/README.md).
+
+## Phase 9 lab scope
+
+Phase 9 immutable case hashes → independently evaluated production/challenger outputs → exact schema validation → component differences/residuals/checks/findings. Actual path/grid and parameter revaluations → explicitly interpreted statistical evidence; sourced ordered shocks → retained stress outputs.
+[Lab methods](../methodology/MODEL_VALIDATION.md), [phase evidence](../validation/phase-9.md).

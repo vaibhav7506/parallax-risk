@@ -76,3 +76,8 @@ changes and reviews. Original ADRs remain historical evidence; see the
 
 Phase 8 extends inward architecture with pure CCR domain calculations and injected legal-unit simulation, preserving Decimal/binary64 and no-import-I/O boundaries.
 [CCR workflow](../workflows/CCR_WORKFLOW.md), [decisions](../decisions/README.md).
+
+## Phase 9 lab scope
+
+Phase 9 adds typed immutable validation evidence and injected production/challenger workflows while retaining the common/domain/application/adapter/composition boundaries.
+[Lab methods](../methodology/MODEL_VALIDATION.md), [phase evidence](../validation/phase-9.md).

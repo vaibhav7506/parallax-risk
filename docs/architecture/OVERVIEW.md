@@ -59,3 +59,8 @@ persistence dependency or runtime service is added. [Workflow](../workflows/XVA_
 
 Phase 8 adds pure domain CCR formulas/contract mapping and an injected application legal-unit simulation comparison. Existing dependency direction and resource lifetimes remain unchanged.
 [CCR workflow](../workflows/CCR_WORKFLOW.md), [decisions](../decisions/README.md).
+
+## Phase 9 lab scope
+
+Phase 9 extends inward domain validation values/mathematics and injected application model adapters. The lab composes existing exposure/XVA/calibration workflows; no new service, database schema or financial HTTP endpoint is added.
+[Lab methods](../methodology/MODEL_VALIDATION.md), [phase evidence](../validation/phase-9.md).

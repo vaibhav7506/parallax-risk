@@ -172,3 +172,21 @@ contract deliberately; no arbitrary string silently changes economics. See
 The domain depends inward on common/pricing/portfolio values; application owns
 service composition. No persistence/API model or approved regulatory method is
 added. See [workflow](workflows/CCR_WORKFLOW.md) and [limits](LIMITATIONS.md).
+
+## Phase 9 change locations
+
+| Responsibility | Location |
+|---|---|
+| Metrics, schemas, comparisons and findings | `src/parallax_risk/domain/validation/contracts.py` |
+| Invariants, finite differences and convergence criteria | `src/parallax_risk/domain/validation/checks.py` |
+| Independent CVA benchmark and flat probability objective | `src/parallax_risk/domain/validation/benchmark.py` |
+| Owned bootstrap and covariance propagation | `src/parallax_risk/domain/validation/uncertainty.py` |
+| Injected comparison, ensembles and calibration propagation | `src/parallax_risk/application/validation.py` |
+| Actual CVA/XVA adapters and independent path observations | `src/parallax_risk/application/validation_models.py` |
+| Actual automatic CVA invariants | `src/parallax_risk/application/validation_invariants.py` |
+| Sourced/hypothetical ordered stresses | `src/parallax_risk/application/validation_stress.py` |
+| Synthetic composition and report | `src/parallax_risk/application/validation_examples.py`, `scripts/demo_validation.py` |
+| Independent targets and actual workflow/rejection checks | `tests/quantitative/test_validation_lab.py`, `tests/integration/test_validation_workflow.py`, `tests/unit/test_validation_guards.py` |
+
+Change mathematical contracts in domain and actual production adapters in application;
+preserve inward imports, units and evidence. [Workflow](workflows/VALIDATION_WORKFLOW.md).

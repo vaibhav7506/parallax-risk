@@ -26,7 +26,8 @@ flowchart TD
     XVA --> XRISK[Actual central differences and movement residuals]
     EXP --> CCR[CcrService / legal-unit standardized and IMM comparison]
     CCR --> COMP[EAD, illustrative capital, driver bridge and exceptions]
-    COMP -.-> GOV[PLANNED: validation lab and governance]
+    XVA --> LAB[Validation lab: models, findings, uncertainty, stresses]
+    LAB -.-> GOV[PLANNED: governance]
 ```
 
 | Implemented step | Input / transformation / output | Module and failure |
@@ -79,3 +80,10 @@ per-legal-unit repricing → restricted standardized and effective-EE/EPE challe
 → EAD/capital-input comparison, arithmetic driver bridge/residual and strict
 exceptions. No financial HTTP job or regulatory approval is inferred.
 See [CCR workflow](workflows/CCR_WORKFLOW.md).
+
+Phase 9: immutable case + injected comparable models + explicit unit/tolerance policy
+→ actual outputs/component differences/residuals → checks and immutable findings.
+Actual local perturbations and path/grid revaluations → sensitivity/convergence evidence;
+independent units, supplied ensembles or available calibration covariance → distinctly
+labelled selected-risk bands. Sourced ordered scenarios → actual stress results.
+[Validation workflow](workflows/VALIDATION_WORKFLOW.md). No approval or persistence is inferred.

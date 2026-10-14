@@ -39,3 +39,8 @@ revaluation and admissible named transformations. Examples/scripts own safe comp
 
 The domain/ccr package owns immutable supervisory inputs, supported contract mapping, standardized formulas, challenger averages and comparison arithmetic. Application CcrService owns legal-unit replay and evidence checks; existing ExposureService/PortfolioService supply actual paths/prices.
 [CCR workflow](../workflows/CCR_WORKFLOW.md), [decisions](../decisions/README.md).
+
+## Phase 9 lab scope
+
+Domain validation owns comparable metrics/findings, numerical checks, independent credit benchmarks, bootstrap and covariance mathematics. Application validation owns model ports, actual production adapters, bounded parameter/calibration workflows and sourced stress revaluation. The synthetic composition uses the existing infrastructure solver explicitly.
+[Lab methods](../methodology/MODEL_VALIDATION.md), [phase evidence](../validation/phase-9.md).

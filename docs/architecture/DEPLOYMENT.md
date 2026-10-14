@@ -34,3 +34,8 @@ wheel code in its disposable Linux test container. [Cleanup](../operations/DOCKE
 
 Phase 8 uses the same Python wheel/API/CLI/PostgreSQL topology. CCR is a library research workflow, not a new service, port, financial endpoint or persisted job.
 [CCR workflow](../workflows/CCR_WORKFLOW.md), [decisions](../decisions/README.md).
+
+## Phase 9 lab scope
+
+Phase 9 is an installed library/report workflow inside the existing runtime. No validation microservice, persistence table or financial HTTP job is added. The phase-specific verification helper uses disposable labelled resources and preserves other projects.
+[Lab methods](../methodology/MODEL_VALIDATION.md), [phase evidence](../validation/phase-9.md).
