@@ -35,3 +35,8 @@ Phase 8 adds no CCR comparison table or migration. Input/path/configuration
 fingerprints and exception flags remain in immutable in-memory results; they are
 not persisted risk jobs or governance Findings. Full tests still exercise live
 isolated PostgreSQL. [Evidence](../validation/phase-8.md).
+
+## Phase 9 lab scope
+
+Findings, model comparisons, uncertainty bands and stress results are immutable in-memory values in Phase 9. They are not persisted approval/governance aggregates; no migration is added. Live database verification still targets the existing operational foundation.
+[Lab methods](../methodology/MODEL_VALIDATION.md), [phase evidence](../validation/phase-9.md).

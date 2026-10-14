@@ -47,3 +47,8 @@ Phase 8 SupervisoryParameters/ComparisonPolicy/ScopeMargin are explicit immutabl
 library inputs, not new environment settings or imported defaults. Source labels,
 currencies, business-day MPOR/NICA, weights/ratio and exception thresholds remain
 caller assumptions. [Contracts/workflow](../workflows/CCR_WORKFLOW.md).
+
+## Phase 9 lab scope
+
+Lab tolerances, confidence levels, resampling/evaluation budgets, source labels and scenario units are explicit library arguments retained in evidence; foundation environment tolerances are not implicitly substituted. No new settings/global RNG or market-data credentials are added.
+[Lab methods](../methodology/MODEL_VALIDATION.md), [phase evidence](../validation/phase-9.md).

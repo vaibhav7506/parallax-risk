@@ -1,6 +1,6 @@
 # Parallax Risk documentation
 
-**Current: Phases 1–8 complete; release 0.8.0. Phase 9 NOT IMPLEMENTED.**
+**Current: Phases 1–9 complete; release 0.9.0. Phase 10 NOT IMPLEMENTED.**
 
 Start with the learning path below. FACT describes actual code/evidence; IMPLEMENTATION
 DECISION describes a chosen policy; ASSUMPTION states its applicability; LIMITATION
@@ -97,7 +97,7 @@ External URL availability and future model correctness are not claimed by this c
 
 ## Deferred detailed documents
 
-Model-validation lab/governance and production scale tutorials remain deferred.
+Governance, mutation/adversarial and production scale tutorials remain deferred.
 Monte Carlo research, sequence policy and measured local benchmarks are implemented
 in Phase 4; no future financial workflow is scaffolded.
 Create future methodology/model/testing/tutorial pages alongside actual code and evidence.
@@ -128,3 +128,12 @@ Create future methodology/model/testing/tutorial pages alongside actual code and
 - [Actual legal-unit IMM challenger](methodology/IMM_CHALLENGER.md)
 - [Capital inputs, component bridges and exceptions](methodology/CCR_COMPARISON.md)
 - [Phase 8 verification and file manifest](validation/phase-8.md)
+
+## Phase 9 model validation lab
+
+- [First validation run](tutorials/08-FIRST-VALIDATION-RUN.md)
+- [Validation workflow](workflows/VALIDATION_WORKFLOW.md)
+- [Comparable models, findings and numerical checks](methodology/MODEL_VALIDATION.md)
+- [Selected risk uncertainty](methodology/MODEL_UNCERTAINTY.md)
+- [Sourced and hypothetical stress](methodology/STRESS_SCENARIOS.md)
+- [Phase 9 verification and manifest](validation/phase-9.md)

@@ -54,3 +54,8 @@ CSA ledgers or explicit margin specifications, non-daily/post-only CSA and
 mismatched TH/MTA. Correct the source input; do not pad grids, replace weights,
 repair legal scope or convert calendar MPOR automatically.
 [Supported workflow](../workflows/CCR_WORKFLOW.md).
+
+## Phase 9 lab scope
+
+A failed validation finding is a retained outcome, not necessarily a software defect. Inspect units, benchmark assumptions, tolerances, grid bias and sampling precision. Single Sobol path inference, unsupported dependent CVA observations, unavailable/constrained covariance, non-PSD covariance and inadmissible stresses reject explicitly.
+[Lab methods](../methodology/MODEL_VALIDATION.md), [phase evidence](../validation/phase-9.md).

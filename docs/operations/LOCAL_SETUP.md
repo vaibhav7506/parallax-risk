@@ -40,3 +40,8 @@ Phase 8 research demo: `python scripts/demo_ccr.py`. It composes pure Python
 services and needs no financial API/database connection. The full database release
 checks use `scripts/verify_phase8.ps1`; see [CCR tutorial](../tutorials/07-FIRST-CCR-COMPARISON.md)
 and [verification](../validation/phase-8.md).
+
+## Phase 9 lab scope
+
+After installing the project/development environment, run `python scripts/demo_validation.py`. Synthetic findings and failed convergence thresholds remain visible. Run `./scripts/verify_phase9.ps1` on Windows for full installed-wheel/Linux and Windows verification with live isolated PostgreSQL.
+[Lab methods](../methodology/MODEL_VALIDATION.md), [phase evidence](../validation/phase-9.md).

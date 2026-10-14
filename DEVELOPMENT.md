@@ -96,3 +96,8 @@ Phase 8 reproduction: `python scripts/demo_ccr.py`; read
 [CCR workflow](docs/workflows/CCR_WORKFLOW.md). Use `scripts/verify_phase8.ps1`
 for the full installed-release/live-database checks and project-scoped finally cleanup.
 No earlier model version or dependency lock changes are needed.
+
+## Phase 9 lab scope
+
+Phase 9 numerical changes require independent targets plus actual revaluation/rejection tests. Run `python scripts/demo_validation.py`, the full release suite and `python scripts/check_docs.py`; preserve prior phase evidence and append every canonical ADR review.
+[Lab methods](docs/methodology/MODEL_VALIDATION.md), [phase evidence](docs/validation/phase-9.md).

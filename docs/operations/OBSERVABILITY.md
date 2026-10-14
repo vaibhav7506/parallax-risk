@@ -34,3 +34,8 @@ Phase 8 CcrService reuses injected portfolio/exposure workflow logs per legal un
 there is no global logger configuration or governance monitor. The returned report
 preserves scoped path/configuration evidence and comparison exception flags.
 [Workflow](../workflows/CCR_WORKFLOW.md).
+
+## Phase 9 lab scope
+
+The lab retains check evidence/findings in its returned report. Existing exposure/XVA/calibration workflow logging remains explicitly configured. No monitoring, alert dispatch, governance approval or automatic remediation is added.
+[Lab methods](../methodology/MODEL_VALIDATION.md), [phase evidence](../validation/phase-9.md).

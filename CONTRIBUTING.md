@@ -48,3 +48,8 @@ standardized formula PFE from empirical quantile PFE, and illustrative capital
 inputs from regulatory capital. Exception flags are not Findings. Keep component
 bridge residuals and exact horizon-node rejection. See
 [CCR methodology](docs/methodology/STANDARDIZED_CCR.md).
+
+## Phase 9 lab scope
+
+Phase 9 findings and uncertainty/stress evidence remain in the library. Preserve exact unit schemas, admissible input changes, owned sampling units and failure outcomes. Do not turn passed checks into model approval or introduce Phase 10 mutations during this phase.
+[Lab methods](docs/methodology/MODEL_VALIDATION.md), [phase evidence](docs/validation/phase-9.md).
