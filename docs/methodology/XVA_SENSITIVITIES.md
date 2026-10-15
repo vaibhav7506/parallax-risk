@@ -77,3 +77,9 @@ within 1e-12 currency units.
 `tests/unit/test_xva_contracts.py`.
 [Workflow](../workflows/XVA_WORKFLOW.md), [tutorial](../tutorials/06-FIRST-XVA-RUN.md),
 [ADR 0019](../decisions/0019-xva-common-stream-risk-attribution.md).
+
+## Phase 10 applicability
+
+Phase 10 reuses actual ordered rate/volatility/correlation/spread/recovery/CSA-threshold bumps for bounded search. Fixed funding/IM/fixings and admissibility remain. Forensic ordered bridges retain residuals and are not causal partitions.
+
+[Search methods](../methodology/ADVERSARIAL_SEARCH.md), [phase evidence](../validation/phase-10.md).

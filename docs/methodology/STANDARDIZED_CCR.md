@@ -74,3 +74,9 @@ explicit MPOR must meet the configured business-day floor. The application
 checks simulation-request metadata, dates, profile units/path count and path shape
 in addition to book/run/market/account evidence; each scope retains runtime
 simulation metadata for replay.
+
+## Phase 10 applicability
+
+Controlled operation probes reuse actual restricted replacement cost and margined maturity factor for missing-cash/MPOR defects. These probes do not implement missing regulatory assets or simulated default-conditioned closeout.
+
+[Search methods](../methodology/ADVERSARIAL_SEARCH.md), [phase evidence](../validation/phase-10.md).

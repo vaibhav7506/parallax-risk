@@ -42,3 +42,9 @@ These research methods do not establish regulatory compliance or model approval.
 - [Comparable models and numerical checks](MODEL_VALIDATION.md)
 - [Independent bootstrap and calibration/parameter uncertainty](MODEL_UNCERTAINTY.md)
 - [Sourced and hypothetical stresses](STRESS_SCENARIOS.md)
+
+## Phase 10
+
+- [Controlled quantitative mutation methods](QUANTITATIVE_MUTATION.md)
+- [Bounded adversarial search](ADVERSARIAL_SEARCH.md)
+- [Material-change forensics](FAILURE_FORENSICS.md)

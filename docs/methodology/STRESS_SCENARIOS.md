@@ -33,3 +33,9 @@ external IM, fixings and owned market/default sequences stay fixed during the li
 moves, according to Phase 7 semantics. Results are conditional sensitivities, not a
 complete crisis model, event likelihood, liquidity simulation or stress governance.
 No persistence, approvals, alerts, backtesting or monitoring is added in Phase 9.
+
+## Phase 10 applicability
+
+Bounded search complements the existing sourced ordered stress workflow. Search factor coordinates are ordered absolute deltas with the same admissibility restrictions; an optimizer-produced scenario has no authenticated historical observation or event likelihood.
+
+[Search methods](../methodology/ADVERSARIAL_SEARCH.md), [phase evidence](../validation/phase-10.md).

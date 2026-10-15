@@ -91,3 +91,9 @@ See [Phase 7 evidence](../validation/phase-7.md).
 [workflow](../workflows/XVA_WORKFLOW.md), [ADR 0017](../decisions/0017-unilateral-credit-adjustments.md).
 The [Federal Reserve CVA research discussion](https://www.federalreserve.gov/pubs/feds/2010/201010/index.html)
 is background on expected default loss, not a claim of implementing supervisory rules.
+
+## Phase 10 applicability
+
+The Phase 10 independent-credit challenger integrates continuous discount times linear EE times survival/hazard/LGD using the same actual production exposure. Only integration disagreement is independently challenged; WWR/default-conditioned MPOR limitations remain.
+
+[Search methods](../methodology/ADVERSARIAL_SEARCH.md), [phase evidence](../validation/phase-10.md).

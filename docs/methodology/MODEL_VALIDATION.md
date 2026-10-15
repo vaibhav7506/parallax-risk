@@ -93,3 +93,9 @@ Independent analytical, grid-bias and statistical checks are
 are `tests/integration/test_validation_workflow.py`; rejection evidence is
 `tests/unit/test_validation_guards.py`. [ADR 0023](../decisions/0023-validation-comparability.md)
 and [ADR 0024](../decisions/0024-validation-inference.md) record the policies.
+
+## Phase 10 applicability
+
+Phase 10 extends actual checks into isolated fault detection, same-case bounded search and material-change diagnostics. Only newly failed baseline-passing checks detect faults; repeatability/materiality have separate interpretations.
+
+[Search methods](../methodology/ADVERSARIAL_SEARCH.md), [phase evidence](../validation/phase-10.md).

@@ -96,3 +96,9 @@ Gram entries, evaluating each symmetric entry once. The lab still rejects asymme
 caller covariance exactly and never clips eigenvalues. This resolves the observed
 Linux BLAS rounding asymmetry at the estimator source. The existing calibration
 mathematical assumptions remain unchanged. [Phase 9 evidence](../validation/phase-9.md).
+
+## Phase 10 applicability
+
+The controlled look-ahead probe selects from supplied synthetic dated calibrated hazards. It challenges observation timing only; it is not a full look-ahead calibration-refit implementation. Forensic calibration hashes are caller supplied with explicit absence when appropriate.
+
+[Search methods](../methodology/ADVERSARIAL_SEARCH.md), [phase evidence](../validation/phase-10.md).

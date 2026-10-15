@@ -50,3 +50,9 @@ Phase 7 [correlation risk](XVA_SENSITIVITIES.md) shifts the exact symmetric Brow
 driver pair, preserving declared factor order and PSD tolerance. A missing matrix
 starts from explicit identity. Validation and engine singular-matrix failures still
 reject without automatic repair; a correlation Greek is not universally signed.
+
+## Phase 10 applicability
+
+Phase 10 can search Brownian correlation deltas or deliberately reverse a probe correlation sign. Actual production matrices still require exact structure, numerical PSD and Cholesky; bounds never authorize repair or clipping.
+
+[Search methods](../methodology/ADVERSARIAL_SEARCH.md), [phase evidence](../validation/phase-10.md).
