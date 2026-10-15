@@ -6,9 +6,9 @@ understand the financial reasoning, locate the code and reproduce results.
 
 ## Current phase
 
-- Current implementation phase: **9 — complete**; release 0.9.0.
-- Completed implementation phases: **1, 2, 3, 4, 5, 6, 7, 8, 9**.
-- Next implementation phase: **10 — adversarial and mutation lab, NOT IMPLEMENTED**.
+- Current implementation phase: **10 — complete**; release 0.10.0.
+- Completed implementation phases: **1, 2, 3, 4, 5, 6, 7, 8, 9, 10**.
+- Next implementation phase: **11 — governance, monitoring, lineage and reporting, NOT IMPLEMENTED**.
 - Documentation maintenance between phases does not advance the implementation phase.
 - Implement exactly one numbered phase when the user writes `go`; complete its
   code, applicable tests, documentation and cleanup, then stop. Never pre-build the next phase.

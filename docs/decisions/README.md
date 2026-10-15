@@ -1,7 +1,7 @@
 # Parallax Risk decision register
 
 This is the canonical register from the documentation maintenance update on
-2026-10-01. **9 of 12 implementation phases are complete.** Phase 9 is complete; Phase 10 requires another `go`.
+2026-10-01. **10 of 12 implementation phases are complete.** Phase 10 is complete; Phase 11 requires another `go`.
 Decision numbers identify decisions, not phases. Each decision retains a phase
 history so reviews and changes can be counted without erasing earlier choices.
 
@@ -29,12 +29,14 @@ history so reviews and changes can be counted without erasing earlier choices.
 | 0020 | [Restricted standardized CCR](0020-restricted-standardized-ccr.md) | Accepted; implemented and verified | Phase 8 |
 | 0021 | [Legal-unit IMM challenger](0021-legal-unit-imm-challenger.md) | Accepted; implemented and verified | Phase 8 |
 | 0022 | [CCR capital comparison](0022-ccr-capital-comparison.md) | Accepted; implemented and verified | Phase 8 |
-
 | 0023 | [Comparable model outputs and reproducible findings](0023-validation-comparability.md) | Accepted; implemented and verified | Phase 9 |
 | 0024 | [Independent-unit convergence and uncertainty](0024-validation-inference.md) | Accepted; implemented and verified | Phase 9 |
 | 0025 | [Sourced and ordered stress scenarios](0025-sourced-stress-scenarios.md) | Accepted; implemented and verified | Phase 9 |
+| 0026 | [Controlled quantitative mutations](0026-controlled-quantitative-mutations.md) | Accepted; implemented and verified | Phase 10 |
+| 0027 | [Bounded adversarial model search](0027-bounded-adversarial-search.md) | Accepted; implemented and verified | Phase 10 |
+| 0028 | [Material-change forensic evidence](0028-material-change-forensics.md) | Accepted; implemented and verified | Phase 10 |
 
-There are **25 canonical ADRs**; all are accepted, implemented, verified and reviewed. The prior sequence proposal is now
+There are **28 canonical ADRs**; all are accepted, implemented, verified and reviewed. The prior sequence proposal is now
 implemented and reviewed; earlier history remains intact.
 
 ## Phase ledger
@@ -50,8 +52,8 @@ implemented and reviewed; earlier history remains intact.
 | Phase 6 | 0.6.0 COMPLETE | 0001, 0003, 0014, 0015, 0016 | 5 material changes; all 16 ADRs reviewed | [821 tests on both platforms; exposure/credit report](../validation/phase-6.md) |
 | Phase 7 | 0.7.0 COMPLETE | 0001, 0017, 0018, 0019 | 4 material changes; all 19 ADRs reviewed | [943 tests on both platforms; XVA/risk report](../validation/phase-7.md) |
 | Phase 8 | 0.8.0 COMPLETE | 0001, 0020, 0021, 0022 | 4 material changes; all 22 ADRs reviewed | [1072 tests on both platforms; CCR prototype report](../validation/phase-8.md) |
-
 | Phase 9 | 0.9.0 COMPLETE | 0001, 0009, 0023, 0024, 0025 | 5 material changes; all 25 ADRs reviewed | [1209 tests on both platforms; validation lab report](../validation/phase-9.md) |
+| Phase 10 | 0.10.0 COMPLETE | 0001, 0026, 0027, 0028 | 4 material changes; all 28 ADRs reviewed | [1336 tests on both platforms; adversarial lab evidence](../validation/phase-10.md) |
 
 These counts are material decision changes, not file-edit or commit counts.
 Historical phase numbers/test outcomes come from the original reports; retrospective

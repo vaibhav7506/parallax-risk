@@ -1,6 +1,6 @@
 # Parallax Risk documentation
 
-**Current: Phases 1–9 complete; release 0.9.0. Phase 10 NOT IMPLEMENTED.**
+**Current: Phases 1–10 complete; release 0.10.0. Phase 11 NOT IMPLEMENTED.**
 
 Start with the learning path below. FACT describes actual code/evidence; IMPLEMENTATION
 DECISION describes a chosen policy; ASSUMPTION states its applicability; LIMITATION
@@ -97,7 +97,7 @@ External URL availability and future model correctness are not claimed by this c
 
 ## Deferred detailed documents
 
-Governance, mutation/adversarial and production scale tutorials remain deferred.
+Governance and production scale tutorials remain deferred; Phase 10 research is documented below.
 Monte Carlo research, sequence policy and measured local benchmarks are implemented
 in Phase 4; no future financial workflow is scaffolded.
 Create future methodology/model/testing/tutorial pages alongside actual code and evidence.
@@ -137,3 +137,12 @@ Create future methodology/model/testing/tutorial pages alongside actual code and
 - [Selected risk uncertainty](methodology/MODEL_UNCERTAINTY.md)
 - [Sourced and hypothetical stress](methodology/STRESS_SCENARIOS.md)
 - [Phase 9 verification and manifest](validation/phase-9.md)
+
+## Phase 10 adversarial lab
+
+- [First adversarial run](tutorials/09-FIRST-ADVERSARIAL-RUN.md)
+- [Mutation/search/forensic workflow](workflows/ADVERSARIAL_WORKFLOW.md)
+- [Controlled quantitative mutations](methodology/QUANTITATIVE_MUTATION.md)
+- [Bounded same-input model search](methodology/ADVERSARIAL_SEARCH.md)
+- [Material changes and possible-cause diagnostics](methodology/FAILURE_FORENSICS.md)
+- [Phase 10 verification and manifest](validation/phase-10.md)

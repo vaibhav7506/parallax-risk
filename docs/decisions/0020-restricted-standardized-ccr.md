@@ -54,3 +54,4 @@ No regulatory-compliance claim is made.
 | 7 | Not applicable; Phase 8 prototype NOT IMPLEMENTED | [Phase 7](../validation/phase-7.md) |
 | 8 | Introduced restricted formulas, mapping and explicit margin assumptions; verified on both platforms | [Phase 8](../validation/phase-8.md) |
 | 9 | Reviewed; no change; existing policy retained in Phase 9 lab scope | [Phase 9](../validation/phase-9.md) |
+| 10 | Reviewed; no change; existing policy retained with isolated Phase 10 research workflows | [Phase 10](../validation/phase-10.md) |

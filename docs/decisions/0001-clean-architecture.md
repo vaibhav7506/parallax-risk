@@ -59,6 +59,12 @@ Phase 8 adds `src/parallax_risk/domain/ccr/` and `src/parallax_risk/application/
 
 Phase 9 adds `src/parallax_risk/domain/validation/` and injected application model/uncertainty/stress workflows. The demo script injects the existing CalibrationSolver adapter; application never imports infrastructure. [Validation workflow](../workflows/VALIDATION_WORKFLOW.md).
 
+Phase 10 adds injected mutation/search/diagnostic workflows and an explicit SciPy
+optimizer adapter. Script composition owns the adapter; application never imports
+infrastructure. Production financial modules retain their policies. See
+`src/parallax_risk/application/validation_search.py` and
+`src/parallax_risk/infrastructure/validation/scipy_search.py`.
+
 ## Phase history
 
 | Phase | Change / review | Evidence |
@@ -73,3 +79,4 @@ Phase 9 adds `src/parallax_risk/domain/validation/` and injected application mod
 | 7 | Added injected XvaCalculator/XvaService and full exposure revaluation; domain XVA/risk remains inward | [Phase 7](../validation/phase-7.md) |
 | 8 | Extended inward architecture with pure CCR domain calculations and injected legal-unit simulation | [Phase 8](../validation/phase-8.md) |
 | 9 | Extended inward architecture with pure validation evidence and injected production/challenger workflows | [Phase 9](../validation/phase-9.md) |
+| 10 | Extended injected optimizer/mutation/diagnostic ports; inward dependency rules retained | [Phase 10](../validation/phase-10.md) |

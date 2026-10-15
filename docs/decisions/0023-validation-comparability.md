@@ -42,3 +42,4 @@ String unit labels require correct adapters; passing tolerances does not prove m
 | 7 | Not applicable; NOT IMPLEMENTED in this phase | [Phase 7](../validation/phase-7.md) |
 | 8 | Not applicable; NOT IMPLEMENTED in this phase | [Phase 8](../validation/phase-8.md) |
 | 9 | Introduced; implementation and explicit scope recorded | [Phase 9](../validation/phase-9.md) |
+| 10 | Reviewed; no change; existing policy retained with isolated Phase 10 research workflows | [Phase 10](../validation/phase-10.md) |
