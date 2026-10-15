@@ -29,7 +29,7 @@ See [benchmarking](../validation/BENCHMARKING.md) and
 Phase 2 recorded 333 tests/99.07% coverage on two platforms. That is historical
 evidence, not a new test count for documentation-only maintenance. Hosted CI is
 configured but has not been observed executing. Phase 4 adds a measured research harness and multi-replicate path convergence;
-mutation/adversarial testing and production throughput SLOs are DEFERRED.
+Phase 10 implements scoped mutation/adversarial testing; production throughput SLOs remain DEFERRED.
 
 [Phase 3 evidence](../validation/phase-3.md) records the new actual runs separately.
 Scalar model steps consume supplied shocks; Phase 4 tests exercise the separate path engine.
@@ -94,3 +94,19 @@ coverage. [Actual evidence](../validation/phase-8.md); [workflow](../workflows/C
 
 Phase 9 adds independent constant/linear-exposure credit targets, production grid-bias detection and refinement, zero/scaling/fixed-cash invariants, finite-difference checks, owned bootstrap replay, covariance cross-term targets, actual path/grid XVA studies, sourced stress adapter and invalid boundary tests. Full release acceptance retains >=95% branch-inclusive coverage; focused tests alone are not whole-package coverage evidence. See `tests/quantitative/test_validation_lab.py`, `tests/unit/test_validation_guards.py` and `tests/integration/test_validation_workflow.py`.
 [Lab methods](../methodology/MODEL_VALIDATION.md), [phase evidence](../validation/phase-9.md).
+
+## Phase 10 checks
+
+`tests/quantitative/test_adversarial_lab.py` tests all 15 independent operation
+observables, one-fault isolation, weak/equivalent misses, baseline qualification,
+known bounded/constraint optima, owned replay and forensic arithmetic residuals.
+`tests/unit/test_adversarial_guards.py` checks malformed economic/time/provenance
+inputs, reserved names, budgets, stale/schema changes, fabricated check/result
+states, infeasible populations and preserved valuation errors.
+`tests/integration/test_adversarial_workflow.py` exercises actual XVA quadrature,
+all six requested search factors on a valid daily CSA baseline and canonical JSON.
+
+An optimizer stopping short of a known constrained optimum under a small population
+is recorded in [Phase 10 evidence](../validation/phase-10.md). More search effort is
+not proof of global optimality. Actual whole-package coverage and live database
+results are recorded separately; focused coverage is not whole-release evidence.

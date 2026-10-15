@@ -38,3 +38,9 @@ resources and other projects are outside scope. Preview is the default.
 [stress](../methodology/STRESS_SCENARIOS.md), [tutorial](../tutorials/08-FIRST-VALIDATION-RUN.md),
 [actual phase evidence](../validation/phase-9.md). Phase 10 mutation/adversarial work,
 Phase 11 governance and Phase 12 production financial APIs remain NOT IMPLEMENTED.
+
+## Phase 10 applicability
+
+Phase 10 extends the lab with injected isolated mutations, bounded comparable-model objectives and actual repeated/ordered diagnostic cases. It retains missed faults and unexplained changes; governance remains outside the workflow.
+
+[Search methods](../methodology/ADVERSARIAL_SEARCH.md), [phase evidence](../validation/phase-10.md).

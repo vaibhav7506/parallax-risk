@@ -16,7 +16,7 @@ not institutional model approval or a governance workflow. Phase 9 now adds a li
 Actual bounded optimizer diagnostics, local parameter uncertainty and supplied-step
 refinement are now implemented. See [calibration](../methodology/CALIBRATION.md)
 and [Phase 3](phase-3.md). Phase 9 implements scoped stress/uncertainty propagation and comparable challenger models.
-Mutation/adversarial detection matrices, backtesting and governance monitoring remain NOT IMPLEMENTED. Do not invent measured detection rates or model accuracy claims.
+Phase 10 implements scoped mutation detection evidence and bounded adversarial search. Backtesting and governance monitoring remain NOT IMPLEMENTED. Do not generalize selected-probe rates or invent model accuracy claims.
 Create their detailed documents only with their authorized implementations.
 
 Actual phase outcomes are [Phase 1](phase-1.md), [Phase 2](phase-2.md) and
@@ -55,3 +55,10 @@ compliance. [Phase 8 evidence](phase-8.md),
 Phase 9 adds immutable findings, automatic invariants, actual production/challenger
 comparison and numerical/uncertainty/stress workflows. [Methods](../methodology/MODEL_VALIDATION.md),
 [workflow](../workflows/VALIDATION_WORKFLOW.md), [actual evidence](phase-9.md).
+
+## Phase 10 lab scope
+
+Controlled faults execute selected actual validations and retain missed mutants.
+Bounded searches retain same-case paired outputs/status; actual repeat/counterfactual
+forensics retains materiality and residual. These remain research evidence, not
+model approval. [Methods/workflow](../workflows/ADVERSARIAL_WORKFLOW.md).

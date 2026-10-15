@@ -44,3 +44,9 @@ or performance certification is inferred. [Targets/evidence](phase-8.md),
 
 Phase 9 compares actual production CVA quadrature with independent analytical constant EE and adaptive piecewise-linear integration. This can expose finite-grid bias under a strict tolerance; a discrepancy is retained rather than relabelled accuracy. No QuantLib/ORE result, external historical dataset, timing improvement or compliance claim is introduced.
 [Lab methods](../methodology/MODEL_VALIDATION.md), [phase evidence](../validation/phase-9.md).
+
+## Phase 10 applicability
+
+Phase 10 optimizes actual production/challenger CVA disagreement within declared feasible bounds and retains every pair. The XVA challenger shares exposure simulation; optimizer stopping and selected-probe detection rates are not general accuracy/performance benchmarks.
+
+[Search methods](../methodology/ADVERSARIAL_SEARCH.md), [phase evidence](../validation/phase-10.md).

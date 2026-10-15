@@ -23,4 +23,4 @@ within the verified runtime; cross-platform bit identity is not claimed.
 
 To change a tolerance or scenario, compose typed library inputs following the
 [workflow](../workflows/VALIDATION_WORKFLOW.md) and [method](../methodology/MODEL_VALIDATION.md).
-There is no financial HTTP endpoint or model approval button. Phase 10 remains deferred.
+There is no financial HTTP endpoint or model approval button. Phase 10 extends the research lab; see [adversarial tutorial](09-FIRST-ADVERSARIAL-RUN.md).
