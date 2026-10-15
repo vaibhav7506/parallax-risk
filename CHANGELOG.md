@@ -1,5 +1,20 @@
 # Parallax Risk changelog
 
+## 0.10.0 — Phase 10 complete — 2026-10-01
+
+- Implemented 15 controlled operation mutations with baseline-qualified detection,
+  retained misses/category rates and actual validation evidence.
+- Added bounded injected SciPy model-disagreement search, explicit constraints/budgets,
+  owned replay and every actual model pair; independent-credit XVA quadrature and
+  six-factor delta mapping reuse actual production exposure and admissible bumps.
+- Added actual endpoint/repeat/ordered counterfactual diagnostics, seven possible
+  causes, materiality/repeat checks and explicit residual; no causal/approval claims.
+- Added methods/workflow/tutorial and ADRs 0026–0028; reviewed every existing ADR,
+  updated affected guides/current identities and preserved prior phase evidence.
+- Full Windows/Linux runs passed 1336 tests each with live PostgreSQL and 99.31%
+  branch-inclusive coverage; owned disposable Docker resources were removed. No new
+  dependency, database schema, financial API or Phase 11 implementation is added.
+
 ## 0.9.0 — Phase 9 complete — 2026-10-01
 
 - Added injected comparable production/challenger models, exact metric/unit schemas,

@@ -13,7 +13,7 @@ dependence, unilateral XVA, actual sensitivity/attribution research and restrict
 Educational/research implementation. Not production trading/risk software. Not
 regulatory certification.
 
-**Current scope: Phase 9 — model validation lab; release 0.9.0.**
+**Current scope: Phase 10 — mutation, adversarial search and forensics complete; release 0.10.0.**
 Immutable market snapshots, discount/zero/projection curves, deposit/par-swap
 bootstrapping, cash flows, bonds, swaps, FX forwards and finite-difference
 sensitivities are implemented. Phase 3 adds Vasicek, Hull–White, GBM, Heston,
@@ -77,7 +77,7 @@ python -m uvicorn parallax_risk.api.app:create_app --factory --host 127.0.0.1 --
 
 `/health` is process liveness. `/ready` returns 200 only after startup and a real
 PostgreSQL `SELECT 1`; it returns 503 for missing/unavailable dependencies.
-`/version` identifies Parallax Risk, release 0.9.0 and Phase 9. These endpoints do
+`/version` identifies Parallax Risk, release 0.10.0 and Phase 10. These endpoints do
 not perform financial calculations. API and CLI imports perform no environment,
 network, filesystem or logger initialization.
 
@@ -197,7 +197,7 @@ curve. Heston projected Euler reports variance projection; its European call pri
 reports quadrature estimates and rejects numerical failure. Correlation validation
 never repairs inputs automatically; a separate opt-in repair retains full evidence.
 These are research models with documented limitations, not real-market validation.
-The existing deterministic-discounting model remains version 0.2.0 within release 0.9.0; calibration model mathematics retains version 0.3.0.
+The existing deterministic-discounting model remains version 0.2.0 within release 0.10.0; calibration model mathematics retains version 0.3.0.
 
 ## Monte Carlo research
 
@@ -307,4 +307,21 @@ and hypothetical/combined stresses. Failed thresholds remain failed findings.
 [methods and assumptions](docs/methodology/MODEL_VALIDATION.md),
 [workflow](docs/workflows/VALIDATION_WORKFLOW.md),
 [actual verification](docs/validation/phase-9.md).
-Phase 10 mutation/adversarial work, Phase 11 governance and Phase 12 financial production APIs remain NOT IMPLEMENTED.
+Phase 10 extends this lab below. Phase 11 governance and Phase 12 financial production APIs remain NOT IMPLEMENTED.
+
+## Phase 10 controlled mutations, bounded search and forensics
+
+Run `python scripts/demo_adversarial.py` for actual synthetic operation mutations,
+baseline-qualified detections and misses, bounded same-case model disagreement
+search and repeated/ordered material-change diagnostics. Search records constraints,
+owned stream, every evaluated pair and actual optimizer convergence. Diagnostics
+retain possible-cause fingerprints and unexplained residuals. The independent-credit
+XVA CVA challenger shares production exposure; it does not independently validate
+that exposure engine. No model approval or financial API is added.
+
+[First run](docs/tutorials/09-FIRST-ADVERSARIAL-RUN.md),
+[mutation methods](docs/methodology/QUANTITATIVE_MUTATION.md),
+[search assumptions](docs/methodology/ADVERSARIAL_SEARCH.md),
+[forensics](docs/methodology/FAILURE_FORENSICS.md),
+[workflow](docs/workflows/ADVERSARIAL_WORKFLOW.md),
+[verification record](docs/validation/phase-10.md).
