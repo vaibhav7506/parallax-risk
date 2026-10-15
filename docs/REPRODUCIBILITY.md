@@ -120,3 +120,14 @@ finally cleanup; retain useful earlier releases and historical test evidence.
 
 Run `python scripts/demo_validation.py` from the installed 0.9.0 environment. Retain exact immutable inputs, unit schemas, source release, owned stream addresses, model versions and result evidence. Bootstrap replicate addresses are order-independent; actual draws are retained. Same-runtime demo byte replay is checked; cross-platform bit identity is not promised. Finite step-grid normal mappings differ; no nested Brownian coupling is claimed.
 [Lab methods](methodology/MODEL_VALIDATION.md), [phase evidence](validation/phase-9.md).
+
+## Phase 10 applicability
+
+Retain actual mutation cases/targets/check implementations and misses; search bounds, restrictions, factor order, StreamKey, runtime/library versions and every actual pair; forensic full endpoint/counterfactual cases and calibration provenance. Same-runtime canonical demo replay is checked; no cross-platform bit identity or global optimum is promised.
+
+[Search methods](methodology/ADVERSARIAL_SEARCH.md), [phase evidence](validation/phase-10.md).
+
+The unchanged Phase 9 demo intentionally retains its 0.9.0 experiment label; that
+label is not the currently installed package version. Use `parallax-risk version`
+for runtime identity and the retained 0.9.0 source/archive for historical release
+replay. The Phase 10 demo declares its own 0.10.0 experiment label.

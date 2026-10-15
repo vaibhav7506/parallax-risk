@@ -1,6 +1,6 @@
 # Current limitations
 
-These limitations apply to implemented Phases 1–9. Preserve them until an actual
+These limitations apply to implemented Phases 1–10. Preserve them until an actual
 change and evidence justify revision; record revisions in the decision history.
 
 | Category / limitation | Impact and affected code | Mitigation / phase |
@@ -13,7 +13,7 @@ change and evidence justify revision; record revisions in the decision history.
 | Direct FX / no basis | No inverse/cross synthesis; portfolio/collateral conversion needs exact direct orientation | Supply exact direct pair/settlement and supported funding assumption |
 | Zero-knot risk, explicit finite bumps | Not market-quote DV01; truncation/cancellation depends on h | State scope/signs, test meaningful bump stability |
 | Additive XVA / restricted comparative CCR | Unilateral deterministic-discount CVA/DVA, residual funding proxy and external IM omit bilateral/default/recursive economics | Read Phases 7/8 assumptions; no regulatory capital/compliance claim |
-| In-memory validation lab; no mutation/governance persistence | Findings and checks are not independent institutional approval or model inventory | Phase 9 lab implemented; Phases 10–11 planned |
+| In-memory validation and adversarial labs; no governance persistence | Findings/mutation rates/searches are not institutional approval or a model inventory | Phases 9–10 library scope; Phase 11 deferred |
 | Operational API only, unauthenticated local service | No production risk jobs, authorization, scale/HA or security certification | Loopback/development use; Phase 12 planned |
 | Incomplete automatic lineage | Simulation captures sequences/runtime/platform and optional supplied source revision; portfolio/market/curve/ledger/pricer hashes exist in memory; persisted lineage absent | Preserve external source/runtime evidence; phased lineage work |
 | Exact version locks without hashes; release-tag bases | Whole-environment rebuild immutability not guaranteed | Record actual versions/image IDs and revalidate updates |
@@ -140,3 +140,22 @@ covariance rejects. Caller-sourced history is not independently authenticated.
 No QuantLib/ORE verification, historical market dataset, model approval, monitoring,
 mutation/adversarial work or new financial API is claimed.
 [Detailed lab assumptions](methodology/MODEL_VALIDATION.md).
+
+## Phase 10 interpretation limits
+
+The 15 built-in faults target isolated synthetic operation seams; they do not mutate
+all source branches or implement missing default-conditioned MPOR. Dated calibration
+selection and reduced sampling diagnostics are limited probes. Equivalent and
+unexercised mutants remain misses. Reported rates apply only to retained cases/faults/checks.
+
+Search bounds/linear restrictions express caller-declared plausibility; complete
+financial constructors can still reject a candidate. No repair/penalty/fallback is
+applied. Optimizer stopping does not prove a global maximum. The XVA challenger
+shares production exposure and supports independent credit only. Fixed-stream finite
+samples/grid integration and optimizer selection remain limitations.
+
+Forensic fingerprints/ordered bridge labels overlap and are not causal proof.
+Actual repeatability does not establish accuracy. Calibration provenance is caller
+supplied, and hashes alone cannot reconstruct complete cases. Detailed
+[mutation](methodology/QUANTITATIVE_MUTATION.md), [search](methodology/ADVERSARIAL_SEARCH.md),
+[forensics](methodology/FAILURE_FORENSICS.md).

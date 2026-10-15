@@ -150,3 +150,18 @@ Definitions, units/signs and caveats: [portfolio methodology](methodology/PORTFO
 | Ordered combined stress | Concatenated sourced shocks with retained parent hashes and possible interactions |
 
 [Lab methods](methodology/MODEL_VALIDATION.md), [uncertainty](methodology/MODEL_UNCERTAINTY.md).
+
+## Phase 10 terminology
+
+| Term | Meaning / limitation |
+|---|---|
+| Controlled mutant | One explicit isolated operation replacement; never a production fault toggle |
+| Baseline-qualified detection | A newly failed check that passed on the fault-free baseline |
+| Equivalent mutant | A fault with indistinguishable selected outputs for this case; remains a miss |
+| Paired search evaluation | Production and challenger actual valuations on one same-input candidate |
+| Plausibility restriction | Caller-declared bounded/linear feasible set; not authenticated market history |
+| Possible-cause fingerprint | Changed input/configuration identity; not a causal contribution |
+| Repeatability finding | Actual same-input repeat exceeded declared tolerance; not a convergence proof |
+| Counterfactual residual | Endpoint change less ordered step changes, retained without causal relabelling |
+
+[Definitions and workflow](workflows/ADVERSARIAL_WORKFLOW.md).

@@ -1,8 +1,8 @@
 # Parallax Risk roadmap
 
-**Current:** Phase 9 complete, release 0.9.0.
-Phases 1–9 are complete. Documentation maintenance does not advance the phase.
-Phase 9 is complete; Phase 10 remains NOT IMPLEMENTED and requires another `go`.
+**Current:** Phase 10 complete, release 0.10.0.
+Phases 1–10 are complete. Documentation maintenance does not advance the phase.
+Phase 10 is complete; Phase 11 remains NOT IMPLEMENTED and requires another `go`.
 
 | Phase | Scope | State |
 |---|---|---|
@@ -15,7 +15,7 @@ Phase 9 is complete; Phase 10 remains NOT IMPLEMENTED and requires another `go`.
 | 7 | XVA and extended sensitivity engine | COMPLETE — [evidence](docs/validation/phase-7.md) |
 | 8 | Regulatory-style capital and challenger models | COMPLETE — [evidence](docs/validation/phase-8.md) |
 | 9 | Model validation lab | COMPLETE — [evidence](docs/validation/phase-9.md) |
-| 10 | Mutation, adversarial search and failure forensics | PLANNED / NOT IMPLEMENTED |
+| 10 | Mutation, adversarial search and failure forensics | COMPLETE — [evidence](docs/validation/phase-10.md) |
 | 11 | Governance, monitoring, lineage and reporting | PLANNED / NOT IMPLEMENTED |
 | 12 | Financial APIs/workflows, scale, security and release hardening | PLANNED / NOT IMPLEMENTED |
 

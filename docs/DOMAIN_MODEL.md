@@ -150,3 +150,17 @@ UncertaintyBand distinguishes empirical bootstrap, supplied ensemble and local c
 interpretations. StressScenario retains sourced/ordered movements and optional observed
 dates/parent hashes; StressResult owns actual baseline/stressed values and movements.
 [Validation methodology](methodology/MODEL_VALIDATION.md).
+
+## Phase 10 research relationships
+
+MutationCampaign owns fault-free output/checks and per-Mutation evidence with
+baseline-qualified newly failed IDs; DetectionRate retains numerator/denominator.
+SearchSpec owns ordered SearchDimensions, LinearRestrictions and StreamKey;
+SearchResult owns actual paired SearchEvaluations, best evidence and OptimizerResult.
+DiagnosticState pairs an actual case and DiagnosticContext; ForensicReport owns
+actual endpoints/repeats/steps, seven DiagnosticCauses, checks and residual.
+
+Values live in `src/parallax_risk/domain/validation/`; injected application workflows
+compose real models. No domain depends on infrastructure/HTTP/persistence. Hashes
+are content evidence, not persisted governance or sufficient input reconstruction.
+[Workflow](workflows/ADVERSARIAL_WORKFLOW.md).
