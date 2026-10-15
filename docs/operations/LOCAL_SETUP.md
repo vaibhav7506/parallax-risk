@@ -45,3 +45,9 @@ and [verification](../validation/phase-8.md).
 
 After installing the project/development environment, run `python scripts/demo_validation.py`. Synthetic findings and failed convergence thresholds remain visible. Run `./scripts/verify_phase9.ps1` on Windows for full installed-wheel/Linux and Windows verification with live isolated PostgreSQL.
 [Lab methods](../methodology/MODEL_VALIDATION.md), [phase evidence](../validation/phase-9.md).
+
+## Phase 10 applicability
+
+Run python scripts/demo_adversarial.py after development installation. The full release command is ./scripts/verify_phase10.ps1 with live isolated PostgreSQL and installed-wheel Linux tests; selected-probe findings/misses are expected report evidence.
+
+[Search methods](../methodology/ADVERSARIAL_SEARCH.md), [phase evidence](../validation/phase-10.md).

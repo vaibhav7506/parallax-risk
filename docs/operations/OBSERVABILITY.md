@@ -39,3 +39,9 @@ preserves scoped path/configuration evidence and comparison exception flags.
 
 The lab retains check evidence/findings in its returned report. Existing exposure/XVA/calibration workflow logging remains explicitly configured. No monitoring, alert dispatch, governance approval or automatic remediation is added.
 [Lab methods](../methodology/MODEL_VALIDATION.md), [phase evidence](../validation/phase-9.md).
+
+## Phase 10 applicability
+
+Phase 10 emits canonical machine-readable model/fault/search/diagnostic evidence; no automatic alerts, dashboard, persisted findings or model approvals are added. Failed materiality/optimizer convergence remains visible in reports.
+
+[Search methods](../methodology/ADVERSARIAL_SEARCH.md), [phase evidence](../validation/phase-10.md).

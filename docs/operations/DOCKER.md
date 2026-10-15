@@ -10,7 +10,7 @@ or service. Normal project database data must remain.
 | Phase verification containers | Remove after session, including failure; exact `parallax-risk-phaseN-verification` Compose project plus matching workspace or explicit verification labels |
 | Standalone test container | Use `--rm`; identify project/purpose/workspace explicitly, retain required outputs outside writable layer |
 | Test network/volume | Remove only exact verification-project labels, known `default`/`postgres_data` roles and no unowned attachments/users |
-| Release images | Keep current `parallax-risk:0.9.0` and useful `0.8.0`/`0.7.0`/`0.6.0`/`0.5.0`/`0.4.0`/`0.3.0`/`0.2.0`/`0.1.0` rollback/evidence images |
+| Release images | Keep current `parallax-risk:0.10.0` and useful `0.9.0`/`0.8.0`/`0.7.0`/`0.6.0`/`0.5.0`/`0.4.0`/`0.3.0`/`0.2.0`/`0.1.0` rollback/evidence images |
 | Normal Compose data/services | Retain; project `parallax-risk` is not a disposable phase verification project |
 | Shared base images/layers/build cache | Retain; ownership is not exclusive, future builds can reuse them |
 | Other projects or ambiguous resources | Retain; never use global prune or force removal |
@@ -20,8 +20,8 @@ or service. Normal project database data must remain.
 PowerShell from the repository root:
 
 ```powershell
-.\scripts\cleanup_docker.ps1 -Phase 9
-.\scripts\cleanup_docker.ps1 -Phase 9 -Apply
+.\scripts\cleanup_docker.ps1 -Phase 10
+.\scripts\cleanup_docker.ps1 -Phase 10 -Apply
 ```
 
 Without `-Apply` the script inventories ownership-checked candidates only. It accepts
@@ -44,12 +44,12 @@ $env:POSTGRES_DB = 'parallax_risk_test'
 $env:PARALLAX_DATABASE_URL = 'postgresql+psycopg://REPLACE_TEST_USER:REPLACE_TEST_PASSWORD@postgres:5432/parallax_risk_test'
 $env:PARALLAX_TEST_DATABASE_URL = 'postgresql+psycopg://REPLACE_TEST_USER:REPLACE_TEST_PASSWORD@127.0.0.1:55432/parallax_risk_test'
 try {
-    docker --config .docker-local compose -p parallax-risk-phase9-verification -f docker-compose.yml -f scripts/compose.verify.yml up --wait
+    docker --config .docker-local compose -p parallax-risk-phase10-verification -f docker-compose.yml -f scripts/compose.verify.yml up --wait
     if ($LASTEXITCODE -ne 0) { throw 'Verification stack startup failed' }
     .venv\Scripts\python.exe -m pytest
     if ($LASTEXITCODE -ne 0) { throw 'Verification tests failed' }
 } finally {
-    .\scripts\cleanup_docker.ps1 -Phase 9 -Apply
+    .\scripts\cleanup_docker.ps1 -Phase 10 -Apply
 }
 ```
 
@@ -68,7 +68,9 @@ guard checks and final inventory are recorded in the [maintenance report](../val
 
 ## Phase 7 helper
 
-Run `.\scripts\verify_phase7.ps1` from PowerShell for historical Phase 7 replay. It builds
+Use the retained Phase 7 source/archive for historical replay of
+`.\scripts\verify_phase7.ps1`; the current checkout builds the current release and
+cannot satisfy that helper's older version assertions. In its matching source it builds
 0.7.0, checks HTTP/database/non-root runtime, runs Windows and Linux tests against
 isolated PostgreSQL, saves useful logs under `artifacts/local/phase7/` and always
 calls Phase 7 scoped cleanup in finally. Its fixed credentials are disposable test
@@ -77,6 +79,8 @@ its `--rm` verification container. See [Phase 7 results](../validation/phase-7.m
 
 ## Phase 9 helper
 
+Use the retained Phase 9 source/archive for its historical helper; the current
+checkout must use the Phase 10 helper below. In matching Phase 9 source,
 `scripts/verify_phase9.ps1` uses parallax-risk-phase9-verification and installed
 0.9.0, verifies HTTP/database/non-root operation and runs full Windows/Linux tests
 against the isolated PostgreSQL 17 service. `--rm` plus explicit verification labels
@@ -84,3 +88,13 @@ scope the disposable test container. Finally invokes Phase 9 ownership-checked
 cleanup after saving needed logs/results. Retain useful release/rollback images,
 shared layers/cache, production data and unrelated resources. Do not delete files
 inside arbitrary containers or use global prune. [Actual inventory](../validation/phase-9.md).
+
+## Phase 10 helper
+
+`scripts/verify_phase10.ps1` uses parallax-risk-phase10-verification and installed
+0.10.0. Its full Windows/Linux suites connect to isolated PostgreSQL 17; image hashes,
+health/readiness/version/database/runtime UID and actual coverage are retained.
+The test-run container uses --rm and explicit ownership labels. Finally removes only
+owned disposable phase containers/network/test volume; useful release/rollback images,
+shared cache/layers and persistent/unrelated resources remain.
+[Actual inventory and verification](../validation/phase-10.md).

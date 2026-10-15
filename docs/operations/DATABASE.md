@@ -40,3 +40,9 @@ isolated PostgreSQL. [Evidence](../validation/phase-8.md).
 
 Findings, model comparisons, uncertainty bands and stress results are immutable in-memory values in Phase 9. They are not persisted approval/governance aggregates; no migration is added. Live database verification still targets the existing operational foundation.
 [Lab methods](../methodology/MODEL_VALIDATION.md), [phase evidence](../validation/phase-9.md).
+
+## Phase 10 applicability
+
+Phase 10 reports remain in memory/JSON; no table or migration is added. The live PostgreSQL check verifies the operational foundation only, not persisted mutation/search/governance aggregates.
+
+[Search methods](../methodology/ADVERSARIAL_SEARCH.md), [phase evidence](../validation/phase-10.md).

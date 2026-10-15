@@ -59,3 +59,9 @@ repair legal scope or convert calendar MPOR automatically.
 
 A failed validation finding is a retained outcome, not necessarily a software defect. Inspect units, benchmark assumptions, tolerances, grid bias and sampling precision. Single Sobol path inference, unsupported dependent CVA observations, unavailable/constrained covariance, non-PSD covariance and inadmissible stresses reject explicitly.
 [Lab methods](../methodology/MODEL_VALIDATION.md), [phase evidence](../validation/phase-9.md).
+
+## Phase 10 applicability
+
+A callback economic rejection aborts optimization explicitly and preserves its actual error. Empty feasible populations, stale case evidence, changing units/model schemas and budget overruns are errors. A miss or false convergence flag is retained evidence, not automatically an execution error.
+
+[Search methods](../methodology/ADVERSARIAL_SEARCH.md), [phase evidence](../validation/phase-10.md).
