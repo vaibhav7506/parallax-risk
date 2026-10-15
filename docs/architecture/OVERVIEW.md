@@ -64,3 +64,9 @@ Phase 8 adds pure domain CCR formulas/contract mapping and an injected applicati
 
 Phase 9 extends inward domain validation values/mathematics and injected application model adapters. The lab composes existing exposure/XVA/calibration workflows; no new service, database schema or financial HTTP endpoint is added.
 [Lab methods](../methodology/MODEL_VALIDATION.md), [phase evidence](../validation/phase-9.md).
+
+## Phase 10 applicability
+
+Phase 10 adds immutable fault/search/diagnostic evidence, injected application workflows and an infrastructure SciPy optimizer. Script composition injects the adapter; there is no new service or financial HTTP route.
+
+[Search methods](../methodology/ADVERSARIAL_SEARCH.md), [phase evidence](../validation/phase-10.md).

@@ -63,3 +63,9 @@ Phase 8 configuration/book/conditional-market/run/ledgers flow into legal-unit s
 
 Phase 9 immutable case hashes → independently evaluated production/challenger outputs → exact schema validation → component differences/residuals/checks/findings. Actual path/grid and parameter revaluations → explicitly interpreted statistical evidence; sourced ordered shocks → retained stress outputs.
 [Lab methods](../methodology/MODEL_VALIDATION.md), [phase evidence](../validation/phase-9.md).
+
+## Phase 10 applicability
+
+Frozen cases and independent checks flow to baseline/mutant reports; bounds/constraints and same-case models flow to every paired search evaluation; actual endpoint/repeat/counterfactual outputs flow to possible-cause diagnostics and explicit residual.
+
+[Search methods](../methodology/ADVERSARIAL_SEARCH.md), [phase evidence](../validation/phase-10.md).

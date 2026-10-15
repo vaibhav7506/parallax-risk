@@ -46,3 +46,9 @@ Phase 8 domain/ccr imports common and existing domain values, never HTTP/ORM/app
 
 Phase 9 domain validation depends only inward on common and existing domain mathematics/statistics; application composes injected services. Calibration solver imports occur in the explicit demo script composition, with no import-time fitting/I/O/network/RNG creation.
 [Lab methods](../methodology/MODEL_VALIDATION.md), [phase evidence](../validation/phase-9.md).
+
+## Phase 10 applicability
+
+The application defines SearchOptimizer and imports no infrastructure. infrastructure/validation implements it; scripts/demo_adversarial.py composes it. Domain evidence remains immutable and inward; imports perform no optimization, RNG initialization or I/O.
+
+[Search methods](../methodology/ADVERSARIAL_SEARCH.md), [phase evidence](../validation/phase-10.md).

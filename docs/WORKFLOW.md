@@ -27,7 +27,10 @@ flowchart TD
     EXP --> CCR[CcrService / legal-unit standardized and IMM comparison]
     CCR --> COMP[EAD, illustrative capital, driver bridge and exceptions]
     XVA --> LAB[Validation lab: models, findings, uncertainty, stresses]
-    LAB -.-> GOV[PLANNED: governance]
+    LAB --> ADV[Controlled mutations and bounded paired-model search]
+    LAB --> FORENSICS[Actual repeats and ordered material-change diagnostics]
+    ADV -.-> GOV[PLANNED: governance]
+    FORENSICS -.-> GOV
 ```
 
 | Implemented step | Input / transformation / output | Module and failure |
@@ -87,3 +90,10 @@ Actual local perturbations and path/grid revaluations → sensitivity/convergenc
 independent units, supplied ensembles or available calibration covariance → distinctly
 labelled selected-risk bands. Sourced ordered scenarios → actual stress results.
 [Validation workflow](workflows/VALIDATION_WORKFLOW.md). No approval or persistence is inferred.
+
+Phase 10: actual frozen cases + isolated mutations + independent selected suite →
+baseline-qualified detections/misses/category rates. Same-case production/challenger
+models + bounded plausible coordinates + owned optimizer → every actual paired
+valuation and status. Before/after contexts + actual repeats + ordered counterfactuals
+→ seven possible causes, materiality/repeat findings and explicit residual.
+[Adversarial workflow](workflows/ADVERSARIAL_WORKFLOW.md). Governance remains deferred.

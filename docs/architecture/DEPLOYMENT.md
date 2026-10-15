@@ -39,3 +39,9 @@ Phase 8 uses the same Python wheel/API/CLI/PostgreSQL topology. CCR is a library
 
 Phase 9 is an installed library/report workflow inside the existing runtime. No validation microservice, persistence table or financial HTTP job is added. The phase-specific verification helper uses disposable labelled resources and preserves other projects.
 [Lab methods](../methodology/MODEL_VALIDATION.md), [phase evidence](../validation/phase-9.md).
+
+## Phase 10 applicability
+
+The installed 0.10.0 library runs inside the existing runtime. No adversarial service/database schema is deployed. Disposable verification is scoped to Phase 10 and retains useful images/shared cache and other projects.
+
+[Search methods](../methodology/ADVERSARIAL_SEARCH.md), [phase evidence](../validation/phase-10.md).

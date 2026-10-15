@@ -60,7 +60,8 @@ is operational connectivity, not a pricing or risk-job workflow.
 | Stochastic model | StochasticProcess/ExactProcess/Discretization in domain/models/base; coefficients and explicit scheme | Independent mathematical targets, domains/refinement; model methodology and ADR |
 | Calibration objective/solver | CalibrationProblem in domain/calibration/contracts; objective in problems; application CalibrationSolver; infrastructure adapter | Recovery, bounds, optimizer failure and identification; methodology/CALIBRATION and workflow |
 | XVA component or factor | domain/xva contracts/calculators/risk; application/xva and xva_revaluation | Independent targets, admissible transformations, actual replay/stability/residual checks; XVA methodology and ADRs |
-| Stress/mutation, governance entity/table | NOT IMPLEMENTED; respective later phases required | Document actual interfaces when authorized |
+| Quantitative mutations/search/forensics | domain/validation + application/validation_mutation.py, validation_search.py, validation_forensics.py | Phase 10 injected research; see workflow below |
+| Governance entity/table | NOT IMPLEMENTED; Phase 11 required | Document actual interfaces when authorized |
 
 Domain errors are in `src/parallax_risk/common/errors.py`; typed names are in
 `src/parallax_risk/common/identifiers.py`. See [testing](testing/STRATEGY.md) for
@@ -190,3 +191,20 @@ added. See [workflow](workflows/CCR_WORKFLOW.md) and [limits](LIMITATIONS.md).
 
 Change mathematical contracts in domain and actual production adapters in application;
 preserve inward imports, units and evidence. [Workflow](workflows/VALIDATION_WORKFLOW.md).
+
+## Phase 10 change locations
+
+- Fault/report values: `src/parallax_risk/domain/validation/mutation.py`; injected
+  runner: `src/parallax_risk/application/validation_mutation.py`; isolated production
+  operation seams: `src/parallax_risk/application/validation_probes.py`.
+- Bounds/constraints/results: `src/parallax_risk/domain/validation/search.py`; actual
+  paired objective: `src/parallax_risk/application/validation_search.py`; independent
+  credit/XVA adapters: `src/parallax_risk/application/validation_search_models.py`.
+- SciPy optimizer port implementation: `src/parallax_risk/infrastructure/validation/scipy_search.py`.
+- Diagnostic values/workflow: `src/parallax_risk/domain/validation/forensics.py` and
+  `src/parallax_risk/application/validation_forensics.py`.
+- Synthetic composition: `src/parallax_risk/application/adversarial_examples.py`,
+  `scripts/demo_adversarial.py`; scoped full verification: `scripts/verify_phase10.ps1`.
+
+Change quantitative behavior in these layers and add independent tests, not API or
+persistence handlers. [Actual workflow](workflows/ADVERSARIAL_WORKFLOW.md).

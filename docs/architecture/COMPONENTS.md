@@ -44,3 +44,9 @@ The domain/ccr package owns immutable supervisory inputs, supported contract map
 
 Domain validation owns comparable metrics/findings, numerical checks, independent credit benchmarks, bootstrap and covariance mathematics. Application validation owns model ports, actual production adapters, bounded parameter/calibration workflows and sourced stress revaluation. The synthetic composition uses the existing infrastructure solver explicitly.
 [Lab methods](../methodology/MODEL_VALIDATION.md), [phase evidence](../validation/phase-9.md).
+
+## Phase 10 applicability
+
+MutationModel and SearchOptimizer are injected ports. Operation probes isolate faults from production; search-model adapters compose actual XVA/exposure and independent credit quadrature. Diagnostic workflows evaluate real repeated endpoints and ordered cases.
+
+[Search methods](../methodology/ADVERSARIAL_SEARCH.md), [phase evidence](../validation/phase-10.md).
