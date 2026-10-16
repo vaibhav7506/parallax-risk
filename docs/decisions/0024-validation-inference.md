@@ -43,6 +43,7 @@ Finite ladder stability does not bound grid bias. Bootstrap/local-normal bands h
 | 8 | Not applicable; NOT IMPLEMENTED in this phase | [Phase 8](../validation/phase-8.md) |
 | 9 | Introduced; implementation and explicit scope recorded | [Phase 9](../validation/phase-9.md) |
 | 10 | Reviewed; no change; existing policy retained with isolated Phase 10 research workflows | [Phase 10](../validation/phase-10.md) |
+| 11 | Reviewed; no change; existing numerical contracts retained by evidence/report consumers | [Phase 11](../validation/phase-11.md) |
 
 Phase 9 constructs the existing full-rank SVD covariance estimator from weighted
 Gram entries, evaluating each symmetric entry once. The lab still rejects asymmetric

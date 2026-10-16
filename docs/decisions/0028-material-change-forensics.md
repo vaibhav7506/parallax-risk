@@ -54,3 +54,4 @@ Hashes alone do not reconstruct cases. No governance persistence or approval exi
 | 8 | Not applicable; NOT IMPLEMENTED | Historical Phase 8 scope |
 | 9 | Not applicable; NOT IMPLEMENTED | Historical Phase 9 scope |
 | 10 | Introduced; explicit implementation/limitations verified on both platforms | [Phase 10](../validation/phase-10.md) |
+| 11 | Reviewed; no change; existing numerical contracts retained by evidence/report consumers | [Phase 11](../validation/phase-11.md) |

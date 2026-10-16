@@ -80,3 +80,4 @@ infrastructure. Production financial modules retain their policies. See
 | 8 | Extended inward architecture with pure CCR domain calculations and injected legal-unit simulation | [Phase 8](../validation/phase-8.md) |
 | 9 | Extended inward architecture with pure validation evidence and injected production/challenger workflows | [Phase 9](../validation/phase-9.md) |
 | 10 | Extended injected optimizer/mutation/diagnostic ports; inward dependency rules retained | [Phase 10](../validation/phase-10.md) |
+| 11 | Extended injected application workflows and infrastructure adapters with governance; no ORM in domain | [Phase 11](../validation/phase-11.md) |

@@ -1,6 +1,6 @@
 # Parallax Risk documentation
 
-**Current: Phases 1–10 complete; release 0.10.0. Phase 11 NOT IMPLEMENTED.**
+**Current: Phases 1–11 complete; release 0.11.0. Phase 12 NOT IMPLEMENTED.**
 
 Start with the learning path below. FACT describes actual code/evidence; IMPLEMENTATION
 DECISION describes a chosen policy; ASSUMPTION states its applicability; LIMITATION
@@ -97,7 +97,7 @@ External URL availability and future model correctness are not claimed by this c
 
 ## Deferred detailed documents
 
-Governance and production scale tutorials remain deferred; Phase 10 research is documented below.
+Production scale tutorials remain deferred; governance and Phase 10 research are documented below.
 Monte Carlo research, sequence policy and measured local benchmarks are implemented
 in Phase 4; no future financial workflow is scaffolded.
 Create future methodology/model/testing/tutorial pages alongside actual code and evidence.
@@ -146,3 +146,10 @@ Create future methodology/model/testing/tutorial pages alongside actual code and
 - [Bounded same-input model search](methodology/ADVERSARIAL_SEARCH.md)
 - [Material changes and possible-cause diagnostics](methodology/FAILURE_FORENSICS.md)
 - [Phase 10 verification and manifest](validation/phase-10.md)
+
+## Phase 11 governance, monitoring and reports
+
+- [Governance, lineage, monitoring and report contracts](methodology/GOVERNANCE.md)
+- [Governance workflow](workflows/GOVERNANCE_WORKFLOW.md)
+- [First governance report run](tutorials/10-FIRST-GOVERNANCE-RUN.md)
+- [Phase 11 implementation and verification](validation/phase-11.md)

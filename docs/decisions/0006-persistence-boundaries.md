@@ -1,8 +1,10 @@
 # ADR 0006 — Persistence boundaries
 
-**Status:** Accepted. **Recorded:** 2026-10-01; reconstructs Phase 1 choice.
+**Status:** Superseded in Phase 11 by [ADR 0029](0029-governance-persistence.md); original connectivity contract retained. **Recorded:** 2026-10-01; reconstructs Phase 1 choice.
 
 ## Context
+This record preserves the prior no-schema decision. Current persistence is documented in [ADR 0029](0029-governance-persistence.md).
+
 Readiness must check a real database without pulling ORM types into quantitative code.
 
 ## Decision
@@ -50,3 +52,4 @@ tests and an updated readiness/schema policy.
 | 8 | Reviewed; no change; existing contracts retained for restricted Phase 8 research | [Phase 8](../validation/phase-8.md) |
 | 9 | Reviewed; no change; existing policy retained in Phase 9 lab scope | [Phase 9](../validation/phase-9.md) |
 | 10 | Reviewed; no change; existing policy retained with isolated Phase 10 research workflows | [Phase 10](../validation/phase-10.md) |
+| 11 | Superseded no-schema scope by ADR 0029; original connectivity contract retained | [Phase 11](../validation/phase-11.md) |

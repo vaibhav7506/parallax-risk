@@ -6,9 +6,9 @@ understand the financial reasoning, locate the code and reproduce results.
 
 ## Current phase
 
-- Current implementation phase: **10 — complete**; release 0.10.0.
-- Completed implementation phases: **1, 2, 3, 4, 5, 6, 7, 8, 9, 10**.
-- Next implementation phase: **11 — governance, monitoring, lineage and reporting, NOT IMPLEMENTED**.
+- Current implementation phase: **11 — complete**; release 0.11.0.
+- Completed implementation phases: **1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11**.
+- Next implementation phase: **12 — API hardening and final integration, NOT IMPLEMENTED**.
 - Documentation maintenance between phases does not advance the implementation phase.
 - Implement exactly one numbered phase when the user writes `go`; complete its
   code, applicable tests, documentation and cleanup, then stop. Never pre-build the next phase.

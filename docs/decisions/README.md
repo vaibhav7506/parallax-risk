@@ -1,7 +1,8 @@
 # Parallax Risk decision register
 
 This is the canonical register from the documentation maintenance update on
-2026-10-01. **10 of 12 implementation phases are complete.** Phase 10 is complete; Phase 11 requires another `go`.
+2026-10-01, updated through 2026-10-02. **11 of 12 implementation phases are complete.**
+Release 0.11.0 implements Phase 11. Phase 12 remains NOT IMPLEMENTED.
 Decision numbers identify decisions, not phases. Each decision retains a phase
 history so reviews and changes can be counted without erasing earlier choices.
 
@@ -12,7 +13,7 @@ history so reviews and changes can be counted without erasing earlier choices.
 | 0003 | [Immutable market snapshots](0003-immutable-market-snapshots.md) | Accepted | Phase 2; conditional paths Phase 6 |
 | 0004 | [Random sequence reproducibility](0004-random-sequence-reproducibility.md) | Accepted metadata and addressed pseudo/Sobol sequences | Phases 1–4 |
 | 0005 | [Correlation validation](0005-correlation-validation.md) | Accepted | Phase 3 |
-| 0006 | [Persistence boundaries](0006-persistence-boundaries.md) | Accepted | Phase 1 |
+| 0006 | [Persistence boundaries](0006-persistence-boundaries.md) | Superseded by 0029; connectivity retained | Phase 1 |
 | 0007 | [Deterministic curves and pricing](0007-deterministic-curves-and-pricing.md) | Accepted | Phase 2 |
 | 0008 | [Stochastic models and discretization](0008-stochastic-models-and-discretization.md) | Accepted | Phase 3 |
 | 0009 | [Bounded calibration and uncertainty](0009-bounded-calibration-and-uncertainty.md) | Accepted; numerical construction refined in Phase 9 | Phase 3; refinement Phase 9 |
@@ -35,8 +36,12 @@ history so reviews and changes can be counted without erasing earlier choices.
 | 0026 | [Controlled quantitative mutations](0026-controlled-quantitative-mutations.md) | Accepted; implemented and verified | Phase 10 |
 | 0027 | [Bounded adversarial model search](0027-bounded-adversarial-search.md) | Accepted; implemented and verified | Phase 10 |
 | 0028 | [Material-change forensic evidence](0028-material-change-forensics.md) | Accepted; implemented and verified | Phase 10 |
+| 0029 | [Transactional governance persistence](0029-governance-persistence.md) | Accepted; implemented and verified | Phase 11 |
+| 0030 | [Governed risk-run lineage](0030-governed-risk-lineage.md) | Accepted; implemented and verified | Phase 11 |
+| 0031 | [Monitoring and alert transitions](0031-monitoring-alert-transitions.md) | Accepted; implemented and verified | Phase 11 |
+| 0032 | [Evidence-only HTML/JSON reports](0032-evidence-report-rendering.md) | Accepted; implemented and verified | Phase 11 |
 
-There are **28 canonical ADRs**; all are accepted, implemented, verified and reviewed. The prior sequence proposal is now
+There are **32 canonical ADRs**; 31 are accepted and ADR 0006 is superseded by 0029. The prior sequence proposal is now
 implemented and reviewed; earlier history remains intact.
 
 ## Phase ledger
@@ -54,6 +59,7 @@ implemented and reviewed; earlier history remains intact.
 | Phase 8 | 0.8.0 COMPLETE | 0001, 0020, 0021, 0022 | 4 material changes; all 22 ADRs reviewed | [1072 tests on both platforms; CCR prototype report](../validation/phase-8.md) |
 | Phase 9 | 0.9.0 COMPLETE | 0001, 0009, 0023, 0024, 0025 | 5 material changes; all 25 ADRs reviewed | [1209 tests on both platforms; validation lab report](../validation/phase-9.md) |
 | Phase 10 | 0.10.0 COMPLETE | 0001, 0026, 0027, 0028 | 4 material changes; all 28 ADRs reviewed | [1336 tests on both platforms; adversarial lab evidence](../validation/phase-10.md) |
+| Phase 11 | 0.11.0 COMPLETE | 0001, 0006, 0029–0032 | 6 material changes; all 32 ADRs reviewed | [1462 tests on both platforms; governance/reporting evidence](../validation/phase-11.md) |
 
 These counts are material decision changes, not file-edit or commit counts.
 Historical phase numbers/test outcomes come from the original reports; retrospective
