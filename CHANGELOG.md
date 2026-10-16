@@ -1,5 +1,28 @@
 # Parallax Risk changelog
 
+## 0.11.0 — Phase 11 complete — 2026-10-02
+
+- Added immutable research model inventory/version/finding/decision/limitation and
+  lineage records, explicit state transitions, guarded SQLAlchemy PostgreSQL
+  snapshot/audit persistence and packaged Alembic revision 0011.
+- Added mandatory lineage for governed XVA, seven comparable scalar monitoring
+  categories, evidence-backed alert transitions and seven HTML/JSON report kinds.
+- Reused actual prior financial/validation/mutation engines. No LLM conclusions,
+  PDF dependency, financial API, scheduler, authenticated authority or regulatory
+  approval. Phase 12 remains NOT IMPLEMENTED.
+- Reviewed all 32 canonical ADRs; added 0029–0032 and superseded the no-schema
+  scope of 0006 while preserving its connectivity/history.
+- Full Windows and installed-wheel Linux suites against isolated PostgreSQL 17.11:
+  1462 passed on each platform, 98.97% branch-inclusive coverage. Separate native
+  PostgreSQL 18 verification also passed. Lint/format/strict mypy/hooks/build/docs,
+  operational endpoints, migration and seven-report demo passed.
+- Repaired Docker runtime IPC directories with explicit user authorization; retained
+  recoverable backups and settings. Fixed the verification helper's shared Windows
+  pytest temporary-folder dependency. Failed attempts remain in the evidence.
+- Removed only Phase 11 disposable Docker resources; all 35 unrelated container
+  identities and useful release/rollback images remain. [Phase evidence](docs/validation/phase-11.md).
+
+
 ## 0.10.0 — Phase 10 complete — 2026-10-01
 
 - Implemented 15 controlled operation mutations with baseline-qualified detection,

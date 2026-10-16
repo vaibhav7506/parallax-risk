@@ -13,7 +13,7 @@ dependence, unilateral XVA, actual sensitivity/attribution research and restrict
 Educational/research implementation. Not production trading/risk software. Not
 regulatory certification.
 
-**Current scope: Phase 10 — mutation, adversarial search and forensics complete; release 0.10.0.**
+**Current scope: Phase 11 — governance, monitoring, lineage and reporting complete; release 0.11.0.**
 Immutable market snapshots, discount/zero/projection curves, deposit/par-swap
 bootstrapping, cash flows, bonds, swaps, FX forwards and finite-difference
 sensitivities are implemented. Phase 3 adds Vasicek, Hull–White, GBM, Heston,
@@ -77,7 +77,7 @@ python -m uvicorn parallax_risk.api.app:create_app --factory --host 127.0.0.1 --
 
 `/health` is process liveness. `/ready` returns 200 only after startup and a real
 PostgreSQL `SELECT 1`; it returns 503 for missing/unavailable dependencies.
-`/version` identifies Parallax Risk, release 0.10.0 and Phase 10. These endpoints do
+`/version` identifies Parallax Risk, release 0.11.0 and Phase 11. These endpoints do
 not perform financial calculations. API and CLI imports perform no environment,
 network, filesystem or logger initialization.
 
@@ -110,9 +110,8 @@ docker compose down
 ```
 
 PostgreSQL is internal to the Compose network, with a persistent named volume.
-API binds to loopback port 8000. The image runs as a non-root user. No tables are
-created in the current scope. Do not remove the database volume unless its contents are no
-longer needed. The PostgreSQL integration test uses only `SELECT 1` and requires
+API binds to loopback port 8000. The image runs as a non-root user. Governance tables are created only by the explicit Phase 11 Alembic upgrade. Do not remove the database volume unless its contents are no
+longer needed. The PostgreSQL integration tests verify connectivity, migrations and governance transactions and require
 `PARALLAX_TEST_DATABASE_URL`; otherwise pytest explicitly skips it. CI supplies
 a real isolated PostgreSQL service and additionally tests the container stack.
 
@@ -197,7 +196,7 @@ curve. Heston projected Euler reports variance projection; its European call pri
 reports quadrature estimates and rejects numerical failure. Correlation validation
 never repairs inputs automatically; a separate opt-in repair retains full evidence.
 These are research models with documented limitations, not real-market validation.
-The existing deterministic-discounting model remains version 0.2.0 within release 0.10.0; calibration model mathematics retains version 0.3.0.
+The existing deterministic-discounting model remains version 0.2.0 within release 0.11.0; calibration model mathematics retains version 0.3.0.
 
 ## Monte Carlo research
 
@@ -307,7 +306,7 @@ and hypothetical/combined stresses. Failed thresholds remain failed findings.
 [methods and assumptions](docs/methodology/MODEL_VALIDATION.md),
 [workflow](docs/workflows/VALIDATION_WORKFLOW.md),
 [actual verification](docs/validation/phase-9.md).
-Phase 10 extends this lab below. Phase 11 governance and Phase 12 financial production APIs remain NOT IMPLEMENTED.
+Phase 10 extends this lab below. Phase 11 adds the governance workflow below; Phase 12 financial production APIs remain NOT IMPLEMENTED.
 
 ## Phase 10 controlled mutations, bounded search and forensics
 
@@ -325,3 +324,25 @@ that exposure engine. No model approval or financial API is added.
 [forensics](docs/methodology/FAILURE_FORENSICS.md),
 [workflow](docs/workflows/ADVERSARIAL_WORKFLOW.md),
 [verification record](docs/validation/phase-10.md).
+
+## Phase 11 governance and reporting
+
+Immutable model inventory/version/finding/decision/limitation records now cross an
+injected repository into PostgreSQL with Alembic revision 0011. Guarded revision
+writes preserve audit history. Governed XVA runs persist actual input/sequence/CSA/
+environment/result lineage before returning success. Seven monitoring categories
+use explicit units/scopes/thresholds and evidence-linked alert transitions. Seven
+computed report kinds render escaped HTML plus machine-readable JSON.
+
+```sh
+python scripts/migrate_governance.py
+python scripts/demo_governance.py --output artifacts/local/phase11/reports
+```
+
+These commands require an explicitly configured, fresh isolated PostgreSQL schema.
+No migration runs at import or service startup. Actors/authority are caller
+declarations; recorded decisions are research metadata. Legacy numerical library
+calls remain ungoverned experiments. Financial API/security hardening remains
+Phase 12 future work. See [contracts](docs/methodology/GOVERNANCE.md),
+[first run](docs/tutorials/10-FIRST-GOVERNANCE-RUN.md) and
+[actual verification](docs/validation/phase-11.md).
