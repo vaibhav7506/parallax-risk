@@ -70,3 +70,13 @@ Phase 9 extends inward domain validation values/mathematics and injected applica
 Phase 10 adds immutable fault/search/diagnostic evidence, injected application workflows and an infrastructure SciPy optimizer. Script composition injects the adapter; there is no new service or financial HTTP route.
 
 [Search methods](../methodology/ADVERSARIAL_SEARCH.md), [phase evidence](../validation/phase-10.md).
+
+## Phase 11 applicability
+
+Governance values remain in domain; application owns lifecycle validation,
+serialization and injected repository/report workflows. Infrastructure implements
+PostgreSQL guarded transactional persistence and packaged explicit Alembic
+migrations. Scripts compose engines/calibration/search adapters and dispose
+owned engines. No SQLAlchemy imports enter domain/application.
+
+[Governance contracts](../methodology/GOVERNANCE.md), [actual phase evidence](../validation/phase-11.md).

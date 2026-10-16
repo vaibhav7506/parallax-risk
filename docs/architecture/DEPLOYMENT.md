@@ -45,3 +45,13 @@ Phase 9 is an installed library/report workflow inside the existing runtime. No 
 The installed 0.10.0 library runs inside the existing runtime. No adversarial service/database schema is deployed. Disposable verification is scoped to Phase 10 and retains useful images/shared cache and other projects.
 
 [Search methods](../methodology/ADVERSARIAL_SEARCH.md), [phase evidence](../validation/phase-10.md).
+
+## Phase 11 applicability
+
+The existing runtime/operational API remains. Governance migration 0011 is an
+explicit separately invoked operation, not startup DDL. Repository and report
+workflows are library/script operations; no financial/governance HTTP service or
+scheduler is deployed. Phase 11 image/start verification status must be read from
+actual phase evidence; a native PostgreSQL run is not Docker verification.
+
+[Governance contracts](../methodology/GOVERNANCE.md), [actual phase evidence](../validation/phase-11.md).

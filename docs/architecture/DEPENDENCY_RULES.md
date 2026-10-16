@@ -52,3 +52,13 @@ Phase 9 domain validation depends only inward on common and existing domain math
 The application defines SearchOptimizer and imports no infrastructure. infrastructure/validation implements it; scripts/demo_adversarial.py composes it. Domain evidence remains immutable and inward; imports perform no optimization, RNG initialization or I/O.
 
 [Search methods](../methodology/ADVERSARIAL_SEARCH.md), [phase evidence](../validation/phase-10.md).
+
+## Phase 11 applicability
+
+GovernanceRepository remains an application protocol; PostgresGovernance
+implements it in infrastructure. Governance dataclasses import no ORM/framework.
+The report builder imports typed application stress results without importing
+persistence. Packaged Alembic env/version imports are inert; explicit migration
+composition supplies the connection. Architecture/import-safety tests cover these paths.
+
+[Governance contracts](../methodology/GOVERNANCE.md), [actual phase evidence](../validation/phase-11.md).

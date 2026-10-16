@@ -29,8 +29,8 @@ flowchart TD
     XVA --> LAB[Validation lab: models, findings, uncertainty, stresses]
     LAB --> ADV[Controlled mutations and bounded paired-model search]
     LAB --> FORENSICS[Actual repeats and ordered material-change diagnostics]
-    ADV -.-> GOV[PLANNED: governance]
-    FORENSICS -.-> GOV
+    ADV --> GOV[Recorded governance evidence and decisions]
+    FORENSICS --> GOV
 ```
 
 | Implemented step | Input / transformation / output | Module and failure |
@@ -47,7 +47,7 @@ flowchart TD
 See [code call path](CODEBASE_GUIDE.md) and [pricing workflow](workflows/PRICING_WORKFLOW.md).
 See [calibration workflow](workflows/CALIBRATION_WORKFLOW.md) and
 [simulation workflow](workflows/SIMULATION_WORKFLOW.md). Future arrows describe
-intended phases. Phase 7 adds signed XVA/risk; Phase 8 adds restricted CCR comparisons. Governance remains absent.
+intended phases. Phase 7 adds signed XVA/risk; Phase 8 adds restricted CCR comparisons. Phase 11 records separate governance evidence and decisions.
 
 Phase 4: explicit typed simulation configuration + RunContext → owned addressed
 normal stream → corrected Gaussian driver covariance → selected vectorized kernels
@@ -97,3 +97,9 @@ models + bounded plausible coordinates + owned optimizer → every actual paired
 valuation and status. Before/after contexts + actual repeats + ordered counterfactuals
 → seven possible causes, materiality/repeat findings and explicit residual.
 [Adversarial workflow](workflows/ADVERSARIAL_WORKFLOW.md). Governance remains deferred.
+
+Phase 11: register inventory/version → retain owned finding/limitation/decision →
+run governed XVA with mandatory lineage commit → register comparable scalar
+policies/evaluations → explicit alert transitions → typed evidence HTML/JSON.
+[Governance workflow](workflows/GOVERNANCE_WORKFLOW.md). No financial HTTP job,
+authenticated authority, scheduler or implicit model approval is implemented.

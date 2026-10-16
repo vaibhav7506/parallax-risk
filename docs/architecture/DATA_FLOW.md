@@ -69,3 +69,13 @@ Phase 9 immutable case hashes → independently evaluated production/challenger 
 Frozen cases and independent checks flow to baseline/mutant reports; bounds/constraints and same-case models flow to every paired search evaluation; actual endpoint/repeat/counterfactual outputs flow to possible-cause diagnostics and explicit residual.
 
 [Search methods](../methodology/ADVERSARIAL_SEARCH.md), [phase evidence](../validation/phase-10.md).
+
+## Phase 11 applicability
+
+Typed registered version + actual XVA experiment → existing exposure/XVA engine
+→ complete lineage fingerprint/environment envelope → guarded PostgreSQL
+snapshot/audit commit → governed result. Comparable measured observations +
+immutable policy → stored evaluation → explicit alert transitions. Computed
+lab/governance results → canonical evidence report → escaped HTML + JSON.
+
+[Governance contracts](../methodology/GOVERNANCE.md), [actual phase evidence](../validation/phase-11.md).

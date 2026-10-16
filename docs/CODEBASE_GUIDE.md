@@ -61,7 +61,7 @@ is operational connectivity, not a pricing or risk-job workflow.
 | Calibration objective/solver | CalibrationProblem in domain/calibration/contracts; objective in problems; application CalibrationSolver; infrastructure adapter | Recovery, bounds, optimizer failure and identification; methodology/CALIBRATION and workflow |
 | XVA component or factor | domain/xva contracts/calculators/risk; application/xva and xva_revaluation | Independent targets, admissible transformations, actual replay/stability/residual checks; XVA methodology and ADRs |
 | Quantitative mutations/search/forensics | domain/validation + application/validation_mutation.py, validation_search.py, validation_forensics.py | Phase 10 injected research; see workflow below |
-| Governance entity/table | NOT IMPLEMENTED; Phase 11 required | Document actual interfaces when authorized |
+| Governance entity/table | domain/governance + application/governance + infrastructure/persistence/governance | Immutable values, guarded head/event persistence; explicit Alembic 0011 |
 
 Domain errors are in `src/parallax_risk/common/errors.py`; typed names are in
 `src/parallax_risk/common/identifiers.py`. See [testing](testing/STRATEGY.md) for
@@ -208,3 +208,17 @@ preserve inward imports, units and evidence. [Workflow](workflows/VALIDATION_WOR
 
 Change quantitative behavior in these layers and add independent tests, not API or
 persistence handlers. [Actual workflow](workflows/ADVERSARIAL_WORKFLOW.md).
+
+## Phase 11 call path
+
+`src/parallax_risk/domain/governance/contracts.py` and
+`src/parallax_risk/domain/governance/monitoring.py` own immutable records and scalar
+monitoring. `src/parallax_risk/application/governance.py` owns workflows/ports;
+`src/parallax_risk/application/governance_codec.py` validates schema-1 reconstruction.
+`src/parallax_risk/application/governed_risk.py` runs real XVA then commits lineage.
+`src/parallax_risk/application/governance_reports.py` renders typed computed evidence.
+`src/parallax_risk/infrastructure/persistence/governance.py` implements PostgreSQL
+transactions; `src/parallax_risk/infrastructure/persistence/migrate.py` composes
+packaged frozen migrations. Scripts own engines and dispose in finally.
+
+[Workflow](workflows/GOVERNANCE_WORKFLOW.md), [contract details](methodology/GOVERNANCE.md).

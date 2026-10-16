@@ -50,7 +50,8 @@ create random paths. See [current components](COMPONENTS.md) and
 `infrastructure.persistence` adapts SQLAlchemy to the connectivity protocol. An
 engine is constructed explicitly at CLI invocation or API lifespan startup, with
 lazy connections, finite pool limits, and connect/statement timeouts. SELECT 1
-is its only query. Exceptions are sanitized at this adapter; no tables exist.
+is the connectivity probe’s only query. Exceptions are sanitized; Phase 11 adds a
+separate governance repository and explicit migration, preserving this probe.
 
 `api` and `cli` are composition roots and own the lifetime of injected probes.
 Readiness probes run in a thread pool so synchronous PostgreSQL calls cannot

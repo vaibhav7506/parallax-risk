@@ -50,3 +50,12 @@ Domain validation owns comparable metrics/findings, numerical checks, independen
 MutationModel and SearchOptimizer are injected ports. Operation probes isolate faults from production; search-model adapters compose actual XVA/exposure and independent credit quadrature. Diagnostic workflows evaluate real repeated endpoints and ordered cases.
 
 [Search methods](../methodology/ADVERSARIAL_SEARCH.md), [phase evidence](../validation/phase-10.md).
+
+## Phase 11 applicability
+
+Added domain/governance values/monitoring, application governance ports/codec/
+reports/governed XVA/demo composition, and infrastructure PostgreSQL repository
+plus frozen migrations. Existing financial engines are reused; no new financial
+HTTP route, persistent numerical-input store or monitoring scheduler is deployed.
+
+[Governance contracts](../methodology/GOVERNANCE.md), [actual phase evidence](../validation/phase-11.md).
