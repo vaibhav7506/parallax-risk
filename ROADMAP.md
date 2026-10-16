@@ -1,8 +1,8 @@
 # Parallax Risk roadmap
 
-**Current:** Phase 10 complete, release 0.10.0.
-Phases 1–10 are complete. Documentation maintenance does not advance the phase.
-Phase 10 is complete; Phase 11 remains NOT IMPLEMENTED and requires another `go`.
+**Current:** Phase 11 complete, release 0.11.0.
+Phases 1–11 are complete. Documentation maintenance does not advance the phase.
+Phase 12 remains NOT IMPLEMENTED and requires a new `go`.
 
 | Phase | Scope | State |
 |---|---|---|
@@ -16,9 +16,9 @@ Phase 10 is complete; Phase 11 remains NOT IMPLEMENTED and requires another `go`
 | 8 | Regulatory-style capital and challenger models | COMPLETE — [evidence](docs/validation/phase-8.md) |
 | 9 | Model validation lab | COMPLETE — [evidence](docs/validation/phase-9.md) |
 | 10 | Mutation, adversarial search and failure forensics | COMPLETE — [evidence](docs/validation/phase-10.md) |
-| 11 | Governance, monitoring, lineage and reporting | PLANNED / NOT IMPLEMENTED |
+| 11 | Governance, monitoring, lineage and reporting | COMPLETE — [evidence](docs/validation/phase-11.md) |
 | 12 | Financial APIs/workflows, scale, security and release hardening | PLANNED / NOT IMPLEMENTED |
 
 Operational API/CLI and foundation metadata exist; they do not implement financial
-risk jobs or governance approval. Phase 4 implements explicit stochastic sequence replay. Proposed decisions
+HTTP jobs or authenticated governance approval. Phase 4 implements explicit stochastic sequence replay. Proposed decisions
 are tracked separately in the [decision register](docs/decisions/README.md).

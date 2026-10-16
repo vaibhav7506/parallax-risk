@@ -47,3 +47,13 @@ identity. Treat full replay inputs as sensitive when they are not synthetic. Log
 uses restricted run/outcome/error envelopes; result hashes are not authorization,
 confidentiality or approval controls. No financial endpoint or new external service
 is introduced.
+
+## Phase 11 applicability
+
+Governance actors/authority are caller declarations; no authentication, role
+separation, signatures or regulatory approval is implemented. Append-only SQL
+triggers protect ordinary writes, not raw administrators. Reports escape stored
+evidence and carry restrictive CSP with no scripts/external assets. Review output
+confidentiality before sharing; existing loopback operational API remains unauthenticated.
+
+[Governance contracts](docs/methodology/GOVERNANCE.md), [actual phase evidence](docs/validation/phase-11.md).

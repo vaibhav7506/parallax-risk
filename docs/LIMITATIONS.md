@@ -13,7 +13,7 @@ change and evidence justify revision; record revisions in the decision history.
 | Direct FX / no basis | No inverse/cross synthesis; portfolio/collateral conversion needs exact direct orientation | Supply exact direct pair/settlement and supported funding assumption |
 | Zero-knot risk, explicit finite bumps | Not market-quote DV01; truncation/cancellation depends on h | State scope/signs, test meaningful bump stability |
 | Additive XVA / restricted comparative CCR | Unilateral deterministic-discount CVA/DVA, residual funding proxy and external IM omit bilateral/default/recursive economics | Read Phases 7/8 assumptions; no regulatory capital/compliance claim |
-| In-memory validation and adversarial labs; no governance persistence | Findings/mutation rates/searches are not institutional approval or a model inventory | Phases 9–10 library scope; Phase 11 deferred |
+| Research governance with declared actors/authority | Records do not authenticate users or confer institutional/regulatory approval | Phase 11 persistence; security/HTTP jobs remain Phase 12 future work |
 | Operational API only, unauthenticated local service | No production risk jobs, authorization, scale/HA or security certification | Loopback/development use; Phase 12 planned |
 | Incomplete automatic lineage | Simulation captures sequences/runtime/platform and optional supplied source revision; portfolio/market/curve/ledger/pricer hashes exist in memory; persisted lineage absent | Preserve external source/runtime evidence; phased lineage work |
 | Exact version locks without hashes; release-tag bases | Whole-environment rebuild immutability not guaranteed | Record actual versions/image IDs and revalidate updates |
@@ -159,3 +159,16 @@ Actual repeatability does not establish accuracy. Calibration provenance is call
 supplied, and hashes alone cannot reconstruct complete cases. Detailed
 [mutation](methodology/QUANTITATIVE_MUTATION.md), [search](methodology/ADVERSARIAL_SEARCH.md),
 [forensics](methodology/FAILURE_FORENSICS.md).
+
+## Phase 11 bounds
+
+GovernedXva persists lineage; lower-level numerical research calls are ungoverned.
+Input bytes/path buffers and calibrated result repositories are not persisted;
+retain artifacts behind hashes. Source revision/calibration ID are explicit caller
+references and may be null. Actors/authority are not authenticated/signed. Raw DB
+admin tampering is outside append-only guarantees. Policies/review dates/monitor
+observations/narratives are caller-owned; no scheduled collection, external alert
+delivery, automatic approval/closure or PDF exists. Thresholds are scalar, strict
+exceedance in declared units; no hidden relative/vector aggregation. Existing
+financial limitations remain. [Detailed contracts](methodology/GOVERNANCE.md),
+[actual verification status](validation/phase-11.md).

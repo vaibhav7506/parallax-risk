@@ -41,7 +41,7 @@ input hashes. RunContext identifies a workflow/configuration; it is not a persis
 risk job, model approval or random generator. Phase 5 wraps nominal identities in
 actual immutable legal portfolio aggregates.
 
-Phase 6 implements ExposureProfile and ExposureRunResult; Phase 7 adds XvaResult. Phase 9 implements immutable Finding evidence; persisted model-governance aggregates remain NOT IMPLEMENTED. Current deterministic
+Phase 6 implements ExposureProfile and ExposureRunResult; Phase 7 adds XvaResult. Phase 9 implements immutable Finding evidence; Phase 11 now adds separate persisted research governance aggregates. Current deterministic
 portfolio risk is a building block for actual stochastic exposure profiles.
 See [roadmap](../ROADMAP.md), [code locations](CODEBASE_GUIDE.md) and
 [limitations](LIMITATIONS.md).
@@ -164,3 +164,15 @@ Values live in `src/parallax_risk/domain/validation/`; injected application work
 compose real models. No domain depends on infrastructure/HTTP/persistence. Hashes
 are content evidence, not persisted governance or sufficient input reconstruction.
 [Workflow](workflows/ADVERSARIAL_WORKFLOW.md).
+
+## Phase 11 governance relationships
+
+Model inventory → immutable Version → owned Finding / Approval / Limitation /
+Lineage / Policy. Evaluation embeds its registered Policy and comparable measured
+observations. Alert references a breached Evaluation; recovery references a later
+nonbreached Evaluation of the same policy. Snapshot adds revision/actor/UTC time/
+reason; PostgreSQL head/event storage preserves each snapshot atomically. Report
+retains actual computed evidence, synthetic flag, digest and caller interpretation.
+Governance Finding is distinct from Phase 9 numerical Finding; Approval is an
+explicit decision record and does not modify inventory status automatically.
+[Contracts](methodology/GOVERNANCE.md).

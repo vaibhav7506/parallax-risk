@@ -101,3 +101,13 @@ No earlier model version or dependency lock changes are needed.
 
 Phase 9 numerical changes require independent targets plus actual revaluation/rejection tests. Run `python scripts/demo_validation.py`, the full release suite and `python scripts/check_docs.py`; preserve prior phase evidence and append every canonical ADR review.
 [Lab methods](docs/methodology/MODEL_VALIDATION.md), [phase evidence](docs/validation/phase-9.md).
+
+## Phase 11 applicability
+
+Phase 11 adds explicit migrated PostgreSQL governance tests and seven report
+workflows. Use scripts/migrate_governance.py and scripts/demo_governance.py only
+against an explicitly configured fresh isolated schema. Scripts/verify_phase11.ps1
+supports -Focused or full installed-wheel Windows/Linux verification, with scoped
+cleanup in finally. Source/archive history and earlier phase reports remain evidence.
+
+[Governance contracts](docs/methodology/GOVERNANCE.md), [actual phase evidence](docs/validation/phase-11.md).

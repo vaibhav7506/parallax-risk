@@ -131,3 +131,14 @@ The unchanged Phase 9 demo intentionally retains its 0.9.0 experiment label; tha
 label is not the currently installed package version. Use `parallax-risk version`
 for runtime identity and the retained 0.9.0 source/archive for historical release
 replay. The Phase 10 demo declares its own 0.10.0 experiment label.
+
+## Phase 11 applicability
+
+GovernedXva commits immutable input/sequence/CSA/environment/result identities.
+Retain actual snapshots, parameterized inputs and source archives behind those
+hashes; null revision/calibration is not invented. The synthetic seven-report demo
+uses fixed IDs/timestamps and rejects duplicate writes; use a fresh isolated schema
+for replay. Rendering is deterministic for identical computed evidence and metadata;
+no cross-platform numerical byte promise is made.
+
+[Governance contracts](methodology/GOVERNANCE.md), [actual phase evidence](validation/phase-11.md).

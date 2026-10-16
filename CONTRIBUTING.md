@@ -53,3 +53,13 @@ bridge residuals and exact horizon-node rejection. See
 
 Phase 9 findings and uncertainty/stress evidence remain in the library. Preserve exact unit schemas, admissible input changes, owned sampling units and failure outcomes. Do not turn passed checks into model approval or introduce Phase 10 mutations during this phase.
 [Lab methods](docs/methodology/MODEL_VALIDATION.md), [phase evidence](docs/validation/phase-9.md).
+
+## Phase 11 applicability
+
+Keep numerical Findings distinct from owned governance Findings. Preserve original
+evidence/history, immutable versions/decisions/lineage/policies, exact monitoring
+units/scopes and explicit transitions. Use Governance workflows for lifecycle
+checks and guarded transactional repositories; declare actors/authority without
+authentication claims. Render stored strings safely and infer no model conclusions.
+
+[Governance contracts](docs/methodology/GOVERNANCE.md), [actual phase evidence](docs/validation/phase-11.md).

@@ -3,7 +3,7 @@
 | Term | Intuition / why it matters | Current project usage and reference |
 |---|---|---|
 | Counterparty credit risk (CCR) | Risk of losing a positive derivative claim when the other party defaults | Deterministic and pathwise exposure/credit research implemented; unilateral default loss implemented in Phase 7; [roadmap](../ROADMAP.md) |
-| Model risk | Risk that assumptions, mathematics, data or implementation produce misleading decisions | Explicit assumptions and quantitative tests today; Phase 9 library lab implemented; governance deferred; [validation](validation/OVERVIEW.md) |
+| Model risk | Risk that assumptions, mathematics, data or implementation produce misleading decisions | Explicit assumptions and quantitative tests today; Phase 9 library lab implemented; Phase 11 records research governance; [validation](validation/OVERVIEW.md) |
 | XVA / CVA | Signed valuation adjustments; unilateral CVA addresses counterparty default loss | Phase 7 implements declared approximations; [methodology](methodology/XVA.md) |
 | NPV / PV | Value today of signed future payments | DiscountingEngine/PricingResult; [pricing](methodology/PRICING.md) |
 | Discount factor D(0,t) | Multiplier translating a payment at t into today's value | Positive anchored DiscountCurve; may exceed 1 with negative rates; [curves](methodology/CURVES.md) |
@@ -165,3 +165,18 @@ Definitions, units/signs and caveats: [portfolio methodology](methodology/PORTFO
 | Counterfactual residual | Endpoint change less ordered step changes, retained without causal relabelling |
 
 [Definitions and workflow](workflows/ADVERSARIAL_WORKFLOW.md).
+
+## Phase 11 terminology
+
+| Term | Meaning and implementation |
+|---|---|
+| Governance snapshot | Immutable record plus revision, declared actor, UTC audit time and reason |
+| Compare-and-swap revision | Write succeeds only against the observed head revision; stale writes fail |
+| Reference guard | Parent/policy/evaluation revision locked and checked in the write transaction |
+| Owned governance finding | Severity/evidence/owner/due date plus explicit remediation/closure lifecycle |
+| Conditional decision | Caller-recorded research decision requiring explicit conditions; no authentication claim |
+| Comparison scope hash | Caller-defined monitoring comparability identity, including relevant units/horizon/quantile |
+| Recovery evaluation | Later comparable evidence within the same policy threshold, required to resolve an alert |
+| Governed run | Actual XVA result returned only after mandatory lineage persistence |
+
+[Governance definitions and limitations](methodology/GOVERNANCE.md).
