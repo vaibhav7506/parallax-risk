@@ -28,7 +28,7 @@ adapters, independent check targets and actual immutable cases. For XVA, use
 XvaCvaProduction, IndependentCreditCvaChallenger and XvaSearchCases with exact factor
 units and a valid baseline, including a daily grid/accounts where a CSA is present.
 Retain complete cases and selected model implementations alongside hashes and JSON.
-No financial API, automatic approval, persisted governance or Phase 11 workflow exists.
+Phase 11 now supplies a separate persisted governance workflow; this Phase 10 numerical experiment does not create governance records automatically.
 
 Focused --no-cov is intentional; whole-release branch-inclusive coverage is verified
 separately with live PostgreSQL and the installed Linux wheel. See

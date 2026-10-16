@@ -37,7 +37,7 @@ resources and other projects are outside scope. Preview is the default.
 [Method](../methodology/MODEL_VALIDATION.md), [uncertainty](../methodology/MODEL_UNCERTAINTY.md),
 [stress](../methodology/STRESS_SCENARIOS.md), [tutorial](../tutorials/08-FIRST-VALIDATION-RUN.md),
 [actual phase evidence](../validation/phase-9.md). Phase 10 mutation/adversarial work,
-Phase 11 governance and Phase 12 production financial APIs remain NOT IMPLEMENTED.
+Phase 11 adds separate research governance; Phase 12 financial APIs remain NOT IMPLEMENTED.
 
 ## Phase 10 applicability
 

@@ -16,7 +16,7 @@ not institutional model approval or a governance workflow. Phase 9 now adds a li
 Actual bounded optimizer diagnostics, local parameter uncertainty and supplied-step
 refinement are now implemented. See [calibration](../methodology/CALIBRATION.md)
 and [Phase 3](phase-3.md). Phase 9 implements scoped stress/uncertainty propagation and comparable challenger models.
-Phase 10 implements scoped mutation detection evidence and bounded adversarial search. Backtesting and governance monitoring remain NOT IMPLEMENTED. Do not generalize selected-probe rates or invent model accuracy claims.
+Phase 10 implements scoped mutation detection evidence and bounded adversarial search. Backtesting remains NOT IMPLEMENTED; Phase 11 now adds separate research monitoring. Do not generalize selected-probe rates or invent model accuracy claims.
 Create their detailed documents only with their authorized implementations.
 
 Actual phase outcomes are [Phase 1](phase-1.md), [Phase 2](phase-2.md) and
@@ -62,3 +62,12 @@ Controlled faults execute selected actual validations and retain missed mutants.
 Bounded searches retain same-case paired outputs/status; actual repeat/counterfactual
 forensics retains materiality and residual. These remain research evidence, not
 model approval. [Methods/workflow](../workflows/ADVERSARIAL_WORKFLOW.md).
+
+## Phase 11 applicability
+
+Phase 11 preserves the numerical lab and adds separate owned governance
+Findings/decisions/limitations, lineage, monitoring and evidence reports. Passed
+checks do not confer approval. Explicit decision records do not close findings or
+activate inventory automatically. The synthetic weak mutation report retains misses.
+
+[Governance contracts](../methodology/GOVERNANCE.md), [actual phase evidence](phase-11.md).

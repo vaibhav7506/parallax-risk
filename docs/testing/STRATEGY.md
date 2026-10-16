@@ -110,3 +110,16 @@ An optimizer stopping short of a known constrained optimum under a small populat
 is recorded in [Phase 10 evidence](../validation/phase-10.md). More search effort is
 not proof of global optimality. Actual whole-package coverage and live database
 results are recorded separately; focused coverage is not whole-release evidence.
+
+## Phase 11 applicability
+
+New contract/state/codec tests reject malformed evidence, nonfinite measurements,
+wrong units/scopes, invalid lifecycle transitions and stale revisions. Live
+PostgreSQL tests create and finally drop only their own UUID schemas in the
+explicitly isolated test DB; they exercise zero/repeated migration, destructive
+opt-in reversal, append-only triggers, atomic rollback, reference guards, concurrent
+CAS and privileged-tamper detection. Actual governed XVA and all seven reports
+are exercised. A skipped DB case is not live verification. Coverage measures
+execution, not financial validity; read the Phase 11 report for actual platform/results.
+
+[Governance contracts](../methodology/GOVERNANCE.md), [actual phase evidence](../validation/phase-11.md).
