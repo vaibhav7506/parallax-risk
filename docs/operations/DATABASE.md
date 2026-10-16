@@ -5,8 +5,8 @@
 PostgresConnectivity using an explicitly created SQLAlchemy engine, bounded pool/
 connect/statement timeouts, real SELECT 1 and sanitized errors.
 
-There are **no tables, governance entities or migration revisions**. Alembic is a
-declared later dependency, not an existing schema. Connectivity is not proof of
+Phase 11 adds **governance_heads, governance_events and Alembic revision 0011**.
+The separate connectivity probe retains its SELECT 1 behavior. Connectivity is not proof of
 data integrity, schema readiness, user permissions or high availability.
 
 API lifespan closes its probe on shutdown; CLI check-db closes in finally. `/ready`
@@ -46,3 +46,24 @@ Findings, model comparisons, uncertainty bands and stress results are immutable 
 Phase 10 reports remain in memory/JSON; no table or migration is added. The live PostgreSQL check verifies the operational foundation only, not persisted mutation/search/governance aggregates.
 
 [Search methods](../methodology/ADVERSARIAL_SEARCH.md), [phase evidence](../validation/phase-10.md).
+
+## Phase 11 explicit schema and repository
+
+Use `python scripts/migrate_governance.py` with explicit PARALLAX_DATABASE_URL to
+upgrade the selected PostgreSQL schema. The packaged Alembic composition borrows
+a caller-owned connection; constructors/service startup do not migrate. The
+head/event repository validates domain documents on read, detects digest/identity
+mismatch, locks revision guards and atomically writes each snapshot plus audit.
+Append-only triggers/deferred foreign keys preserve ordinary-write history.
+
+Full inputs, calibrated results and financial path buffers are not stored here.
+Lineage retains their identities; retain actual source artifacts for replay. Raw
+DB administrators remain trusted. Schema upgrades need explicit privileges;
+readiness does not check Alembic revision. Destructive base downgrade requires
+allow_destructive=True and removes selected governance data; use only disposable
+test schemas for reversal verification.
+
+Tests create UUID-named schemas only in PARALLAX_TEST_DATABASE_URL, then drop only
+those schemas in finally. Docker verification removes only its owned phase stack;
+normal Compose database data is retained. See [ADR 0029](../decisions/0029-governance-persistence.md),
+[governance contracts](../methodology/GOVERNANCE.md), [actual results](../validation/phase-11.md).

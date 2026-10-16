@@ -65,3 +65,14 @@ A failed validation finding is a retained outcome, not necessarily a software de
 A callback economic rejection aborts optimization explicitly and preserves its actual error. Empty feasible populations, stale case evidence, changing units/model schemas and budget overruns are errors. A miss or false convergence flag is retained evidence, not automatically an execution error.
 
 [Search methods](../methodology/ADVERSARIAL_SEARCH.md), [phase evidence](../validation/phase-10.md).
+
+## Phase 11 applicability
+
+Missing revision 0011 requires an explicit migration on the correctly selected
+schema; SELECT 1 readiness does not prove schema readiness. Stale revision or
+reference means reread/review, never blind overwrite/retry. Duplicate synthetic
+demo IDs require a fresh isolated schema. Invalid recovery evidence cannot resolve
+an alert. Digest/identity mismatch on read is a failure, not automatic repair.
+Docker startup failure does not establish a test result or safe cleanup inventory.
+
+[Governance contracts](../methodology/GOVERNANCE.md), [actual phase evidence](../validation/phase-11.md).

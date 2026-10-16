@@ -45,3 +45,13 @@ The lab retains check evidence/findings in its returned report. Existing exposur
 Phase 10 emits canonical machine-readable model/fault/search/diagnostic evidence; no automatic alerts, dashboard, persisted findings or model approvals are added. Failed materiality/optimizer convergence remains visible in reports.
 
 [Search methods](../methodology/ADVERSARIAL_SEARCH.md), [phase evidence](../validation/phase-10.md).
+
+## Phase 11 applicability
+
+Monitoring Policies/Evaluations are persisted research evidence, separate from
+operational service logs. They cover seven scalar categories and retain units,
+comparison scope, threshold and source hashes. Alerts follow explicit
+open/acknowledged/resolved transitions backed by later recovery evidence. No
+scheduled collector, external notification delivery or authenticated actor exists.
+
+[Governance contracts](../methodology/GOVERNANCE.md), [actual phase evidence](../validation/phase-11.md).

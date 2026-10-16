@@ -18,8 +18,7 @@ auto-load that file. Replace `.env.example` placeholders and use an encoded URL.
 Host API/CLI addresses differ from Compose's internal `postgres` hostname.
 
 Do not connect tests to valuable production data. Use a separate test project and
-ports with the [Docker lifecycle](DOCKER.md). No tables or migrations are currently
-created; see [database scope](DATABASE.md). Service failures are described in
+ports with the [Docker lifecycle](DOCKER.md). Governance tables require an explicit Phase 11 migration; see [database scope](DATABASE.md). Service failures are described in
 [troubleshooting](TROUBLESHOOTING.md).
 
 Phase 4 research also supports [the simulation tutorial](../tutorials/03-FIRST-SIMULATION-RUN.md).

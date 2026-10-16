@@ -52,3 +52,13 @@ caller assumptions. [Contracts/workflow](../workflows/CCR_WORKFLOW.md).
 
 Lab tolerances, confidence levels, resampling/evaluation budgets, source labels and scenario units are explicit library arguments retained in evidence; foundation environment tolerances are not implicitly substituted. No new settings/global RNG or market-data credentials are added.
 [Lab methods](../methodology/MODEL_VALIDATION.md), [phase evidence](../validation/phase-9.md).
+
+## Phase 11 applicability
+
+Governance repository/engine/migration lifetimes are explicit. Scripts load
+PARALLAX_DATABASE_URL through the existing validated Settings boundary; no
+import-time settings or new dependency is introduced. Quantitative policies,
+review dates, parameters and authority are typed caller values, not environment
+fallbacks. The DB URL remains excluded from public config and its hash.
+
+[Governance contracts](../methodology/GOVERNANCE.md), [actual phase evidence](../validation/phase-11.md).
