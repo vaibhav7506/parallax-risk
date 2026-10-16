@@ -80,13 +80,13 @@ Different numeric results across software/BLAS versions remain possible later;
 dependency locks and Phase 4 simulation environment metadata support that control.
 
 Phase 5 portfolio/market/curve/ledger lineage is implemented in memory; persisted
-governance lineage remains deferred. Phase 4 records explicit
+governed lineage is now implemented separately in Phase 11. Phase 4 records explicit
 sequence/environment metadata and an optional supplied source revision; these do not
 prove input authenticity or mathematical correctness.
 
 Phase 3 model/calibration primitives are separate from these helpers. Calibration
 IDs, input/settings hashes and parameters now exist; Phase 4 implements random
-sequences, while persisted governance lineage remains deferred. See [calibration](CALIBRATION.md).
+sequences, while persisted governed lineage is now implemented separately in Phase 11. See [calibration](CALIBRATION.md).
 
 Phase 5 reuses exact-contract Money for positions/cash/haircuts/aggregation, while
 explicit binary64 FX factors become Decimal text. It does not imply exact-decimal

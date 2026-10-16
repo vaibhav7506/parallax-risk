@@ -48,3 +48,12 @@ These research methods do not establish regulatory compliance or model approval.
 - [Controlled quantitative mutation methods](QUANTITATIVE_MUTATION.md)
 - [Bounded adversarial search](ADVERSARIAL_SEARCH.md)
 - [Material-change forensics](FAILURE_FORENSICS.md)
+
+## Phase 11 applicability
+
+Research governance records explicit decisions and limitations separately from
+numerical checks. Scalar monitoring retains exact units/scopes/directions/thresholds.
+HTML/JSON reports preserve actual assumptions/failures/residuals/mutation misses;
+they infer no approval, causal conclusion or regulatory certification.
+
+[Governance contracts](GOVERNANCE.md), [actual phase evidence](../validation/phase-11.md).
