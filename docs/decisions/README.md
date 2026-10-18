@@ -1,8 +1,8 @@
 # Parallax Risk decision register
 
 This is the canonical register from the documentation maintenance update on
-2026-10-01, updated through 2026-10-02. **11 of 12 implementation phases are complete.**
-Release 0.11.0 implements Phase 11. Phase 12 remains NOT IMPLEMENTED.
+2026-10-01, updated through 2026-10-02. **12 of 12 implementation phases are complete.**
+Release 0.12.0 completes the final Phase 12; no later phase is authorized.
 Decision numbers identify decisions, not phases. Each decision retains a phase
 history so reviews and changes can be counted without erasing earlier choices.
 
@@ -40,8 +40,12 @@ history so reviews and changes can be counted without erasing earlier choices.
 | 0030 | [Governed risk-run lineage](0030-governed-risk-lineage.md) | Accepted; implemented and verified | Phase 11 |
 | 0031 | [Monitoring and alert transitions](0031-monitoring-alert-transitions.md) | Accepted; implemented and verified | Phase 11 |
 | 0032 | [Evidence-only HTML/JSON reports](0032-evidence-report-rendering.md) | Accepted; implemented and verified | Phase 11 |
+| 0033 | [Server-selected nominal financial wire schemas](0033-nominal-service-wire.md) | Accepted; implemented and verified | Phase 12 |
+| 0034 | [Durable owned jobs and success-linked lineage](0034-durable-service-jobs.md) | Accepted; implemented and verified | Phase 12 |
+| 0035 | [Explicit principal roles, safe transport and work admission](0035-service-authentication-and-limits.md) | Accepted; implemented and verified | Phase 12 |
+| 0036 | [Preserve financial history with a cumulative validation pass](0036-cumulative-collateral-history.md) | Accepted; implemented and verified | Phase 12 |
 
-There are **32 canonical ADRs**; 31 are accepted and ADR 0006 is superseded by 0029. The prior sequence proposal is now
+There are **36 canonical ADRs**; 35 are accepted and ADR 0006 is superseded by 0029. The prior sequence proposal is now
 implemented and reviewed; earlier history remains intact.
 
 ## Phase ledger
@@ -60,6 +64,7 @@ implemented and reviewed; earlier history remains intact.
 | Phase 9 | 0.9.0 COMPLETE | 0001, 0009, 0023, 0024, 0025 | 5 material changes; all 25 ADRs reviewed | [1209 tests on both platforms; validation lab report](../validation/phase-9.md) |
 | Phase 10 | 0.10.0 COMPLETE | 0001, 0026, 0027, 0028 | 4 material changes; all 28 ADRs reviewed | [1336 tests on both platforms; adversarial lab evidence](../validation/phase-10.md) |
 | Phase 11 | 0.11.0 COMPLETE | 0001, 0006, 0029–0032 | 6 material changes; all 32 ADRs reviewed | [1462 tests on both platforms; governance/reporting evidence](../validation/phase-11.md) |
+| Phase 12 | 0.12.0 COMPLETE | 0001, 0013, 0029, 0030, 0032, 0033–0036 | 9 material changes; all 36 ADRs reviewed | [1610 tests on each platform; final release evidence](../validation/phase-12.md) |
 
 These counts are material decision changes, not file-edit or commit counts.
 Historical phase numbers/test outcomes come from the original reports; retrospective

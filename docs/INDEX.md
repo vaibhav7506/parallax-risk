@@ -1,6 +1,6 @@
 # Parallax Risk documentation
 
-**Current: Phases 1–11 complete; release 0.11.0. Phase 12 NOT IMPLEMENTED.**
+**Current: all 12 implementation phases complete; release 0.12.0.**
 
 Start with the learning path below. FACT describes actual code/evidence; IMPLEMENTATION
 DECISION describes a chosen policy; ASSUMPTION states its applicability; LIMITATION
@@ -153,3 +153,23 @@ Create future methodology/model/testing/tutorial pages alongside actual code and
 - [Governance workflow](workflows/GOVERNANCE_WORKFLOW.md)
 - [First governance report run](tutorials/10-FIRST-GOVERNANCE-RUN.md)
 - [Phase 11 implementation and verification](validation/phase-11.md)
+
+## Phase 12 current service scope
+
+The 0.12.0 service adds authenticated versioned financial/lab/governance jobs,
+retained inputs/results/lineage, owner-scoped objects/reports and production CLI.
+Earlier phase-specific descriptions above record their scope at introduction; current
+service behavior is defined by [service contracts](methodology/SERVICE.md),
+[operations](operations/SERVICE.md) and
+[Phase 12 evidence](validation/phase-12.md). Numerical model limitations remain applicable.
+
+## Phase 12 service and final audit
+
+- [Service contracts](methodology/SERVICE.md)
+- [Authenticated deployment and operations](operations/SERVICE.md)
+- [Service performance method and measured evidence](validation/SERVICE_BENCHMARKS.md)
+- [Phase 12 implementation and verification](validation/phase-12.md)
+- [Master requirements audit](validation/FINAL_AUDIT.md)
+- [Synthetic service inputs](../data/sample/service/README.md)
+
+[Implemented model cards](models/INDEX.md) consolidate purpose, units, evidence and material restrictions.

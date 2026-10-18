@@ -50,3 +50,4 @@ Gram entries, evaluating each symmetric entry once. The lab still rejects asymme
 caller covariance exactly and never clips eigenvalues. This resolves the observed
 Linux BLAS rounding asymmetry at the estimator source. The existing calibration
 mathematical assumptions remain unchanged. [Phase 9 evidence](../validation/phase-9.md).
+| 12 | Reviewed; no change; numerical/research contract remains applicable | [Phase 12](../validation/phase-12.md) |

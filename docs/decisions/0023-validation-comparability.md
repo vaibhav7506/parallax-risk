@@ -44,3 +44,4 @@ String unit labels require correct adapters; passing tolerances does not prove m
 | 9 | Introduced; implementation and explicit scope recorded | [Phase 9](../validation/phase-9.md) |
 | 10 | Reviewed; no change; existing policy retained with isolated Phase 10 research workflows | [Phase 10](../validation/phase-10.md) |
 | 11 | Reviewed; no change; existing numerical contracts retained by evidence/report consumers | [Phase 11](../validation/phase-11.md) |
+| 12 | Reviewed; no change; numerical/research contract remains applicable | [Phase 12](../validation/phase-12.md) |

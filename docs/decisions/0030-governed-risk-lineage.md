@@ -40,3 +40,8 @@ Fingerprints do not retain input bytes. Code reference/calibration identifiers a
 | 9 | Not applicable; NOT IMPLEMENTED in this phase | [Phase 9](../validation/phase-9.md) |
 | 10 | Not applicable; NOT IMPLEMENTED in this phase | [Phase 10](../validation/phase-10.md) |
 | 11 | Introduced; reviewed and verified on Windows/installed-wheel Linux with live PostgreSQL | [Phase 11](../validation/phase-11.md) |
+| 12 | Every successful service operation retains request/result plus committed actual lineage; legacy GovernedXva preserved | [Phase 12](../validation/phase-12.md) |
+
+## Phase 12 applicability
+
+Every successful service operation retains request/result plus committed actual lineage; legacy GovernedXva preserved. See [service contracts](../methodology/SERVICE.md). Earlier history remains evidence; this extends the decision without replacing its accepted financial policy.

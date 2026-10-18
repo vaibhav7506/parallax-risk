@@ -81,3 +81,8 @@ infrastructure. Production financial modules retain their policies. See
 | 9 | Extended inward architecture with pure validation evidence and injected production/challenger workflows | [Phase 9](../validation/phase-9.md) |
 | 10 | Extended injected optimizer/mutation/diagnostic ports; inward dependency rules retained | [Phase 10](../validation/phase-10.md) |
 | 11 | Extended injected application workflows and infrastructure adapters with governance; no ORM in domain | [Phase 11](../validation/phase-11.md) |
+| 12 | Extended application ports and API/CLI composition for authenticated service workflows | [Phase 12](../validation/phase-12.md) |
+
+## Phase 12 applicability
+
+Extended application ports and API/CLI composition for authenticated service workflows. See [service contracts](../methodology/SERVICE.md). Earlier history remains evidence; this extends the decision without replacing its accepted financial policy.

@@ -53,3 +53,4 @@ tests and an updated readiness/schema policy.
 | 9 | Reviewed; no change; existing policy retained in Phase 9 lab scope | [Phase 9](../validation/phase-9.md) |
 | 10 | Reviewed; no change; existing policy retained with isolated Phase 10 research workflows | [Phase 10](../validation/phase-10.md) |
 | 11 | Superseded no-schema scope by ADR 0029; original connectivity contract retained | [Phase 11](../validation/phase-11.md) |
+| 12 | Reviewed superseded decision; connectivity retained; successor 0029 extended by 0034 | [Phase 12](../validation/phase-12.md) |

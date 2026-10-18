@@ -41,3 +41,8 @@ Trusted result providers/callers own evidence provenance and narrative. Dataclas
 | 9 | Not applicable; NOT IMPLEMENTED in this phase | [Phase 9](../validation/phase-9.md) |
 | 10 | Not applicable; NOT IMPLEMENTED in this phase | [Phase 10](../validation/phase-10.md) |
 | 11 | Introduced; reviewed and verified on Windows/installed-wheel Linux with live PostgreSQL | [Phase 11](../validation/phase-11.md) |
+| 12 | API report creation reads compatible retained owned jobs; summary synthetic status explicitly declared | [Phase 12](../validation/phase-12.md) |
+
+## Phase 12 applicability
+
+API report creation reads compatible retained owned jobs; summary synthetic status explicitly declared. See [service contracts](../methodology/SERVICE.md). Earlier history remains evidence; this extends the decision without replacing its accepted financial policy.

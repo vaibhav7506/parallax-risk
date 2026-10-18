@@ -67,3 +67,8 @@ binary64 valuation remains approximate. See the [methodology assumptions](../met
 | 9 | Reviewed; no change; existing policy retained in Phase 9 lab scope | [Phase 9](../validation/phase-9.md) |
 | 10 | Reviewed; no change; existing policy retained with isolated Phase 10 research workflows | [Phase 10](../validation/phase-10.md) |
 | 11 | Reviewed; no change; existing numerical contracts retained by evidence/report consumers | [Phase 11](../validation/phase-11.md) |
+| 12 | Cumulative historical balance validation preserves Money order and every historical policy check | [Phase 12](../validation/phase-12.md) |
+
+## Phase 12 applicability
+
+Cumulative historical balance validation preserves Money order and every historical policy check. See [service contracts](../methodology/SERVICE.md). Earlier history remains evidence; this extends the decision without replacing its accepted financial policy.

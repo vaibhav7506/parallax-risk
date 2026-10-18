@@ -35,3 +35,8 @@ Declared actors are unauthenticated. Raw administrators can disable triggers; ha
 | 9 | Not applicable; NOT IMPLEMENTED in this phase | [Phase 9](../validation/phase-9.md) |
 | 10 | Not applicable; NOT IMPLEMENTED in this phase | [Phase 10](../validation/phase-10.md) |
 | 11 | Introduced; reviewed and verified on Windows/installed-wheel Linux with live PostgreSQL | [Phase 11](../validation/phase-11.md) |
+| 12 | Added explicit 0012 immutable owned objects/durable job state beside unchanged governance events | [Phase 12](../validation/phase-12.md) |
+
+## Phase 12 applicability
+
+Added explicit 0012 immutable owned objects/durable job state beside unchanged governance events. See [service contracts](../methodology/SERVICE.md). Earlier history remains evidence; this extends the decision without replacing its accepted financial policy.
