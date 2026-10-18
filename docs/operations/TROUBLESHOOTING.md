@@ -4,7 +4,7 @@
 |---|---|---|
 | Import/package version mismatch | Wrong environment or stale editable metadata | Use project venv, reinstall `--no-deps -e .`, compare CLI/package/pyproject version |
 | Invalid configuration | Unknown PARALLAX variable, non-ASCII integer, invalid URL or production without DB | Inspect safe config and supported variable table; never print credential-bearing URL |
-| Health 200 / ready 503 | Process exists but probe not started/configured or DB unavailable | Check configured host/network and database health; readiness is deliberately not fake success |
+| Health 200 / ready 503 | Process exists but DB/schema/worker health is unavailable | Check DB connectivity, explicit revision 0012 migration and worker health; inspect uncertain claims before restart |
 | DB test skipped | PARALLAX_TEST_DATABASE_URL absent | Supply isolated live DB URL; don't report this as successful live integration |
 | Port 8000 busy | Another workload may own it | Use verification override 58000/55432; do not stop other projects |
 | Missing fixing/curve/direct FX | Required explicit input absent | Provide exact known fixing/index assignment/pair; no hidden inverse/projection fallback |
@@ -76,3 +76,16 @@ an alert. Digest/identity mismatch on read is a failure, not automatic repair.
 Docker startup failure does not establish a test result or safe cleanup inventory.
 
 [Governance contracts](../methodology/GOVERNANCE.md), [actual phase evidence](../validation/phase-11.md).
+
+
+## Service-specific failures
+
+| Symptom | Meaning / action |
+|---|---|
+| HTTP 401/403 | Missing digest-matched credential or explicit role/owner permission; inspect safe configuration, never print the key |
+| HTTP 409 | Changed idempotent input, stale governance revision, missing matching retained reference or terminal claim; inspect/reload evidence instead of blind retry |
+| HTTP 413/429 | Byte/work/admission/rate budget exceeded; use documented bounds and pace polling/downloads |
+| Worker unhealthy / running claim after interruption | Possible uncertain execution or already-committed lineage; inspect input/result/lineage, explicitly abandon only owned work, then choose a new request identity |
+| CLI credential/URL/encoding error | Regular bounded printable-ASCII key file, valid HTTPS or loopback HTTP URL and UTF-8 responses are required; redirects are refused |
+
+[Failure and capacity operations](SERVICE.md), [problem details](../api/ERRORS.md).

@@ -1,8 +1,13 @@
 # Configuration
 
+Release 0.12.0 separately validates `ServiceSettings` under PARALLAX_SERVICE_: digest credentials, exact origins, transport, workers, pending jobs, payload bytes and per-minute rate. These documented service variables are allowed by operational settings validation and excluded from financial configuration hashes. Production requires credentials and a database. [Bounds and provisioning](SERVICE.md).
+
+## Financial and operational settings
+
 `src/parallax_risk/application/config.py` defines immutable Pydantic Settings;
 `load_settings()` is called explicitly by composition roots. Unknown `PARALLAX_`
-variables are rejected, apart from the documented integration-test URL.
+variables are rejected, apart from the documented integration-test URL and known
+PARALLAX_SERVICE_ fields validated by the separate service boundary.
 
 | Variable | Meaning / default / constraint |
 |---|---|

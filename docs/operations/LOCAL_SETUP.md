@@ -4,6 +4,11 @@ Follow [DEVELOPMENT](../../DEVELOPMENT.md) for exact installation/check commands
 Use the project virtual environment, Python 3.12+, locked dependencies and editable
 package installation. Package import does not load settings or open database connections.
 
+For the current HTTP/CLI service, follow [credential provisioning, explicit migration
+and startup](SERVICE.md), then run the [actual retained-input demonstration](../api/EXAMPLES.md).
+The current full release helper is `scripts/verify_phase12.ps1`; Phase 1–11 helpers
+require their matching historical release source and are not current-version checks.
+
 The quickest financial learning path is `python scripts/demo_deterministic.py`:
 it requires no database and reads a fixed labelled synthetic fixture. It prints
 computed price/evidence JSON to stdout and safe workflow logs to stderr.
@@ -18,7 +23,7 @@ auto-load that file. Replace `.env.example` placeholders and use an encoded URL.
 Host API/CLI addresses differ from Compose's internal `postgres` hostname.
 
 Do not connect tests to valuable production data. Use a separate test project and
-ports with the [Docker lifecycle](DOCKER.md). Governance tables require an explicit Phase 11 migration; see [database scope](DATABASE.md). Service failures are described in
+ports with the [Docker lifecycle](DOCKER.md). Governance/service tables require explicit migration through revision 0012; see [database scope](DATABASE.md). Service failures are described in
 [troubleshooting](TROUBLESHOOTING.md).
 
 Phase 4 research also supports [the simulation tutorial](../tutorials/03-FIRST-SIMULATION-RUN.md).

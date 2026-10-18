@@ -1,5 +1,9 @@
 # Logs and health
 
+Current service logs retain request correlation, operation/job identity, outcome and safe error class. They omit tokens, credential configuration, raw financial payloads and database URLs. `/ready` checks database/schema/worker health; inspect retained jobs for uncertain claims. [Job failure operations](SERVICE.md).
+
+## Earlier workflow logging scopes
+
 `src/parallax_risk/common/logging.py` creates instance-local structlog loggers without
 global configuration. The envelope contains event, level/time and optional run ID,
 outcome and safe error type. There is no raw portfolio/market/credential field.

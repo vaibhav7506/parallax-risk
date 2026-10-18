@@ -1,7 +1,7 @@
 # Release and evidence checklist
 
-Phase 11 release is 0.11.0, verified on Windows and installed-wheel Linux with
-isolated PostgreSQL 17.11. Phase boundaries are independent of documentation
+The completed final release is Phase 12 / 0.12.0; actual checks are recorded
+in [its report](../validation/phase-12.md). Phase 11 / 0.11.0 is retained historical evidence. Phase boundaries are independent of documentation
 maintenance, which does not authorize new quantitative functionality.
 
 1. Complete only the authorized phase, inspect changes and run applicable numerical/
@@ -16,14 +16,14 @@ maintenance, which does not authorize new quantitative functionality.
    and list anything not implemented/deferred. Validate local links and actual commands.
 6. Save useful outputs, remove only disposable test resources in finally, and report
    retained release/rollback images/data. Keep shared layers/cache; never global-prune.
-7. Report documentation changes and stop, awaiting `go` for the next phase.
+7. Report documentation changes and stop. Phase 12 is final; no next phase is authorized.
 
 No publishing/deployment to external infrastructure, automatic model approval or
 production hardening is implied by building a local wheel/image.
 
 For Phase 4 preserve executed notebooks, replayable demo JSON, measured benchmark
 JSON, dependency locks, actual Windows/Linux PostgreSQL tests and scoped cleanup logs.
-Use `scripts/verify_phase11.ps1` for the active target release; useful 0.10.0/0.9.0/0.8.0/0.7.0 and earlier release
+Use `scripts/verify_phase12.ps1` for the active target release; useful 0.10.0/0.9.0/0.8.0/0.7.0 and earlier release
 images remain. The Phase 4 helper is historical evidence, not a current version check.
 The unchanged deterministic/calibration models retain versions 0.2.0/0.3.0.
 
@@ -66,7 +66,7 @@ evidence. Never relabel the Phase 9 1209-test result as a newly executed run.
 
 ## Phase 11 release verification
 
-`./scripts/verify_phase11.ps1` builds/checks installed 0.11.0 and runs full Windows/
+The historical `./scripts/verify_phase11.ps1`, from matching Phase 11 source, builds/checks installed 0.11.0 and runs full Windows/
 Linux tests against isolated PostgreSQL 17. -Focused runs new contracts/live DB/
 architecture checks. Both save results, exercise explicit migration/seven-report
 demo and call cleanup_docker.ps1 -Phase 11 -Apply in finally. Do not replace actual

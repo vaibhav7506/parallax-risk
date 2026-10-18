@@ -1,5 +1,9 @@
 # PostgreSQL scope and lifecycle
 
+Release 0.12.0 adds immutable owned service objects and durable jobs in revision 0012. Financial results remain pure values in library calls; service successes retain exact input/result documents and registered-model lineage. Service readiness checks both connectivity and revision 0012. [Current operations](SERVICE.md).
+
+## Connectivity and earlier phase scopes
+
 `src/parallax_risk/application/ports.py` supplies ConnectivityProbe.
 `src/parallax_risk/infrastructure/persistence/database.py` implements
 PostgresConnectivity using an explicitly created SQLAlchemy engine, bounded pool/
