@@ -63,3 +63,14 @@ checks and guarded transactional repositories; declare actors/authority without
 authentication claims. Render stored strings safely and infer no model conclusions.
 
 [Governance contracts](docs/methodology/GOVERNANCE.md), [actual phase evidence](docs/validation/phase-11.md).
+
+## Phase 12 service development
+
+Read [service contracts](docs/methodology/SERVICE.md), [API](docs/api/ENDPOINTS.md) and
+[operations](docs/operations/SERVICE.md). Add quantitative commands in application/workflows,
+then update exact wire schemas, admission, owner/role boundaries and meaningful engine/API
+tests. Keep domain/common free of HTTP/ORM imports. New migrations are numbered and
+explicitly tested from zero/upgrades; never alter the frozen 0011 revision.
+Run full checks with real isolated PostgreSQL and scoped Docker cleanup, record actual
+results, and review every canonical ADR plus affected guides. Local tests do not prove
+hosted CI. Credentials/inputs/reports belong in ignored local artifacts.

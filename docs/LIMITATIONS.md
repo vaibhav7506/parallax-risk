@@ -1,6 +1,6 @@
 # Current limitations
 
-These limitations apply to implemented Phases 1–10. Preserve them until an actual
+These limitations apply through Phase 12 research/service scope. Preserve them until an actual
 change and evidence justify revision; record revisions in the decision history.
 
 | Category / limitation | Impact and affected code | Mitigation / phase |
@@ -13,9 +13,9 @@ change and evidence justify revision; record revisions in the decision history.
 | Direct FX / no basis | No inverse/cross synthesis; portfolio/collateral conversion needs exact direct orientation | Supply exact direct pair/settlement and supported funding assumption |
 | Zero-knot risk, explicit finite bumps | Not market-quote DV01; truncation/cancellation depends on h | State scope/signs, test meaningful bump stability |
 | Additive XVA / restricted comparative CCR | Unilateral deterministic-discount CVA/DVA, residual funding proxy and external IM omit bilateral/default/recursive economics | Read Phases 7/8 assumptions; no regulatory capital/compliance claim |
-| Research governance with declared actors/authority | Records do not authenticate users or confer institutional/regulatory approval | Phase 11 persistence; security/HTTP jobs remain Phase 12 future work |
-| Operational API only, unauthenticated local service | No production risk jobs, authorization, scale/HA or security certification | Loopback/development use; Phase 12 planned |
-| Incomplete automatic lineage | Simulation captures sequences/runtime/platform and optional supplied source revision; portfolio/market/curve/ledger/pricer hashes exist in memory; persisted lineage absent | Preserve external source/runtime evidence; phased lineage work |
+| Authenticated research governance | Static API key/RBAC does not confer institutional approval or signed identity | Explicit roles/authority binding; enterprise identity/signatures absent |
+| Bounded local asynchronous service | No HA, distributed implementation, wall-time cancellation or automatic crash recovery | Durable claims, explicit ownership/admission and operator inspection |
+| Optional source/calibration provenance | Service retains exact request/result/lineage; unavailable commit remains null; linked deployment supports Vasicek only | Explicit evidence and assumptions; no invented reference |
 | Exact version locks without hashes; release-tag bases | Whole-environment rebuild immutability not guaranteed | Record actual versions/image IDs and revalidate updates |
 | Python 3.14 unverified; hosted CI not observed | Metadata support is broader than local evidence | Report tested 3.13.2/3.12.14; execute matrix when hosted CI runs |
 
@@ -172,3 +172,12 @@ delivery, automatic approval/closure or PDF exists. Thresholds are scalar, stric
 exceedance in declared units; no hidden relative/vector aggregation. Existing
 financial limitations remain. [Detailed contracts](methodology/GOVERNANCE.md),
 [actual verification status](validation/phase-11.md).
+
+## Phase 12 current service scope
+
+The 0.12.0 service adds authenticated versioned financial/lab/governance jobs,
+retained inputs/results/lineage, owner-scoped objects/reports and production CLI.
+Earlier phase-specific descriptions above record their scope at introduction; current
+service behavior is defined by [service contracts](methodology/SERVICE.md),
+[operations](operations/SERVICE.md) and
+[Phase 12 evidence](validation/phase-12.md). Numerical model limitations remain applicable.

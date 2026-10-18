@@ -180,3 +180,24 @@ Definitions, units/signs and caveats: [portfolio methodology](methodology/PORTFO
 | Governed run | Actual XVA result returned only after mandatory lineage persistence |
 
 [Governance definitions and limitations](methodology/GOVERNANCE.md).
+
+## Phase 12 current service scope
+
+The 0.12.0 service adds authenticated versioned financial/lab/governance jobs,
+retained inputs/results/lineage, owner-scoped objects/reports and production CLI.
+Earlier phase-specific descriptions above record their scope at introduction; current
+service behavior is defined by [service contracts](methodology/SERVICE.md),
+[operations](operations/SERVICE.md) and
+[Phase 12 evidence](validation/phase-12.md). Numerical model limitations remain applicable.
+
+## Service terminology added in Phase 12
+
+| Term | Meaning |
+|---|---|
+| Nominal wire schema | Server-selected exact typed JSON shape; never dynamic import |
+| Idempotency key | Owner-scoped immutable request identity; changed content conflicts |
+| Claim token | Exclusive durable job completion authority, checked with state CAS |
+| Uncertain running job | Persistence/process interruption requiring explicit inspection |
+| Principal | Authenticated subject plus explicit frozen roles |
+| Keyset page | Exclusive lexicographic after cursor and bounded brief records |
+| Synthetic report flag | Declared/stored source classification, not market authenticity |

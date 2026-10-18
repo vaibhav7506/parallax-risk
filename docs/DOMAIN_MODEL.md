@@ -176,3 +176,33 @@ retains actual computed evidence, synthetic flag, digest and caller interpretati
 Governance Finding is distinct from Phase 9 numerical Finding; Approval is an
 explicit decision record and does not modify inventory status automatically.
 [Contracts](methodology/GOVERNANCE.md).
+
+## Phase 12 current service scope
+
+The 0.12.0 service adds authenticated versioned financial/lab/governance jobs,
+retained inputs/results/lineage, owner-scoped objects/reports and production CLI.
+Earlier phase-specific descriptions above record their scope at introduction; current
+service behavior is defined by [service contracts](methodology/SERVICE.md),
+[operations](operations/SERVICE.md) and
+[Phase 12 evidence](validation/phase-12.md). Numerical model limitations remain applicable.
+
+
+## Retained service evidence relationships
+
+```mermaid
+flowchart LR
+    Principal --> Objects[Owned immutable market/book/scenario objects]
+    Objects --> Input[Retained typed JobInput]
+    Version[Registered Model + Version] --> Job[Idempotent queued Job]
+    Input --> Job
+    Job --> Claim[Exclusive claim token]
+    Claim --> Engine[Existing financial/lab engine]
+    Engine --> Lineage[Committed governance Lineage]
+    Lineage --> Success[CAS terminal success + result]
+    Success --> Report[Owned typed evidence report]
+```
+
+Job status is queued → running → succeeded/failed, with explicit operator abandonment
+and immutable terminal evidence. Lineage and completion are separate transactions;
+an uncertain completion can leave committed orphan lineage and a running claim.
+[Contracts and failure handling](methodology/SERVICE.md).

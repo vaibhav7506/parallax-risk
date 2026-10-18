@@ -15,7 +15,7 @@ snapshot, curves, conventions and model version; it does not consume random draw
 | Source revision/runtime/libs | Simulation captures Python/NumPy/SciPy/platform plus optional supplied source revision; other workflows preserve external evidence |
 | Calibration identity/parameters/data/settings | CalibrationRunId, input/configuration hashes, bounds, fitted parameters, residuals/status and enclosing RunContext |
 | Sequence algorithm/order | StreamKey, PCG64DXSM Ziggurat or complete scrambled Sobol midpoint design, explicit layout and request hash |
-| Portfolio hash/persisted lineage | Portfolio/ledger/scenario content hashes in memory; persisted lineage deferred |
+| Portfolio hash/persisted lineage | Direct library content fingerprints; governed XVA and every successful service job additionally commit lineage; the service retains exact inputs and results |
 
 ## Reproduce a run
 
@@ -142,3 +142,23 @@ for replay. Rendering is deterministic for identical computed evidence and metad
 no cross-platform numerical byte promise is made.
 
 [Governance contracts](methodology/GOVERNANCE.md), [actual phase evidence](validation/phase-11.md).
+
+## Phase 12 current service scope
+
+The 0.12.0 service adds authenticated versioned financial/lab/governance jobs,
+retained inputs/results/lineage, owner-scoped objects/reports and production CLI.
+Earlier phase-specific descriptions above record their scope at introduction; current
+service behavior is defined by [service contracts](methodology/SERVICE.md),
+[operations](operations/SERVICE.md) and
+[Phase 12 evidence](validation/phase-12.md). Numerical model limitations remain applicable.
+
+
+## Reproduce a retained service run
+
+Retrieve `/v1/runs/{job_id}/input`, preserve the schema-1 JobInput and registered
+book/market/scenario/calibration/model-version records, and submit it under a fresh
+idempotency key in the same locked environment. The retained request includes actual
+calibrated parameters, sequence addresses, conventions and synthetic flags. Compare
+the financial result digest; job IDs, correlation IDs and audit timestamps differ.
+The demo performs this actual replay; source revision is null when no commit exists.
+[Commands and example](api/EXAMPLES.md).

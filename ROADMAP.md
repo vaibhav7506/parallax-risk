@@ -1,8 +1,8 @@
 # Parallax Risk roadmap
 
-**Current:** Phase 11 complete, release 0.11.0.
-Phases 1–11 are complete. Documentation maintenance does not advance the phase.
-Phase 12 remains NOT IMPLEMENTED and requires a new `go`.
+**Current:** Phase 12 complete, release 0.12.0.
+All 12 phases are complete. Documentation maintenance does not advance the phase.
+Phase 12 is the final authorized phase; no Phase 13 is planned.
 
 | Phase | Scope | State |
 |---|---|---|
@@ -17,8 +17,8 @@ Phase 12 remains NOT IMPLEMENTED and requires a new `go`.
 | 9 | Model validation lab | COMPLETE — [evidence](docs/validation/phase-9.md) |
 | 10 | Mutation, adversarial search and failure forensics | COMPLETE — [evidence](docs/validation/phase-10.md) |
 | 11 | Governance, monitoring, lineage and reporting | COMPLETE — [evidence](docs/validation/phase-11.md) |
-| 12 | Financial APIs/workflows, scale, security and release hardening | PLANNED / NOT IMPLEMENTED |
+| 12 | Financial APIs/workflows, scale, security and release hardening | COMPLETE — [evidence](docs/validation/phase-12.md) |
 
-Operational API/CLI and foundation metadata exist; they do not implement financial
-HTTP jobs or authenticated governance approval. Phase 4 implements explicit stochastic sequence replay. Proposed decisions
-are tracked separately in the [decision register](docs/decisions/README.md).
+Phase 12 adds authenticated durable financial workflows and production CLI around the
+existing research engines. [Final audit](docs/validation/FINAL_AUDIT.md) records scope
+and explicitly unsupported optional/financial/operational cases.
