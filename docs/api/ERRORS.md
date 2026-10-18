@@ -1,33 +1,25 @@
-# Errors and boundaries
+# Service errors
 
-Operational readiness exposes safe 503 states instead of underlying connection
-strings/driver details. Unexpected service errors are not replaced by a fake healthy
-response. Configuration validation happens at explicit factory/CLI invocation.
+Errors have application/problem+json with type=about:blank, title, status, a fixed detail
+code, instance=urn:uuid:correlation and correlation_id. X-Request-ID also carries that
+UUID. Responses use no-store and nosniff. Input values, connection URLs and secrets do
+not appear in errors or structured logs. [Contracts](../methodology/SERVICE.md).
 
-Library failures derive from `ParallaxError` in `src/parallax_risk/common/errors.py`:
-DomainValidationError, ConventionError, CurrencyMismatchError, MarketDataError,
-MissingMarketDataError, CurveError, CurveBootstrapError, PricingError, NumericalError,
-ConfigurationError and InfrastructureError. NumericalError is an arithmetic failure,
-not necessarily a DomainValidationError. PricingService logs safe error class and rethrows.
+| Status | Meaning |
+|---|---|
+| 400 | Invalid JSON/duplicate keys/correlation/structural format |
+| 401 | Missing or invalid opaque credential |
+| 403 | Role, computed-lineage write, authority or TLS transport violation |
+| 404 | Unknown resource or no owned object/job |
+| 409 | Idempotency/revision/immutable identity conflict or result not available |
+| 413 | Actual streamed body exceeds byte limit |
+| 415 | Non-JSON media type or compressed request |
+| 422 | Pydantic envelope/economic validation or work admission rejected |
+| 429 | Principal rate/active-principal/global pending-job admission limit |
+| 500 | Sanitized unexpected service failure |
+| 503 | Missing/unavailable service dependency |
 
-Pydantic ingestion reports boundary ValidationError. No general financial HTTP error
-schema or mapping exists because no such endpoint exists. CLI config/check-db failures
-print authored safe errors to stderr and return exit 1; argparse errors use its own
-exit semantics. Do not infer quantitative error codes from operational responses.
-
-Phase 4 library failures include SimulationError for sequence/grid/sampling-unit and
-workflow contracts, plus existing model/correlation/numerical failures. They propagate
-through the research service with safe outcome logging; there is no simulation HTTP
-route that maps them to a new financial response schema.
-
-Phase 5 library scope/lifecycle/CSA/ledger/pricer-evidence violations raise
-DomainValidationError. Existing missing-market/numerical errors propagate. No
-financial HTTP operation or new HTTP error mapping is implemented.
-
-Phase 6 library date/grid/binding/credit/settlement/adapter violations raise authored
-DomainValidationError or existing numerical errors. They are not mapped into a new
-financial endpoint. Invalid hazards, spreads and resolution/overflow are not repaired.
-
-Phase 7 library XVA/risk type/currency/date/horizon/sign/evidence and inadmissible
-bump failures raise authored ParallaxError subclasses. They are not a new HTTP error
-schema; operational endpoints retain their existing behavior.
+A worker error is recorded under a failed run as calculation_rejected or
+internal_calculation_failure. Uncertain persistence halts its worker and retains the
+running claim for inspection, rather than upgrading it to success or automatically
+retrying. The operator_abandoned code marks an explicit owned abandonment.

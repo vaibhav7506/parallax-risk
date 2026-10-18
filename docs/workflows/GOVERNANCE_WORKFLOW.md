@@ -26,7 +26,10 @@ inputs. Its fixed IDs intentionally reject a second execution in the same schema
 The weak-suite report retains misses; the conditional research decision does not
 close its finding. Outputs are research evidence, not production approval.
 
-No new financial/governance API route is implemented. Phase 12 remains future work.
+The steps above are the direct Phase 11 library workflow. Release 0.12.0 additionally
+authenticates service principals and applies roles to governance writes; actor and
+approval authority must match the authenticated subject.
+[HTTP/CLI workflow](../api/EXAMPLES.md) and [service contracts](../methodology/SERVICE.md).
 [First run](../tutorials/10-FIRST-GOVERNANCE-RUN.md),
 [contracts and limits](../methodology/GOVERNANCE.md),
 [database lifecycle](../operations/DATABASE.md).

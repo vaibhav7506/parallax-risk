@@ -11,7 +11,7 @@ tolerances. Coverage is a guard against untested paths, not proof of model corre
 | Quantitative | Independent Decimal/formula targets and cash-flow/parity reconciliation in tests/quantitative |
 | Regression | Missing fixing/projection, paid-flow cutoff and extreme annuity guards in tests/regression |
 | Integration | Real PostgreSQL/CLI, import/layer safety, package metadata and synthetic workflow replay in tests/integration |
-| API | Operational success/readiness/lifecycle/redaction behavior in tests/api |
+| API | Operational and financial guard/auth/rate/body/CORS/lifecycle/redaction behavior in tests/api; real persisted workflows in tests/integration/test_service_postgres.py |
 | Documentation/operations | Local links/references/index/ADR reviews and ownership-checked cleanup scripts |
 | Phase 3 model/calibration | Independent Gaussian-integral/Riccati-ODE targets, exact/Euler refinement, recovery/replay, bounds/failures/identification and strict source/input guards |
 

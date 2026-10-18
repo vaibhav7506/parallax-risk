@@ -71,3 +71,12 @@ checks do not confer approval. Explicit decision records do not close findings o
 activate inventory automatically. The synthetic weak mutation report retains misses.
 
 [Governance contracts](../methodology/GOVERNANCE.md), [actual phase evidence](phase-11.md).
+
+
+## Final service verification
+
+Phase 12 adds strict wire/admission/auth/transport/owner/role checks, actual PostgreSQL
+migration/immutability/idempotency/claims/CAS/lineage tests, production CLI and all-16-
+workflow replay/report evidence. It preserves underlying numerical tolerances.
+[Actual Phase 12 results](phase-12.md), [measured benchmarks](SERVICE_BENCHMARKS.md),
+[full master audit](FINAL_AUDIT.md), [implemented model cards](../models/INDEX.md).

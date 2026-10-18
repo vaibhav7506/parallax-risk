@@ -1,36 +1,17 @@
-# Operational API philosophy and scope
+# API overview
 
-The FastAPI factory exposes process/dependency/release information only. Quantitative
-workflows are Python library calls today; no POST pricing/simulation/exposure/XVA
-endpoint exists. Keep financial formulas in domain, never route handlers.
+Parallax Risk 0.12.0 exposes public operational endpoints and authenticated versioned
+financial, validation and governance workflows. [Endpoint reference](ENDPOINTS.md),
+[request/result contracts](../methodology/SERVICE.md), [examples](EXAMPLES.md),
+[errors](ERRORS.md), [deployment](../operations/SERVICE.md).
 
-`src/parallax_risk/api/app.py` (`create_app`) explicitly loads settings at invocation,
-owns the injected/lazy probe's lifespan and checks synchronous DB work in a thread
-pool. Package import starts no service. API release metadata follows the package.
+Factories/lifespan own settings, PostgreSQL engines and bounded local worker threads.
+Imports do not load settings or create resources. Routers validate Pydantic envelopes
+and delegate blocking application work to a thread pool; financial formulas remain
+in domain/application modules. CPU calculation happens after a durable job claim.
 
-Versioned financial endpoints, authentication, request correlation IDs, idempotency
-keys, long-running risk jobs and pagination are NOT IMPLEMENTED / Phase 12 planned.
-Current GET operations have no mutation body or job state. Generated OpenAPI/docs
-are useful schema views but not a financial API contract or security layer.
-
-Read [endpoints](ENDPOINTS.md), [errors](ERRORS.md), [examples](EXAMPLES.md) and
-[security scope](../../SECURITY.md). Bind locally; no enterprise-service claim is made.
-
-Phase 4 adds an injected Python simulation research workflow and executed notebooks.
-It adds no financial HTTP route or asynchronous risk-job lifecycle. Operational version
-metadata now identifies release 0.11.0 and phase 11.
-
-Phase 5 adds the injected Python PortfolioService for deterministic legal netting and
-cash collateral accounting. Operational endpoints do not submit books or execute
-margin movements. Financial APIs remain deferred.
-
-Phase 6 adds library exposure/default/WWR research only. `/version` currently reports 0.11.0/11;
-no endpoint executes repricing, collateral settlement, default simulation or XVA.
-
-Phase 7 adds library XVA/sensitivity/attribution research. `/version` currently reports 0.11.0/11;
-no endpoint runs those calculations. [Library workflow](../workflows/XVA_WORKFLOW.md).
-
-## Phase 9 lab scope
-
-Phase 9 implements library validation reports only. Findings, uncertainty and stresses do not introduce financial API endpoints or model approval routes. `/version` identifies release 0.11.0/phase 11.
-[Lab methods](../methodology/MODEL_VALIDATION.md), [phase evidence](../validation/phase-9.md).
+OpenAPI describes transport schemas and APIKeyHeader security. The separately exposed
+/v1/workflows schemas supply exact nested command types. The service never executes
+uploaded code or resolves a client type name. The unauthenticated development factory
+can expose operational/schema endpoints; financial access fails closed. Production
+requires explicit database and digest credentials before it can start.

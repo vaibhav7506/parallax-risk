@@ -37,10 +37,20 @@ resources and other projects are outside scope. Preview is the default.
 [Method](../methodology/MODEL_VALIDATION.md), [uncertainty](../methodology/MODEL_UNCERTAINTY.md),
 [stress](../methodology/STRESS_SCENARIOS.md), [tutorial](../tutorials/08-FIRST-VALIDATION-RUN.md),
 [actual phase evidence](../validation/phase-9.md). Phase 10 mutation/adversarial work,
-Phase 11 adds separate research governance; Phase 12 financial APIs remain NOT IMPLEMENTED.
+Phase 11 adds separate research governance. Release 0.12.0 exposes these real lab
+workflows through authenticated durable jobs; [service examples](../api/EXAMPLES.md).
 
 ## Phase 10 applicability
 
 Phase 10 extends the lab with injected isolated mutations, bounded comparable-model objectives and actual repeated/ordered diagnostic cases. It retains missed faults and unexplained changes; governance remains outside the workflow.
 
 [Search methods](../methodology/ADVERSARIAL_SEARCH.md), [phase evidence](../validation/phase-10.md).
+
+## Phase 12 current service scope
+
+The 0.12.0 service adds authenticated versioned financial/lab/governance jobs,
+retained inputs/results/lineage, owner-scoped objects/reports and production CLI.
+Earlier phase-specific descriptions above record their scope at introduction; current
+service behavior is defined by [service contracts](../methodology/SERVICE.md),
+[operations](../operations/SERVICE.md) and
+[Phase 12 evidence](../validation/phase-12.md). Numerical model limitations remain applicable.
