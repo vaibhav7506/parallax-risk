@@ -57,3 +57,9 @@ HTML/JSON reports preserve actual assumptions/failures/residuals/mutation misses
 they infer no approval, causal conclusion or regulatory certification.
 
 [Governance contracts](GOVERNANCE.md), [actual phase evidence](../validation/phase-11.md).
+
+
+## Final service and model review
+
+- [Implemented model cards](../models/INDEX.md)
+- [Typed service workflows and retained evidence](SERVICE.md)
