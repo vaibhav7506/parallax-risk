@@ -1,8 +1,10 @@
 # Parallax Risk codebase guide
 
-The code currently supports primitives, operational service checks and deterministic
-pricing, stochastic models/calibration, Monte Carlo, collateralized portfolios, exposure/credit and XVA research. [Roadmap](../ROADMAP.md)
-marks later capabilities NOT IMPLEMENTED.
+Release 0.12.0 provides the complete 12-phase research platform: deterministic pricing,
+stochastic calibration/simulation, legal portfolios/collateral, exposure/credit/XVA,
+restricted CCR challengers, validation/mutation/search/forensics, persistent governance/
+monitoring/reporting, authenticated durable service jobs and CLI workflows.
+[Roadmap](../ROADMAP.md), [model cards](models/INDEX.md), [limits](LIMITATIONS.md).
 
 | Package | Purpose / principal objects | Inputs → outputs; caller/dependencies |
 |---|---|---|
@@ -15,10 +17,10 @@ marks later capabilities NOT IMPLEMENTED.
 | `src/parallax_risk/domain/calibration/` | Sourced objectives, bounds/settings/results/uncertainty | Immutable instrument data/parameters → predictions and finite evidence contracts |
 | `src/parallax_risk/infrastructure/calibration/` | ScipyLeastSquares | Implements application solver port; objective/bounds → result or explicit error |
 | `src/parallax_risk/application/` | Settings, RunContext, MarketSnapshotInput, PricingService, ConnectivityProbe | Boundary/env data → validated domain inputs/run-linked results/port contracts |
-| `src/parallax_risk/infrastructure/persistence/` | PostgresConnectivity | Configured URL → SELECT 1 or sanitized error; implements application port |
-| `src/parallax_risk/api/` | create_app, operational schemas | GET health/readiness/version → JSON/status; owns probe lifespan |
-| `src/parallax_risk/cli/` | main | version/config/run-context/check-db args → JSON or safe error/exit status |
-| `scripts/` | Synthetic example, lock snapshot, docs validator, scoped cleanup | Local reproducible/maintenance workflows; no new financial HTTP commands |
+| `src/parallax_risk/infrastructure/persistence/` | Connectivity, PostgresGovernance, PostgresJobs/ObjectStore and packaged migrations | Configured caller-owned engine → validated snapshots/audit or owned immutable inputs/durable jobs; sanitized errors |
+| `src/parallax_risk/api/` | create_app, guard, versioned routes and strict boundary schemas | Authenticated typed input → application job/object/governance/report orchestration; owns engine/probe/workers lifespan |
+| `src/parallax_risk/cli/` | main and service commands | Operational config/check-db plus bounded authenticated financial submissions, polling, ingestion/governance/report/query → JSON or safe exit |
+| `scripts/` | Synthetic library/service demos, benchmarks, credential provisioning, verification, docs validator and scoped cleanup | Reproducible real financial HTTP/CLI/library evidence and owned maintenance workflows |
 
 ## End-to-end pricing call path
 
@@ -222,3 +224,21 @@ transactions; `src/parallax_risk/infrastructure/persistence/migrate.py` composes
 packaged frozen migrations. Scripts own engines and dispose in finally.
 
 [Workflow](workflows/GOVERNANCE_WORKFLOW.md), [contract details](methodology/GOVERNANCE.md).
+
+## Phase 12 current service scope
+
+The 0.12.0 service adds authenticated versioned financial/lab/governance jobs,
+retained inputs/results/lineage, owner-scoped objects/reports and production CLI.
+Earlier phase-specific descriptions above record their scope at introduction; current
+service behavior is defined by [service contracts](methodology/SERVICE.md),
+[operations](operations/SERVICE.md) and
+[Phase 12 evidence](validation/phase-12.md). Numerical model limitations remain applicable.
+
+| Change | Actual Phase 12 location |
+|---|---|
+| Add an economic workflow | `src/parallax_risk/application/workflows.py` and server-selected wire schema |
+| Change owner/RBAC/retention/report policy | `src/parallax_risk/application/service.py` |
+| Change durable transaction/claim behavior | `src/parallax_risk/infrastructure/persistence/service.py` and new numbered migration |
+| Change auth/body/rate/TLS checks | `src/parallax_risk/api/guard.py`, `src/parallax_risk/application/service_config.py` |
+| Add CLI transport behavior | `src/parallax_risk/cli/service.py`, `src/parallax_risk/infrastructure/http_client.py` |
+| Reproduce complete sample | `scripts/demo_service.py`, `src/parallax_risk/application/service_examples.py` |

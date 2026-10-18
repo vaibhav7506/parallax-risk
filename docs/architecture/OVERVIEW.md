@@ -1,27 +1,31 @@
 # Architecture overview
 
-Parallax Risk uses one typed src-layout package with explicit composition. The
-current domain includes pricing, model coefficients and calibration objectives, with
-mathematical tests independent of HTTP/ORM.
+Parallax Risk uses one typed src-layout package. Application services orchestrate the
+completed financial/lab engines through injected ports; API/CLI validate and compose
+resources, infrastructure implements persistence/authentication/compute, and domain
+mathematics depend inward on common values.
 
 ```mermaid
 flowchart TD
-    HTTP[API factory / lifespan] --> APP[Application configuration / ports]
-    CLI[Operational CLI] --> APP
-    RESEARCH[Synthetic example] --> WORK[PricingService / market ingestion]
-    WORK --> DOMAIN[Immutable market, curves, contracts, pricing]
-    RESEARCH --> CAL[CalibrationService / strict calibration input]
-    CAL --> OBJECTIVE[Immutable model objectives and results]
-    OPT[SciPy optimizer adapter] --> CAL
-    OPT --> OBJECTIVE
-    OBJECTIVE --> MODELS[Process coefficients and analytical instrument prices]
-    MODELS --> COMMON
-    DOMAIN --> COMMON[Money, dates, IDs, finite math and hashes]
-    APP --> COMMON
-    ADAPTER[SQLAlchemy PostgreSQL adapter] --> PORT[ConnectivityProbe]
-    HTTP --> ADAPTER
-    CLI --> ADAPTER
+    HTTP[Versioned authenticated API] --> APP[Application workflows and strict boundaries]
+    CLI[Operational and financial CLI] --> HTTP
+    LIB[Pure Python research composition] --> APP
+    APP --> DOMAIN[Market, pricing, processes, simulation, collateral, exposure, XVA, CCR, validation]
+    APP --> GOV[Governance, monitoring and report contracts]
+    DOMAIN --> COMMON[Immutable units, Money, dates, IDs, finite math and hashes]
+    GOV --> COMMON
+    APP --> PORTS[Job, object, governance, authentication and optimizer ports]
+    DB[PostgreSQL repositories and explicit migrations] --> PORTS
+    WORKER[Bounded local threads] --> PORTS
+    SOLVER[SciPy optimizer adapters] --> PORTS
+    HTTP --> ROOT[Owned service resource lifetime]
+    ROOT --> DB
+    ROOT --> WORKER
 ```
+
+[Service contracts](../methodology/SERVICE.md) and [deployment](DEPLOYMENT.md) describe
+retained evidence, failure states and local operating limits. No financial mathematics
+lives in API routers or persistence adapters.
 
 `create_app()` and CLI `main()` own operational dependency lifetimes. `PricingService`
 injects engine/logger and returns run-correlated evidence. The pricing library has
@@ -80,3 +84,12 @@ migrations. Scripts compose engines/calibration/search adapters and dispose
 owned engines. No SQLAlchemy imports enter domain/application.
 
 [Governance contracts](../methodology/GOVERNANCE.md), [actual phase evidence](../validation/phase-11.md).
+
+## Phase 12 current service scope
+
+The 0.12.0 service adds authenticated versioned financial/lab/governance jobs,
+retained inputs/results/lineage, owner-scoped objects/reports and production CLI.
+Earlier phase-specific descriptions above record their scope at introduction; current
+service behavior is defined by [service contracts](../methodology/SERVICE.md),
+[operations](../operations/SERVICE.md) and
+[Phase 12 evidence](../validation/phase-12.md). Numerical model limitations remain applicable.

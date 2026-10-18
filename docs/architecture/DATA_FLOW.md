@@ -1,5 +1,9 @@
 # Data and evidence flow
 
+Current service flow: authenticated HTTP/CLI input → strict nominal domain decoding → registered immutable inputs and an idempotent queued job → claim-token worker → existing financial/lab engine → retained result with committed lineage → typed HTML/JSON report. [Service contracts](../methodology/SERVICE.md).
+
+## Historical library flows at introduction
+
 Source-labelled JSON → MarketSnapshotInput → frozen MarketSnapshot. Supplied curve
 conventions/knots or supported bootstrap quotes → immutable curves → CurveSet.
 Contract/schedule + PricingContext → DiscountingEngine → signed cash-flow PVs and
@@ -79,3 +83,12 @@ immutable policy → stored evaluation → explicit alert transitions. Computed
 lab/governance results → canonical evidence report → escaped HTML + JSON.
 
 [Governance contracts](../methodology/GOVERNANCE.md), [actual phase evidence](../validation/phase-11.md).
+
+## Phase 12 current service scope
+
+The 0.12.0 service adds authenticated versioned financial/lab/governance jobs,
+retained inputs/results/lineage, owner-scoped objects/reports and production CLI.
+Earlier phase-specific descriptions above record their scope at introduction; current
+service behavior is defined by [service contracts](../methodology/SERVICE.md),
+[operations](../operations/SERVICE.md) and
+[Phase 12 evidence](../validation/phase-12.md). Numerical model limitations remain applicable.

@@ -9,12 +9,12 @@
 | domain/models | Finite process coefficients/one-step schemes, correlation and analytical/Fourier instrument values | RNG, paths, market vendors or web handlers |
 | domain/calibration | Sourced immutable objective/bounds/settings/result and uncertainty contracts | Optimizer initialization, persistence or HTTP validation |
 | application | Pydantic input/settings boundaries, run envelope, injected pricing/calibration/simulation/portfolio workflows and ports | ORM models or web handlers |
-| infrastructure | SQLAlchemy connectivity and SciPy bounded optimizer adapter | Financial instrument formulas, automatic migrations or governance tables |
-| API/CLI | Operational composition, response/exit states and resource cleanup | Financial HTTP jobs, model calculations or approvals |
+| infrastructure | Explicit SQLAlchemy governance/object/job repositories, SciPy optimizers, authentication/HTTP adapters and local workers | Financial instrument formulas or automatic migrations |
+| API/CLI | Versioned operational/financial/governance composition, validated requests, response/exit states and resource cleanup | Financial formulas or implicit approval decisions |
 | scripts/tests/docs | Reproduction, maintenance, independent checks and learning/evidence | Alternate untested financial implementations |
 
 The [code guide](../CODEBASE_GUIDE.md) links principal classes/files and call paths.
-The same domain values serve pure Python research and future authorized boundaries;
+The same domain values serve pure Python research and authenticated service boundaries;
 dependency injection limits hidden process state.
 
 Phase 4 `domain/simulation` owns sequence generation, time grids, vectorized kernels,
@@ -59,3 +59,12 @@ plus frozen migrations. Existing financial engines are reused; no new financial
 HTTP route, persistent numerical-input store or monitoring scheduler is deployed.
 
 [Governance contracts](../methodology/GOVERNANCE.md), [actual phase evidence](../validation/phase-11.md).
+
+## Phase 12 current service scope
+
+The 0.12.0 service adds authenticated versioned financial/lab/governance jobs,
+retained inputs/results/lineage, owner-scoped objects/reports and production CLI.
+Earlier phase-specific descriptions above record their scope at introduction; current
+service behavior is defined by [service contracts](../methodology/SERVICE.md),
+[operations](../operations/SERVICE.md) and
+[Phase 12 evidence](../validation/phase-12.md). Numerical model limitations remain applicable.

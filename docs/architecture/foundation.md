@@ -1,4 +1,9 @@
-# Parallax Risk foundation architecture
+# Parallax Risk architecture foundation
+
+Current Phase 12 service architecture: [components](COMPONENTS.md),
+[deployment](DEPLOYMENT.md), [application/job/wire contracts](../methodology/SERVICE.md).
+The inward layer rules below remain valid; phase-specific paragraphs describe introduction.
+
 
 Phases 1–4 use a modular Python package with inward dependencies. Deterministic
 domain pricing is implemented; future-phase directories are not scaffolded.
@@ -62,7 +67,7 @@ Imports and layer contracts have automated tests. Logs contain restricted event,
 outcome, error-type and optional run-ID fields, without raw portfolio/market data
 or connection strings. Later phases must review sensitivity before adding fields.
 
-The service is intentionally unauthenticated with only operational endpoints;
+Historically Phases 1–11 exposed only unauthenticated operational endpoints;
 financial API workflows and security hardening belong to Phase 12. Expose this
 baseline only on loopback/development networks. PostgreSQL is not published by
 Compose. The non-root container has no source mounting or automatic migrations.
@@ -82,3 +87,12 @@ Phase 8 extends inward architecture with pure CCR domain calculations and inject
 
 Phase 9 adds typed immutable validation evidence and injected production/challenger workflows while retaining the common/domain/application/adapter/composition boundaries.
 [Lab methods](../methodology/MODEL_VALIDATION.md), [phase evidence](../validation/phase-9.md).
+
+## Phase 12 current service scope
+
+The 0.12.0 service adds authenticated versioned financial/lab/governance jobs,
+retained inputs/results/lineage, owner-scoped objects/reports and production CLI.
+Earlier phase-specific descriptions above record their scope at introduction; current
+service behavior is defined by [service contracts](../methodology/SERVICE.md),
+[operations](../operations/SERVICE.md) and
+[Phase 12 evidence](../validation/phase-12.md). Numerical model limitations remain applicable.
