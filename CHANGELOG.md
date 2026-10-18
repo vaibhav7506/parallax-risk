@@ -1,5 +1,32 @@
 # Parallax Risk changelog
 
+Each entry records the scope and actual evidence at its release.
+
+## 0.12.0 — Phase 12 complete — 2026-10-02
+
+- Exposed all 16 real market/pricing/simulation/exposure/XVA/CCR/validation
+  workflows through strict versioned API jobs and bounded authenticated CLI commands.
+- Added immutable owned inputs/results/reports, packaged Alembic 0012, concurrent
+  idempotency/admission/claim checks and CAS completion tied to committed lineage.
+- Added explicit principal roles, digest-only keys, payload/work/queue/rate limits,
+  safe file/URL/redirect handling, deliberate CORS/TLS-proxy configuration, request
+  correlation, sanitized errors/logs and database/schema/worker readiness.
+- Preserved financial collateral history with cumulative exact Money validation.
+  Recorded actual before/after, batching/memory/512-trade and serial/thread/process
+  measurements; small-job processes were slower. No GPU/Redis/distributed adapter.
+- Added seven implemented model cards, service/deployment/API guides, synthetic
+  fixtures, all-16 replay/report demo, dependency audit and final master audit.
+  Reviewed all 36 ADRs; added 0033–0036 and extended five earlier decisions.
+- Full Windows and installed-wheel Linux live-PostgreSQL suites: 1610 passed each,
+  97.7583% combined statement/branch
+  coverage. Ruff/format/strict mypy and explicit-project hooks passed. Native wheel/
+  sdist clean install and 159-file source/image/package integrity passed; 99 pinned
+  distributions had no known advisory vulnerabilities. Owned test resources were removed
+  in finally; all 35 unrelated container identities remained unchanged.
+- Kept numerical/research/security limitations, mutation misses, optimizer status
+  and failed-attempt evidence explicit; historical reports remain unchanged.
+  [Phase evidence](docs/validation/phase-12.md), [master audit](docs/validation/FINAL_AUDIT.md).
+
 ## 0.11.0 — Phase 11 complete — 2026-10-02
 
 - Added immutable research model inventory/version/finding/decision/limitation and
