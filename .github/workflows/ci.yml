@@ -36,6 +36,11 @@ jobs:
       - run: python -m pytest
       - run: python -m build
       - run: parallax-risk version
+      - name: Audit pinned runtime and development dependencies
+        run: |
+          python -m venv /tmp/parallax-audit
+          /tmp/parallax-audit/bin/python -m pip install pip-audit==2.10.1
+          /tmp/parallax-audit/bin/python -m pip_audit -r requirements-runtime.lock -r requirements-dev.lock --no-deps --disable-pip --strict --progress-spinner off
       - uses: actions/upload-artifact@v4
         with:
           name: coverage-${{ matrix.python }}
@@ -49,17 +54,25 @@ jobs:
       PARALLAX_DATABASE_URL: postgresql+psycopg://ci_test:ci_ephemeral_only@postgres:5432/parallax_risk_test
     steps:
       - uses: actions/checkout@v4
-      - name: Build and start service stack
-        env:
-          POSTGRES_USER: ci_test
-          POSTGRES_PASSWORD: ci_ephemeral_only
-          POSTGRES_DB: parallax_risk_test
-          PARALLAX_DATABASE_URL: postgresql+psycopg://ci_test:ci_ephemeral_only@postgres:5432/parallax_risk_test
-        run: docker compose -p parallax-risk-ci up --build --wait --wait-timeout 180
+      - name: Provision disposable CI service authentication
+        run: |
+          python -m venv /tmp/parallax-ci
+          /tmp/parallax-ci/bin/python -m pip install -r requirements-runtime.lock
+          /tmp/parallax-ci/bin/python -m pip install --no-deps -e .
+          /tmp/parallax-ci/bin/python scripts/create_service_credentials.py --subject ci-researcher --roles reader analyst validator approver operator
+          echo "PARALLAX_SERVICE_CREDENTIALS=$(cat artifacts/local/service-credentials/credentials.json)" >> "$GITHUB_ENV"
+      - name: Build and explicitly migrate fresh database before API startup
+        run: |
+          docker compose -p parallax-risk-ci up --wait --wait-timeout 180 postgres
+          docker compose -p parallax-risk-ci build api
+          docker compose -p parallax-risk-ci run --rm --no-deps api python -c "from sqlalchemy import create_engine; from parallax_risk.application.config import load_settings; from parallax_risk.infrastructure.persistence.migrate import migrate; e=create_engine(load_settings().database_url.get_secret_value(),hide_parameters=True); c=e.begin(); connection=c.__enter__(); migrate(connection); c.__exit__(None,None,None); e.dispose()"
+          docker compose -p parallax-risk-ci up --wait --wait-timeout 180 api
       - run: curl --fail http://127.0.0.1:8000/health
       - run: curl --fail http://127.0.0.1:8000/ready
       - run: curl --fail http://127.0.0.1:8000/version
       - run: docker compose -p parallax-risk-ci exec -T api parallax-risk check-db
+      - name: Authenticated real financial demonstration
+        run: /tmp/parallax-ci/bin/python scripts/demo_service.py --server http://127.0.0.1:8000 --credential-file artifacts/local/service-credentials/api-key.txt --subject ci-researcher
       - name: Logs
         if: failure()
         run: docker compose -p parallax-risk-ci logs

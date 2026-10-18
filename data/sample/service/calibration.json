@@ -1,0 +1,197 @@
+{
+  "project": "Parallax Risk",
+  "is_synthetic": true,
+  "notice": "Generated example inputs; no observed market data or tail-accuracy claim",
+  "data": {
+    "__type__": "parallax_risk.application.workflows.CalibrationCommand",
+    "problem": {
+      "__type__": "parallax_risk.domain.calibration.problems.VasicekBondProblem",
+      "currency": "USD",
+      "as_of": "2025-01-01T00:00:00+00:00",
+      "initial_rate": 0.03,
+      "observations": [
+        {
+          "__type__": "parallax_risk.domain.calibration.problems.DiscountObservation",
+          "quote_id": {
+            "__type__": "parallax_risk.common.identifiers.QuoteId",
+            "value": "synthetic-bond-0"
+          },
+          "maturity": 0.25,
+          "value": 0.9923236012772433,
+          "source": {
+            "__type__": "parallax_risk.domain.market.observations.SourceMetadata",
+            "name": "synthetic-phase12",
+            "reference": "Generated Q-model discount bonds; not observed market data",
+            "observed_at": "2025-01-01T00:00:00+00:00",
+            "is_sample": true
+          },
+          "scale": 1.0
+        },
+        {
+          "__type__": "parallax_risk.domain.calibration.problems.DiscountObservation",
+          "quote_id": {
+            "__type__": "parallax_risk.common.identifiers.QuoteId",
+            "value": "synthetic-bond-1"
+          },
+          "maturity": 0.5,
+          "value": 0.9843461915171225,
+          "source": {
+            "__type__": "parallax_risk.domain.market.observations.SourceMetadata",
+            "name": "synthetic-phase12",
+            "reference": "Generated Q-model discount bonds; not observed market data",
+            "observed_at": "2025-01-01T00:00:00+00:00",
+            "is_sample": true
+          },
+          "scale": 1.0
+        },
+        {
+          "__type__": "parallax_risk.domain.calibration.problems.DiscountObservation",
+          "quote_id": {
+            "__type__": "parallax_risk.common.identifiers.QuoteId",
+            "value": "synthetic-bond-2"
+          },
+          "maturity": 1.0,
+          "value": 0.9677461728311689,
+          "source": {
+            "__type__": "parallax_risk.domain.market.observations.SourceMetadata",
+            "name": "synthetic-phase12",
+            "reference": "Generated Q-model discount bonds; not observed market data",
+            "observed_at": "2025-01-01T00:00:00+00:00",
+            "is_sample": true
+          },
+          "scale": 1.0
+        },
+        {
+          "__type__": "parallax_risk.domain.calibration.problems.DiscountObservation",
+          "quote_id": {
+            "__type__": "parallax_risk.common.identifiers.QuoteId",
+            "value": "synthetic-bond-3"
+          },
+          "maturity": 2.0,
+          "value": 0.9332164523465064,
+          "source": {
+            "__type__": "parallax_risk.domain.market.observations.SourceMetadata",
+            "name": "synthetic-phase12",
+            "reference": "Generated Q-model discount bonds; not observed market data",
+            "observed_at": "2025-01-01T00:00:00+00:00",
+            "is_sample": true
+          },
+          "scale": 1.0
+        },
+        {
+          "__type__": "parallax_risk.domain.calibration.problems.DiscountObservation",
+          "quote_id": {
+            "__type__": "parallax_risk.common.identifiers.QuoteId",
+            "value": "synthetic-bond-4"
+          },
+          "maturity": 3.0,
+          "value": 0.8983558668908955,
+          "source": {
+            "__type__": "parallax_risk.domain.market.observations.SourceMetadata",
+            "name": "synthetic-phase12",
+            "reference": "Generated Q-model discount bonds; not observed market data",
+            "observed_at": "2025-01-01T00:00:00+00:00",
+            "is_sample": true
+          },
+          "scale": 1.0
+        },
+        {
+          "__type__": "parallax_risk.domain.calibration.problems.DiscountObservation",
+          "quote_id": {
+            "__type__": "parallax_risk.common.identifiers.QuoteId",
+            "value": "synthetic-bond-5"
+          },
+          "maturity": 5.0,
+          "value": 0.8307137225657235,
+          "source": {
+            "__type__": "parallax_risk.domain.market.observations.SourceMetadata",
+            "name": "synthetic-phase12",
+            "reference": "Generated Q-model discount bonds; not observed market data",
+            "observed_at": "2025-01-01T00:00:00+00:00",
+            "is_sample": true
+          },
+          "scale": 1.0
+        },
+        {
+          "__type__": "parallax_risk.domain.calibration.problems.DiscountObservation",
+          "quote_id": {
+            "__type__": "parallax_risk.common.identifiers.QuoteId",
+            "value": "synthetic-bond-6"
+          },
+          "maturity": 7.0,
+          "value": 0.767435663240226,
+          "source": {
+            "__type__": "parallax_risk.domain.market.observations.SourceMetadata",
+            "name": "synthetic-phase12",
+            "reference": "Generated Q-model discount bonds; not observed market data",
+            "observed_at": "2025-01-01T00:00:00+00:00",
+            "is_sample": true
+          },
+          "scale": 1.0
+        },
+        {
+          "__type__": "parallax_risk.domain.calibration.problems.DiscountObservation",
+          "quote_id": {
+            "__type__": "parallax_risk.common.identifiers.QuoteId",
+            "value": "synthetic-bond-7"
+          },
+          "maturity": 10.0,
+          "value": 0.6811840270630016,
+          "source": {
+            "__type__": "parallax_risk.domain.market.observations.SourceMetadata",
+            "name": "synthetic-phase12",
+            "reference": "Generated Q-model discount bonds; not observed market data",
+            "observed_at": "2025-01-01T00:00:00+00:00",
+            "is_sample": true
+          },
+          "scale": 1.0
+        }
+      ]
+    },
+    "bounds": [
+      {
+        "__type__": "parallax_risk.domain.calibration.contracts.ParameterBound",
+        "name": "speed",
+        "initial": 0.5,
+        "lower": 0.05,
+        "upper": 2.0
+      },
+      {
+        "__type__": "parallax_risk.domain.calibration.contracts.ParameterBound",
+        "name": "level",
+        "initial": 0.03,
+        "lower": 0.001,
+        "upper": 0.1
+      },
+      {
+        "__type__": "parallax_risk.domain.calibration.contracts.ParameterBound",
+        "name": "volatility",
+        "initial": 0.01,
+        "lower": 0.001,
+        "upper": 0.05
+      }
+    ],
+    "settings": {
+      "__type__": "parallax_risk.domain.calibration.contracts.CalibrationSettings",
+      "max_evaluations": 1000,
+      "function_tolerance": 1e-10,
+      "parameter_tolerance": 1e-10,
+      "gradient_tolerance": 1e-10,
+      "maximum_condition_number": 10000000000.0
+    },
+    "calibration_id": {
+      "__type__": "parallax_risk.common.identifiers.CalibrationRunId",
+      "value": "synthetic-phase12-calibration"
+    },
+    "run": {
+      "__type__": "parallax_risk.application.context.RunContext",
+      "run_id": {
+        "__type__": "parallax_risk.common.identifiers.RiskRunId",
+        "value": "synthetic-phase12-calibration"
+      },
+      "timestamp": "2025-01-01T00:00:00+00:00",
+      "seed": 20261001,
+      "configuration_hash": "1ca4fba0e04fd27edeef842229a41606396068f7b3809a1edd90a89590331d8c"
+    }
+  }
+}

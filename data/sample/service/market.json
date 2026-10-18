@@ -1,0 +1,81 @@
+{
+  "project": "Parallax Risk",
+  "is_synthetic": true,
+  "notice": "Generated example inputs; no observed market data or tail-accuracy claim",
+  "data": {
+    "__type__": "parallax_risk.domain.market.snapshot.MarketSnapshot",
+    "snapshot_id": {
+      "__type__": "parallax_risk.common.identifiers.MarketSnapshotId",
+      "value": "scenario-0"
+    },
+    "version": {
+      "__type__": "parallax_risk.common.identifiers.MarketSnapshotVersion",
+      "value": "2025-01-01"
+    },
+    "valuation_date": "2025-01-01",
+    "currencies": [
+      "EUR",
+      "USD"
+    ],
+    "quotes": [
+      {
+        "__type__": "parallax_risk.domain.market.observations.Quote",
+        "quote_id": {
+          "__type__": "parallax_risk.common.identifiers.QuoteId",
+          "value": "EUR-scenario-rate"
+        },
+        "currency": "EUR",
+        "value": 0.03,
+        "unit": "decimal_annual_rate",
+        "source": {
+          "__type__": "parallax_risk.domain.market.observations.SourceMetadata",
+          "name": "model-derived-scenario",
+          "reference": "Synthetic scenario; not observed market data",
+          "observed_at": "2025-01-01T00:00:00+00:00",
+          "is_sample": true
+        }
+      },
+      {
+        "__type__": "parallax_risk.domain.market.observations.Quote",
+        "quote_id": {
+          "__type__": "parallax_risk.common.identifiers.QuoteId",
+          "value": "USD-scenario-rate"
+        },
+        "currency": "USD",
+        "value": 0.03,
+        "unit": "decimal_annual_rate",
+        "source": {
+          "__type__": "parallax_risk.domain.market.observations.SourceMetadata",
+          "name": "model-derived-scenario",
+          "reference": "Synthetic scenario; not observed market data",
+          "observed_at": "2025-01-01T00:00:00+00:00",
+          "is_sample": true
+        }
+      }
+    ],
+    "rates": [],
+    "fx_spots": [
+      {
+        "__type__": "parallax_risk.domain.market.observations.FxSpot",
+        "quote_id": {
+          "__type__": "parallax_risk.common.identifiers.QuoteId",
+          "value": "EUR-USD-scenario"
+        },
+        "base_currency": "EUR",
+        "quote_currency": "USD",
+        "value_date": "2025-01-01",
+        "rate": 1.1,
+        "source": {
+          "__type__": "parallax_risk.domain.market.observations.SourceMetadata",
+          "name": "model-derived-scenario",
+          "reference": "Synthetic scenario; not observed market data",
+          "observed_at": "2025-01-01T00:00:00+00:00",
+          "is_sample": true
+        }
+      }
+    ],
+    "volatilities": [],
+    "credit_spreads": [],
+    "fixings": []
+  }
+}

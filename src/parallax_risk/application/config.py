@@ -127,6 +127,9 @@ def load_settings() -> Settings:
     known = {"PARALLAX_" + field.upper() for field in Settings.model_fields}
     # The integration-test URL belongs to the test runner, not runtime settings.
     known.add("PARALLAX_TEST_DATABASE_URL")
+    from parallax_risk.application.service_config import ServiceSettings
+
+    known.update("PARALLAX_SERVICE_" + field.upper() for field in ServiceSettings.model_fields)
     for name in os.environ:
         upper = name.upper()
         if upper.startswith("PARALLAX_") and (

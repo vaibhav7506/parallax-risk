@@ -26,11 +26,13 @@ def test_health_version_and_readiness_without_database():
         assert client.get("/health").json() == {"status": "ok"}
         response = client.get("/version")
         assert response.status_code == 200
-        assert response.json() == {"name": "Parallax Risk", "version": __version__, "phase": 11}
+        assert response.json() == {"name": "Parallax Risk", "version": __version__, "phase": 12}
         ready = client.get("/ready")
         assert ready.status_code == 503
         assert ready.json() == {"status": "not_ready", "database": "not_configured"}
-        assert set(client.get("/openapi.json").json()["paths"]) == {"/health", "/ready", "/version"}
+        assert {"/health", "/ready", "/version", "/v1/xva"} <= set(
+            client.get("/openapi.json").json()["paths"]
+        )
 
 
 def test_readiness_tracks_live_dependency_and_owns_lifecycle():

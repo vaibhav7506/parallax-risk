@@ -5,6 +5,7 @@ from contextlib import contextmanager
 import pytest
 from sqlalchemy.exc import OperationalError
 
+from parallax_risk import __version__
 from parallax_risk.cli.main import main
 from parallax_risk.common.errors import ConfigurationError, InfrastructureError
 from parallax_risk.infrastructure.persistence.database import PostgresConnectivity
@@ -140,7 +141,10 @@ def test_cli_database_check_and_cleanup(monkeypatch, capsys):
 
 def test_cli_help_and_version_start_without_settings(monkeypatch, capsys):
     monkeypatch.setenv("PARALLAX_DEFAULT_SEED", "invalid")
-    for argument, expected in (("--help", "run-context"), ("--version", "Parallax Risk 0.11.0")):
+    for argument, expected in (
+        ("--help", "run-context"),
+        ("--version", f"Parallax Risk {__version__}"),
+    ):
         with pytest.raises(SystemExit) as result:
             main([argument])
         assert result.value.code == 0

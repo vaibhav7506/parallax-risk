@@ -1,0 +1,106 @@
+{
+  "project": "Parallax Risk",
+  "is_synthetic": true,
+  "notice": "Generated example inputs; no observed market data or tail-accuracy claim",
+  "data": {
+    "__type__": "parallax_risk.domain.portfolio.contracts.PortfolioSnapshot",
+    "portfolio_id": {
+      "__type__": "parallax_risk.common.identifiers.PortfolioId",
+      "value": "synthetic-phase12"
+    },
+    "version": {
+      "__type__": "parallax_risk.common.identifiers.PortfolioVersion",
+      "value": "1"
+    },
+    "as_of": "2025-01-01",
+    "reporting_currency": "USD",
+    "counterparties": [
+      {
+        "__type__": "parallax_risk.domain.portfolio.contracts.Counterparty",
+        "counterparty_id": {
+          "__type__": "parallax_risk.common.identifiers.CounterpartyId",
+          "value": "synthetic-cp"
+        },
+        "legal_name": "Synthetic entity",
+        "netting_sets": [
+          {
+            "__type__": "parallax_risk.domain.portfolio.contracts.NettingSet",
+            "netting_set_id": {
+              "__type__": "parallax_risk.common.identifiers.NettingSetId",
+              "value": "synthetic-set"
+            },
+            "agreement_reference": "Synthetic legal scope; not a legal opinion",
+            "netting_enforceable": true,
+            "reporting_currency": "USD",
+            "trades": [
+              {
+                "__type__": "parallax_risk.domain.portfolio.contracts.Trade",
+                "trade_id": {
+                  "__type__": "parallax_risk.common.identifiers.TradeId",
+                  "value": "synthetic-fx"
+                },
+                "instrument": {
+                  "__type__": "parallax_risk.domain.instruments.fx.contracts.FxForward",
+                  "base_notional": {
+                    "__type__": "parallax_risk.common.money.Money",
+                    "amount": "100",
+                    "currency": "EUR"
+                  },
+                  "quote_currency": "USD",
+                  "strike": "1.1",
+                  "maturity": "2026-01-01",
+                  "direction": "buy_base"
+                },
+                "quantity": "1",
+                "booking_date": "2025-01-01",
+                "effective_date": "2025-01-01",
+                "termination_date": null,
+                "termination_reason": null
+              }
+            ],
+            "csa": {
+              "__type__": "parallax_risk.domain.portfolio.csa.Csa",
+              "csa_id": {
+                "__type__": "parallax_risk.common.identifiers.CsaId",
+                "value": "synthetic-phase12-csa"
+              },
+              "currency": "USD",
+              "receive_threshold": {
+                "__type__": "parallax_risk.common.money.Money",
+                "amount": "5",
+                "currency": "USD"
+              },
+              "post_threshold": {
+                "__type__": "parallax_risk.common.money.Money",
+                "amount": "5",
+                "currency": "USD"
+              },
+              "minimum_transfer_amount": {
+                "__type__": "parallax_risk.common.money.Money",
+                "amount": "0",
+                "currency": "USD"
+              },
+              "independent_amount": {
+                "__type__": "parallax_risk.common.money.Money",
+                "amount": "0",
+                "currency": "USD"
+              },
+              "eligible_collateral": [
+                {
+                  "__type__": "parallax_risk.domain.portfolio.csa.EligibleCollateral",
+                  "currency": "USD",
+                  "haircut": "0"
+                }
+              ],
+              "direction": "two_way",
+              "first_margin_date": "2025-01-01",
+              "frequency_days": 1,
+              "settlement_lag_days": 0,
+              "margin_period_of_risk_days": 10
+            }
+          }
+        ]
+      }
+    ]
+  }
+}

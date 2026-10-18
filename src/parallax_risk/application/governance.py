@@ -63,6 +63,8 @@ class GovernanceRepository(Protocol):
 
     def history(self, kind: str, entity_id: str) -> tuple[Snapshot, ...]: ...
 
+    def list(self, kind: str, after: str, limit: int) -> tuple[Snapshot, ...]: ...
+
     def save(
         self, snapshot: Snapshot, expected_revision: int, references: tuple[Reference, ...]
     ) -> None:

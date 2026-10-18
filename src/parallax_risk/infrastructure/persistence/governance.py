@@ -105,6 +105,25 @@ class PostgresGovernance:
         except SQLAlchemyError:
             raise InfrastructureError("Governance history read failed") from None
 
+    def list(self, kind: str, after: str, limit: int) -> tuple[Snapshot, ...]:
+        try:
+            with self.engine.connect() as connection:
+                rows = connection.execute(
+                    select(events)
+                    .join(
+                        heads,
+                        (events.c.kind == heads.c.kind)
+                        & (events.c.entity_id == heads.c.entity_id)
+                        & (events.c.revision == heads.c.revision),
+                    )
+                    .where(events.c.kind == kind, events.c.entity_id > after)
+                    .order_by(events.c.entity_id)
+                    .limit(limit)
+                ).all()
+            return tuple(_snapshot(row) for row in rows)
+        except SQLAlchemyError:
+            raise InfrastructureError("Governance listing failed") from None
+
     def save(
         self, snapshot: Snapshot, expected_revision: int, references: tuple[Reference, ...]
     ) -> None:

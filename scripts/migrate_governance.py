@@ -27,7 +27,7 @@ def main() -> None:
         raise ConfigurationError("Governance migration failed; database details withheld") from None
     finally:
         engine.dispose()
-    print("Parallax Risk governance schema upgraded to Alembic revision 0011.")
+    print("Parallax Risk governance/service schema upgraded to Alembic revision 0012.")
 
 
 if __name__ == "__main__":

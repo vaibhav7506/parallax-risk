@@ -42,7 +42,7 @@ def database():
     )
     try:
         with engine.begin() as connection:
-            migrate(connection)
+            migrate(connection, target_revision="0011")
         yield engine
     finally:
         engine.dispose()
@@ -63,7 +63,7 @@ def test_actual_upgrade_repeat_downgrade_and_reupgrade(database):
             connection.execute(text("SELECT version_num FROM alembic_version")).scalar_one()
             == "0011"
         )
-        migrate(connection)
+        migrate(connection, target_revision="0011")
     governance = Governance(PostgresGovernance(database))
     save(governance, MODEL)
     with database.begin() as connection:
@@ -72,7 +72,7 @@ def test_actual_upgrade_repeat_downgrade_and_reupgrade(database):
         migrate(connection, downgrade_to_base=True, allow_destructive=True)
     assert set(inspect(database).get_table_names()) == {"alembic_version"}
     with database.begin() as connection:
-        migrate(connection)
+        migrate(connection, target_revision="0011")
     assert governance.repository.get("model", "model") is None
 
 
@@ -233,7 +233,7 @@ def test_packaged_frozen_revision_executes_with_alembic_operations(database):
         with Operations.context(MigrationContext.configure(connection)):
             phase11_governance.downgrade()
         assert "governance_events" not in inspect(connection).get_table_names()
-        migrate(connection)
+        migrate(connection, target_revision="0011")
 
 
 @pytest.mark.parametrize("tamper", ["digest", "identity"])

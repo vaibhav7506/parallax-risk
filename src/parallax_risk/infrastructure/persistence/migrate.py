@@ -8,9 +8,13 @@ from sqlalchemy.engine import Connection
 
 
 def migrate(
-    connection: Connection, *, downgrade_to_base: bool = False, allow_destructive: bool = False
+    connection: Connection,
+    *,
+    downgrade_to_base: bool = False,
+    allow_destructive: bool = False,
+    target_revision: str = "head",
 ) -> None:
-    """Upgrade to 0011; destructive reversal requires explicit opt-in on an isolated DB.
+    """Upgrade explicitly to head/0011/0012; destructive reversal requires opt-in.
 
     Caller owns the surrounding transaction/connection and database selection.
     Normal service startup never applies migrations.
@@ -19,6 +23,8 @@ def migrate(
         raise ValueError("Migration switches must be booleans")
     if connection.dialect.name != "postgresql":
         raise ValueError("Migrations require PostgreSQL")
+    if target_revision not in ("head", "0011", "0012"):
+        raise ValueError("Unsupported migration revision")
     config = Config()
     config.set_main_option("script_location", str(Path(__file__).parent / "migrations"))
     config.attributes["connection"] = connection
@@ -27,4 +33,4 @@ def migrate(
             raise ValueError("Downgrade removes governance data; explicit opt-in is required")
         command.downgrade(config, "base")
     else:
-        command.upgrade(config, "head")
+        command.upgrade(config, target_revision)

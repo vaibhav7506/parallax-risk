@@ -8,7 +8,8 @@ from collections.abc import Sequence
 from parallax_risk import __version__
 from parallax_risk.application.config import load_settings
 from parallax_risk.application.context import create_run_context
-from parallax_risk.common.errors import ConfigurationError, InfrastructureError
+from parallax_risk.cli.service import SUBMIT, add_commands, run
+from parallax_risk.common.errors import ConfigurationError, ParallaxError
 from parallax_risk.common.logging import create_logger
 from parallax_risk.infrastructure.persistence.database import PostgresConnectivity
 
@@ -22,11 +23,15 @@ def main(argv: Sequence[str] | None = None) -> int:
     commands.add_parser("config", help="Validate and print redacted effective configuration")
     commands.add_parser("run-context", help="Create a reproducibility metadata envelope")
     commands.add_parser("check-db", help="Check configured PostgreSQL connectivity")
+    add_commands(commands)
     args = parser.parse_args(argv)
     if args.command == "version":
-        print(json.dumps({"name": "Parallax Risk", "version": __version__, "phase": 11}))
+        print(json.dumps({"name": "Parallax Risk", "version": __version__, "phase": 12}))
         return 0
     try:
+        if args.command in (*SUBMIT, "ingest", "governance-write", "report", "query"):
+            run(args)
+            return 0
         settings = load_settings()
         if args.command == "config":
             print(json.dumps(settings.public_configuration(), sort_keys=True))
@@ -48,7 +53,7 @@ def main(argv: Sequence[str] | None = None) -> int:
             finally:
                 probe.close()
             print(json.dumps({"database": "connected"}))
-    except (ConfigurationError, InfrastructureError) as error:
+    except ParallaxError as error:
         print(str(error), file=sys.stderr)
         return 1
     return 0

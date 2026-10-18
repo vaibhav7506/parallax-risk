@@ -172,8 +172,22 @@ def validate_account(account: CollateralAccount, csa: Csa, market: PricingContex
         ):
             raise DomainValidationError("Movement violates CSA schedule/settlement lag")
     dates = {account.opening_date, *(m.settlement_date for m in account.movements)}
+    # A validated constant CSA lag makes settlement order equal call order.
+    # Preserve the exact Money addition order and validate each end-of-day state,
+    # including multiple same-day settlements, without rescanning prior movements.
+    values = {m.currency: m for m in account.opening_balances}
+    next_movement = 0
     for as_of in sorted(dates):
-        collateral_value(account.balances(as_of), csa, market)
+        while (
+            next_movement < len(account.movements)
+            and account.movements[next_movement].settlement_date <= as_of
+        ):
+            cash = account.movements[next_movement].amount
+            values[cash.currency] = (
+                values.get(cash.currency, Money(Decimal(0), cash.currency)) + cash
+            )
+            next_movement += 1
+        collateral_value(tuple(values[currency] for currency in sorted(values)), csa, market)
 
 
 @dataclass(frozen=True, slots=True)
